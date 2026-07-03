@@ -631,11 +631,11 @@ const Hero = () => {
               <span style={{
               color: '#5DBB3A',
               display: 'block'
-            }}>Explore &amp;</span>
+            }}>Partner with Us.</span>
               <span style={{
               color: '#FFFFFF',
               display: 'block'
-            }}>Invest in Nkomazi SEZ.</span>
+            }}>Tenders &amp; Procurement.</span>
             </motion.h1>
             <motion.p initial={{
             opacity: 0,
