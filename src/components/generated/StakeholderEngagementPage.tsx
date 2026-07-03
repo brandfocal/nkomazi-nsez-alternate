@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
