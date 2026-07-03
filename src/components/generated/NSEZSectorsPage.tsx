@@ -704,7 +704,7 @@ const SectorsHero = () => {
           y: bgY
         }}>
           <div className="absolute inset-0" style={{
-            backgroundImage: "url('/agro-processing4.jpg')",
+            backgroundImage: "url('/agro-processing-4.jpg')",
             backgroundPosition: 'center 40%',
             backgroundSize: 'cover'
           }} />

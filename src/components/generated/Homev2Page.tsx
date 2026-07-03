@@ -3358,7 +3358,7 @@ export function Homev2Page() {
       minHeight: '620px'
     }}>
       <div className="absolute inset-0" style={{
-        backgroundImage: 'url("/nsez-banner7.jpg")',
+        backgroundImage: 'url("/manufacturing4.jpg")',
         backgroundPosition: 'center 40%',
         backgroundSize: 'cover'
       }} />
