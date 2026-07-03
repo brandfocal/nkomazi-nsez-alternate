@@ -4,6 +4,7 @@ import { motion, AnimatePresence, useInView, useScroll, useTransform } from "fra
 import { Menu, X, MapPin } from "lucide-react";
 import { NSEZNavbar } from "./NSEZNavbar";
 import { NSEZFooterSection } from "./NSEZFooterSection";
+import { NsezValuesSection } from "./NsezValuesSection";
 
 // ─── Font constants ───────────────────────────────────────────────────────────
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
@@ -2075,9 +2076,10 @@ export const AboutNSEZPage = () => {
       <GoldDivider />
       <WhyNSEZSection />
       <GoldDivider />
-      <ValuesSection />
+      <NsezValuesSection />
       <GoldDivider />
       <LocationsSection />
+
       <NSEZFooterSection />
     </div>
   </div>;
