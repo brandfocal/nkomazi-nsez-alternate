@@ -105,7 +105,7 @@ const WHY_WORK_CARDS = [{
   icon: Users,
   title: 'Meaningful Impact',
   description: 'Be part of a team creating real economic change and industrial development across Mpumalanga.',
-  image: '/meaningful-impact.JPG'
+  image: '/meaningful-impact.jpg'
 }, {
   id: 'ww2',
   icon: Briefcase,
@@ -117,7 +117,7 @@ const WHY_WORK_CARDS = [{
   icon: Info,
   title: 'Collaborative Culture',
   description: 'Work alongside government, investors, and community stakeholders in a purpose-driven organisation.',
-  image: '/collaborative-culture.JPG'
+  image: '/collaborative-culture.jpg'
 }];
 const ArrowRightIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
   <path d="M2.58844 6.47511C2.29705 6.47511 2.06083 6.71132 2.06083 7.00271C2.06083 7.2941 2.29705 7.53032 2.58844 7.53032V7.00271V6.47511ZM2.58844 7.00271V7.53032H11.0301V7.00271V6.47511H2.58844V7.00271Z" fill="currentColor" />
