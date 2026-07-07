@@ -105,19 +105,19 @@ const WHY_WORK_CARDS = [{
   icon: Users,
   title: 'Meaningful Impact',
   description: 'Be part of a team creating real economic change and industrial development across Mpumalanga.',
-  image: 'https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=600&q=80'
+  image: '/meaningful-impact.JPG'
 }, {
   id: 'ww2',
   icon: Briefcase,
   title: 'Growth Opportunities',
   description: 'Nkomazi SEZ offers a dynamic environment where your career can grow alongside a rapidly developing economic zone.',
-  image: 'https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=600&q=80'
+  image: '/community-development.jpg'
 }, {
   id: 'ww3',
   icon: Info,
   title: 'Collaborative Culture',
   description: 'Work alongside government, investors, and community stakeholders in a purpose-driven organisation.',
-  image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=600&q=80'
+  image: '/collaborative-culture.JPG'
 }];
 const ArrowRightIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
   <path d="M2.58844 6.47511C2.29705 6.47511 2.06083 6.71132 2.06083 7.00271C2.06083 7.2941 2.29705 7.53032 2.58844 7.53032V7.00271V6.47511ZM2.58844 7.00271V7.53032H11.0301V7.00271V6.47511H2.58844V7.00271Z" fill="currentColor" />
