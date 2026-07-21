@@ -797,7 +797,11 @@ const Hero = () => {
   } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 min-h-[580px] sm:h-[calc(100vh-36px)] sm:max-h-[calc(100vh-36px)] py-12 sm:py-0 overflow-hidden">
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
+    minHeight: '100svh',
+    height: 'calc(100svh - 36px)',
+    maxHeight: 'calc(100svh - 36px)'
+  }}>
     <div style={{
       position: 'absolute',
       inset: 0,
@@ -927,19 +931,7 @@ const Hero = () => {
           </motion.p>
         </div>
 
-        <div className="hidden lg:block flex-shrink-0" style={{
-          width: '1px',
-          alignSelf: 'stretch',
-          backgroundColor: 'rgba(255,255,255,0.15)',
-          marginLeft: '36px',
-          marginRight: '36px'
-        }} />
-
-        <div ref={statsRowRef} className="flex flex-col gap-0 w-full lg:w-auto" style={{
-          flexShrink: 1,
-          flexBasis: '45%',
-          minWidth: 0,
-          maxWidth: '100%',
+        <div ref={statsRowRef} className="flex flex-col gap-0 w-full lg:w-[50%] flex-none" style={{
           background: 'rgba(5, 18, 10, 0.60)',
           backdropFilter: 'blur(14px)',
           WebkitBackdropFilter: 'blur(14px)',

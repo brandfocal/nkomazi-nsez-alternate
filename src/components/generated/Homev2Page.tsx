@@ -945,7 +945,11 @@ const VideoHero = () => {
   } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-3xl mx-1.5 sm:mx-2.5 min-h-[580px] sm:h-[calc(100vh-36px)] sm:max-h-[calc(100vh-36px)] py-12 sm:py-0 overflow-hidden">
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
+    minHeight: '100svh',
+    height: 'calc(100svh - 36px)',
+    maxHeight: 'calc(100svh - 36px)'
+  }}>
     {/* Background image with parallax */}
     <div style={{
       position: 'absolute',
@@ -984,7 +988,7 @@ const VideoHero = () => {
       <span style={{
         fontFamily: HEADING_FONT,
         fontWeight: 900,
-        fontSize: 'clamp(160px, 28vw, 360px)',
+        fontSize: 'clamp(120px, 24vw, 360px)',
         color: 'rgba(255,255,255,0.035)',
         lineHeight: 1,
         userSelect: 'none',
@@ -995,13 +999,12 @@ const VideoHero = () => {
     </div>
 
     {/* Main hero content */}
-    <motion.div className="relative sm:absolute left-0 right-0 sm:bottom-10" style={{
-      paddingLeft: 'clamp(24px, 5vw, 80px)',
-      paddingRight: 'clamp(24px, 5vw, 80px)',
+    <motion.div className="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{
+      paddingBottom: 'clamp(28px, 5vh, 56px)',
       opacity,
       zIndex: 2
     }}>
-      <motion.div className="w-full flex flex-col lg:flex-row lg:items-end gap-8 lg:gap-0" initial={{
+      <motion.div className="w-full flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-8" initial={{
         opacity: 0,
         y: 50
       }} animate={{
@@ -1012,8 +1015,8 @@ const VideoHero = () => {
         delay: 0.2,
         ease: [0.22, 1, 0.36, 1]
       }}>
-        {/* Left column — headline only */}
-        <div className="flex flex-col gap-0 flex-1 min-w-0">
+        {/* Left column */}
+        <div className="flex flex-col gap-0 flex-none w-full lg:w-[50%]">
           <motion.h1 initial={{
             opacity: 0,
             y: 14
@@ -1026,7 +1029,7 @@ const VideoHero = () => {
             ease: [0.22, 1, 0.36, 1]
           }} style={{
             fontFamily: HEADING_FONT,
-            fontSize: 'clamp(38px, 6vw, 80px)',
+            fontSize: 'clamp(36px, 6vw, 80px)',
             lineHeight: '1.05',
             letterSpacing: '-1px',
             fontWeight: 700,
@@ -1055,7 +1058,7 @@ const VideoHero = () => {
             ease: 'easeOut'
           }} style={{
             fontFamily: BODY_FONT,
-            fontSize: '14px',
+            fontSize: 'clamp(13px, 1.6vw, 15px)',
             lineHeight: '1.8',
             color: 'rgba(255,255,255,0.95)',
             marginBottom: 0,
@@ -1067,23 +1070,13 @@ const VideoHero = () => {
           </motion.p>
         </div>
 
-        {/* Vertical divider */}
-        <div className="hidden lg:block flex-shrink-0" style={{
-          width: '1px',
-          alignSelf: 'stretch',
-          backgroundColor: 'rgba(255,255,255,0.15)',
-          marginLeft: '40px',
-          marginRight: '40px'
-        }} />
-
-        {/* Right column — sub, body copy, CTAs */}
-        <div className="flex flex-col gap-0 w-full lg:w-[clamp(420px,38vw,560px)] max-w-full" style={{
-          flexShrink: 0,
+        {/* Right column — glassmorphism panel */}
+        <div className="flex flex-col gap-0 w-full lg:w-[50%] flex-none" style={{
           background: 'rgba(5, 18, 10, 0.55)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
           borderRadius: '16px',
-          padding: '24px 28px',
+          padding: 'clamp(16px, 3vw, 28px)',
           border: '1px solid rgba(255,255,255,0.08)'
         }}>
           <div ref={statsRowRef} className="flex flex-row items-center" style={{

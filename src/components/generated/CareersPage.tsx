@@ -475,7 +475,11 @@ const PageHero = () => {
   } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 min-h-[580px] sm:h-[calc(100vh-36px)] sm:max-h-[calc(100vh-36px)] py-12 sm:py-0 overflow-hidden">
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
+    minHeight: '100svh',
+    height: 'calc(100svh - 36px)',
+    maxHeight: 'calc(100svh - 36px)'
+  }}>
     {/* Background */}
     <div style={{
       position: 'absolute',
@@ -522,11 +526,12 @@ const PageHero = () => {
     </div>
 
     {/* Hero content */}
-    <motion.div className="relative sm:absolute left-0 right-0 px-4 sm:px-8 lg:px-[clamp(48px,5vw,80px)] sm:bottom-10" style={{
+    <motion.div className="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{
+      paddingBottom: 'clamp(28px, 5vh, 56px)',
       opacity,
       zIndex: 2
     }}>
-      <motion.div className="w-full flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-0" initial={{
+      <motion.div className="w-full flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-8" initial={{
         opacity: 0,
         y: 50
       }} animate={{
@@ -538,7 +543,7 @@ const PageHero = () => {
         ease: [0.22, 1, 0.36, 1]
       }}>
         {/* Left: headline + subtext */}
-        <div className="flex flex-col gap-0 flex-1 min-w-0">
+        <div className="flex flex-col gap-0 flex-none w-full lg:w-[50%]">
           <motion.h1 initial={{
             opacity: 0,
             y: 14
@@ -591,20 +596,8 @@ const PageHero = () => {
           </motion.p>
         </div>
 
-        {/* Vertical divider — desktop only */}
-        <div className="hidden lg:block flex-shrink-0" style={{
-          width: '1px',
-          alignSelf: 'stretch',
-          backgroundColor: 'rgba(255,255,255,0.15)',
-          marginLeft: '40px',
-          marginRight: '40px'
-        }} />
-
         {/* Right: stats card */}
-        <div className="flex flex-col gap-0 w-full lg:w-auto" style={{
-          maxWidth: '100%',
-          flex: '0 0 auto',
-          width: 'min(100%, clamp(300px, 38vw, 560px))',
+        <div className="flex flex-col gap-0 w-full lg:w-[50%] flex-none" style={{
           background: 'rgba(5, 18, 10, 0.55)',
           backdropFilter: 'blur(12px)',
           WebkitBackdropFilter: 'blur(12px)',
