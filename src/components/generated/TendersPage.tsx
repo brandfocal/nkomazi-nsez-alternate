@@ -519,12 +519,7 @@ const Hero = () => {
   const bgY = useTransform(scrollY, [0, 600], ['0%', '-13%']);
   const opacityVal = useTransform(scrollY, [0, 500], [1, 0]);
   const HERO_BG = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=85';
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-3xl mx-1.5 sm:mx-2.5" style={{
-    overflow: 'hidden',
-    height: 'calc(100vh - 36px)',
-    maxHeight: 'calc(100vh - 36px)',
-    minHeight: '520px'
-  }}>
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-3xl mx-1.5 sm:mx-2.5 min-h-[520px] sm:h-[calc(100vh-36px)] sm:max-h-[calc(100vh-36px)] py-12 sm:py-0 overflow-hidden">
       {/* Background image with parallax */}
       <div style={{
       position: 'absolute',
@@ -576,8 +571,7 @@ const Hero = () => {
       </div>
 
       {/* Hero content anchored to bottom */}
-      <motion.div className="absolute left-0 right-0" style={{
-      bottom: '40px',
+      <motion.div className="relative sm:absolute left-0 right-0 sm:bottom-10" style={{
       paddingLeft: 'clamp(16px, 4vw, 64px)',
       paddingRight: 'clamp(16px, 4vw, 64px)',
       opacity: opacityVal,
