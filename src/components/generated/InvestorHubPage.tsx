@@ -535,8 +535,15 @@ const Hero = () => {
   const {
     scrollY
   } = useScroll();
-  const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
-  const contentOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  const contentOpacity = isMobile ? 1 : scrollOpacity;
   const scrollProgress = useTransform(scrollY, [0, 600], [0, 100]);
   const springProgress = useSpring(scrollProgress, {
     stiffness: 100,

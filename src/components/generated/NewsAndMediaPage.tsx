@@ -443,8 +443,15 @@ const HeroSection = () => {
   const {
     scrollY
   } = useScroll();
-  const bgY = useTransform(scrollY, [0, 600], ['0px', '-80px']);
-  const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  const heroOpacity = isMobile ? 1 : scrollOpacity;
   return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
     overflow: 'hidden',
     minHeight: '100svh',

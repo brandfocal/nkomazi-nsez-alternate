@@ -445,8 +445,15 @@ const Hero = () => {
   const {
     scrollY
   } = useScroll();
-  const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
-  const opacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  const opacity = isMobile ? 1 : scrollOpacity;
   return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 min-h-[580px] sm:min-h-[100svh] sm:h-[calc(100svh-36px)] sm:max-h-[calc(100svh-36px)] overflow-hidden">
     <div style={{
       position: 'absolute',
