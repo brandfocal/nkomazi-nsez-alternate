@@ -581,7 +581,7 @@ const VideoHero = () => {
     setWiping(true);
     setActiveImg(i);
   };
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-3xl overflow-hidden mx-2.5" style={{
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
     minHeight: '860px'
   }}>
       {/* Parallax wrapper */}

@@ -858,7 +858,7 @@ const HeroSection = () => {
   } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], ["0%", "18%"]);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-3xl mx-1.5 sm:mx-2.5" style={{
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
     overflow: "hidden",
     height: "calc(100vh - 36px)",
     maxHeight: "calc(100vh - 36px)",
