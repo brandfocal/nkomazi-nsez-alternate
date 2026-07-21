@@ -944,6 +944,7 @@ const VideoHero = () => {
   const {
     scrollY
   } = useScroll();
+  const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
   const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {

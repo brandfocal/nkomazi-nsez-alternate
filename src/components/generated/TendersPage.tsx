@@ -516,6 +516,7 @@ const Hero = () => {
   const {
     scrollY
   } = useScroll();
+  const bgY = useTransform(scrollY, [0, 600], ['0%', '-13%']);
   const scrollOpacityVal = useTransform(scrollY, [0, 500], [1, 0]);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {

@@ -675,6 +675,7 @@ const SectorsHero = () => {
   const {
     scrollY
   } = useScroll();
+  const bgY = useTransform(scrollY, [0, 600], ['0px', '-80px']);
   const scrollOpacity = useTransform(scrollY, [0, 500], [1, 0]);
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
