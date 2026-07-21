@@ -677,11 +677,7 @@ const SectorsHero = () => {
   } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], ['0px', '-80px']);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  return <section className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
-    minHeight: '100svh',
-    height: 'calc(100svh - 36px)',
-    maxHeight: 'calc(100svh - 36px)'
-  }}>
+  return <section className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 min-h-[580px] sm:min-h-[100svh] sm:h-[calc(100svh-36px)] sm:max-h-[calc(100svh-36px)] overflow-hidden">
     {/* Tailwind can't do 100svh in inline style portably, so we use a style tag approach via className */}
     <style>{`
         @media (min-width: 1024px) {
@@ -758,7 +754,7 @@ const SectorsHero = () => {
         ease: [0.22, 1, 0.36, 1]
       }}>
         {/* Hero text block */}
-        <div className="px-4 sm:px-6 lg:px-[clamp(24px,5vw,80px)] pb-6 sm:pb-8 lg:pb-8">
+        <div className="px-4 sm:px-6 lg:px-[clamp(24px,5vw,80px)] pb-6 sm:pb-8 lg:pb-8 pt-32 sm:pt-0">
           <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-16">
             {/* Left column */}
             <div className="flex flex-col gap-0 flex-1 min-w-0">

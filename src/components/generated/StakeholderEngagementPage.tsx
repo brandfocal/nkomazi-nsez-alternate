@@ -798,11 +798,7 @@ const Hero = () => {
   } = useScroll();
   const bgY = useTransform(scrollY, [0, 600], ['0%', '18%']);
   const opacity = useTransform(scrollY, [0, 500], [1, 0]);
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
-    minHeight: '100svh',
-    height: 'calc(100svh - 36px)',
-    maxHeight: 'calc(100svh - 36px)'
-  }}>
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 min-h-[580px] sm:min-h-[100svh] sm:h-[calc(100svh-36px)] sm:max-h-[calc(100svh-36px)] overflow-hidden">
     <div style={{
       position: 'absolute',
       inset: 0,
@@ -846,7 +842,7 @@ const Hero = () => {
       </span>
     </div>
 
-    <motion.div className="relative sm:absolute left-0 right-0 px-4 sm:px-8 lg:px-[clamp(48px,5vw,80px)] sm:bottom-10" style={{
+    <motion.div className="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-32 sm:pt-0" style={{
       opacity,
       zIndex: 2
     }}>
