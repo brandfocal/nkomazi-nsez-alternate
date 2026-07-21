@@ -519,7 +519,7 @@ const Hero = () => {
   const bgY = useTransform(scrollY, [0, 600], ['0%', '-13%']);
   const opacityVal = useTransform(scrollY, [0, 500], [1, 0]);
   const HERO_BG = 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1800&q=85';
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 mt-9 overflow-hidden" style={{
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 overflow-hidden" style={{
     minHeight: '100svh',
     height: 'calc(100svh - 36px)',
     maxHeight: 'calc(100svh - 36px)'
