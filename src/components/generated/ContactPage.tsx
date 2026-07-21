@@ -480,7 +480,7 @@ const Hero = () => {
     }} />
 
     {/* Hero content */}
-    <motion.div className="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20" style={{
+    <motion.div className="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-24 sm:pt-0" style={{
       paddingBottom: 'clamp(28px, 5vh, 56px)',
       opacity,
       zIndex: 2
