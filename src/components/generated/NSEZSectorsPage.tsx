@@ -761,7 +761,7 @@ const SectorsHero = () => {
           <div className="flex flex-col lg:flex-row lg:items-start gap-6 lg:gap-16">
             {/* Left column */}
             <div className="flex flex-col gap-0 flex-1 min-w-0">
-              <motion.div className="flex items-center gap-2 mb-3 sm:mb-4" initial={{
+              <motion.div className="flex items-center gap-3 mb-3 sm:mb-4" initial={{
                 opacity: 0,
                 x: -20
               }} animate={{
@@ -772,13 +772,14 @@ const SectorsHero = () => {
                 delay: 0.3
               }} style={{
                 fontFamily: BODY_FONT,
-                fontSize: '13px',
-                color: 'rgba(255,255,255,0.6)'
+                fontSize: '12px',
+                color: 'rgba(255,255,255,0.5)',
+                letterSpacing: '0.1em'
               }}>
                 <span>Home</span>
                 <ChevronRight size={12} />
                 <span style={{
-                  color: 'rgba(255,255,255,0.9)'
+                  color: GOLD
                 }}>Sectors</span>
               </motion.div>
               <motion.h1 initial={{

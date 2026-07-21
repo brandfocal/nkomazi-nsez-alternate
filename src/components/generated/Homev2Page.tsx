@@ -1017,6 +1017,16 @@ const VideoHero = () => {
       }}>
         {/* Left column */}
         <div className="flex flex-col gap-0 flex-none w-full lg:w-[50%]">
+          <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
+            fontFamily: BODY_FONT,
+            fontSize: '12px',
+            color: 'rgba(255,255,255,0.5)',
+            letterSpacing: '0.1em'
+          }}>
+            <span>Home</span>
+            <ChevronRight size={12} />
+            <span style={{ color: GOLD }}>Overview</span>
+          </div>
           <motion.h1 initial={{
             opacity: 0,
             y: 14
@@ -3185,8 +3195,7 @@ export function Homev2Page() {
 
     {/* Hero — extra top padding to account for banner + nav */}
     <div id="sec-hero" style={{
-      paddingTop: '36px',
-      height: '100vh'
+      paddingTop: '36px'
     }}>
       <VideoHero />
     </div>

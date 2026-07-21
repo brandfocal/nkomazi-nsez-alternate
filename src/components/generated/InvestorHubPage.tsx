@@ -616,18 +616,17 @@ const Hero = () => {
         duration: 0.4,
         delay: 0.15,
         ease: 'easeOut'
-      }} className="flex items-center gap-2 mb-5 sm:mb-6" style={{
+      }} className="flex items-center gap-3 mb-3 sm:mb-4" style={{
         fontFamily: BODY_FONT,
-        fontSize: '11px',
-        color: 'rgba(255,255,255,0.45)',
-        letterSpacing: '0.08em',
-        textTransform: 'uppercase'
+        fontSize: '12px',
+        color: 'rgba(255,255,255,0.5)',
+        letterSpacing: '0.1em'
       }}>
         <span>Home</span>
-        <ChevronRight size={11} />
+        <ChevronRight size={12} />
         <span style={{
-          color: 'rgba(255,255,255,0.75)'
-        }}>Invest</span>
+          color: GOLD
+        }}>Investor Hub</span>
       </motion.div>
 
       {/* Main heading */}
