@@ -1360,6 +1360,9 @@ export const SectorsPage = () => {
   }}>
     <NSEZNavbar />
 
+    {/* Spacer for navbar top banner */}
+    <div style={{ height: '36px' }} />
+
     {/* HERO */}
     <div>
       <SectorsHero />

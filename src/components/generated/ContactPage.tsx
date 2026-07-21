@@ -1239,6 +1239,8 @@ const InvestmentCallout = () => <section style={{
 export const ContactPage = () => {
   return <div className="w-full bg-white selection:bg-[#C8A84B] selection:text-[#1D4D35] overflow-x-hidden">
     <NSEZNavbar />
+    {/* Spacer for navbar top banner */}
+    <div style={{ height: '36px' }} />
     <main>
       <Hero />
       <ContactSplit />

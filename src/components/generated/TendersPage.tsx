@@ -1226,6 +1226,9 @@ export const TendersPage = () => {
   return <div className="min-h-screen bg-white text-[#111111] overflow-x-hidden">
       <NSEZNavbar />
 
+      {/* Spacer for navbar top banner */}
+      <div style={{ height: '36px' }} />
+
       {/* Hero Section */}
       <Hero />
 
