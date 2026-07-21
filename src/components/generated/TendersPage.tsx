@@ -665,8 +665,7 @@ const Hero = () => {
         }} />
 
           {/* Right column — glassmorphism panel */}
-          <div className="flex flex-col gap-0" style={{
-          width: 'clamp(280px, 36vw, 520px)',
+          <div className="flex flex-col gap-0 w-full lg:w-[clamp(280px,36vw,520px)] max-w-full" style={{
           flexShrink: 0,
           background: 'rgba(5, 18, 10, 0.55)',
           backdropFilter: 'blur(12px)',

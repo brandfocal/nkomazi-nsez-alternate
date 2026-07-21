@@ -995,8 +995,7 @@ const VideoHero = () => {
     </div>
 
     {/* Main hero content */}
-    <motion.div className="absolute left-0 right-0" style={{
-      bottom: '40px',
+    <motion.div className="relative sm:absolute left-0 right-0 sm:bottom-10" style={{
       paddingLeft: 'clamp(24px, 5vw, 80px)',
       paddingRight: 'clamp(24px, 5vw, 80px)',
       opacity,
@@ -1078,8 +1077,7 @@ const VideoHero = () => {
         }} />
 
         {/* Right column — sub, body copy, CTAs */}
-        <div className="flex flex-col gap-0" style={{
-          width: 'clamp(420px, 38vw, 560px)',
+        <div className="flex flex-col gap-0 w-full lg:w-[clamp(420px,38vw,560px)] max-w-full" style={{
           flexShrink: 0,
           background: 'rgba(5, 18, 10, 0.55)',
           backdropFilter: 'blur(12px)',
