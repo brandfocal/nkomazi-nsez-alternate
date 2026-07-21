@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from 'framer-motion';
-import { Menu, X, Mail, MapPin, Calendar, Briefcase, Info, ArrowUpRight } from 'lucide-react';
+import { Menu, X, Mail, MapPin, Calendar, Briefcase, Info, ArrowUpRight, ChevronRight } from 'lucide-react';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
+const GOLD = "#C9A84C";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const NAV_SECTORS = ['Agro-processing & Agriculture', 'Manufacturing', 'Green Economy', 'Logistics & Warehousing'];

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from 'framer-motion';
-import { Menu, X, MapPin } from 'lucide-react';
+import { Menu, X, MapPin, ChevronRight } from 'lucide-react';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
+const GOLD = "#C9A84C";
 
 // ─── SVG Icons ────────────────────────────────────────────────────────────────
 

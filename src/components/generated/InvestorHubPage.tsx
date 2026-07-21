@@ -8,6 +8,7 @@ import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, S
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
+const GOLD = "#C9A84C";
 
 // ─── Easing ───────────────────────────────────────────────────────────────────
 const EASE_NATURAL = [0.22, 1, 0.36, 1] as const;

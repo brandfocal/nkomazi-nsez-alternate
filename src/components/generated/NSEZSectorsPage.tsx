@@ -9,6 +9,7 @@ import { NSEZFooterSection } from './NSEZFooterSection';
 // ─── Font Constants ────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
+const GOLD = "#C9A84C";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
