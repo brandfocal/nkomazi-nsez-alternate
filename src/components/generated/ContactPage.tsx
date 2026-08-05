@@ -98,14 +98,18 @@ const OrangeButton = ({
 
 const OFFICE_CARDS = [{
   id: 'komatipoort',
-  title: 'Komatipoort Site',
-  address: 'Komatipoort, Mpumalanga, South Africa',
-  map: '/komatipoort-site.jpg'
+  title: 'Office Site – Komatipoort',
+  address: 'Portion 58 Farm, Komatipoort Townlands 182 JU, Komatipoort, 1340',
+  gps: 'GPS: -25.450833, 31.931639 (25°27\'03.0"S 31°55\'53.9"E)',
+  map: '/komatipoort-site.jpg',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=-25.450833,31.931639'
 }, {
   id: 'mbombela',
-  title: 'Mbombela HQ',
-  address: 'Mbombela (Nelspruit), Mpumalanga, South Africa',
-  map: '/Mbombela-HQ.jpg'
+  title: 'Head Office (Mega Offices)',
+  address: '02 Eastern Boulevard, Riverside, Mbombela, 1201, South Africa',
+  gps: 'GPS: -25.4347789, 30.9664799',
+  map: '/Mbombela-HQ.jpg',
+  mapUrl: 'https://www.google.com/maps/search/?api=1&query=-25.4347789,30.9664799'
 }];
 const HERO_STATS = [{
   value: 50,
@@ -762,10 +766,15 @@ const ContactSplit = () => {
                     }}>
                       Komatipoort Office
                     </p>
-                    <p className="text-sm text-white/75" style={{
+                    <p className="text-sm text-white/75 font-medium mb-1" style={{
                       fontFamily: BODY_FONT
                     }}>
-                      Komatipoort, Mpumalanga, South Africa
+                      Portion 58 Farm, Komatipoort Townlands 182 JU, Komatipoort, 1340
+                    </p>
+                    <p className="text-xs text-white/50" style={{
+                      fontFamily: BODY_FONT
+                    }}>
+                      GPS: -25.450833, 31.931639
                     </p>
                   </div>
                   <div>
@@ -775,10 +784,15 @@ const ContactSplit = () => {
                     }}>
                       Mbombela Office
                     </p>
-                    <p className="text-sm text-white/75" style={{
+                    <p className="text-sm text-white/75 font-medium mb-1" style={{
                       fontFamily: BODY_FONT
                     }}>
-                      Mbombela, Mpumalanga, South Africa
+                      02 Eastern Boulevard, Riverside, Mbombela, 1201, South Africa
+                    </p>
+                    <p className="text-xs text-white/50" style={{
+                      fontFamily: BODY_FONT
+                    }}>
+                      GPS: -25.4347789, 30.9664799
                     </p>
                   </div>
                 </div>
@@ -1040,14 +1054,22 @@ const OfficeLocations = () => <section id="offices" className="py-16 sm:py-20 md
               }}>
                 {office.title}
               </h4>
-              <p className="text-sm text-gray-400" style={{
+              <p className="text-sm text-gray-500" style={{
                 fontFamily: BODY_FONT
               }}>
                 {office.address}
               </p>
+              <p className="text-xs text-gray-400 mt-1" style={{
+                fontFamily: BODY_FONT
+              }}>
+                {office.gps}
+              </p>
             </div>
             <div className="flex-shrink-0">
-              <OrangeButton label="Get Directions" fullWidthMobile />
+              <OrangeButton label="Get Directions" fullWidthMobile href={office.mapUrl} onClick={(e) => {
+                e.stopPropagation();
+                window.open(office.mapUrl, '_blank');
+              }} />
             </div>
           </div>
         </div>

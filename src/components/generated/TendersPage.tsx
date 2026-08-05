@@ -21,6 +21,7 @@ interface Opportunity {
   description: string;
   closingDate: string;
   status: 'Open' | 'Closed' | 'Closing Soon';
+  pdfUrl?: string;
 }
 interface StatItem {
   value: number;
@@ -35,51 +36,33 @@ interface SocialLinkItem {
 
 // --- Mock Data ---
 const OPPORTUNITIES: Opportunity[] = [{
-  id: '1',
+  id: 'nsez-2026-03',
   category: 'Tender',
-  title: 'Civil Infrastructure Works Phase 1',
-  description: 'Invitation to tender for civil engineering and earthworks for Nkomazi SEZ Phase 1 infrastructure including internal roads and bulk services.',
-  closingDate: '31 July 2026',
-  status: 'Open'
+  title: 'Provision of Tax Practitioners/Specialists and Financial Advisory Services',
+  description: 'Appointment of qualified and experienced panel members for the provision of tax practitioners/specialists, and financial advisory services for a period of three (3) years. Bid No: NSEZ/2026/03.',
+  closingDate: '11 August 2026',
+  status: 'Open',
+  pdfUrl: '/tenders/tenders/05-08-2026/BID NSEZ202603 TAX.pdf'
 }, {
-  id: '2',
-  category: 'RFQ',
-  title: 'Security Services Supply',
-  description: 'Request for quotation for on-site security services at the Komatipoort site to ensure 24/7 protection of assets and personnel.',
-  closingDate: '15 July 2026',
-  status: 'Closing Soon'
-}, {
-  id: '3',
-  category: 'Partnership',
-  title: 'Agro-processing Investment Partnership',
-  description: 'Seeking strategic partners in the agro-processing value chain for co-investment and operations within the designated industrial zone.',
-  closingDate: 'Open',
-  status: 'Open'
-}, {
-  id: '4',
-  category: 'Leasing',
-  title: 'Industrial Land Leasing',
-  description: 'Industrial-zoned land parcels available for long-term lease within the SEZ footprint. Various sizes available from 0.5ha to 10ha.',
-  closingDate: 'Open',
-  status: 'Open'
-}, {
-  id: '5',
-  category: 'EOI',
-  title: 'Renewable Energy Developer',
-  description: 'Expression of interest from renewable energy developers for on-site generation projects including solar and biomass solutions.',
-  closingDate: '30 August 2026',
-  status: 'Open'
-}, {
-  id: '6',
+  id: 'nsez-2026-04',
   category: 'Tender',
-  title: 'Consulting Services Environmental Impact Assessment',
-  description: 'Tender for qualified environmental consultants to conduct a comprehensive EIA for Phase 2 development areas of the Nkomazi SEZ.',
-  closingDate: '20 July 2026',
-  status: 'Closing Soon'
+  title: 'Provision of Internal Audit and Risk Management Services',
+  description: 'Appointment of qualified and experienced panel members for the provision of internal audit and risk management services for a period of three (3) years. Bid No: NSEZ/2026/04.',
+  closingDate: '12 August 2026',
+  status: 'Open',
+  pdfUrl: '/tenders/tenders/05-08-2026/BID NSEZ202604 INTERNAL AUDIT.pdf'
+}, {
+  id: 'nsez-2026-05',
+  category: 'Tender',
+  title: 'Construction of External Electrical Bulk Infrastructure for Phase 1',
+  description: 'Construction of external electrical bulk infrastructure for Phase 1 at Nkomazi Special Economic Zone (NSEZ) situated at Komatipoort, Mpumalanga Province. Bid No: NSEZ/2026/05.',
+  closingDate: '13 August 2026',
+  status: 'Open',
+  pdfUrl: '/tenders/tenders/05-08-2026/Bid Documentation -Bulk Electrical Construction.pdf'
 }];
 const STATS: StatItem[] = [{
-  value: 6,
-  suffix: '+',
+  value: 3,
+  suffix: '',
   label: 'Active Tenders'
 }, {
   value: 3,
@@ -853,7 +836,11 @@ const OpportunityCard = ({
     ease: 'easeOut'
   }} whileHover={{
     scale: 1.005
-  }} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{
+  }} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} onClick={() => {
+    if (item.pdfUrl) {
+      window.open(item.pdfUrl, '_blank');
+    }
+  }} style={{
     background: '#FAFAF8',
     border: '1px solid rgba(29,77,53,0.1)',
     borderRadius: '20px',
@@ -969,7 +956,13 @@ const OpportunityCard = ({
               {item.closingDate}
             </span>
           </div>
-          <motion.a href="#" onClick={e => e.preventDefault()} className="flex items-center gap-2 no-underline" style={{
+          <motion.a href="#" onClick={e => {
+            e.preventDefault();
+            e.stopPropagation();
+            if (item.pdfUrl) {
+              window.open(item.pdfUrl, '_blank');
+            }
+          }} className="flex items-center gap-2 no-underline" style={{
           fontFamily: BODY_FONT,
           fontSize: '11px',
           fontWeight: 700,

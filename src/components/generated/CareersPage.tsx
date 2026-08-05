@@ -29,41 +29,15 @@ const CAREER_CATEGORIES = [{
   label: 'Internships'
 }];
 const JOB_LISTINGS = [{
-  id: 'j1',
-  title: 'Investment Facilitation Officer',
+  id: 'marketing-communications-manager',
+  title: 'Marketing and Communications Manager',
   category: 'Vacancy',
-  department: 'Investment Department',
-  location: 'Komatipoort',
-  closingDate: '31 July 2026',
-  description: 'We are seeking a proactive Investment Facilitation Officer to support new investors in navigating the regulatory landscape and establishing operations within the zone.',
-  type: 'Full-time'
-}, {
-  id: 'j2',
-  title: 'Graduate Infrastructure Planner',
-  category: 'Graduate Programme',
-  department: 'Infrastructure Department',
-  location: 'Mbombela',
-  closingDate: '15 August 2026',
-  description: 'Join our infrastructure team as a Graduate Planner. You will assist in the design and implementation of sustainable industrial infrastructure projects.',
-  type: 'Graduate'
-}, {
-  id: 'j3',
-  title: 'Business Administration Learnership NQF 4',
-  category: 'Learnership',
   department: 'Corporate Services',
-  location: 'Komatipoort',
-  closingDate: '31 July 2026',
-  description: 'An opportunity for young South Africans to gain practical experience and a formal qualification in business administration within a dynamic economic environment.',
-  type: 'Learnership'
-}, {
-  id: 'j4',
-  title: 'Marketing and Communications Intern',
-  category: 'Internship',
-  department: 'Marketing Department',
   location: 'Mbombela',
-  closingDate: '20 July 2026',
-  description: 'Support our marketing team in digital content creation, stakeholder relations, and event coordination for the Nkomazi Special Economic Zone.',
-  type: 'Internship'
+  closingDate: '15 July 2026',
+  description: 'To develop, implement, and manage internal and external communication and marketing strategies that enhance the organisation\'s visibility, brand reputation, and stakeholder engagement.',
+  type: 'Permanent',
+  pdfUrl: '/careers/vacancies/05-08-2026/marketing and communications manager/736045339_1353480426739712_5508305170083225341_n.jpg'
 }];
 
 // ─── Hero Stats ───────────────────────────────────────────────────────────────
@@ -847,7 +821,11 @@ const CareersSection = () => {
           }} transition={{
             duration: 0.4
           }} className="space-y-4 sm:space-y-6">
-            {filteredJobs.map(job => <div key={job.id} className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 hover:shadow-lg hover:border-[#1fac67]/20 transition-all duration-300">
+            {filteredJobs.map(job => <div key={job.id} onClick={() => {
+              if (job.pdfUrl) {
+                window.open(job.pdfUrl, '_blank');
+              }
+            }} className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 hover:shadow-lg hover:border-[#1fac67]/20 transition-all duration-300 cursor-pointer">
               <div className="flex-1 min-w-0 space-y-3 sm:space-y-4">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-widest" style={{
@@ -892,7 +870,18 @@ const CareersSection = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex-shrink-0 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0 w-full sm:w-auto">
+                {job.pdfUrl && (
+                  <GhostButtonDark
+                    label="View Advert"
+                    fullWidth
+                    onClick={(e) => {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      window.open(job.pdfUrl, '_blank');
+                    }}
+                  />
+                )}
                 <GreenButton label="Apply Now" fullWidth href="#register" />
               </div>
             </div>)}
