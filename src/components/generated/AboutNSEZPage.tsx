@@ -769,12 +769,11 @@ const StickyNav = ({
         paddingBottom: scrolled ? "14px" : "0px",
         transition: "padding 0.35s ease"
       }}>
-        <a href="#" onClick={e => e.preventDefault()} className="flex-shrink-0 flex items-center no-underline">
-          <img src="https://cdn.prod.website-files.com/6891d538bffa36dd46a28858/6891d538bffa36dd46a28873_nkomazi-sez-logo.png" alt="Nkomazi SEZ" style={{
+        <a href="/" className="flex-shrink-0 flex items-center no-underline">
+          <img src="/NSEZ-Horizontal-Logo-white.png" alt="Nkomazi SEZ" style={{
             height: "36px",
             width: "auto",
-            objectFit: "contain",
-            filter: "brightness(0) invert(1)"
+            objectFit: "contain"
           }} />
         </a>
 
