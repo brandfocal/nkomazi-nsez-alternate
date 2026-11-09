@@ -634,7 +634,7 @@ const Hero = () => {
             Our dedicated team is ready to assist you with enquiries, site visits, application guidance, and investment facilitation support.
           </motion.p>
 
-          <motion.div className="flex flex-col xs:flex-row flex-wrap items-stretch xs:items-center gap-3" initial={{
+          <motion.div className="flex flex-row flex-wrap items-center gap-3 sm:gap-4" initial={{
             opacity: 0,
             y: 16
           }} animate={{
@@ -645,8 +645,8 @@ const Hero = () => {
             delay: 0.75,
             ease: 'easeOut'
           }}>
-            <GoldButton label="Send an Enquiry" fullWidthMobile href="#enquiry" />
-            <GhostButton label="View Our Offices" fullWidthMobile href="#offices" />
+            <GoldButton label="Send an Enquiry" href="#enquiry" />
+            <GhostButton label="View Our Offices" href="#offices" />
           </motion.div>
         </motion.div>
       </motion.div>

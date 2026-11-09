@@ -1063,47 +1063,83 @@ const GallerySection = () => {
   );
 };
 
-const FEATURED_VIDEOS = [
+interface FeaturedVideo {
+  id: string;
+  url: string;
+  startTime?: number;
+  title: string;
+  excerpt: string;
+  runtime: string;
+  source: string;
+}
+
+const FEATURED_VIDEOS: FeaturedVideo[] = [
   {
     id: "sQTybYIGILM",
+    url: "https://www.youtube.com/watch?v=sQTybYIGILM",
     title: "Forensic Investigation Passed in Nkomazi Local Municipality",
     excerpt: "SABC News report covering the Nkomazi Local Municipality Section 106 forensic investigation council resolution.",
-    url: "https://www.youtube.com/watch?v=sQTybYIGILM",
-    thumbnail: "https://img.youtube.com/vi/sQTybYIGILM/maxresdefault.jpg",
     runtime: "2:15",
     source: "SABC News"
   },
   {
     id: "j6SHvykV9w8",
+    url: "https://www.youtube.com/watch?v=j6SHvykV9w8&t=1s",
+    startTime: 1,
     title: "Nkomazi SEZ Manufacturing & Industrialist Summit 2026",
     excerpt: "Key highlights and discussions from the Nkomazi Special Economic Zone Manufacturing & Industrialist Summit.",
-    url: "https://www.youtube.com/watch?v=j6SHvykV9w8",
-    thumbnail: "https://img.youtube.com/vi/j6SHvykV9w8/maxresdefault.jpg",
     runtime: "4:32",
     source: "Nkomazi SEZ Media"
   },
   {
     id: "KTeiTcbaDBA",
+    url: "https://www.youtube.com/watch?v=KTeiTcbaDBA&t=6s",
+    startTime: 6,
     title: "Nkomazi SEZ Stakeholder Relations Showcase & Progress",
     excerpt: "Watch the latest progress updates, active development sites, and investor opportunities within the economic zone.",
-    url: "https://www.youtube.com/watch?v=KTeiTcbaDBA",
-    thumbnail: "https://img.youtube.com/vi/KTeiTcbaDBA/maxresdefault.jpg",
     runtime: "3:10",
     source: "Nkomazi SEZ Media"
   },
   {
     id: "4HXdK1X2ojs",
+    url: "https://www.youtube.com/watch?v=4HXdK1X2ojs",
     title: "Nkomazi SEZ: Unlocking New Opportunities for Investment",
     excerpt: "A video presentation highlighting strategic location benefits, infrastructure readiness, and priority sector opportunities.",
-    url: "https://www.youtube.com/watch?v=4HXdK1X2ojs",
-    thumbnail: "https://img.youtube.com/vi/4HXdK1X2ojs/maxresdefault.jpg",
     runtime: "5:20",
     source: "Nkomazi SEZ Media"
   }
 ];
 
+const VideoCardThumbnail = ({ videoId, title }: { videoId: string; title: string }) => {
+  const [src, setSrc] = useState(`https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`);
+  const [step, setStep] = useState(0);
+
+  const handleError = () => {
+    if (step === 0) {
+      setStep(1);
+      setSrc(`https://img.youtube.com/vi/${videoId}/hqdefault.jpg`);
+    } else if (step === 1) {
+      setStep(2);
+      setSrc(`https://img.youtube.com/vi/${videoId}/0.jpg`);
+    } else if (step === 2) {
+      setStep(3);
+      setSrc(`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`);
+    }
+  };
+
+  return (
+    <img
+      src={src}
+      alt={title}
+      loading="lazy"
+      onError={handleError}
+      className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+    />
+  );
+};
+
 const VideosSection = () => {
-  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+  const [activeVideo, setActiveVideo] = useState<FeaturedVideo | null>(null);
 
   return (
     <>
@@ -1116,46 +1152,61 @@ const VideosSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-10">
             {FEATURED_VIDEOS.map((video, idx) => (
               <FadeUp key={video.id} delay={idx * 0.1}>
-                <div className="group relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-video shadow-xl sm:shadow-2xl bg-[#081a12]">
-                  <img src={video.thumbnail} alt={video.title} className="w-full h-full object-cover opacity-85 group-hover:scale-[1.03] transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-black/45 group-hover:bg-black/35 transition-colors" />
-                  
-                  <div className="absolute top-4 sm:top-6 left-4 sm:left-6 flex items-center gap-2 sm:gap-3 z-10">
-                    <div className="bg-[#FF0000] px-2 py-1 rounded text-white text-[10px] font-bold tracking-wider uppercase">
+                <div
+                  onClick={() => setActiveVideo(video)}
+                  className="group relative rounded-2xl sm:rounded-3xl overflow-hidden aspect-[16/10] sm:aspect-video shadow-xl sm:shadow-2xl bg-[#081a12] cursor-pointer flex flex-col justify-end"
+                >
+                  {/* YouTube Video Screenshot */}
+                  <VideoCardThumbnail videoId={video.id} title={video.title} />
+
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/55 to-black/25 group-hover:via-black/45 transition-colors pointer-events-none" />
+
+                  {/* Top Badges */}
+                  <div className="absolute top-4 sm:top-5 left-4 sm:left-5 flex items-center gap-2 sm:gap-2.5 z-10 pointer-events-none">
+                    <div className="bg-[#FF0000] px-2 py-0.5 sm:px-2.5 sm:py-1 rounded text-white text-[10px] font-bold tracking-wider uppercase flex items-center shadow-md">
                       YouTube
                     </div>
-                    <div>
-                      <p className="text-white/70 text-[10px] uppercase font-bold" style={{ fontFamily: BODY_FONT }}>
+                    <div className="bg-black/60 backdrop-blur-md px-2 py-0.5 sm:px-2.5 sm:py-1 rounded border border-white/10 shadow-md">
+                      <p className="text-white/80 text-[10px] uppercase font-bold" style={{ fontFamily: BODY_FONT }}>
                         {video.source}
                       </p>
                     </div>
                   </div>
 
-                  <div className="absolute inset-0 flex flex-col items-center justify-center px-4 z-10">
-                    <motion.button onClick={() => setActiveVideoId(video.id)} whileHover={{
-                      scale: 1.1
-                    }} whileTap={{
-                      scale: 0.95
-                    }} className="w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-[#1fac67] text-white flex items-center justify-center shadow-2xl cursor-pointer" aria-label={`Play ${video.title}`}>
-                      <Play size={24} fill="currentColor" className="ml-1" />
-                    </motion.button>
-                    <div className="mt-4 sm:mt-6 text-center">
-                      <h4 className="text-white text-lg sm:text-xl md:text-2xl font-black uppercase tracking-tight mb-1 sm:mb-2 max-w-[90%] mx-auto leading-tight" style={{
-                        fontFamily: HEADING_FONT
-                      }}>
-                        {video.title}
-                      </h4>
-                      <p className="text-white/80 text-[11px] sm:text-xs max-w-[85%] mx-auto leading-relaxed hidden sm:block mb-1" style={{
-                        fontFamily: BODY_FONT
-                      }}>
-                        {video.excerpt}
-                      </p>
-                      <p className="text-[#C9A84C] text-[10px] sm:text-xs font-bold uppercase tracking-widest" style={{
-                        fontFamily: BODY_FONT
-                      }}>
+                  {/* Centered Play Button */}
+                  <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+                    <motion.div
+                      whileHover={{ scale: 1.15 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1fac67] text-white flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:bg-[#189556] group-hover:scale-110"
+                      aria-label={`Play ${video.title}`}
+                    >
+                      <Play size={24} fill="currentColor" className="ml-0.5" />
+                    </motion.div>
+                  </div>
+
+                  {/* Description text in the video cards aligned to the bottom */}
+                  <div className="relative z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent flex flex-col justify-end pt-14">
+                    <div className="flex items-center gap-2 mb-1.5">
+                      <span className="text-[#C9A84C] text-[10px] sm:text-xs font-bold uppercase tracking-widest" style={{ fontFamily: BODY_FONT }}>
                         Runtime: {video.runtime}
-                      </p>
+                      </span>
+                      <span className="text-white/40 text-xs">•</span>
+                      <span className="text-white/70 text-[10px] sm:text-xs font-medium uppercase tracking-wider" style={{ fontFamily: BODY_FONT }}>
+                        {video.source}
+                      </span>
                     </div>
+                    <h4 className="text-white text-base sm:text-lg md:text-xl font-bold uppercase tracking-tight leading-snug mb-1 sm:mb-1.5 group-hover:text-[#1fac67] transition-colors line-clamp-2" style={{
+                      fontFamily: HEADING_FONT
+                    }}>
+                      {video.title}
+                    </h4>
+                    <p className="text-white/80 text-xs sm:text-sm line-clamp-2 leading-relaxed" style={{
+                      fontFamily: BODY_FONT
+                    }}>
+                      {video.excerpt}
+                    </p>
                   </div>
                 </div>
               </FadeUp>
@@ -1164,37 +1215,83 @@ const VideosSection = () => {
         </div>
       </section>
 
+      {/* Video Modal Player */}
       <AnimatePresence>
-        {activeVideoId && (
+        {activeVideo && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/85 backdrop-blur-sm p-4 sm:p-6"
-            onClick={() => setActiveVideoId(null)}
+            className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/90 backdrop-blur-md p-3 sm:p-6"
+            onClick={() => setActiveVideo(null)}
           >
             <motion.div
-              initial={{ scale: 0.95 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.95 }}
-              className="relative w-full max-w-4xl aspect-video rounded-2xl overflow-hidden shadow-2xl bg-black"
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl bg-[#081a12] border border-white/10 flex flex-col"
               onClick={e => e.stopPropagation()}
             >
-              <button
-                className="absolute top-4 right-4 text-white hover:text-white/70 transition-colors z-50 bg-black/40 hover:bg-black/60 p-2 rounded-full border-0 outline-none cursor-pointer"
-                onClick={() => setActiveVideoId(null)}
-                aria-label="Close modal"
-              >
-                <X size={20} />
-              </button>
-              <iframe
-                src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=1`}
-                title="YouTube video player"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-                className="w-full h-full"
-              />
+              {/* Modal Header */}
+              <div className="flex items-center justify-between px-4 sm:px-6 py-3 bg-[#0d281a] border-b border-white/10">
+                <div className="flex items-center gap-2.5 truncate mr-4">
+                  <span className="bg-[#FF0000] px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider text-white">
+                    YouTube
+                  </span>
+                  <span className="text-white font-semibold text-sm sm:text-base truncate" style={{ fontFamily: HEADING_FONT }}>
+                    {activeVideo.title}
+                  </span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={activeVideo.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white bg-white/10 hover:bg-white/20 rounded-lg transition-colors cursor-pointer"
+                  >
+                    Watch on YouTube <ExternalLink size={13} />
+                  </a>
+                  <button
+                    onClick={() => setActiveVideo(null)}
+                    className="text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors flex-shrink-0 cursor-pointer"
+                    aria-label="Close modal"
+                  >
+                    <X size={18} />
+                  </button>
+                </div>
+              </div>
+
+              {/* Player Container */}
+              <div className="relative w-full aspect-video bg-black flex items-center justify-center">
+                <iframe
+                  key={activeVideo.id}
+                  src={`https://www.youtube.com/embed/${activeVideo.id}?autoplay=1&rel=0&playsinline=1${activeVideo.startTime ? `&start=${activeVideo.startTime}` : ''}`}
+                  title={activeVideo.title}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  className="w-full h-full border-0"
+                  loading="eager"
+                />
+              </div>
+
+              {/* Modal Footer with Description & External Link */}
+              <div className="p-4 sm:p-5 bg-[#0a1f15] border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+                <div className="flex-1">
+                  <p className="text-white/90 text-xs sm:text-sm leading-relaxed" style={{ fontFamily: BODY_FONT }}>
+                    {activeVideo.excerpt}
+                  </p>
+                </div>
+                <a
+                  href={activeVideo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex sm:hidden items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#1fac67] hover:text-[#22c55e] bg-white/5 hover:bg-white/10 rounded-lg transition-colors flex-shrink-0"
+                >
+                  Watch on YouTube <ExternalLink size={14} />
+                </a>
+              </div>
             </motion.div>
           </motion.div>
         )}
