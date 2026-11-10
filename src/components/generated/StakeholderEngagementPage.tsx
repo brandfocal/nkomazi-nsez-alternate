@@ -666,7 +666,7 @@ const StickyNav = ({
         transition: 'padding 0.35s ease'
       }}>
         <a href="/" className="flex-shrink-0 flex items-center no-underline">
-          <img src="/NSEZ-Horizontal-Logo-white.png" alt="Nkomazi SEZ" className="h-8 sm:h-10 w-auto object-contain" />
+          <img src="/NSEZ-Horizontal-Logo-white.png" alt="Nkomazi SEZ" className="h-12 sm:h-[60px] w-auto object-contain" />
         </a>
 
         <div className="hidden lg:flex items-center gap-0 backdrop-blur-[26px] bg-white/10 border border-white/20 rounded-xl p-[4.6px]">

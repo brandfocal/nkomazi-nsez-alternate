@@ -771,7 +771,7 @@ const StickyNav = ({
       }}>
         <a href="/" className="flex-shrink-0 flex items-center no-underline">
           <img src="/NSEZ-Horizontal-Logo-white.png" alt="Nkomazi SEZ" style={{
-            height: "36px",
+            height: "54px",
             width: "auto",
             objectFit: "contain"
           }} />

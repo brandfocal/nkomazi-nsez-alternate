@@ -205,7 +205,7 @@ export function NSEZNavbar() {
               <img
                 src="/NSEZ-Horizontal-Logo-white.png"
                 alt="Nkomazi SEZ"
-                className="h-8 sm:h-10 w-auto object-contain"
+                className="h-12 sm:h-[60px] w-auto object-contain"
               />
             </a>
 
