@@ -15,7 +15,7 @@ const EASE_NATURAL = [0.22, 1, 0.36, 1] as const;
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const NAV_SECTORS = ['Agro-processing & Agriculture', 'Manufacturing', 'Green Economy', 'Logistics & Warehousing'];
-const NAV_SIMPLE_LINKS = ['About Nkomazi SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+const NAV_SIMPLE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
 interface FeatureItem {
   title: string;
   description: string;
@@ -51,7 +51,7 @@ const FEATURES: FeatureItem[] = [{
   image: 'https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=1000&q=85'
 }, {
   title: 'Export Gateway',
-  description: 'Access to the Port of Maputo, regional border posts and multimodal transport networks. Nkomazi SEZ sits at the crossroads of the Maputo Corridor and key SADC trade routes - enabling seamless movement of goods to Mozambique, sub-Saharan Africa, and Indian Ocean ports. Your business starts with a built-in regional reach.',
+  description: 'Access to the Port of Maputo, regional border posts and multimodal transport networks. MPUMALANGA NKOMAZI SEZ sits at the crossroads of the Maputo Corridor and key SADC trade routes - enabling seamless movement of goods to Mozambique, sub-Saharan Africa, and Indian Ocean ports. Your business starts with a built-in regional reach.',
   Icon: Globe,
   image: '/nsez-banner21.jpg'
 }, {
@@ -89,12 +89,12 @@ const INVESTMENT_STAGES: JourneyStage[] = [
       {
         number: "Step 1",
         title: "Referral or Approached Investor",
-        description: "The journey begins when an investor approaches Nkomazi SEZ directly, is referred through a partner, or is proactively engaged by the Nkomazi SEZ investment team."
+        description: "The journey begins when an investor approaches MPUMALANGA NKOMAZI SEZ directly, is referred through a partner, or is proactively engaged by the MPUMALANGA NKOMAZI SEZ investment team."
       },
       {
         number: "Step 2",
         title: "Initiation Meeting",
-        description: "A first formal engagement to introduce Nkomazi SEZ, understand the investor's business and objectives, and explore potential alignment with the zone's sectors and opportunities."
+        description: "A first formal engagement to introduce MPUMALANGA NKOMAZI SEZ, understand the investor's business and objectives, and explore potential alignment with the zone's sectors and opportunities."
       },
       {
         number: "Step 3",
@@ -113,12 +113,12 @@ const INVESTMENT_STAGES: JourneyStage[] = [
       {
         number: "Step 4",
         title: "Multi-Stakeholder Evaluation",
-        description: "The proposal is reviewed collaboratively by relevant stakeholders to assess its strategic, economic, and developmental value to Nkomazi SEZ and the region."
+        description: "The proposal is reviewed collaboratively by relevant stakeholders to assess its strategic, economic, and developmental value to MPUMALANGA NKOMAZI SEZ and the region."
       },
       {
         number: "Step 5",
         title: "SEZ Legal Unit Due Diligence",
-        description: "Nkomazi SEZ's legal unit conducts thorough due diligence to verify compliance, mitigate risk, and ensure the proposal meets all regulatory and governance requirements."
+        description: "MPUMALANGA NKOMAZI SEZ's legal unit conducts thorough due diligence to verify compliance, mitigate risk, and ensure the proposal meets all regulatory and governance requirements."
       }
     ]
   },
@@ -137,7 +137,7 @@ const INVESTMENT_STAGES: JourneyStage[] = [
       {
         number: "Step 7",
         title: "SEZ Board Approval / Rejection",
-        description: "The Nkomazi SEZ Board takes the final decision to approve or decline the investment proposal based on the full evaluation and recommendation."
+        description: "The MPUMALANGA NKOMAZI SEZ Board takes the final decision to approve or decline the investment proposal based on the full evaluation and recommendation."
       },
       {
         number: "Step 8",
@@ -180,7 +180,7 @@ const RESOURCES: ResourceItem[] = [{
 }, {
   index: '02',
   title: 'Investor Guide',
-  description: 'Step-by-step guidance on the Nkomazi SEZ application process, compliance requirements, and operational standards for investors and tenants.',
+  description: 'Step-by-step guidance on the MPUMALANGA NKOMAZI SEZ application process, compliance requirements, and operational standards for investors and tenants.',
   href: '#'
 }, {
   index: '03',
@@ -190,7 +190,7 @@ const RESOURCES: ResourceItem[] = [{
 }, {
   index: '04',
   title: 'FAQs',
-  description: 'Answers to the most common questions from investors about Nkomazi SEZ processes, eligibility, timelines, and operational requirements.',
+  description: 'Answers to the most common questions from investors about MPUMALANGA NKOMAZI SEZ processes, eligibility, timelines, and operational requirements.',
   href: '#'
 }, {
   index: '05',
@@ -600,7 +600,7 @@ const Hero = () => {
         userSelect: 'none',
         letterSpacing: '-0.04em'
       }}>
-        NKOMAZI SEZ
+        MPUMALANGA NKOMAZI SEZ
       </span>
     </div>
 
@@ -661,7 +661,7 @@ const Hero = () => {
           textTransform: 'uppercase',
           margin: 0
         }}>
-          Why Invest in Nkomazi SEZ
+          Why Invest in MPUMALANGA NKOMAZI SEZ
         </motion.h1>
       </div>
 
@@ -732,7 +732,7 @@ const WhyInvestSection = () => {
     <GoldDivider />
     <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
       <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 sm:mb-14 gap-6 sm:gap-4">
-        <AnimatedHeading eyebrow="Investment Case" heading="Why Invest in Nkomazi SEZ" eyebrowColor="#e87326" headingColor="#111111" />
+        <AnimatedHeading eyebrow="Investment Case" heading="Why Invest in MPUMALANGA NKOMAZI SEZ" eyebrowColor="#e87326" headingColor="#111111" />
         <FadeUp delay={0.1}>
           <p style={{
             fontFamily: BODY_FONT,
@@ -830,7 +830,7 @@ const JourneySection = () => {
   }}>
     <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-        <AnimatedHeading eyebrow="Evaluation & Approval Process" heading="Your Path to Investing in Nkomazi SEZ" eyebrowColor="#C9A84C" headingColor="#ffffff" />
+        <AnimatedHeading eyebrow="Evaluation & Approval Process" heading="Your Path to Investing in MPUMALANGA NKOMAZI SEZ" eyebrowColor="#C9A84C" headingColor="#ffffff" />
         <FadeUp delay={0.1}>
           <p style={{
             fontFamily: BODY_FONT,
@@ -1454,7 +1454,7 @@ const CTASection = () => {
                 margin: 0,
                 maxWidth: '400px'
               }}>
-                Connect with our investment facilitation team and take the first step toward establishing your business in Nkomazi SEZ.
+                Connect with our investment facilitation team and take the first step toward establishing your business in MPUMALANGA NKOMAZI SEZ.
               </p>
             </div>
           </div>
@@ -1488,7 +1488,7 @@ const CTASection = () => {
             }} />
 
             <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-              <a href="mailto:invest@nsez.gov.za" style={{
+              <a href="mailto:invest@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
                 color: '#C8A84B',
@@ -1500,13 +1500,13 @@ const CTASection = () => {
               }} onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.opacity = '1';
               }}>
-                invest@nsez.gov.za
+                invest@nkomazisez.gov.za
               </a>
               <span style={{
                 color: 'rgba(17,17,17,0.2)',
                 fontSize: '12px'
               }}>—</span>
-              <a href="mailto:info@nsez.gov.za" style={{
+              <a href="mailto:info@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
                 color: 'rgba(17,17,17,0.5)',
@@ -1517,7 +1517,7 @@ const CTASection = () => {
               }} onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(17,17,17,0.5)';
               }}>
-                info@nsez.gov.za
+                info@nkomazisez.gov.za
               </a>
             </div>
           </div>

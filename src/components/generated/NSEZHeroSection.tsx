@@ -174,7 +174,7 @@ export function NSEZHeroSection() {
     display: 'flex',
     flexDirection: 'column',
     overflow: 'hidden'
-  }} aria-label="Nkomazi SEZ Hero">
+  }} aria-label="MPUMALANGA NKOMAZI SEZ Hero">
       {/* Parallax background */}
       <motion.div aria-hidden="true" style={{
       y: bgY,
@@ -275,7 +275,7 @@ export function NSEZHeroSection() {
           </motion.div>
 
           {/* Main heading — word-by-word stagger */}
-          <motion.div initial="hidden" animate="visible" variants={containerVariants} aria-label="Nkomazi SEZ: The Strategic Gateway to Southern African Trade." style={{
+          <motion.div initial="hidden" animate="visible" variants={containerVariants} aria-label="MPUMALANGA NKOMAZI SEZ: The Strategic Gateway to Southern African Trade." style={{
           marginBottom: '32px'
         }}>
             <h1 style={{

@@ -609,7 +609,7 @@ const Hero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-            Nkomazi SEZ (NSEZ) is positioned as a gateway for regional and international investment, offering world-class infrastructure, investor-focused incentives, and access to key trade corridors connecting South Africa to the African continent.
+            MPUMALANGA NKOMAZI SEZ (NSEZ) is positioned as a gateway for regional and international investment, offering world-class infrastructure, investor-focused incentives, and access to key trade corridors connecting South Africa to the African continent.
           </motion.p>
 
           <motion.p initial={{
@@ -727,7 +727,7 @@ const ContactSplit = () => {
                   }}>
                     Investment Enquiries
                   </p>
-                  <a href="mailto:invest@nsez.gov.za" className="font-bold transition-colors no-underline break-all" style={{
+                  <a href="mailto:invest@nkomazisez.gov.za" className="font-bold transition-colors no-underline break-all" style={{
                     fontFamily: HEADING_FONT,
                     fontSize: 'clamp(16px, 2vw, 20px)',
                     color: '#ffffff'
@@ -736,7 +736,7 @@ const ContactSplit = () => {
                   }} onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
                   }}>
-                    invest@nsez.gov.za
+                    invest@nkomazisez.gov.za
                   </a>
                 </div>
                 <div>
@@ -746,7 +746,7 @@ const ContactSplit = () => {
                   }}>
                     General Enquiries
                   </p>
-                  <a href="mailto:info@nsez.gov.za" className="font-bold transition-colors no-underline break-all" style={{
+                  <a href="mailto:info@nkomazisez.gov.za" className="font-bold transition-colors no-underline break-all" style={{
                     fontFamily: HEADING_FONT,
                     fontSize: 'clamp(16px, 2vw, 20px)',
                     color: '#ffffff'
@@ -755,7 +755,26 @@ const ContactSplit = () => {
                   }} onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
                   }}>
-                    info@nsez.gov.za
+                    info@nkomazisez.gov.za
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase font-semibold tracking-[0.1em] mb-2" style={{
+                    fontFamily: BODY_FONT,
+                    color: 'rgba(255,255,255,0.45)'
+                  }}>
+                    Whistleblower & Ethics
+                  </p>
+                  <a href="mailto:whistleblower@nkomazisez.gov.za" className="font-bold transition-colors no-underline break-all" style={{
+                    fontFamily: HEADING_FONT,
+                    fontSize: 'clamp(16px, 2vw, 20px)',
+                    color: '#ffffff'
+                  }} onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#C8A84B';
+                  }} onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                  }}>
+                    whistleblower@nkomazisez.gov.za
                   </a>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
@@ -1234,7 +1253,7 @@ const InvestmentCallout = () => <section style={{
           }} />
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-5">
-            <a href="mailto:invest@nsez.gov.za" className="break-all" style={{
+            <a href="mailto:invest@nkomazisez.gov.za" className="break-all" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
               color: '#C8A84B',
@@ -1246,13 +1265,13 @@ const InvestmentCallout = () => <section style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.opacity = '1';
             }}>
-              invest@nsez.gov.za
+              invest@nkomazisez.gov.za
             </a>
             <span style={{
               color: 'rgba(17,17,17,0.2)',
               fontSize: '12px'
             }}>—</span>
-            <a href="mailto:info@nsez.gov.za" className="break-all" style={{
+            <a href="mailto:info@nkomazisez.gov.za" className="break-all" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
               color: 'rgba(17,17,17,0.5)',
@@ -1263,7 +1282,24 @@ const InvestmentCallout = () => <section style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(17,17,17,0.5)';
             }}>
-              info@nsez.gov.za
+              info@nkomazisez.gov.za
+            </a>
+            <span style={{
+              color: 'rgba(17,17,17,0.2)',
+              fontSize: '12px'
+            }}>—</span>
+            <a href="mailto:whistleblower@nkomazisez.gov.za" className="break-all" style={{
+              fontFamily: BODY_FONT,
+              fontSize: '14px',
+              color: 'rgba(17,17,17,0.5)',
+              textDecoration: 'none',
+              transition: 'color 0.2s'
+            }} onMouseEnter={e => {
+              (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(17,17,17,0.8)';
+            }} onMouseLeave={e => {
+              (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(17,17,17,0.5)';
+            }}>
+              whistleblower@nkomazisez.gov.za
             </a>
           </div>
         </div>

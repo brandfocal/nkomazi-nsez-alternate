@@ -17,8 +17,8 @@ const EASE_V5 = [0.22, 1, 0.36, 1] as const;
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const NAV_SECTORS = ["Agro-processing & Agriculture", "Manufacturing", "Green Economy", "Logistics & Warehousing"];
-const NAV_SIMPLE_LINKS = ["About Nkomazi SEZ", "Invest", "Sectors", "MSME Hub", "Tenders", "News and Media", "Stakeholder Relations", "Careers", "Contact Us"];
-const DESKTOP_NAV_LINKS = ["About Nkomazi SEZ", "Invest", "MSME Hub", "Tenders", "News and Media", "Stakeholder Relations", "Careers"];
+const NAV_SIMPLE_LINKS = ["About MPUMALANGA NKOMAZI SEZ", "Invest", "Sectors", "MSME Hub", "Tenders", "News and Media", "Stakeholder Relations", "Careers", "Contact Us"];
+const DESKTOP_NAV_LINKS = ["About MPUMALANGA NKOMAZI SEZ", "Invest", "MSME Hub", "Tenders", "News and Media", "Stakeholder Relations", "Careers"];
 interface ValueItem {
   letter: string;
   name: string;
@@ -130,7 +130,7 @@ const LOCATIONS: LocationItem[] = [{
   bgPosition: "center 50%",
   tags: ["Administrative", "Liaison"]
 }];
-const FOOTER_EXPLORE_LINKS = ["About Nkomazi SEZ", "Why Invest", "Priority Sectors", "Investor Hub"];
+const FOOTER_EXPLORE_LINKS = ["About MPUMALANGA NKOMAZI SEZ", "Why Invest", "Priority Sectors", "Investor Hub"];
 const FOOTER_CONNECT_LINKS = ["Investment Process", "Resources", "Partners", "Contact"];
 interface SocialLinkItem {
   Icon: React.FC;
@@ -680,25 +680,25 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
     alignItems: "center",
     gap: "10px"
   }}>
-    <a href="mailto:invest@nsez.gov.za" style={{
+    <a href="mailto:invest@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: "11px",
       color: "#1D4D35",
       textDecoration: "none",
       letterSpacing: "0.04em"
-    }}>invest@nsez.gov.za</a>
+    }}>invest@nkomazisez.gov.za</a>
     <span style={{
       color: "#1D4D35",
       opacity: 0.35,
       fontSize: "11px"
     }}>|</span>
-    <a href="mailto:info@nsez.gov.za" style={{
+    <a href="mailto:info@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: "11px",
       color: "#1D4D35",
       textDecoration: "none",
       letterSpacing: "0.04em"
-    }}>info@nsez.gov.za</a>
+    }}>info@nkomazisez.gov.za</a>
   </div>
   <div style={{
     display: "flex",
@@ -770,7 +770,7 @@ const StickyNav = ({
         transition: "padding 0.35s ease"
       }}>
         <a href="/" className="flex-shrink-0 flex items-center no-underline">
-          <img src="/NSEZ-Horizontal-Logo-white.png" alt="Nkomazi SEZ" style={{
+          <img src="/NSEZ-Horizontal-Logo-white.png" alt="MPUMALANGA NKOMAZI SEZ" style={{
             height: "54px",
             width: "auto",
             objectFit: "contain"
@@ -908,7 +908,7 @@ const HeroSection = () => {
         userSelect: "none",
         letterSpacing: "-0.04em"
       }}>
-        NKOMAZI SEZ
+        MPUMALANGA NKOMAZI SEZ
       </span>
     </div>
 
@@ -943,7 +943,7 @@ const HeroSection = () => {
           delay: 0.28,
           ease: EASE_V5
         }}>
-          <EyebrowLabel label="About Nkomazi SEZ" />
+          <EyebrowLabel label="About MPUMALANGA NKOMAZI SEZ" />
         </motion.div>
 
         <motion.h1 initial={{
@@ -971,7 +971,7 @@ const HeroSection = () => {
           <span style={{
             color: "#ffffff",
             display: "block"
-          }}>Nkomazi SEZ.</span>
+          }}>MPUMALANGA NKOMAZI SEZ.</span>
         </motion.h1>
 
         <motion.p initial={{
@@ -1105,7 +1105,7 @@ const WhoWeAreSection = () => <section id="story" style={{
               textTransform: "uppercase" as const,
               letterSpacing: "-0.01em"
             }}>
-              Nkomazi SEZ Development Site
+              MPUMALANGA NKOMAZI SEZ Development Site
             </p>
           </div>
           <div style={{
@@ -1617,7 +1617,7 @@ const WhyNSEZSection = () => <section id="strategy" style={{
   <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
     <div className="grid md:grid-cols-2 gap-20 items-start">
       <FadeUp>
-        <EyebrowLabel label="Why Nkomazi SEZ" />
+        <EyebrowLabel label="Why MPUMALANGA NKOMAZI SEZ" />
         <SplitHeading text="The Challenge We Are Solving" lightBg />
       </FadeUp>
       <FadeUp delay={0.15} className="flex flex-col gap-10">
@@ -1641,7 +1641,7 @@ const WhyNSEZSection = () => <section id="strategy" style={{
           lineHeight: "1.85",
           fontWeight: 300
         }}>
-          Nkomazi SEZ exists to unlock value-added production, create jobs, strengthen supply chains and facilitate regional trade across the SADC corridor.
+          MPUMALANGA NKOMAZI SEZ exists to unlock value-added production, create jobs, strengthen supply chains and facilitate regional trade across the SADC corridor.
         </p>
         <div className="flex gap-3 flex-wrap pt-2">
           <GreenButton label="Download Brochure" href="#" />
@@ -1685,7 +1685,7 @@ const ValuesSection = () => {
       letterSpacing: "-0.04em",
       zIndex: 0
     }}>
-      NKOMAZI SEZ
+      MPUMALANGA NKOMAZI SEZ
     </div>
 
     <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8" style={{

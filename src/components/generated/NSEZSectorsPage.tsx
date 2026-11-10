@@ -14,9 +14,9 @@ const GOLD = "#C9A84C";
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
 const NAV_SECTORS = ['Agro-processing', 'Manufacturing', 'Green Economy', 'Logistics and Warehousing'];
-const NAV_LEFT_LINKS = ['About Nkomazi SEZ', 'Invest'];
+const NAV_LEFT_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest'];
 const NAV_RIGHT_LINKS = ['MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
-const NAV_ALL_LINKS = ['About Nkomazi SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+const NAV_ALL_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
 const SOCIAL_ICON_ITEMS = [{
   label: 'Instagram',
   href: 'https://www.instagram.com/nkomazisez/',
@@ -67,7 +67,7 @@ const SECTORS = [{
 }, {
   id: '02',
   title: 'Manufacturing',
-  description: 'Access strategic industrial development opportunities supported by serviced land, utilities infrastructure, logistics connectivity and a growing regional supply chain. From light manufacturing to specialised industrial production, Nkomazi SEZ provides a competitive base for building for Africa.',
+  description: 'Access strategic industrial development opportunities supported by serviced land, utilities infrastructure, logistics connectivity and a growing regional supply chain. From light manufacturing to specialised industrial production, MPUMALANGA NKOMAZI SEZ provides a competitive base for building for Africa.',
   details: [{
     label: 'Sector Overview',
     content: 'High-growth manufacturing zone with world-class utilities.'
@@ -87,7 +87,7 @@ const SECTORS = [{
 }, {
   id: '03',
   title: 'Logistics and Warehousing',
-  description: "Benefit from Nkomazi SEZ's position on the Maputo Corridor, with customs facilitation, warehousing opportunities and direct access to the Port of Maputo and SADC markets. Proximity to the Maputo Corridor, one of the busiest freight routes in Southern Africa, positions Nkomazi SEZ as a natural logistics and distribution hub.",
+  description: "Benefit from MPUMALANGA NKOMAZI SEZ's position on the Maputo Corridor, with customs facilitation, warehousing opportunities and direct access to the Port of Maputo and SADC markets. Proximity to the Maputo Corridor, one of the busiest freight routes in Southern Africa, positions MPUMALANGA NKOMAZI SEZ as a natural logistics and distribution hub.",
   details: [{
     label: 'Sector Overview',
     content: 'Strategic gateway to Southern African markets.'
@@ -107,7 +107,7 @@ const SECTORS = [{
 }, {
   id: '04',
   title: 'Green Economy',
-  description: "Explore investment opportunities in renewable energy generation, green hydrogen, energy storage and sustainable industrial infrastructure aligned with South Africa's energy transition agenda. Nkomazi SEZ actively supports green economy investment as part of its long-term industrial vision.",
+  description: "Explore investment opportunities in renewable energy generation, green hydrogen, energy storage and sustainable industrial infrastructure aligned with South Africa's energy transition agenda. MPUMALANGA NKOMAZI SEZ actively supports green economy investment as part of its long-term industrial vision.",
   details: [{
     label: 'Sector Overview',
     content: 'A future-proofed industrial ecosystem focused on sustainability.'
@@ -127,7 +127,7 @@ const SECTORS = [{
 }, {
   id: '05',
   title: 'Nutraceuticals',
-  description: "A high-growth emerging sector leveraging Mpumalanga's agricultural abundance to produce health-focused, value-added products for regional and export markets. Nkomazi SEZ provides the research and production environment needed to lead in this high-value global market.",
+  description: "A high-growth emerging sector leveraging Mpumalanga's agricultural abundance to produce health-focused, value-added products for regional and export markets. MPUMALANGA NKOMAZI SEZ provides the research and production environment needed to lead in this high-value global market.",
   details: [{
     label: 'Sector Overview',
     content: 'Combining biotech innovation with traditional agricultural strength.'
@@ -146,7 +146,7 @@ const SECTORS = [{
   color: '#E8521A'
 }];
 const FOOTER_EXPLORE_LINKS = [{
-  label: 'About Nkomazi SEZ',
+  label: 'About MPUMALANGA NKOMAZI SEZ',
   href: '#'
 }, {
   label: 'Why Invest',
@@ -868,7 +868,7 @@ const SectorsHero = () => {
                 color: 'rgba(255,255,255,0.85)',
                 margin: 0
               }}>
-                Nkomazi SEZ has identified five priority sectors where the intersection of regional advantage, infrastructure, and market demand creates exceptional conditions for investment and growth.
+                MPUMALANGA NKOMAZI SEZ has identified five priority sectors where the intersection of regional advantage, infrastructure, and market demand creates exceptional conditions for investment and growth.
               </p>
               <p style={{
                 fontFamily: BODY_FONT,
@@ -1284,7 +1284,7 @@ const CTASection = () => <section style={{
               margin: 0,
               maxWidth: '400px'
             }}>
-              Connect with our investment facilitation team and take the first step toward establishing your business in Nkomazi SEZ.
+              Connect with our investment facilitation team and take the first step toward establishing your business in MPUMALANGA NKOMAZI SEZ.
             </p>
           </div>
         </div>
@@ -1318,7 +1318,7 @@ const CTASection = () => <section style={{
           }} />
 
           <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-            <a href="mailto:invest@nsez.gov.za" style={{
+            <a href="mailto:invest@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
               color: '#C8A84B',
@@ -1330,13 +1330,13 @@ const CTASection = () => <section style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.opacity = '1';
             }}>
-              invest@nsez.gov.za
+              invest@nkomazisez.gov.za
             </a>
             <span style={{
               color: 'rgba(17,17,17,0.2)',
               fontSize: '12px'
             }}>—</span>
-            <a href="mailto:info@nsez.gov.za" style={{
+            <a href="mailto:info@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
               color: 'rgba(17,17,17,0.5)',
@@ -1347,7 +1347,7 @@ const CTASection = () => <section style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(17,17,17,0.5)';
             }}>
-              info@nsez.gov.za
+              info@nkomazisez.gov.za
             </a>
           </div>
         </div>

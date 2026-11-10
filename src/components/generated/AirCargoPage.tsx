@@ -136,7 +136,7 @@ const BENEFITS = [{
 // Different sector-themed backgrounds for investor stories
 const INVESTOR_STORIES = [{
   id: 's1',
-  quote: "Establishing our agro-processing facility in Nkomazi SEZ was the best investment decision we've made. The infrastructure, incentives, and hands-on support exceeded every expectation.",
+  quote: "Establishing our agro-processing facility in MPUMALANGA NKOMAZI SEZ was the best investment decision we've made. The infrastructure, incentives, and hands-on support exceeded every expectation.",
   name: 'Thandi Mokoena',
   role: 'CEO, Greenfield Produce Ltd',
   image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=80',
@@ -152,7 +152,7 @@ const INVESTOR_STORIES = [{
   sector: 'Logistics'
 }, {
   id: 's3',
-  quote: "The N4 corridor access and tax incentives made Nkomazi SEZ an obvious choice. Our manufacturing costs dropped 22% compared to our Johannesburg facility.",
+  quote: "The N4 corridor access and tax incentives made MPUMALANGA NKOMAZI SEZ an obvious choice. Our manufacturing costs dropped 22% compared to our Johannesburg facility.",
   name: 'Priya Naidoo',
   role: 'COO, Precision Parts SA',
   image: 'https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800&q=80',
@@ -178,7 +178,7 @@ const FAQS = [{
   a: 'The SEZ provides bulk water, sanitation, electricity (Eskom feed + solar backup), fibre-optic connectivity, and paved internal roads to every plot.'
 }, {
   q: 'Is there support for work permit applications?',
-  a: 'Yes. The Nkomazi SEZ one-stop-shop facilitates critical skills visas, work permits, and environmental authorisations on behalf of registered investors.'
+  a: 'Yes. The MPUMALANGA NKOMAZI SEZ one-stop-shop facilitates critical skills visas, work permits, and environmental authorisations on behalf of registered investors.'
 }] as {
   q: string;
   a: string;
@@ -823,7 +823,7 @@ const FaqItem = ({
 
 const ZONE_CAROUSEL_IMAGES = [{
   src: 'https://images.unsplash.com/photo-1464226184884-fa280b87c399?w=1200&q=85',
-  alt: 'Nkomazi SEZ agricultural landscape'
+  alt: 'MPUMALANGA NKOMAZI SEZ agricultural landscape'
 }, {
   src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80',
   alt: 'Road infrastructure'
@@ -974,7 +974,7 @@ const ZoneOverview = () => {
                 <p className="text-white/60 text-[16px] font-normal leading-[1.85] m-0" style={{
                 fontFamily: BODY_FONT
               }}>
-                  Nkomazi SEZ is a fully serviced, government-backed industrial park with streamlined approvals, competitive tax incentives, and direct access to the southern African regional market through the N4 Maputo Development Corridor.
+                  MPUMALANGA NKOMAZI SEZ is a fully serviced, government-backed industrial park with streamlined approvals, competitive tax incentives, and direct access to the southern African regional market through the N4 Maputo Development Corridor.
                 </p>
               </FadeUp>
             </div>
@@ -1026,7 +1026,7 @@ const HowToInvest = () => {
               lineHeight: '1.1',
               letterSpacing: '-2px'
             }}>
-                Your pathway to the Nkomazi SEZ
+                Your pathway to the MPUMALANGA NKOMAZI SEZ
               </AnimatedHeading>
             </div>
             <FadeUp delay={0.1}><GreenButton label="Start your journey" href="/contact" /></FadeUp>
@@ -1150,7 +1150,7 @@ const KeyBenefits = () => {
             lineHeight: '1.1',
             letterSpacing: '-2px'
           }}>
-              Why choose Nkomazi SEZ
+              Why choose MPUMALANGA NKOMAZI SEZ
             </AnimatedHeading>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -1877,13 +1877,13 @@ export const AirCargoPage = () => {
             <div className="flex flex-col lg:flex-row justify-between items-start gap-10 pb-12 border-b border-white/10">
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-2.5">
-                   <img src="/NSEZ-logo-png-wh.png" alt="Nkomazi SEZ" className="h-12 w-auto object-contain max-w-none rounded-md" />
+                   <img src="/NSEZ-logo-png-wh.png" alt="MPUMALANGA NKOMAZI SEZ" className="h-12 w-auto object-contain max-w-none rounded-md" />
                 </div>
                 <p className="text-white/40 text-[14px] font-normal leading-6 m-0" style={{
                 fontFamily: BODY_FONT
               }}>
                   <span>Copyright © </span>
-                  <a href="#" onClick={e => e.preventDefault()} className="text-white/70 font-semibold no-underline hover:text-white transition-colors duration-200">Nkomazi SEZ</a>
+                  <a href="#" onClick={e => e.preventDefault()} className="text-white/70 font-semibold no-underline hover:text-white transition-colors duration-200">MPUMALANGA NKOMAZI SEZ</a>
                   <span> 2025 | All Rights Reserved</span>
                 </p>
               </div>

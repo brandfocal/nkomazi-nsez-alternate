@@ -317,7 +317,7 @@ const Footer = () => {
                 <img src="/NSEZ-logo-png-wh.png" alt="NSEZ Logo" className="h-10 sm:h-12 object-contain mb-6 sm:mb-8 rounded-md" />
               </a>
               <p className="text-white/40 text-[14px]">
-                Copyright 2026 Nkomazi SEZ All Rights Reserved.
+                Copyright 2026 MPUMALANGA NKOMAZI SEZ All Rights Reserved.
               </p>
             </div>
             <div className="flex flex-col gap-6 w-full lg:max-w-xl">
@@ -375,7 +375,7 @@ const Hero = () => {
         
         <FadeUp delay={0.2}>
           <SubtitlePill className="mb-6 sm:mb-8">
-            REGULATORY AND COMPLIANCE PORTAL - NKOMAZI SEZ
+            REGULATORY AND COMPLIANCE PORTAL - MPUMALANGA NKOMAZI SEZ
           </SubtitlePill>
         </FadeUp>
 
@@ -452,7 +452,7 @@ const CentralizedServices = () => {
             </AnimatedHeading>
             <FadeUp delay={0.2} className="max-w-2xl">
               <p className="text-[#0F2419]/70 text-[15px] sm:text-[17px] leading-[1.65]">
-                Every approval required to commence industrial operations in the Nkomazi SEZ is coordinated through a single submission desk eliminating multi-agency delays.
+                Every approval required to commence industrial operations in the MPUMALANGA NKOMAZI SEZ is coordinated through a single submission desk eliminating multi-agency delays.
               </p>
             </FadeUp>
           </div>
@@ -645,9 +645,9 @@ const ContactSection = () => {
               <div className="text-white/50 text-xs uppercase tracking-[0.06em] mb-2">
                 Director: One-Stop-Shop Operations and Regulatory Vetting
               </div>
-              <a href="mailto:oss@nsez.gov.za" className="text-[#C8A84B] text-[20px] sm:text-[24px] md:text-[28px] font-medium font-['Inter'] hover:opacity-80 transition-opacity flex items-center gap-3 break-all">
+              <a href="mailto:oss@nkomazisez.gov.za" className="text-[#C8A84B] text-[20px] sm:text-[24px] md:text-[28px] font-medium font-['Inter'] hover:opacity-80 transition-opacity flex items-center gap-3 break-all">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
-                oss@nsez.gov.za
+                oss@nkomazisez.gov.za
               </a>
             </div>
             

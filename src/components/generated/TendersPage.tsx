@@ -97,10 +97,10 @@ const CATEGORIES: {
 }];
 
 // --- Footer Data ---
-const EXPLORE_LINKS = ['About Nkomazi SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'];
+const EXPLORE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'];
 const CONNECT_LINKS = ['Investment Process', 'Resources', 'Partners', 'Contact'];
 const NAV_SECTORS = ['Agro-processing', 'Manufacturing', 'Green Economy', 'Logistics and Warehousing'];
-const NAV_SIMPLE_LINKS = ['About Nkomazi SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+const NAV_SIMPLE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
 
 // --- Icons ---
 const ArrowUpRightIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
@@ -686,7 +686,7 @@ const Hero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-              Nkomazi SEZ is positioned as a gateway for regional and international investment, offering world-class
+              MPUMALANGA NKOMAZI SEZ is positioned as a gateway for regional and international investment, offering world-class
               infrastructure, investor-focused incentives, and access to key trade corridors connecting South Africa to the
               African continent.
             </motion.p>
@@ -1112,7 +1112,7 @@ const ConnectSection = () => {
                 textTransform: 'uppercase',
                 marginBottom: '16px'
               }}>
-                  Connect With Nkomazi SEZ
+                  Connect With MPUMALANGA NKOMAZI SEZ
                 </div>
                 <h2 style={{
                 fontFamily: HEADING_FONT,
@@ -1136,7 +1136,7 @@ const ConnectSection = () => {
                 maxWidth: '400px'
               }}>
                   Connect with our investment facilitation team and take the first step toward establishing your business in
-                  Nkomazi SEZ.
+                  MPUMALANGA NKOMAZI SEZ.
                 </p>
               </div>
             </div>
@@ -1170,7 +1170,7 @@ const ConnectSection = () => {
             }} />
 
               <div className="flex flex-wrap items-center gap-4 sm:gap-5">
-                <a href="mailto:invest@nsez.gov.za" style={{
+                <a href="mailto:invest@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
                 color: '#C8A84B',
@@ -1182,13 +1182,13 @@ const ConnectSection = () => {
               }} onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.opacity = '1';
               }}>
-                  invest@nsez.gov.za
+                  invest@nkomazisez.gov.za
                 </a>
                 <span style={{
                 color: 'rgba(17,17,17,0.2)',
                 fontSize: '12px'
               }}>—</span>
-                <a href="mailto:info@nsez.gov.za" style={{
+                <a href="mailto:info@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
                 color: 'rgba(17,17,17,0.5)',
@@ -1199,7 +1199,7 @@ const ConnectSection = () => {
               }} onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(17,17,17,0.5)';
               }}>
-                  info@nsez.gov.za
+                  info@nkomazisez.gov.za
                 </a>
               </div>
             </div>
@@ -1220,6 +1220,11 @@ export const TendersPage = () => {
       return matchesFilter && matchesSearch;
     });
   }, [activeFilter, searchQuery]);
+
+  const activeCategory = CATEGORIES.find(c => c.value === activeFilter);
+  const activeHeading = activeFilter === 'All'
+    ? 'Active Tenders'
+    : `Active ${activeCategory ? activeCategory.label : activeFilter}`;
   return <div className="min-h-screen bg-white text-[#111111] overflow-x-hidden">
       <NSEZNavbar />
 
@@ -1250,7 +1255,7 @@ export const TendersPage = () => {
                   margin: 0,
                   letterSpacing: '-0.5px'
                 }}>
-                    Active Tenders
+                    {activeHeading}
                   </h2>
                   <span style={{
                   fontFamily: BODY_FONT,
@@ -1357,7 +1362,7 @@ export const TendersPage = () => {
               fontFamily: BODY_FONT,
               color: 'rgba(255,255,255,0.7)'
             }}>
-                Subscribe to receive the latest opportunities, tenders and news from Nkomazi SEZ directly to your inbox.
+                Subscribe to receive the latest opportunities, tenders and news from MPUMALANGA NKOMAZI SEZ directly to your inbox.
               </p>
             </div>
             <div className="w-full max-w-lg">

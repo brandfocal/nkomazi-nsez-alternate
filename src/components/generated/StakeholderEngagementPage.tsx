@@ -71,7 +71,7 @@ const SOCIAL_LINKS: SocialLinkItem[] = [{
   href: 'https://www.linkedin.com/company/nkomazi-special-economic-zone/'
 }];
 const NAV_SECTORS = ['Agro-processing & Agriculture', 'Manufacturing', 'Green Economy', 'Logistics & Warehousing'];
-const NAV_SIMPLE_LINKS = ['About Nkomazi SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+const NAV_SIMPLE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
 
 const IMPACT_STATS: StatItem[] = [{
   id: 'communities',
@@ -108,7 +108,7 @@ const HERO_STATS: HeroStatData[] = [{
   suffix: '+',
   label: 'Registered Investors'
 }];
-const FOOTER_EXPLORE_LINKS = ['About Nkomazi SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'];
+const FOOTER_EXPLORE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'];
 const FOOTER_CONNECT_LINKS = ['Investment Process', 'Resources', 'Partners', 'Contact'];
 const FOOTER_LEGAL_LINKS = ['Privacy Policy', 'Terms of Use'];
 
@@ -514,28 +514,28 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
     alignItems: 'center',
     gap: '10px'
   }}>
-    <a href="mailto:invest@nsez.gov.za" style={{
+    <a href="mailto:invest@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
       color: '#1D4D35',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
-      invest@nsez.gov.za
+      invest@nkomazisez.gov.za
     </a>
     <span style={{
       color: '#1D4D35',
       opacity: 0.35,
       fontSize: '11px'
     }}>|</span>
-    <a href="mailto:info@nsez.gov.za" style={{
+    <a href="mailto:info@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
       color: '#1D4D35',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
-      info@nsez.gov.za
+      info@nkomazisez.gov.za
     </a>
   </div>
   <div style={{
@@ -640,7 +640,7 @@ const StickyNav = ({
     });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const desktopLinks = ['About Nkomazi SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+  const desktopLinks = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
   return <nav className="fixed left-0 right-0 z-[9999] px-4 sm:px-6" style={{
     top: '36px',
     paddingTop: scrolled ? '0px' : '20px',
@@ -666,7 +666,7 @@ const StickyNav = ({
         transition: 'padding 0.35s ease'
       }}>
         <a href="/" className="flex-shrink-0 flex items-center no-underline">
-          <img src="/NSEZ-Horizontal-Logo-white.png" alt="Nkomazi SEZ" className="h-12 sm:h-[60px] w-auto object-contain" />
+          <img src="/NSEZ-Horizontal-Logo-white.png" alt="MPUMALANGA NKOMAZI SEZ" className="h-12 sm:h-[60px] w-auto object-contain" />
         </a>
 
         <div className="hidden lg:flex items-center gap-0 backdrop-blur-[26px] bg-white/10 border border-white/20 rounded-xl p-[4.6px]">
@@ -844,7 +844,7 @@ const Hero = () => {
         userSelect: 'none',
         letterSpacing: '-0.04em'
       }}>
-        NKOMAZI SEZ
+        MPUMALANGA NKOMAZI SEZ
       </span>
     </div>
 
@@ -941,7 +941,7 @@ const Hero = () => {
             fontWeight: 500,
             maxWidth: '520px'
           }}>
-            Nkomazi SEZ is committed to inclusive economic growth and community development across the Nkomazi Local Municipality and the broader Ehlanzeni District.
+            MPUMALANGA NKOMAZI SEZ is committed to inclusive economic growth and community development across the Nkomazi Local Municipality and the broader Ehlanzeni District.
           </motion.p>
         </div>
 
@@ -984,7 +984,7 @@ const Hero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-            The Nkomazi SEZ is driving inclusive economic growth by investing in the communities at the heart of the zone — supporting skills development, youth empowerment, and stakeholder partnerships.
+            The MPUMALANGA NKOMAZI SEZ is driving inclusive economic growth by investing in the communities at the heart of the zone — supporting skills development, youth empowerment, and stakeholder partnerships.
           </motion.p>
 
           <motion.p initial={{
@@ -1006,7 +1006,7 @@ const Hero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-            Whether you're a community organisation, government partner, or resident of the Nkomazi region, discover how Nkomazi SEZ is building a future that works for everyone.
+            Whether you're a community organisation, government partner, or resident of the Nkomazi region, discover how MPUMALANGA NKOMAZI SEZ is building a future that works for everyone.
           </motion.p>
 
           <motion.div className="flex flex-row flex-wrap items-center gap-2 sm:gap-3 mt-1 sm:mt-0" initial={{
@@ -1295,7 +1295,7 @@ const ContactCTA = () => <section style={{
               margin: 0,
               maxWidth: '420px'
             }}>
-              Connect with our stakeholder relations team and learn how your organisation can partner with Nkomazi SEZ.
+              Connect with our stakeholder relations team and learn how your organisation can partner with MPUMALANGA NKOMAZI SEZ.
             </p>
           </div>
         </div>
@@ -1354,7 +1354,7 @@ const ContactCTA = () => <section style={{
           }} />
 
           <div className="flex flex-wrap items-center gap-3 sm:gap-4">
-            <a href="mailto:community@nsez.gov.za" style={{
+            <a href="mailto:community@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
               color: '#C8A84B',
@@ -1366,13 +1366,13 @@ const ContactCTA = () => <section style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.opacity = '1';
             }}>
-              community@nsez.gov.za
+              community@nkomazisez.gov.za
             </a>
             <span style={{
               color: 'rgba(17,17,17,0.2)',
               fontSize: '12px'
             }}>—</span>
-            <a href="mailto:info@nsez.gov.za" style={{
+            <a href="mailto:info@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
               color: 'rgba(17,17,17,0.5)',
@@ -1383,7 +1383,7 @@ const ContactCTA = () => <section style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(17,17,17,0.5)';
             }}>
-              info@nsez.gov.za
+              info@nkomazisez.gov.za
             </a>
           </div>
         </div>

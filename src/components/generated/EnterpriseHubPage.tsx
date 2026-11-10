@@ -23,7 +23,7 @@ const SURFACE_WARM = "#EEEEE8";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 const NAV_SECTORS = ["Agro-processing & Agriculture", "Manufacturing", "Green Economy", "Logistics & Warehousing"];
-const NAV_LINKS = ["About Nkomazi SEZ", "Invest", "MSME Hub", "Tenders", "News and Media", "Stakeholder Relations", "Careers", "Contact Us"];
+const NAV_LINKS = ["About MPUMALANGA NKOMAZI SEZ", "Invest", "MSME Hub", "Tenders", "News and Media", "Stakeholder Relations", "Careers", "Contact Us"];
 interface MSMEProgrammeCard {
   id: string;
   number: string;
@@ -36,7 +36,7 @@ const MSME_PROGRAMME_CARDS: MSMEProgrammeCard[] = [{
   id: "supplier",
   number: "01",
   title: "Supplier Registration",
-  description: "Register your business to participate in Nkomazi SEZ supply chains and be considered for procurement and service opportunities within the zone.",
+  description: "Register your business to participate in MPUMALANGA NKOMAZI SEZ supply chains and be considered for procurement and service opportunities within the zone.",
   bgImage: "/enterprise-development3.jpg",
   bottomColor: "#162E20"
 }, {
@@ -58,7 +58,7 @@ const PROCESS_STEPS: ProcessStep[] = [{
   id: "register",
   step: "01",
   title: "Register",
-  desc: "Submit your business details through the Nkomazi SEZ MSME registration portal to join our supplier network.",
+  desc: "Submit your business details through the MPUMALANGA NKOMAZI SEZ MSME registration portal to join our supplier network.",
   image: "https://images.unsplash.com/photo-1542744094-3a31f272c490?w=1000&q=90"
 }, {
   id: "verify",
@@ -76,7 +76,7 @@ const PROCESS_STEPS: ProcessStep[] = [{
   id: "grow",
   step: "04",
   title: "Grow",
-  desc: "Scale your business through sustained support, funding access and integration into the Nkomazi SEZ industrial ecosystem.",
+  desc: "Scale your business through sustained support, funding access and integration into the MPUMALANGA NKOMAZI SEZ industrial ecosystem.",
   image: "https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=1000&q=90"
 }];
 interface MetricItem {
@@ -562,7 +562,7 @@ const Hero = () => {
         userSelect: "none",
         letterSpacing: "-0.05em"
       }}>
-          NKOMAZI SEZ
+          MPUMALANGA NKOMAZI SEZ
         </span>
       </div>
 
@@ -779,7 +779,7 @@ const MSMEProgrammes = () => <section id="programmes" className="py-16 sm:py-24 
           fontSize: "14px",
           fontWeight: 400
         }}>
-            Explore our specialized support initiatives designed to empower local businesses and facilitate their integration into the Nkomazi SEZ industrial ecosystem.
+            Explore our specialized support initiatives designed to empower local businesses and facilitate their integration into the MPUMALANGA NKOMAZI SEZ industrial ecosystem.
           </p>
         </FadeUp>
       </div>
@@ -886,7 +886,7 @@ const PartnerLogos = () => <section id="sec-partners" className="py-[80px] sm:py
       fontFamily: HEADING_FONT,
       letterSpacing: '-0.5px'
     }}>
-        Nkomazi SEZ — your gateway to growth on the African continent
+        MPUMALANGA NKOMAZI SEZ — your gateway to growth on the African continent
       </p>
     </FadeUp>
     <p style={{
@@ -950,7 +950,7 @@ const HowToJoin = () => <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8
           fontSize: "14px",
           fontWeight: 400
         }}>
-            A clear, supported process to help your business access the full range of Nkomazi SEZ MSME opportunities.
+            A clear, supported process to help your business access the full range of MPUMALANGA NKOMAZI SEZ MSME opportunities.
           </p>
         </FadeUp>
       </div>
@@ -1066,7 +1066,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
           lineHeight: 1.75,
           fontWeight: 400
         }}>
-            Join the Nkomazi SEZ supplier network and unlock new growth opportunities.
+            Join the MPUMALANGA NKOMAZI SEZ supplier network and unlock new growth opportunities.
           </p>
         </FadeUp>
       </div>
@@ -1489,7 +1489,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                   color: `rgba(22,46,32,0.65)`,
                   fontWeight: 400
                 }}>
-                    I consent to Nkomazi SEZ storing my information in accordance with POPIA.
+                    I consent to MPUMALANGA NKOMAZI SEZ storing my information in accordance with POPIA.
                   </span>
                 </label>
               </div>
@@ -1604,7 +1604,7 @@ const ContactCTA = () => {
                   maxWidth: "400px",
                   margin: 0
                 }}>
-                    Get in touch with our dedicated MSME support team today. We are here to help your business access the full range of Nkomazi SEZ opportunities and programmes.
+                    Get in touch with our dedicated MSME support team today. We are here to help your business access the full range of MPUMALANGA NKOMAZI SEZ opportunities and programmes.
                   </p>
                 </div>
               </div>
@@ -1639,7 +1639,7 @@ const ContactCTA = () => {
 
               {/* Contact emails — wrap naturally */}
               <div className="flex flex-row flex-wrap items-center gap-2 sm:gap-3">
-                <a href="mailto:invest@nsez.gov.za" style={{
+                <a href="mailto:invest@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: "14px",
                 fontWeight: 500,
@@ -1647,13 +1647,13 @@ const ContactCTA = () => {
                 textDecoration: "none",
                 transition: "color 0.2s"
               }}>
-                  invest@nsez.gov.za
+                  invest@nkomazisez.gov.za
                 </a>
                 <span style={{
                 color: "rgba(17,17,17,0.2)",
                 fontSize: "14px"
               }}>—</span>
-                <a href="mailto:info@nsez.gov.za" style={{
+                <a href="mailto:info@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: "14px",
                 color: "rgba(17,17,17,0.5)",
@@ -1664,7 +1664,7 @@ const ContactCTA = () => {
               }} onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.color = "rgba(17,17,17,0.5)";
               }}>
-                  info@nsez.gov.za
+                  info@nkomazisez.gov.za
                 </a>
               </div>
             </div>

@@ -129,12 +129,12 @@ export function NSEZNavbar() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <a href="mailto:invest@nsez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#1D4D35', textDecoration: 'none', letterSpacing: '0.04em' }}>
-            invest@nsez.gov.za
+          <a href="mailto:invest@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#1D4D35', textDecoration: 'none', letterSpacing: '0.04em' }}>
+            invest@nkomazisez.gov.za
           </a>
           <span style={{ color: '#1D4D35', opacity: 0.35, fontSize: '11px' }}>|</span>
-          <a href="mailto:info@nsez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#1D4D35', textDecoration: 'none', letterSpacing: '0.04em' }}>
-            info@nsez.gov.za
+          <a href="mailto:info@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#1D4D35', textDecoration: 'none', letterSpacing: '0.04em' }}>
+            info@nkomazisez.gov.za
           </a>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
@@ -204,7 +204,7 @@ export function NSEZNavbar() {
             <a href="/" className="flex-shrink-0 flex items-center no-underline">
               <img
                 src="/NSEZ-Horizontal-Logo-white.png"
-                alt="Nkomazi SEZ"
+                alt="MPUMALANGA NKOMAZI SEZ"
                 className="h-12 sm:h-[60px] w-auto object-contain"
               />
             </a>

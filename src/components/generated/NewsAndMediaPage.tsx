@@ -10,14 +10,14 @@ const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 // ─── MOCK DATA ──────────────────────────────────────────────────────────────────
 
-const NAV_LEFT_LINKS = ['About Nkomazi SEZ', 'Invest'];
+const NAV_LEFT_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest'];
 const NAV_RIGHT_LINKS = ['MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
 const NAV_SECTORS = ['Agro-processing', 'Manufacturing', 'Green Economy', 'Logistics and Warehousing'];
 const TABS = ["All", "News Articles", "Press Releases", "Media Statements", "Events", "Photo Gallery", "Videos"];
 const NEWS_ARTICLES = [{
   id: 1,
   category: "Featured Article",
-  title: "Nkomazi SEZ Occupies One of the Most Strategically Important Economic Positions in South Africa",
+  title: "MPUMALANGA NKOMAZI SEZ Occupies One of the Most Strategically Important Economic Positions in South Africa",
   excerpt: "An in-depth look at how the Nkomazi Special Economic Zone is positioned along the Maputo Development Corridor to drive SADC trade and regional industrial growth.",
   date: "Mpumalanga 247",
   image: "https://images.unsplash.com/photo-1465447142348-e9952c393450?w=800&q=80",
@@ -25,7 +25,7 @@ const NEWS_ARTICLES = [{
 }, {
   id: 2,
   category: "Video Highlights",
-  title: "Nkomazi SEZ Special Broadcast & Milestone Presentation",
+  title: "MPUMALANGA NKOMAZI SEZ Special Broadcast & Milestone Presentation",
   excerpt: "Watch our corporate video and progress update presentation showing development milestones and active construction sites.",
   date: "Google Drive Video",
   image: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80",
@@ -33,7 +33,7 @@ const NEWS_ARTICLES = [{
 }, {
   id: 3,
   category: "Video Coverage",
-  title: "Nkomazi SEZ Executive Showcase on Facebook",
+  title: "MPUMALANGA NKOMAZI SEZ Executive Showcase on Facebook",
   excerpt: "A social media video feature covering the Mozambique Investment Summit (MIS) highlights, stakeholder agreements, and corridor benefits.",
   date: "Facebook Watch",
   image: "https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?w=800&q=80",
@@ -69,11 +69,11 @@ const GALLERY_IMAGES = [
 }));
 const PRESS_RELEASES = [{
   date: "10 April 2024",
-  title: "Media Statement: Progress Update on Nkomazi SEZ Industrial Land Allocation",
+  title: "Media Statement: Progress Update on MPUMALANGA NKOMAZI SEZ Industrial Land Allocation",
   type: "Media Statement"
 }, {
   date: "28 March 2024",
-  title: "Press Release: Nkomazi SEZ Partners with Provincial DEDT for Green Economy Forum",
+  title: "Press Release: MPUMALANGA NKOMAZI SEZ Partners with Provincial DEDT for Green Economy Forum",
   type: "Press Release"
 }, {
   date: "15 March 2024",
@@ -93,16 +93,16 @@ const SOCIAL_ICON_ITEMS = [{
   label: 'Instagram',
   href: 'https://www.instagram.com/nkomazisez/'
 }];
-const FOOTER_EXPLORE_LINKS = ['About Nkomazi SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'];
+const FOOTER_EXPLORE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'];
 const FOOTER_QUICK_LINKS = ['Investment Process', 'Resources', 'Partners', 'Contact'];
 const FOOTER_CONTACT_ITEMS = [{
   label: 'Investment Enquiries',
-  value: 'invest@nsez.gov.za',
-  href: 'mailto:invest@nsez.gov.za'
+  value: 'invest@nkomazisez.gov.za',
+  href: 'mailto:invest@nkomazisez.gov.za'
 }, {
   label: 'General Enquiries',
-  value: 'info@nsez.gov.za',
-  href: 'mailto:info@nsez.gov.za'
+  value: 'info@nkomazisez.gov.za',
+  href: 'mailto:info@nkomazisez.gov.za'
 }, {
   label: 'Phone',
   value: '+27 (0) 13 752 2440',
@@ -662,7 +662,7 @@ const HeroSection = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-              Nkomazi SEZ continues to attract regional and global attention as a premier industrial investment destination along the Maputo Development Corridor.
+              MPUMALANGA NKOMAZI SEZ continues to attract regional and global attention as a premier industrial investment destination along the Maputo Development Corridor.
             </p>
             <p style={{
             fontFamily: BODY_FONT,
@@ -932,7 +932,7 @@ const GallerySection = () => {
             fontSize: '13px',
             lineHeight: '1.75'
           }}>
-            Explore images from Nkomazi SEZ events, site visits, and stakeholder relations including the MIS Summit.
+            Explore images from MPUMALANGA NKOMAZI SEZ events, site visits, and stakeholder relations including the MIS Summit.
           </p>
 
           {/* Masonry grid with 4 columns on large screens */}
@@ -1086,27 +1086,27 @@ const FEATURED_VIDEOS: FeaturedVideo[] = [
     id: "j6SHvykV9w8",
     url: "https://www.youtube.com/watch?v=j6SHvykV9w8&t=1s",
     startTime: 1,
-    title: "Nkomazi SEZ Manufacturing & Industrialist Summit 2026",
+    title: "MPUMALANGA NKOMAZI SEZ Manufacturing & Industrialist Summit 2026",
     excerpt: "Key highlights and discussions from the Nkomazi Special Economic Zone Manufacturing & Industrialist Summit.",
     runtime: "4:32",
-    source: "Nkomazi SEZ Media"
+    source: "MPUMALANGA NKOMAZI SEZ Media"
   },
   {
     id: "KTeiTcbaDBA",
     url: "https://www.youtube.com/watch?v=KTeiTcbaDBA&t=6s",
     startTime: 6,
-    title: "Nkomazi SEZ Stakeholder Relations Showcase & Progress",
+    title: "MPUMALANGA NKOMAZI SEZ Stakeholder Relations Showcase & Progress",
     excerpt: "Watch the latest progress updates, active development sites, and investor opportunities within the economic zone.",
     runtime: "3:10",
-    source: "Nkomazi SEZ Media"
+    source: "MPUMALANGA NKOMAZI SEZ Media"
   },
   {
     id: "4HXdK1X2ojs",
     url: "https://www.youtube.com/watch?v=4HXdK1X2ojs",
-    title: "Nkomazi SEZ: Unlocking New Opportunities for Investment",
+    title: "MPUMALANGA NKOMAZI SEZ: Unlocking New Opportunities for Investment",
     excerpt: "A video presentation highlighting strategic location benefits, infrastructure readiness, and priority sector opportunities.",
     runtime: "5:20",
-    source: "Nkomazi SEZ Media"
+    source: "MPUMALANGA NKOMAZI SEZ Media"
   }
 ];
 
@@ -1493,7 +1493,7 @@ const NewsletterSection = () => <section style={{
               margin: 0,
               maxWidth: '400px'
             }}>
-                Subscribe to Nkomazi SEZ updates, news and media releases delivered directly to your inbox.
+                Subscribe to MPUMALANGA NKOMAZI SEZ updates, news and media releases delivered directly to your inbox.
               </p>
             </div>
           </div>

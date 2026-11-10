@@ -11,7 +11,7 @@ const GOLD = "#C9A84C";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const NAV_SECTORS = ['Agro-processing & Agriculture', 'Manufacturing', 'Green Economy', 'Logistics & Warehousing'];
-const NAV_SIMPLE_LINKS = ['About Nkomazi SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+const NAV_SIMPLE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
 const CAREER_CATEGORIES = [{
   id: 'all',
   label: 'All Positions'
@@ -85,7 +85,7 @@ const WHY_WORK_CARDS = [{
   id: 'ww2',
   icon: Briefcase,
   title: 'Growth Opportunities',
-  description: 'Nkomazi SEZ offers a dynamic environment where your career can grow alongside a rapidly developing economic zone.',
+  description: 'MPUMALANGA NKOMAZI SEZ offers a dynamic environment where your career can grow alongside a rapidly developing economic zone.',
   image: '/community-development.jpg'
 }, {
   id: 'ww3',
@@ -500,7 +500,7 @@ const PageHero = () => {
         userSelect: 'none',
         letterSpacing: '-0.04em'
       }}>
-        NKOMAZI SEZ
+        MPUMALANGA NKOMAZI SEZ
       </span>
     </div>
 
@@ -559,7 +559,7 @@ const PageHero = () => {
             <span style={{
               color: '#FFFFFF',
               display: 'block'
-            }}>Careers at Nkomazi SEZ.</span>
+            }}>Careers at MPUMALANGA NKOMAZI SEZ.</span>
           </motion.h1>
           <motion.p initial={{
             opacity: 0,
@@ -627,7 +627,7 @@ const PageHero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-            Nkomazi SEZ is driving economic transformation in Mpumalanga and the broader Southern African region. We are actively seeking passionate individuals to join our growing team across investment facilitation, infrastructure, operations, and more.
+            MPUMALANGA NKOMAZI SEZ is driving economic transformation in Mpumalanga and the broader Southern African region. We are actively seeking passionate individuals to join our growing team across investment facilitation, infrastructure, operations, and more.
           </motion.p>
           <motion.p initial={{
             opacity: 0,
@@ -648,7 +648,7 @@ const PageHero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-            Whether you are a recent graduate, an experienced professional, or looking for a learnership opportunity — Nkomazi SEZ offers a meaningful career with real impact.
+            Whether you are a recent graduate, an experienced professional, or looking for a learnership opportunity — MPUMALANGA NKOMAZI SEZ offers a meaningful career with real impact.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3" initial={{
@@ -663,7 +663,7 @@ const PageHero = () => {
             ease: 'easeOut'
           }}>
             <GoldButton label="View Open Positions" href="#opportunities" />
-            <GhostButton label="Learn About Nkomazi SEZ" href="/about-us" />
+            <GhostButton label="Learn About MPUMALANGA NKOMAZI SEZ" href="/about-us" />
           </motion.div>
         </div>
       </motion.div>
@@ -717,13 +717,13 @@ const WhyWorkAtNSEZ = () => <section className="py-16 sm:py-24 bg-white px-4 sm:
           fontFamily: BODY_FONT,
           background: '#1fac67'
         }}>
-          Why Nkomazi SEZ
+          Why MPUMALANGA NKOMAZI SEZ
         </span>
       </FadeUp>
       <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] text-[#1D4D35] uppercase text-center mb-4" style={{
         lineHeight: 1.05
       }}>
-        Why Work at Nkomazi SEZ
+        Why Work at MPUMALANGA NKOMAZI SEZ
       </AnimatedHeading>
       <div style={{
         height: '2px',
@@ -964,7 +964,7 @@ const LearnershipsBand = () => <section className="bg-[#1D4D35] text-white relat
           lineHeight: 1.8,
           maxWidth: '560px'
         }}>
-          Nkomazi SEZ is committed to developing young talent through structured learnerships, graduate placements, and internships aligned with our priority sectors.
+          MPUMALANGA NKOMAZI SEZ is committed to developing young talent through structured learnerships, graduate placements, and internships aligned with our priority sectors.
         </p>
       </FadeUp>
     </div>
@@ -1124,7 +1124,7 @@ const RegisterInterestCTA = () => {
 
             {/* Contact row */}
             <div className="flex flex-wrap items-center gap-3 sm:gap-5">
-              <a href="mailto:careers@nsez.gov.za" style={{
+              <a href="mailto:careers@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
                 color: '#C8A84B',
@@ -1136,13 +1136,13 @@ const RegisterInterestCTA = () => {
               }} onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.opacity = '1';
               }}>
-                careers@nsez.gov.za
+                careers@nkomazisez.gov.za
               </a>
               <span style={{
                 color: 'rgba(17,17,17,0.2)',
                 fontSize: '12px'
               }}>—</span>
-              <a href="mailto:info@nsez.gov.za" style={{
+              <a href="mailto:info@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
                 color: 'rgba(17,17,17,0.5)',
@@ -1153,7 +1153,7 @@ const RegisterInterestCTA = () => {
               }} onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.opacity = '1';
               }}>
-                info@nsez.gov.za
+                info@nkomazisez.gov.za
               </a>
             </div>
           </div>
@@ -1181,7 +1181,7 @@ const Footer = () => <footer style={{
         color: '#ffffff',
         letterSpacing: '-0.5px'
       }}>
-        NKOMAZI SEZ
+        MPUMALANGA NKOMAZI SEZ
       </div>
       <div className="flex flex-col sm:flex-row items-center gap-4 text-center sm:text-left">
         <span style={{
@@ -1244,7 +1244,7 @@ const Footer = () => <footer style={{
           letterSpacing: '-0.5px',
           lineHeight: 1
         }}>
-          NKOMAZI SEZ
+          MPUMALANGA NKOMAZI SEZ
         </div>
         <p style={{
           fontFamily: BODY_FONT,
@@ -1254,7 +1254,7 @@ const Footer = () => <footer style={{
           lineHeight: 1.75,
           margin: 0
         }}>
-          Nkomazi Special Economic Zone (Nkomazi SEZ) is an entity of the Mpumalanga Department of Economic Development and Tourism (DEDT), established to drive sustainable industrialisation, attract regional and international investment, and create lasting economic transformation for the people of Mpumalanga and South Africa.
+          Nkomazi Special Economic Zone (MPUMALANGA NKOMAZI SEZ) is an entity of the Mpumalanga Department of Economic Development and Tourism (DEDT), established to drive sustainable industrialisation, attract regional and international investment, and create lasting economic transformation for the people of Mpumalanga and South Africa.
         </p>
         <div style={{
           display: 'flex',
@@ -1304,7 +1304,7 @@ const Footer = () => <footer style={{
             Explore
           </span>
           <div className="flex flex-col gap-2.5">
-            {['About Nkomazi SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'].map(link => <a key={link} href="#" onClick={e => e.preventDefault()} style={{
+            {['About MPUMALANGA NKOMAZI SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'].map(link => <a key={link} href="#" onClick={e => e.preventDefault()} style={{
               fontFamily: BODY_FONT,
               fontSize: '13px',
               color: 'rgba(255,255,255,0.65)',
@@ -1370,7 +1370,7 @@ const Footer = () => <footer style={{
               letterSpacing: '0.1em',
               textTransform: 'uppercase' as const
             }}>Investment Enquiries</span>
-            <a href="mailto:invest@nsez.gov.za" style={{
+            <a href="mailto:invest@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '13px',
               color: 'rgba(255,255,255,0.75)',
@@ -1380,7 +1380,7 @@ const Footer = () => <footer style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)';
             }}>
-              invest@nsez.gov.za
+              invest@nkomazisez.gov.za
             </a>
           </div>
           <div className="flex flex-col gap-1">
@@ -1392,7 +1392,7 @@ const Footer = () => <footer style={{
               letterSpacing: '0.1em',
               textTransform: 'uppercase' as const
             }}>General Enquiries</span>
-            <a href="mailto:info@nsez.gov.za" style={{
+            <a href="mailto:info@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '13px',
               color: 'rgba(255,255,255,0.75)',
@@ -1402,7 +1402,7 @@ const Footer = () => <footer style={{
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)';
             }}>
-              info@nsez.gov.za
+              info@nkomazisez.gov.za
             </a>
           </div>
           <div className="flex flex-col gap-1">

@@ -87,7 +87,7 @@ const ADVANTAGE_TABS: AdvantageTab[] = [{
   labelWords: TAB_CLUSTERS_WORDS,
   icon: <Factory size={22} strokeWidth={1.5} aria-hidden="true" />,
   image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=900&q=80',
-  imageAlt: 'Industrial facility at the Nkomazi SEZ showing modern manufacturing infrastructure within the Maputo Development Corridor.',
+  imageAlt: 'Industrial facility at the MPUMALANGA NKOMAZI SEZ showing modern manufacturing infrastructure within the Maputo Development Corridor.',
   paragraphs: ['Dedicated infrastructure for Agro-processing, Logistics, Automotive, and Green Energy sectors. Each cluster features purpose-built facilities and shared utilities.', 'The cluster model fosters supply chain synergies, knowledge transfer, and collaborative growth — creating a self-reinforcing ecosystem of industrial excellence.'],
   tags: ['Agro-processing', 'Logistics', 'Automotive', 'Green Energy']
 }];

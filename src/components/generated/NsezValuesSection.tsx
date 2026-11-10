@@ -68,6 +68,13 @@ const VALUES: ValueItem[] = [{
   description: "Building enduring relationships founded on transparency, reliability, and a steadfast commitment to our stakeholders' success.",
   hint: 'Transparency and reliability.',
   iconPath: 'M12 4.5c2.8-2.5 7-.5 7 3.3 0 4.7-7 9.7-7 9.7s-7-5-7-9.7c0-3.8 4.2-5.8 7-3.3ZM8 20h8'
+}, {
+  id: 'agility',
+  letter: 'A',
+  title: 'Agility',
+  description: '',
+  hint: '',
+  iconPath: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z'
 }];
 
 const COLORS = {
@@ -133,6 +140,14 @@ const LETTER_TILE_STYLES: Record<string, LetterTileStyle> = {
     activeBorderColor: 'rgba(93,187,58,0.72)',
     boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
     activeBoxShadow: '0 4px 20px rgba(0,0,0,0.24), 0 0 26px rgba(93,187,58,0.24), inset 0 0 22px rgba(201,168,75,0.055)'
+  },
+  agility: {
+    background: 'radial-gradient(circle at 50% 50%, rgba(93,187,58,0.14) 0%, rgba(93,187,58,0.035) 40%, rgba(26,61,43,0) 72%), #173324',
+    activeBackground: 'radial-gradient(circle at 50% 50%, rgba(93,187,58,0.24) 0%, rgba(93,187,58,0.08) 42%, rgba(32,74,52,0) 74%), #1E422F',
+    borderColor: 'rgba(201,168,75,0.4)',
+    activeBorderColor: 'rgba(201,168,75,0.82)',
+    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 28px rgba(201,168,75,0.32)'
   }
 };
 
@@ -165,6 +180,7 @@ export const NsezValuesSection = () => {
   const excellenceControls = useAnimation();
   const serviceControls = useAnimation();
   const trustControls = useAnimation();
+  const agilityControls = useAnimation();
 
   const {
     scrollYProgress
@@ -185,6 +201,7 @@ export const NsezValuesSection = () => {
   const excellenceValue = VALUES[3] as ValueItem;
   const serviceValue = VALUES[4] as ValueItem;
   const trustValue = VALUES[5] as ValueItem;
+  const agilityValue = VALUES[6] as ValueItem;
 
   const animatedLetters: AnimatedLetterItem[] = React.useMemo(() => [{
     id: integrityValue.id,
@@ -240,7 +257,16 @@ export const NsezValuesSection = () => {
     iconPath: trustValue.iconPath,
     controls: trustControls,
     isActive: activeValueId === trustValue.id
-  }], [activeValueId, excellenceControls, excellenceValue, integrityControls, integrityValue, nurtureControls, nurtureValue, serviceControls, serviceValue, trustControls, trustValue, valueControls, valueValue]);
+  }, {
+    id: agilityValue.id,
+    letter: agilityValue.letter,
+    title: agilityValue.title,
+    description: agilityValue.description,
+    hint: agilityValue.hint,
+    iconPath: agilityValue.iconPath,
+    controls: agilityControls,
+    isActive: activeValueId === agilityValue.id
+  }], [activeValueId, agilityControls, agilityValue, excellenceControls, excellenceValue, integrityControls, integrityValue, nurtureControls, nurtureValue, serviceControls, serviceValue, trustControls, trustValue, valueControls, valueValue]);
 
   React.useEffect(() => {
     animatedLetters.forEach((item, index) => {
@@ -526,11 +552,14 @@ export const NsezValuesSection = () => {
                   }}>
                         {item.title}
                       </h3>
-                      <ChevronDown className={cn('mt-1 h-5 w-5 flex-shrink-0 transition-[transform,opacity,color] duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]', expandedId === item.id ? 'rotate-180 opacity-100' : 'opacity-45 group-hover:opacity-90 group-focus-visible:opacity-90')} style={{
-                    color: expandedId === item.id || activeValueId === item.id ? '#F5F0E8' : COLORS.deepGreen
-                  }} aria-hidden="true" />
+                      {item.description ? (
+                        <ChevronDown className={cn('mt-1 h-5 w-5 flex-shrink-0 transition-[transform,opacity,color] duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]', expandedId === item.id ? 'rotate-180 opacity-100' : 'opacity-45 group-hover:opacity-90 group-focus-visible:opacity-90')} style={{
+                          color: expandedId === item.id || activeValueId === item.id ? '#F5F0E8' : COLORS.deepGreen
+                        }} aria-hidden="true" />
+                      ) : null}
                     </div>
 
+                    {item.description ? (
                     <AnimatePresence initial={false}>
                       {expandedId === item.id ? <motion.div key="content" initial={{
                     height: 0,
@@ -583,6 +612,7 @@ export const NsezValuesSection = () => {
                           </span>
                         </motion.div>}
                     </AnimatePresence>
+                    ) : null}
                   </div>
                 </div>
               </motion.article>)}

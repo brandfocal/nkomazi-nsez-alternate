@@ -41,7 +41,7 @@ type TooltipData = {
 
 const NKOMAZI_HUB: CityNode = {
   id: 'nkz',
-  label: 'Nkomazi SEZ',
+  label: 'MPUMALANGA NKOMAZI SEZ',
   region: 'South Africa',
   cx: 500,
   cy: 295,
@@ -540,7 +540,7 @@ const MAP_STATS = [{
 
 const INSET_NODES = [{
   id: 'nkz-i',
-  label: 'Nkomazi SEZ',
+  label: 'MPUMALANGA NKOMAZI SEZ',
   x: 100,
   y: 100,
   isHub: true,
@@ -1049,7 +1049,7 @@ const InsetPanel = ({
         fontFamily: BODY_FONT,
         fontWeight: 700,
         letterSpacing: '0.05em'
-      }}>NKOMAZI SEZ</text>
+      }}>MPUMALANGA NKOMAZI SEZ</text>
       </svg>
       <div className="px-3 pb-2.5 flex items-center gap-1.5">
         <div className="w-2 h-px bg-[#C8A84B]" />
@@ -1237,10 +1237,10 @@ const MaputoCorridorMap = ({
             {node.labelPos === 'right' ? <text x={node.cx + 16} y={node.cy + 4} fontSize="10" fill="white" fillOpacity="0.85" fontFamily={BODY_FONT}>{node.label}</text> : <text x={node.cx} y={node.cy + 24} textAnchor="middle" fontSize="10" fill="white" fillOpacity="0.85" fontFamily={BODY_FONT}>{node.label}</text>}
           </g>)}
 
-        {/* Nkomazi SEZ Hub */}
+        {/* MPUMALANGA NKOMAZI SEZ Hub */}
         <g style={{
         cursor: 'pointer'
-      }} onMouseEnter={() => showTooltip('Nkomazi SEZ', 'Special Economic Zone — Komatipoort, Mpumalanga', 542, 308)} onMouseLeave={hideTooltip}>
+      }} onMouseEnter={() => showTooltip('MPUMALANGA NKOMAZI SEZ', 'Special Economic Zone — Komatipoort, Mpumalanga', 542, 308)} onMouseLeave={hideTooltip}>
           {/* Animated outer pulse */}
           {inView && <motion.circle cx={542} cy={308} r={20} stroke="#C8A84B" strokeWidth={2} fill="none" animate={{
           opacity: [1, 0.3]
@@ -1255,7 +1255,7 @@ const MaputoCorridorMap = ({
           {/* Inner dot */}
           <circle cx={542} cy={308} r={7} fill="#C8A84B" filter="url(#node-glow)" />
           {/* Labels */}
-          <text x={542} y={280} textAnchor="middle" fontSize="11" fill="#C8A84B" fontFamily={BODY_FONT} fontWeight="700" letterSpacing="0.5">NKOMAZI SEZ</text>
+          <text x={542} y={280} textAnchor="middle" fontSize="11" fill="#C8A84B" fontFamily={BODY_FONT} fontWeight="700" letterSpacing="0.5">MPUMALANGA NKOMAZI SEZ</text>
           <text x={542} y={328} textAnchor="middle" fontSize="9" fill="white" fillOpacity="0.7" fontFamily={BODY_FONT}>Komatipoort</text>
         </g>
 
@@ -1291,12 +1291,12 @@ const MaputoCorridorMap = ({
           <circle cx={46} cy={540} r={0} fill="none" />
         </g>
 
-        {/* Nkomazi SEZ gold ring in legend - overlaid after rect */}
+        {/* MPUMALANGA NKOMAZI SEZ gold ring in legend - overlaid after rect */}
         <g>
           <rect x={30} y={576} width={190} height={20} rx="0" fill="rgba(0,0,0,0.4)" />
           <circle cx={46} cy={589} r={5} stroke="#C8A84B" strokeWidth="1.5" fill="none" />
           <circle cx={46} cy={589} r={2} fill="#C8A84B" />
-          <text x={58} y={593} fontSize="9" fill="white" fillOpacity="0.75" fontFamily={BODY_FONT}>Nkomazi SEZ Hub</text>
+          <text x={58} y={593} fontSize="9" fill="white" fillOpacity="0.75" fontFamily={BODY_FONT}>MPUMALANGA NKOMAZI SEZ Hub</text>
         </g>
 
         {/* SVG Tooltip */}
@@ -1553,7 +1553,7 @@ export const GlobalRouteMap: React.FC = () => {
           }} className="w-full px-4 pb-2 relative">
                 <svg viewBox="0 0 1000 460" preserveAspectRatio="xMidYMid meet" className="w-full" style={{
               display: 'block'
-            }} aria-label="Nkomazi SEZ global trade corridor map">
+            }} aria-label="MPUMALANGA NKOMAZI SEZ global trade corridor map">
                   <defs>
                     <filter id="dot-glow" x="-150%" y="-150%" width="400%" height="400%">
                       <feGaussianBlur stdDeviation="2.5" result="blur" />
@@ -1668,7 +1668,7 @@ export const GlobalRouteMap: React.FC = () => {
                   fontWeight: 700,
                   letterSpacing: '0.04em'
                 }}>
-                      NKOMAZI SEZ
+                      MPUMALANGA NKOMAZI SEZ
                     </text>
                     <text x={NKOMAZI_HUB.cx} y={NKOMAZI_HUB.cy + 34} textAnchor="middle" fontSize="8" fill="rgba(200,168,75,0.55)" style={{
                   fontFamily: BODY_FONT

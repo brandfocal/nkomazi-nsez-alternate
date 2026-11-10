@@ -11,7 +11,7 @@ const GOLD = "#C9A84C";
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
 const NAV_SECTORS = ['Agro-processing & Agriculture', 'Manufacturing', 'Green Economy', 'Logistics & Warehousing'];
-const NAV_SIMPLE_LINKS = ['About Nkomazi SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+const NAV_SIMPLE_LINKS = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'Sectors', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
 const PARTNER_LOGOS = [
   '/partners/dp-world.png',
   '/partners/dtic.png',
@@ -45,12 +45,12 @@ const INVESTMENT_STAGES: JourneyStage[] = [
       {
         number: "Step 1",
         title: "Referral or Approached Investor",
-        description: "The journey begins when an investor approaches Nkomazi SEZ directly, is referred through a partner, or is proactively engaged by the Nkomazi SEZ investment team."
+        description: "The journey begins when an investor approaches MPUMALANGA NKOMAZI SEZ directly, is referred through a partner, or is proactively engaged by the MPUMALANGA NKOMAZI SEZ investment team."
       },
       {
         number: "Step 2",
         title: "Initiation Meeting",
-        description: "A first formal engagement to introduce Nkomazi SEZ, understand the investor's business and objectives, and explore potential alignment with the zone's sectors and opportunities."
+        description: "A first formal engagement to introduce MPUMALANGA NKOMAZI SEZ, understand the investor's business and objectives, and explore potential alignment with the zone's sectors and opportunities."
       },
       {
         number: "Step 3",
@@ -69,12 +69,12 @@ const INVESTMENT_STAGES: JourneyStage[] = [
       {
         number: "Step 4",
         title: "Multi-Stakeholder Evaluation",
-        description: "The proposal is reviewed collaboratively by relevant stakeholders to assess its strategic, economic, and developmental value to Nkomazi SEZ and the region."
+        description: "The proposal is reviewed collaboratively by relevant stakeholders to assess its strategic, economic, and developmental value to MPUMALANGA NKOMAZI SEZ and the region."
       },
       {
         number: "Step 5",
         title: "SEZ Legal Unit Due Diligence",
-        description: "Nkomazi SEZ's legal unit conducts thorough due diligence to verify compliance, mitigate risk, and ensure the proposal meets all regulatory and governance requirements."
+        description: "MPUMALANGA NKOMAZI SEZ's legal unit conducts thorough due diligence to verify compliance, mitigate risk, and ensure the proposal meets all regulatory and governance requirements."
       }
     ]
   },
@@ -93,7 +93,7 @@ const INVESTMENT_STAGES: JourneyStage[] = [
       {
         number: "Step 7",
         title: "SEZ Board Approval / Rejection",
-        description: "The Nkomazi SEZ Board takes the final decision to approve or decline the investment proposal based on the full evaluation and recommendation."
+        description: "The MPUMALANGA NKOMAZI SEZ Board takes the final decision to approve or decline the investment proposal based on the full evaluation and recommendation."
       },
       {
         number: "Step 8",
@@ -157,7 +157,7 @@ const SEZ_SECTORS = [{
 const INVEST_STEPS = [{
   step: '01',
   title: 'Submit an Enquiry',
-  desc: 'Connect with the Nkomazi SEZ investment team to discuss your business and investment interests.',
+  desc: 'Connect with the MPUMALANGA NKOMAZI SEZ investment team to discuss your business and investment interests.',
   image: 'https://images.unsplash.com/photo-1542744094-3a31f272c490?w=800&q=80',
   icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'
 }, {
@@ -175,7 +175,7 @@ const INVEST_STEPS = [{
 }, {
   step: '04',
   title: 'Establish and Grow',
-  desc: 'Launch and scale your operation within the Nkomazi SEZ ecosystem with ongoing support.',
+  desc: 'Launch and scale your operation within the MPUMALANGA NKOMAZI SEZ ecosystem with ongoing support.',
   image: 'https://images.unsplash.com/photo-1590856029826-c7a73142bbf1?w=800&q=80',
   icon: 'M13 10V3L4 14h7v7l9-11h-7z'
 }] as {
@@ -191,7 +191,7 @@ const ENTERPRISE_HUB_CARDS = [{
   id: 'loc',
   number: '01',
   title: 'Strategic Location',
-  desc: 'Positioned along the Maputo Development Corridor, Nkomazi SEZ provides investors with direct access to South Africa, Mozambique, Eswatini and broader SADC markets.',
+  desc: 'Positioned along the Maputo Development Corridor, MPUMALANGA NKOMAZI SEZ provides investors with direct access to South Africa, Mozambique, Eswatini and broader SADC markets.',
   bgImage: '/nsez-smme3.jpg'
 }, {
   id: 'incentives',
@@ -203,7 +203,7 @@ const ENTERPRISE_HUB_CARDS = [{
   id: 'infra',
   number: '03',
   title: 'Infrastructure Ready',
-  desc: 'Nkomazi SEZ is developing responsive infrastructure that supports industrial growth, logistics operations and large-scale manufacturing investment.',
+  desc: 'MPUMALANGA NKOMAZI SEZ is developing responsive infrastructure that supports industrial growth, logistics operations and large-scale manufacturing investment.',
   bgImage: '/nsez-smme2.jpg'
 }, {
   id: 'sector',
@@ -233,7 +233,7 @@ const ENTERPRISE_HUB_CARDS = [{
 const ENTERPRISE_CARD_BOTTOM_COLORS = ['#0F1923', '#1D4D35', '#1A2744', '#0F1923', '#1D4D35', '#1A2744'] as string[];
 const INVESTOR_STORIES = [{
   id: 's1',
-  quote: "Establishing our agro-processing facility in Nkomazi SEZ was the best investment decision we've made. The infrastructure, incentives, and hands-on support exceeded every expectation.",
+  quote: "Establishing our agro-processing facility in MPUMALANGA NKOMAZI SEZ was the best investment decision we've made. The infrastructure, incentives, and hands-on support exceeded every expectation.",
   name: 'Thandi Mokoena',
   role: 'CEO',
   company: 'Greenfield Produce Ltd',
@@ -251,7 +251,7 @@ const INVESTOR_STORIES = [{
   sector: 'Logistics'
 }, {
   id: 's3',
-  quote: "The N4 corridor access and tax incentives made Nkomazi SEZ an obvious choice. Our manufacturing costs dropped 22% compared to our Johannesburg facility.",
+  quote: "The N4 corridor access and tax incentives made MPUMALANGA NKOMAZI SEZ an obvious choice. Our manufacturing costs dropped 22% compared to our Johannesburg facility.",
   name: 'Priya Naidoo',
   role: 'COO',
   company: 'Precision Parts SA',
@@ -279,13 +279,13 @@ const FAQS = [{
   a: 'The SEZ provides bulk water, sanitation, electricity (Eskom feed + solar backup), fibre-optic connectivity, and paved internal roads to every plot.'
 }, {
   q: 'Is there support for work permit applications?',
-  a: 'Yes. The Nkomazi SEZ one-stop-shop facilitates critical skills visas, work permits, and environmental authorisations on behalf of registered investors.'
+  a: 'Yes. The MPUMALANGA NKOMAZI SEZ one-stop-shop facilitates critical skills visas, work permits, and environmental authorisations on behalf of registered investors.'
 }] as {
   q: string;
   a: string;
 }[];
 const FOOTER_LINKS = {
-  'Nkomazi SEZ': ['About Nkomazi SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'],
+  'MPUMALANGA NKOMAZI SEZ': ['About MPUMALANGA NKOMAZI SEZ', 'Why Invest', 'Priority Sectors', 'Investor Hub'],
   'Resources': ['Investment Process', 'Resources', 'Partners', 'Contact']
 };
 const EH_METRICS = [{
@@ -369,28 +369,28 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
     alignItems: 'center',
     gap: '10px'
   }}>
-    <a href="mailto:invest@nsez.gov.za" style={{
+    <a href="mailto:invest@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
       color: '#1D4D35',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
-      invest@nsez.gov.za
+      invest@nkomazisez.gov.za
     </a>
     <span style={{
       color: '#1D4D35',
       opacity: 0.35,
       fontSize: '11px'
     }}>|</span>
-    <a href="mailto:info@nsez.gov.za" style={{
+    <a href="mailto:info@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
       color: '#1D4D35',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
-      info@nsez.gov.za
+      info@nkomazisez.gov.za
     </a>
   </div>
   <div style={{
@@ -759,7 +759,7 @@ const StickyNav = ({
     });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  const desktopLinks = ['About Nkomazi SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
+  const desktopLinks = ['About MPUMALANGA NKOMAZI SEZ', 'Invest', 'MSME Hub', 'Tenders', 'News and Media', 'Stakeholder Relations', 'Careers', 'Contact Us'];
   return <nav className="fixed left-0 right-0 z-[9999] px-4 sm:px-6" style={{
     top: '36px',
     paddingTop: scrolled ? '0px' : '20px',
@@ -785,7 +785,7 @@ const StickyNav = ({
         transition: 'padding 0.35s ease'
       }}>
         <a href="/" className="flex-shrink-0 flex items-center no-underline">
-          <img src="/NSEZ-Horizontal-Logo-white.png" alt="Nkomazi SEZ" className="h-12 sm:h-[60px] w-auto object-contain" />
+          <img src="/NSEZ-Horizontal-Logo-white.png" alt="MPUMALANGA NKOMAZI SEZ" className="h-12 sm:h-[60px] w-auto object-contain" />
         </a>
 
         <div className="hidden lg:flex items-center gap-0 backdrop-blur-[26px] bg-white/10 border border-white/20 rounded-xl p-[4.6px]">
@@ -927,9 +927,9 @@ const HeroStatItem = ({
 };
 const STATIC_HERO_IMAGE = '/komatipoort-site.jpg';
 const STATIC_HERO_HEADLINE_GREEN = 'Invest in Opportunity.';
-const STATIC_HERO_HEADLINE_GOLD = 'Invest in Nkomazi SEZ.';
+const STATIC_HERO_HEADLINE_GOLD = 'Invest in MPUMALANGA NKOMAZI SEZ.';
 const STATIC_HERO_SUB = 'A strategically positioned Special Economic Zone in the heart of Mpumalanga, driving agro-processing, manufacturing, logistics, and green economy investment in Mpumalanga, South Africa.';
-const STATIC_HERO_BODY = 'Nkomazi SEZ is positioned as a gateway for regional and international investment, offering world-class infrastructure, investor-focused incentives, and access to key trade corridors connecting South Africa to the African continent and global markets.';
+const STATIC_HERO_BODY = 'MPUMALANGA NKOMAZI SEZ is positioned as a gateway for regional and international investment, offering world-class infrastructure, investor-focused incentives, and access to key trade corridors connecting South Africa to the African continent and global markets.';
 const STATIC_HERO_CTA_PRIMARY = 'Explore Investment Opportunities';
 const STATIC_HERO_CTA_SECONDARY = 'Speak to the Investment Team';
 const VideoHero = () => {
@@ -997,7 +997,7 @@ const VideoHero = () => {
         userSelect: 'none',
         letterSpacing: '-0.04em'
       }}>
-        NKOMAZI SEZ
+        MPUMALANGA NKOMAZI SEZ
       </span>
     </div>
 
@@ -1056,7 +1056,7 @@ const VideoHero = () => {
             <span style={{
               color: '#FFFFFF',
               display: 'block'
-            }}>Invest in Nkomazi SEZ.</span>
+            }}>Invest in MPUMALANGA NKOMAZI SEZ.</span>
           </motion.h1>
 
           <motion.p initial={{
@@ -1150,7 +1150,7 @@ const VideoHero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-            Whether you're expanding into regional markets, establishing a manufacturing base, or exploring sustainable industrial opportunities, Nkomazi SEZ is your gateway to growth on the African continent.
+            Whether you're expanding into regional markets, establishing a manufacturing base, or exploring sustainable industrial opportunities, MPUMALANGA NKOMAZI SEZ is your gateway to growth on the African continent.
           </motion.p>
 
           <motion.div className="flex flex-col sm:flex-row items-start sm:items-center gap-3" initial={{
@@ -1400,7 +1400,7 @@ const StatsStrip = () => {
             display: 'block',
             lineHeight: '1.75'
           }}>
-            Nkomazi SEZ is creating a platform for industrial growth, investment attraction and sustainable economic development across Mpumalanga and the Southern African region.
+            MPUMALANGA NKOMAZI SEZ is creating a platform for industrial growth, investment attraction and sustainable economic development across Mpumalanga and the Southern African region.
           </span>
         </div>
       </FadeUp>
@@ -1464,7 +1464,7 @@ const ZoneOverview = () => <section style={{
           display: 'block',
           marginBottom: '16px'
         }}>
-          NKOMAZI SEZ AT A GLANCE
+          MPUMALANGA NKOMAZI SEZ AT A GLANCE
         </span>
         <div style={{
           display: 'flex',
@@ -1505,7 +1505,7 @@ const ZoneOverview = () => <section style={{
             display: 'block',
             marginBottom: '8px'
           }}>
-            Nkomazi SEZ is creating a platform for industrial growth, investment attraction and sustainable economic development.
+            MPUMALANGA NKOMAZI SEZ is creating a platform for industrial growth, investment attraction and sustainable economic development.
           </span>
           <span style={{
             fontSize: '15px',
@@ -1513,7 +1513,7 @@ const ZoneOverview = () => <section style={{
             lineHeight: 1.8,
             display: 'block'
           }}>
-            Across Mpumalanga and the Southern African region, Nkomazi SEZ offers world-class infrastructure, investor-focused incentives, and access to key trade corridors connecting South Africa to the African continent and global markets.
+            Across Mpumalanga and the Southern African region, MPUMALANGA NKOMAZI SEZ offers world-class infrastructure, investor-focused incentives, and access to key trade corridors connecting South Africa to the African continent and global markets.
           </span>
         </p>
         <div style={{
@@ -1621,7 +1621,7 @@ const EnterpriseHubSection = () => {
             letterSpacing: '0.2em',
             textTransform: 'uppercase' as const,
             display: 'block'
-          }}>WHY NKOMAZI SEZ</span>
+          }}>WHY MPUMALANGA NKOMAZI SEZ</span>
           <FadeUp delay={0}>
             <h2 style={{
               margin: 0,
@@ -1656,7 +1656,7 @@ const EnterpriseHubSection = () => {
               maxWidth: '480px',
               lineHeight: 1.55
             }}>
-              Six compelling reasons why leading investors, manufacturers and agro-processors are choosing Nkomazi SEZ as their base for African growth.
+              Six compelling reasons why leading investors, manufacturers and agro-processors are choosing MPUMALANGA NKOMAZI SEZ as their base for African growth.
             </p>
           </FadeUp>
         </div>
@@ -2261,7 +2261,7 @@ const CommunityPortalSnippet = () => {
           letterSpacing: '-1px',
           color: '#111111'
         }}>
-          Your Path to Investing in Nkomazi SEZ
+          Your Path to Investing in MPUMALANGA NKOMAZI SEZ
         </AnimatedHeading>
         <div className="max-w-[680px] mx-auto text-center" style={{
           fontFamily: BODY_FONT
@@ -2607,7 +2607,7 @@ const ABOUT_HIGHLIGHT_CARDS = [{
 }, {
   id: 'infra',
   title: 'Infrastructure Ready',
-  body: 'Nkomazi SEZ is developing responsive infrastructure that supports industrial growth, logistics operations and large-scale manufacturing investment.',
+  body: 'MPUMALANGA NKOMAZI SEZ is developing responsive infrastructure that supports industrial growth, logistics operations and large-scale manufacturing investment.',
   icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
     <polyline points="16 7 22 7 22 13" />
@@ -2649,7 +2649,7 @@ const AboutUs = () => {
         overflow: 'hidden',
         marginBottom: '40px'
       }}>
-        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=85" alt="Aerial landscape of Nkomazi SEZ region, Komatipoort" style={{
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=1800&q=85" alt="Aerial landscape of MPUMALANGA NKOMAZI SEZ region, Komatipoort" style={{
           width: '100%',
           height: '100%',
           objectFit: 'cover',
@@ -2758,7 +2758,7 @@ const AboutUs = () => {
                 display: 'block',
                 marginBottom: '8px'
               }}>
-                Nkomazi SEZ is a government-designated Special Economic Zone in Komatipoort, Mpumalanga — strategically positioned along the Maputo Development Corridor.
+                MPUMALANGA NKOMAZI SEZ is a government-designated Special Economic Zone in Komatipoort, Mpumalanga — strategically positioned along the Maputo Development Corridor.
               </span>
               <span style={{
                 fontSize: '15px',
@@ -2885,7 +2885,7 @@ const OPPORTUNITIES_SUBSET: Opportunity[] = [{
   id: '1',
   category: 'Tender',
   title: 'Civil Infrastructure Works Phase 1',
-  description: 'Invitation to tender for civil engineering and earthworks for Nkomazi SEZ Phase 1 infrastructure including internal roads and bulk services.',
+  description: 'Invitation to tender for civil engineering and earthworks for MPUMALANGA NKOMAZI SEZ Phase 1 infrastructure including internal roads and bulk services.',
   closingDate: '31 July 2026',
   status: 'Open'
 }, {
@@ -3210,7 +3210,7 @@ export function Homev2Page() {
           fontFamily: HEADING_FONT,
           letterSpacing: '-0.5px'
         }}>
-          Nkomazi SEZ — your gateway to growth on the African continent
+          MPUMALANGA NKOMAZI SEZ — your gateway to growth on the African continent
         </p>
       </FadeUp>
       <p style={{

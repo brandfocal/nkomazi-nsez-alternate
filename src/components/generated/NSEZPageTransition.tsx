@@ -106,7 +106,7 @@ export function NSEZPageTransition() {
         zIndex: 10000,
         pointerEvents: 'none'
       }}>
-            <img src="/NSEZ-logo-png-wh.png" alt="Nkomazi SEZ" className="h-16 w-auto object-contain max-w-none rounded-md" />
+            <img src="/NSEZ-logo-png-wh.png" alt="MPUMALANGA NKOMAZI SEZ" className="h-16 w-auto object-contain max-w-none rounded-md" />
           </motion.div>
         </motion.div>}
     </AnimatePresence>;

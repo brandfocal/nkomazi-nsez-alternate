@@ -60,7 +60,7 @@ export function NSEZFooterSection() {
           <div className="md:col-span-4 flex flex-col gap-6">
             <img
               src="/NSEZ-logo-png-wh.png"
-              alt="Nkomazi SEZ"
+              alt="MPUMALANGA NKOMAZI SEZ"
               className="h-12 w-auto object-contain self-start"
             />
             <p
@@ -214,12 +214,12 @@ export function NSEZFooterSection() {
                   Investment Enquiries
                 </span>
                 <a
-                  href="mailto:invest@nsez.gov.za"
+                  href="mailto:invest@nkomazisez.gov.za"
                   style={{ fontFamily: BODY_FONT, fontSize: '13px', color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)'; }}
                 >
-                  invest@nsez.gov.za
+                  invest@nkomazisez.gov.za
                 </a>
               </div>
               <div className="flex flex-col gap-1">
@@ -227,12 +227,12 @@ export function NSEZFooterSection() {
                   General Enquiries
                 </span>
                 <a
-                  href="mailto:info@nsez.gov.za"
+                  href="mailto:info@nkomazisez.gov.za"
                   style={{ fontFamily: BODY_FONT, fontSize: '13px', color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}
                   onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)'; }}
                 >
-                  info@nsez.gov.za
+                  info@nkomazisez.gov.za
                 </a>
               </div>
               <div className="flex flex-col gap-1">
