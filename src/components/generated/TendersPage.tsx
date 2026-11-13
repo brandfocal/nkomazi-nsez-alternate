@@ -13,7 +13,7 @@ const GOLD = "#C9A84C";
 const ORANGE = "#E8521A";
 
 // --- Types ---
-type OpportunityCategory = 'Tender' | 'RFQ' | 'Partnership' | 'Leasing' | 'EOI';
+type OpportunityCategory = 'Tender' | 'RFQ' | 'Partnership' | 'EOI';
 interface Opportunity {
   id: string;
   category: OpportunityCategory;
@@ -88,9 +88,6 @@ const CATEGORIES: {
 }, {
   label: 'Partnerships',
   value: 'Partnership'
-}, {
-  label: 'Leasing',
-  value: 'Leasing'
 }, {
   label: 'Expressions of Interest',
   value: 'EOI'
@@ -641,7 +638,7 @@ const Hero = () => {
             fontWeight: 500,
             maxWidth: '520px'
           }}>
-              Tenders, partnerships, leasing and investment opportunities within the Nkomazi Special Economic Zone.
+              Tenders, partnerships, and investment opportunities within the Mpumalanga Nkomazi Special Economic Zone.
             </motion.p>
           </div>
 
@@ -709,7 +706,7 @@ const Hero = () => {
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-              Explore current active tenders, RFQs, partnership calls, and leasing opportunities. Join us in building
+              Explore current active tenders, RFQs, partnership calls, and expressions of interest. Join us in building
               Mpumalanga's economic future.
             </motion.p>
 
@@ -785,8 +782,6 @@ const getCategoryColor = (cat: OpportunityCategory) => {
       return '#1A3320';
     case 'Partnership':
       return GOLD;
-    case 'Leasing':
-      return ORANGE;
     case 'EOI':
       return '#1A2744';
     default:

@@ -1877,7 +1877,7 @@ export const AirCargoPage = () => {
             <div className="flex flex-col lg:flex-row justify-between items-start gap-10 pb-12 border-b border-white/10">
               <div className="flex flex-col gap-5">
                 <div className="flex items-center gap-2.5">
-                   <img src="/NSEZ-logo-png-wh.png" alt="MPUMALANGA NKOMAZI SEZ" className="h-12 w-auto object-contain max-w-none rounded-md" />
+                   <img src="/NSEZ-Horizontal-Logo-white.png" alt="MPUMALANGA NKOMAZI SEZ" className="h-10 sm:h-12 w-auto object-contain max-w-none" />
                 </div>
                 <p className="text-white/40 text-[14px] font-normal leading-6 m-0" style={{
                 fontFamily: BODY_FONT

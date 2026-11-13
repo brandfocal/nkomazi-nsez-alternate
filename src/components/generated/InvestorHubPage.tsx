@@ -3,7 +3,7 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
-import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, Sun, Menu, X, ChevronRight, ArrowDownToLine } from 'lucide-react';
+import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, Sun, Menu, X, ChevronRight, ArrowDownToLine, Building2, Warehouse, Layers, CheckCircle2, FileText, Check, ArrowRight } from 'lucide-react';
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
@@ -1248,6 +1248,456 @@ const OpportunitiesSection = () => {
   </section>;
 };
 
+// ─── Leasing & Industrial Property Listings ──────────────────────────────────
+interface LeasingListing {
+  id: string;
+  title: string;
+  category: 'Agro-Processing' | 'Logistics & Warehousing' | 'Manufacturing' | 'Commercial & Office';
+  size: string;
+  leaseTerm: string;
+  zoning: string;
+  status: 'Available Now' | 'Phase 1 Allocation' | 'Pre-Leasing' | 'Expression of Interest';
+  statusColor: string;
+  description: string;
+  features: string[];
+  location: string;
+  highlights: { label: string; value: string }[];
+}
+
+const LEASING_LISTINGS: LeasingListing[] = [
+  {
+    id: 'lease-01',
+    title: 'Agro-Processing Serviced Industrial Parcels',
+    category: 'Agro-Processing',
+    size: '2.5 Ha – 12.0 Ha Serviced Plots',
+    leaseTerm: '30 to 99-Year Long-Term Ground Lease',
+    zoning: 'Special Industrial / Agro-Processing Hub',
+    status: 'Phase 1 Allocation',
+    statusColor: '#1fac67',
+    description: 'Fully serviced land parcels engineered for high-throughput citrus, subtropical fruit, macadamia processing, and juice packaging operations with dedicated bulk utility tie-ins.',
+    features: [
+      'Guaranteed bulk raw & potable water allocations',
+      'Direct connection to 33kV dedicated SEZ electrical substation',
+      'Dual access for heavy articulated B-double haulage vehicles',
+      'Full SEZ customs-controlled territory status & tax incentives'
+    ],
+    location: 'Zone 1A — Agro-Industrial Precinct',
+    highlights: [
+      { label: 'Bulk Power', value: 'Up to 2.5 MVA' },
+      { label: 'Water Supply', value: 'High-Volume Bulk Tie-in' },
+      { label: 'Border Distance', value: '4.5 km to Lebombo' }
+    ]
+  },
+  {
+    id: 'lease-02',
+    title: 'Bonded Logistics & Cold Chain Warehousing',
+    category: 'Logistics & Warehousing',
+    size: '3,500 m² – 18,000 m² GLA Units',
+    leaseTerm: '5 to 15-Year Commercial Lease',
+    zoning: 'Bonded Logistics & Freight Yard',
+    status: 'Available Now',
+    statusColor: '#C9A84C',
+    description: 'Modern, high-bay cross-dock logistics facilities with integrated cold-storage pre-cooling bays, container marshalling yard, and on-site SARS customs inspection clearing points.',
+    features: [
+      '12.5m clear eaves height with automated docking levelers',
+      'Reinforced 8.5 Ton/m² heavy-load post-tensioned floor slab',
+      'Temperature-controlled chambers (-25°C deep freeze to +4°C chilling)',
+      'Dedicated 42m articulated truck turnaround and staging yard'
+    ],
+    location: 'Zone 2B — Logistics & Dry Port Sector',
+    highlights: [
+      { label: 'Eaves Height', value: '12.5 Metres' },
+      { label: 'Floor Load', value: '8.5 T/m² Post-Tensioned' },
+      { label: 'Docking', value: 'Cross-Dock Levelers' }
+    ]
+  },
+  {
+    id: 'lease-03',
+    title: 'Plug-and-Play Light Manufacturing & Assembly Shells',
+    category: 'Manufacturing',
+    size: '800 m² – 3,200 m² Modular Shells',
+    leaseTerm: '3 to 10-Year Renewable Lease',
+    zoning: 'Light Industrial / Advanced Manufacturing',
+    status: 'Pre-Leasing',
+    statusColor: '#1fac67',
+    description: 'Turnkey industrial units designed for fast-track setup, light machinery, packaging, assembly, and green technologies. Includes fitted admin offices, staff canteen, and secure loading bays.',
+    features: [
+      'Pre-installed 3-phase 400V power supply (expandable to 500 kVA)',
+      'Integrated mezzanine administrative offices and staff facilities',
+      'Connected to SEZ rooftop solar microgrid & emergency diesel backup',
+      'High-speed redundant fibre internet and CCTV security perimeter'
+    ],
+    location: 'Zone 1C — Advanced Light Manufacturing Precinct',
+    highlights: [
+      { label: 'Power Supply', value: '3-Phase 400V 500kVA' },
+      { label: 'Office Space', value: '150 m² Mezzanine' },
+      { label: 'Backup Power', value: 'Solar Microgrid Tied' }
+    ]
+  },
+  {
+    id: 'lease-04',
+    title: 'Commercial Trade Centre & One-Stop-Shop Suites',
+    category: 'Commercial & Office',
+    size: '120 m² – 950 m² Corporate Suites',
+    leaseTerm: '2 to 5-Year Flexible Commercial Lease',
+    zoning: 'Commercial, Financial & Service Hub',
+    status: 'Expression of Interest',
+    statusColor: '#38bdf8',
+    description: 'Premium A-grade office suites and service retail within the Mpumalanga Nkomazi SEZ Administrative Complex, ideal for freight forwarders, clearing agents, financial institutions, and professional services.',
+    features: [
+      'Direct adjacency to the SEZ One-Stop-Shop (OSS) Investor Centre',
+      'Centralised boardroom, conference facilities, and business lounge',
+      'Uninterrupted utility supply with dual grid and solar-battery storage',
+      '24/7 biometric security access with covered tenant and visitor parking'
+    ],
+    location: 'Zone 0 — Central Administrative & Investor Gateway',
+    highlights: [
+      { label: 'Classification', value: 'Grade A Office' },
+      { label: 'Connectivity', value: 'Redundant Fibre Tier 1' },
+      { label: 'Security', value: 'Biometric 24/7 Access' }
+    ]
+  }
+];
+
+const LEASING_CATEGORIES = ['All Properties', 'Agro-Processing', 'Logistics & Warehousing', 'Manufacturing', 'Commercial & Office'] as const;
+
+const LeasingListingsSection = () => {
+  const [selectedCategory, setSelectedCategory] = useState<string>('All Properties');
+
+  const filteredListings = selectedCategory === 'All Properties'
+    ? LEASING_LISTINGS
+    : LEASING_LISTINGS.filter(l => l.category === selectedCategory);
+
+  return (
+    <section
+      id="leasing"
+      style={{
+        background: '#0B1B13',
+        paddingTop: 'clamp(56px, 8vw, 104px)',
+        paddingBottom: 'clamp(56px, 8vw, 104px)',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+    >
+      {/* Subtle background glow */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: 'radial-gradient(ellipse at 80% 20%, rgba(31,172,103,0.12) 0%, transparent 60%)'
+        }}
+      />
+
+      <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
+          <div>
+            <div
+              style={{
+                fontFamily: BODY_FONT,
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.12em',
+                textTransform: 'uppercase',
+                color: '#C9A84C',
+                marginBottom: '12px'
+              }}
+            >
+              Industrial Real Estate & Land Parcels
+            </div>
+            <h2
+              style={{
+                fontFamily: HEADING_FONT,
+                fontSize: 'clamp(32px, 5vw, 68px)',
+                fontWeight: 700,
+                lineHeight: 1.05,
+                letterSpacing: '-1px',
+                color: '#ffffff',
+                margin: 0,
+                textTransform: 'uppercase'
+              }}
+            >
+              Prime Leasing & Development Sites
+            </h2>
+          </div>
+          <p
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: '14px',
+              lineHeight: '1.8',
+              color: 'rgba(255,255,255,0.7)',
+              maxWidth: '420px',
+              margin: 0
+            }}
+          >
+            Serviced industrial parcels, modern warehousing, and modular manufacturing facilities available for qualified investors under competitive long-term lease models.
+          </p>
+        </div>
+
+        {/* Category Filter Tabs */}
+        <div className="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-white/10">
+          {LEASING_CATEGORIES.map(category => {
+            const isActive = selectedCategory === category;
+            return (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setSelectedCategory(category)}
+                style={{
+                  fontFamily: BODY_FONT,
+                  fontSize: '13px',
+                  fontWeight: isActive ? 600 : 400,
+                  transition: 'all 0.25s ease'
+                }}
+                className={`px-4 py-2 rounded-full cursor-pointer transition-all ${
+                  isActive
+                    ? 'bg-[#1fac67] text-white shadow-md'
+                    : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
+                }`}
+              >
+                {category}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Listings Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
+          {filteredListings.map((listing, index) => (
+            <motion.div
+              key={listing.id}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group flex flex-col justify-between rounded-2xl p-6 sm:p-8 transition-all duration-300"
+              style={{
+                background: 'rgba(255,255,255,0.03)',
+                border: '1px solid rgba(255,255,255,0.08)',
+                boxShadow: '0 8px 32px rgba(0,0,0,0.2)'
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = 'rgba(200,168,75,0.4)';
+                el.style.transform = 'translateY(-4px)';
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLDivElement;
+                el.style.borderColor = 'rgba(255,255,255,0.08)';
+                el.style.transform = 'translateY(0)';
+              }}
+            >
+              <div>
+                {/* Card Top: Badges */}
+                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                  <span
+                    className="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider"
+                    style={{
+                      fontFamily: BODY_FONT,
+                      background: 'rgba(201,168,76,0.15)',
+                      color: '#C9A84C',
+                      border: '1px solid rgba(201,168,76,0.3)'
+                    }}
+                  >
+                    {listing.category}
+                  </span>
+                  <span
+                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
+                    style={{
+                      fontFamily: BODY_FONT,
+                      background: 'rgba(255,255,255,0.06)',
+                      color: listing.statusColor,
+                      border: `1px solid ${listing.statusColor}40`
+                    }}
+                  >
+                    <span
+                      className="w-2 h-2 rounded-full"
+                      style={{ background: listing.statusColor }}
+                    />
+                    {listing.status}
+                  </span>
+                </div>
+
+                {/* Title & Location */}
+                <h3
+                  style={{
+                    fontFamily: HEADING_FONT,
+                    fontSize: 'clamp(24px, 2.4vw, 32px)',
+                    fontWeight: 700,
+                    lineHeight: 1.15,
+                    color: '#ffffff',
+                    margin: 0,
+                    marginBottom: '8px'
+                  }}
+                >
+                  {listing.title}
+                </h3>
+                <div
+                  className="flex items-center gap-1.5 mb-4 text-xs"
+                  style={{
+                    fontFamily: BODY_FONT,
+                    color: 'rgba(255,255,255,0.6)'
+                  }}
+                >
+                  <MapPin className="w-3.5 h-3.5 text-[#C9A84C]" />
+                  <span>{listing.location}</span>
+                </div>
+
+                <p
+                  style={{
+                    fontFamily: BODY_FONT,
+                    fontSize: '13.5px',
+                    lineHeight: '1.75',
+                    color: 'rgba(255,255,255,0.72)',
+                    marginBottom: '20px'
+                  }}
+                >
+                  {listing.description}
+                </p>
+
+                {/* Specifications Bar */}
+                <div
+                  className="grid grid-cols-3 gap-2 sm:gap-4 p-3.5 rounded-xl mb-6"
+                  style={{
+                    background: 'rgba(0,0,0,0.25)',
+                    border: '1px solid rgba(255,255,255,0.05)'
+                  }}
+                >
+                  {listing.highlights.map(h => (
+                    <div key={h.label} className="text-center sm:text-left">
+                      <div
+                        style={{
+                          fontFamily: BODY_FONT,
+                          fontSize: '10.5px',
+                          color: 'rgba(255,255,255,0.5)',
+                          textTransform: 'uppercase',
+                          letterSpacing: '0.05em'
+                        }}
+                      >
+                        {h.label}
+                      </div>
+                      <div
+                        style={{
+                          fontFamily: BODY_FONT,
+                          fontSize: '12.5px',
+                          fontWeight: 600,
+                          color: '#ffffff',
+                          marginTop: '2px'
+                        }}
+                      >
+                        {h.value}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Property Specs Pill Details */}
+                <div className="space-y-2 mb-6">
+                  <div className="flex items-start gap-2 text-xs text-white/80" style={{ fontFamily: BODY_FONT }}>
+                    <span className="text-[#C9A84C] font-semibold min-w-[70px]">Size:</span>
+                    <span>{listing.size}</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-xs text-white/80" style={{ fontFamily: BODY_FONT }}>
+                    <span className="text-[#C9A84C] font-semibold min-w-[70px]">Tenure:</span>
+                    <span>{listing.leaseTerm}</span>
+                  </div>
+                  <div className="flex items-start gap-2 text-xs text-white/80" style={{ fontFamily: BODY_FONT }}>
+                    <span className="text-[#C9A84C] font-semibold min-w-[70px]">Zoning:</span>
+                    <span>{listing.zoning}</span>
+                  </div>
+                </div>
+
+                {/* Features Checkpoints */}
+                <div className="space-y-2.5 mb-8 pt-4 border-t border-white/5">
+                  {listing.features.map((feat, fIdx) => (
+                    <div key={fIdx} className="flex items-start gap-2.5 text-xs text-white/75" style={{ fontFamily: BODY_FONT }}>
+                      <CheckCircle2 className="w-4 h-4 text-[#1fac67] shrink-0 mt-0.5" />
+                      <span>{feat}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Card Footer Actions */}
+              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/10">
+                <a
+                  href="/contact?subject=Leasing+Inquiry"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all"
+                  style={{
+                    fontFamily: BODY_FONT,
+                    background: '#1fac67',
+                    letterSpacing: '0.02em'
+                  }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#189657'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#1fac67'; }}
+                >
+                  <span>Inquire About Lease</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </a>
+
+                <a
+                  href="/contact?subject=Leasing+Technical+Specs"
+                  className="inline-flex items-center gap-1.5 text-xs text-white/60 hover:text-[#C9A84C] transition-colors no-underline"
+                  style={{ fontFamily: BODY_FONT }}
+                >
+                  <FileText className="w-3.5 h-3.5" />
+                  <span>Download Specs</span>
+                </a>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Bottom Banner Support */}
+        <div
+          className="mt-12 p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6"
+          style={{
+            background: 'linear-gradient(135deg, rgba(31,172,103,0.12) 0%, rgba(200,168,75,0.08) 100%)',
+            border: '1px solid rgba(200,168,75,0.2)'
+          }}
+        >
+          <div>
+            <h4
+              style={{
+                fontFamily: HEADING_FONT,
+                fontSize: '22px',
+                fontWeight: 700,
+                color: '#ffffff',
+                textTransform: 'uppercase',
+                margin: 0,
+                marginBottom: '4px'
+              }}
+            >
+              Need Custom Land Allocation or Turnkey Build-to-Suit?
+            </h4>
+            <p
+              style={{
+                fontFamily: BODY_FONT,
+                fontSize: '13px',
+                color: 'rgba(255,255,255,0.7)',
+                margin: 0
+              }}
+            >
+              Our One-Stop-Shop investment team provides tailored master planning, environmental approvals, and bespoke industrial facility designs.
+            </p>
+          </div>
+          <a
+            href="/contact"
+            className="shrink-0 px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-black no-underline transition-all"
+            style={{
+              fontFamily: BODY_FONT,
+              background: '#C9A84C'
+            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#d8b95d'; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#C9A84C'; }}
+          >
+            Speak to Investment Advisory
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 // ─── Resources Section ────────────────────────────────────────────────────────
 const ResourcesSection = () => {
   return <section style={{
@@ -1583,6 +2033,8 @@ export function InvestorHubPage() {
     <JourneySection />
     <GoldDivider />
     <OpportunitiesSection />
+    <GoldDivider />
+    <LeasingListingsSection />
     <GoldDivider />
     <ResourcesSection />
     <CTASection />

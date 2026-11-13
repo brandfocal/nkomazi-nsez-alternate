@@ -314,7 +314,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 sm:gap-12 border-b border-white/10 pb-12 mb-12">
             <div>
               <a href="/" className="flex-shrink-0 flex items-center no-underline">
-                <img src="/NSEZ-logo-png-wh.png" alt="NSEZ Logo" className="h-10 sm:h-12 object-contain mb-6 sm:mb-8 rounded-md" />
+                <img src="/NSEZ-Horizontal-Logo-white.png" alt="NSEZ Logo" className="h-10 sm:h-12 w-auto object-contain mb-6 sm:mb-8" />
               </a>
               <p className="text-white/40 text-[14px]">
                 Copyright 2026 MPUMALANGA NKOMAZI SEZ All Rights Reserved.

@@ -298,8 +298,8 @@ const EH_METRICS = [{
   value: '14+',
   label: 'Registered\nInvestors'
 }, {
-  value: '2028',
-  label: 'Infrastructure\nCompletion'
+  value: '2029',
+  label: 'Phase 1\nCompletion'
 }];
 const GoldDivider = () => <div style={{
   height: '1px',
@@ -1324,10 +1324,10 @@ const STATS_STRIP_DATA = [{
   suffix: '+',
   label: 'Registered Investors'
 }, {
-  value: 2028,
+  value: 2029,
   prefix: '',
   suffix: '',
-  label: 'Infrastructure Completion'
+  label: 'Phase 1 Completion'
 }] as {
   value: number;
   prefix: string;
@@ -1593,7 +1593,7 @@ const ZoneOverview = () => <section style={{
             borderRadius: '999px',
             display: 'inline-block'
           }}>
-            Komatipoort, Mpumalanga · 2028 Infrastructure Completion
+            Komatipoort, Mpumalanga · 2029 Phase 1 Completion
           </span>
         </div>
       </div>
@@ -2187,9 +2187,9 @@ const VoicesSection = () => {
 // ─── Community Portal Snippet (Investment Journey — 4 steps) ──────────────────
 
 const COMMUNITY_STATS = [{
-  num: '2028',
-  numericVal: 2028,
-  label: 'INFRASTRUCTURE COMPLETION',
+  num: '2029',
+  numericVal: 2029,
+  label: 'PHASE 1 COMPLETION',
   display: (n: number) => `${n}`
 }, {
   num: '14+',
@@ -2505,9 +2505,9 @@ const BackToTop = () => {
 // ─── About Us ─────────────────────────────────────────────────────────────────
 
 const ABOUT_STAT_PILLS = [{
-  value: '2028',
-  display: '2028',
-  label: 'Infrastructure Completion',
+  value: '2029',
+  display: '2029',
+  label: 'Phase 1 Completion',
   isCountUp: false
 }, {
   value: 'Maputo Corridor',

@@ -59,9 +59,9 @@ export function NSEZFooterSection() {
           {/* Column 1 — 30% */}
           <div className="md:col-span-4 flex flex-col gap-6">
             <img
-              src="/NSEZ-logo-png-wh.png"
+              src="/NSEZ-Horizontal-Logo-white.png"
               alt="MPUMALANGA NKOMAZI SEZ"
-              className="h-12 w-auto object-contain self-start"
+              className="h-10 sm:h-12 w-auto object-contain self-start"
             />
             <p
               style={{
