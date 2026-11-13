@@ -3,7 +3,7 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
-import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, Sun, Menu, X, ChevronRight, ArrowDownToLine, Building2, Warehouse, Layers, CheckCircle2, FileText, Check, ArrowRight } from 'lucide-react';
+import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, Sun, Menu, X, ChevronRight, ArrowDownToLine, Building2, Warehouse, Layers, CheckCircle2, FileText, Check, ArrowRight, Search } from 'lucide-react';
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
@@ -1256,12 +1256,10 @@ interface LeasingListing {
   size: string;
   leaseTerm: string;
   zoning: string;
-  status: 'Available Now' | 'Phase 1 Allocation' | 'Pre-Leasing' | 'Expression of Interest';
-  statusColor: string;
+  status: 'Available' | 'Phase 1 Allocation' | 'Pre-Leasing' | 'EOI Open';
   description: string;
-  features: string[];
   location: string;
-  highlights: { label: string; value: string }[];
+  referenceNumber: string;
 }
 
 const LEASING_LISTINGS: LeasingListing[] = [
@@ -1269,430 +1267,591 @@ const LEASING_LISTINGS: LeasingListing[] = [
     id: 'lease-01',
     title: 'Agro-Processing Serviced Industrial Parcels',
     category: 'Agro-Processing',
-    size: '2.5 Ha – 12.0 Ha Serviced Plots',
-    leaseTerm: '30 to 99-Year Long-Term Ground Lease',
+    size: '2.5 Ha – 12.0 Ha',
+    leaseTerm: '30–99 Year Ground Lease',
     zoning: 'Special Industrial / Agro-Processing Hub',
     status: 'Phase 1 Allocation',
-    statusColor: '#1fac67',
-    description: 'Fully serviced land parcels engineered for high-throughput citrus, subtropical fruit, macadamia processing, and juice packaging operations with dedicated bulk utility tie-ins.',
-    features: [
-      'Guaranteed bulk raw & potable water allocations',
-      'Direct connection to 33kV dedicated SEZ electrical substation',
-      'Dual access for heavy articulated B-double haulage vehicles',
-      'Full SEZ customs-controlled territory status & tax incentives'
-    ],
-    location: 'Zone 1A — Agro-Industrial Precinct',
-    highlights: [
-      { label: 'Bulk Power', value: 'Up to 2.5 MVA' },
-      { label: 'Water Supply', value: 'High-Volume Bulk Tie-in' },
-      { label: 'Border Distance', value: '4.5 km to Lebombo' }
-    ]
+    description: 'Fully serviced industrial plots engineered for citrus and subtropical fruit processing, cold-chain packing, macadamia processing, and juice packaging with high-capacity bulk utility tie-ins.',
+    location: 'Zone 1A · Agro-Industrial Hub',
+    referenceNumber: 'NSEZ-LEAS-01'
   },
   {
     id: 'lease-02',
     title: 'Bonded Logistics & Cold Chain Warehousing',
     category: 'Logistics & Warehousing',
-    size: '3,500 m² – 18,000 m² GLA Units',
-    leaseTerm: '5 to 15-Year Commercial Lease',
-    zoning: 'Bonded Logistics & Freight Yard',
-    status: 'Available Now',
-    statusColor: '#C9A84C',
-    description: 'Modern, high-bay cross-dock logistics facilities with integrated cold-storage pre-cooling bays, container marshalling yard, and on-site SARS customs inspection clearing points.',
-    features: [
-      '12.5m clear eaves height with automated docking levelers',
-      'Reinforced 8.5 Ton/m² heavy-load post-tensioned floor slab',
-      'Temperature-controlled chambers (-25°C deep freeze to +4°C chilling)',
-      'Dedicated 42m articulated truck turnaround and staging yard'
-    ],
-    location: 'Zone 2B — Logistics & Dry Port Sector',
-    highlights: [
-      { label: 'Eaves Height', value: '12.5 Metres' },
-      { label: 'Floor Load', value: '8.5 T/m² Post-Tensioned' },
-      { label: 'Docking', value: 'Cross-Dock Levelers' }
-    ]
+    size: '3,500 m² – 18,000 m² GLA',
+    leaseTerm: '5–15 Year Commercial Lease',
+    zoning: 'Bonded Logistics & Customs Controlled',
+    status: 'Available',
+    description: 'Modern, high-bay cross-dock logistics facilities featuring 12.5m eaves height, automated dock levelers, integrated cold storage chambers, and dedicated heavy-vehicle marshalling yards.',
+    location: 'Zone 2B · Freight & Dry Port',
+    referenceNumber: 'NSEZ-LEAS-02'
   },
   {
     id: 'lease-03',
-    title: 'Plug-and-Play Light Manufacturing & Assembly Shells',
+    title: 'Plug-and-Play Light Manufacturing Shells',
     category: 'Manufacturing',
-    size: '800 m² – 3,200 m² Modular Shells',
-    leaseTerm: '3 to 10-Year Renewable Lease',
-    zoning: 'Light Industrial / Advanced Manufacturing',
+    size: '800 m² – 3,200 m² Modular',
+    leaseTerm: '3–10 Year Renewable Lease',
+    zoning: 'Light Industrial / Assembly',
     status: 'Pre-Leasing',
-    statusColor: '#1fac67',
-    description: 'Turnkey industrial units designed for fast-track setup, light machinery, packaging, assembly, and green technologies. Includes fitted admin offices, staff canteen, and secure loading bays.',
-    features: [
-      'Pre-installed 3-phase 400V power supply (expandable to 500 kVA)',
-      'Integrated mezzanine administrative offices and staff facilities',
-      'Connected to SEZ rooftop solar microgrid & emergency diesel backup',
-      'High-speed redundant fibre internet and CCTV security perimeter'
-    ],
-    location: 'Zone 1C — Advanced Light Manufacturing Precinct',
-    highlights: [
-      { label: 'Power Supply', value: '3-Phase 400V 500kVA' },
-      { label: 'Office Space', value: '150 m² Mezzanine' },
-      { label: 'Backup Power', value: 'Solar Microgrid Tied' }
-    ]
+    description: 'Turnkey industrial units built for fast-track operational setup. Ideal for agro-machinery assembly, solar component manufacture, light packaging, and high-tech fabrication.',
+    location: 'Zone 1C · Advanced Manufacturing',
+    referenceNumber: 'NSEZ-LEAS-03'
   },
   {
     id: 'lease-04',
-    title: 'Commercial Trade Centre & One-Stop-Shop Suites',
+    title: 'Commercial Trade Centre & OSS Suites',
     category: 'Commercial & Office',
-    size: '120 m² – 950 m² Corporate Suites',
-    leaseTerm: '2 to 5-Year Flexible Commercial Lease',
-    zoning: 'Commercial, Financial & Service Hub',
-    status: 'Expression of Interest',
-    statusColor: '#38bdf8',
-    description: 'Premium A-grade office suites and service retail within the Mpumalanga Nkomazi SEZ Administrative Complex, ideal for freight forwarders, clearing agents, financial institutions, and professional services.',
-    features: [
-      'Direct adjacency to the SEZ One-Stop-Shop (OSS) Investor Centre',
-      'Centralised boardroom, conference facilities, and business lounge',
-      'Uninterrupted utility supply with dual grid and solar-battery storage',
-      '24/7 biometric security access with covered tenant and visitor parking'
-    ],
-    location: 'Zone 0 — Central Administrative & Investor Gateway',
-    highlights: [
-      { label: 'Classification', value: 'Grade A Office' },
-      { label: 'Connectivity', value: 'Redundant Fibre Tier 1' },
-      { label: 'Security', value: 'Biometric 24/7 Access' }
-    ]
+    size: '120 m² – 950 m²',
+    leaseTerm: '2–5 Year Flexible Lease',
+    zoning: 'Commercial & Financial Hub',
+    status: 'EOI Open',
+    description: 'Grade-A professional corporate suites within the SEZ Administrative Complex, adjacent to the SARS Customs Gateway and One-Stop-Shop Investor Centre.',
+    location: 'Zone 0 · Administrative Complex',
+    referenceNumber: 'NSEZ-LEAS-04'
+  },
+  {
+    id: 'lease-05',
+    title: 'Bulk Grain & Dry Commodity Silo Precinct',
+    category: 'Agro-Processing',
+    size: '1.8 Ha – 4.5 Ha Rail-Linked',
+    leaseTerm: '20–50 Year Development Lease',
+    zoning: 'Heavy Industrial / Rail Handling',
+    status: 'Available',
+    description: 'Direct rail-siding adjacent land parcel engineered for grain silos, fertilizer blending, and regional commodity transfer connecting directly to the Maputo Rail Corridor.',
+    location: 'Zone 1D · Rail Freight Terminal',
+    referenceNumber: 'NSEZ-LEAS-05'
+  },
+  {
+    id: 'lease-06',
+    title: 'Heavy Vehicle Fleet Maintenance & Service Depots',
+    category: 'Logistics & Warehousing',
+    size: '5,000 m² – 12,000 m² Yard',
+    leaseTerm: '10–20 Year Commercial Lease',
+    zoning: 'Transport & Fleet Support',
+    status: 'Pre-Leasing',
+    description: 'Specialised transport support facility featuring multi-bay truck inspection pits, diesel fuel bunkering depot, driver rest amenities, and secure overnight commercial fleet parking.',
+    location: 'Zone 2A · Corridor Logistics Park',
+    referenceNumber: 'NSEZ-LEAS-06'
   }
 ];
 
-const LEASING_CATEGORIES = ['All Properties', 'Agro-Processing', 'Logistics & Warehousing', 'Manufacturing', 'Commercial & Office'] as const;
+const LEASING_CATEGORIES = ['All', 'Agro-Processing', 'Logistics & Warehousing', 'Manufacturing', 'Commercial & Office'] as const;
 
+// ─── Lease Category Colors ────────────────────────────────────────────────────
+const getLeasingCategoryColor = (cat: string) => {
+  switch (cat) {
+    case 'Agro-Processing':
+      return '#1fac67';
+    case 'Logistics & Warehousing':
+      return '#C9A84C';
+    case 'Manufacturing':
+      return '#0F3024';
+    case 'Commercial & Office':
+      return '#1A2744';
+    default:
+      return '#1fac67';
+  }
+};
+
+// ─── Lease Card (Formatted identical to Tender OpportunityCard) ──────────────
+const LeaseCard = ({
+  item,
+  index
+}: {
+  item: LeasingListing;
+  index: number;
+}) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, {
+    once: true,
+    margin: '-30px'
+  });
+  const [hovered, setHovered] = useState(false);
+
+  const statusStyles: Record<string, { bg: string; text: string }> = {
+    Available: {
+      bg: 'rgba(31,172,103,0.12)',
+      text: '#1fac67'
+    },
+    'Phase 1 Allocation': {
+      bg: 'rgba(201,168,76,0.18)',
+      text: '#C9A84C'
+    },
+    'Pre-Leasing': {
+      bg: 'rgba(232,82,26,0.12)',
+      text: '#E8521A'
+    },
+    'EOI Open': {
+      bg: 'rgba(26,39,68,0.12)',
+      text: '#1A2744'
+    }
+  };
+
+  const ss = statusStyles[item.status] || {
+    bg: 'rgba(31,172,103,0.12)',
+    text: '#1fac67'
+  };
+  const catColor = getLeasingCategoryColor(item.category);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{
+        opacity: 0,
+        y: 24
+      }}
+      animate={inView ? {
+        opacity: 1,
+        y: 0
+      } : {}}
+      transition={{
+        duration: 0.5,
+        delay: index * 0.08,
+        ease: 'easeOut'
+      }}
+      whileHover={{
+        scale: 1.005
+      }}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={() => setHovered(false)}
+      onClick={() => {
+        window.location.href = `/contact?subject=${encodeURIComponent('Leasing Inquiry: ' + item.title)}`;
+      }}
+      style={{
+        background: '#FAFAF8',
+        border: '1px solid rgba(29,77,53,0.1)',
+        borderRadius: '20px',
+        overflow: 'hidden',
+        boxShadow: hovered ? '0 12px 40px rgba(0,0,0,0.09)' : '0 4px 24px rgba(0,0,0,0.05)',
+        display: 'flex',
+        flexDirection: 'column',
+        height: '100%',
+        cursor: 'pointer',
+        transition: 'box-shadow 0.2s ease, transform 0.2s ease',
+        position: 'relative'
+      }}
+    >
+      {/* Left vertical accent bar */}
+      <div
+        style={{
+          position: 'absolute',
+          left: 0,
+          top: 0,
+          bottom: 0,
+          width: '4px',
+          background: hovered ? catColor : `linear-gradient(to bottom, ${catColor}, transparent)`,
+          transition: 'background 0.2s ease'
+        }}
+      />
+
+      {/* Card body */}
+      <div
+        className="p-5 sm:p-7"
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          flex: 1,
+          paddingLeft: 'clamp(24px, 3vw, 32px)'
+        }}
+      >
+        {/* Status + category row */}
+        <div
+          className="flex items-center justify-between"
+          style={{
+            marginBottom: '12px'
+          }}
+        >
+          <span
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: '10px',
+              fontWeight: 700,
+              textTransform: 'uppercase',
+              letterSpacing: '0.12em',
+              padding: '4px 10px',
+              borderRadius: '99px',
+              background: ss.bg,
+              color: ss.text,
+              whiteSpace: 'nowrap'
+            }}
+          >
+            {item.status}
+          </span>
+          <span
+            style={{
+              fontFamily: HEADING_FONT,
+              fontWeight: 700,
+              fontSize: '10px',
+              textTransform: 'uppercase',
+              letterSpacing: '0.12em',
+              padding: '3px 10px',
+              borderRadius: '99px',
+              background: catColor + '22',
+              color: catColor,
+              whiteSpace: 'nowrap'
+            }}
+          >
+            {item.category}
+          </span>
+        </div>
+
+        {/* Title */}
+        <h3
+          className="text-lg sm:text-xl lg:text-2xl"
+          style={{
+            fontFamily: HEADING_FONT,
+            fontWeight: 700,
+            color: '#0F3024',
+            margin: '0 0 10px 0',
+            lineHeight: 1.15,
+            letterSpacing: '-0.3px'
+          }}
+        >
+          {item.title}
+        </h3>
+
+        {/* Description */}
+        <p
+          style={{
+            fontFamily: BODY_FONT,
+            fontSize: '13px',
+            color: '#5a6474',
+            margin: 0,
+            lineHeight: 1.75,
+            display: '-webkit-box',
+            WebkitLineClamp: 3,
+            WebkitBoxOrient: 'vertical',
+            overflow: 'hidden',
+            flex: 1
+          }}
+        >
+          {item.description}
+        </p>
+
+        {/* Size & Tenure Badges */}
+        <div
+          className="flex flex-wrap items-center gap-2"
+          style={{
+            marginTop: '14px',
+            marginBottom: '2px'
+          }}
+        >
+          <span
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: '11px',
+              fontWeight: 600,
+              color: '#0F3024',
+              background: 'rgba(29,77,53,0.06)',
+              padding: '3px 8px',
+              borderRadius: '6px'
+            }}
+          >
+            {item.size}
+          </span>
+          <span
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: '11px',
+              fontWeight: 500,
+              color: '#5a6474',
+              background: 'rgba(0,0,0,0.04)',
+              padding: '3px 8px',
+              borderRadius: '6px'
+            }}
+          >
+            {item.leaseTerm}
+          </span>
+        </div>
+
+        {/* Card footer */}
+        <div
+          style={{
+            borderTop: '1px solid rgba(29,77,53,0.08)',
+            paddingTop: '16px',
+            marginTop: '16px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          }}
+        >
+          <div className="flex items-center gap-2">
+            <MapPin
+              size={13}
+              style={{
+                color: GOLD,
+                flexShrink: 0
+              }}
+            />
+            <span
+              style={{
+                fontFamily: BODY_FONT,
+                fontSize: '12px',
+                color: '#667',
+                letterSpacing: '0.03em'
+              }}
+            >
+              {item.location}
+            </span>
+          </div>
+
+          <motion.a
+            href={`/contact?subject=${encodeURIComponent('Leasing Inquiry: ' + item.title)}`}
+            onClick={e => {
+              e.stopPropagation();
+            }}
+            className="flex items-center gap-2 no-underline"
+            style={{
+              fontFamily: BODY_FONT,
+              fontSize: '11px',
+              fontWeight: 700,
+              color: '#1fac67',
+              letterSpacing: '0.08em',
+              textTransform: 'uppercase'
+            }}
+            whileHover={{
+              x: 2
+            }}
+            transition={{
+              duration: 0.15
+            }}
+          >
+            <span>Inquire Now</span>
+            <div
+              style={{
+                width: '28px',
+                height: '28px',
+                borderRadius: '50%',
+                background: hovered ? '#1fac67' : 'rgba(29,77,53,0.08)',
+                color: hovered ? '#ffffff' : '#1fac67',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                flexShrink: 0,
+                transition: 'background 0.2s ease, color 0.2s ease'
+              }}
+            >
+              <ArrowRightIcon />
+            </div>
+          </motion.a>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
+
+// ─── Leasing Listings Section ────────────────────────────────────────────────
 const LeasingListingsSection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('All Properties');
+  const [selectedCategory, setSelectedCategory] = useState<string>('All');
+  const [searchQuery, setSearchQuery] = useState('');
+  const [focused, setFocused] = useState(false);
 
-  const filteredListings = selectedCategory === 'All Properties'
-    ? LEASING_LISTINGS
-    : LEASING_LISTINGS.filter(l => l.category === selectedCategory);
+  const filteredListings = LEASING_LISTINGS.filter(item => {
+    const matchesFilter = selectedCategory === 'All' || item.category === selectedCategory;
+    const matchesSearch =
+      item.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      item.location.toLowerCase().includes(searchQuery.toLowerCase());
+    return matchesFilter && matchesSearch;
+  });
+
+  const activeHeading = selectedCategory === 'All'
+    ? 'Active Lease Listings'
+    : `Active ${selectedCategory} Leases`;
 
   return (
     <section
       id="leasing"
       style={{
-        background: '#0B1B13',
-        paddingTop: 'clamp(56px, 8vw, 104px)',
-        paddingBottom: 'clamp(56px, 8vw, 104px)',
-        position: 'relative',
-        overflow: 'hidden'
+        background: '#ffffff',
+        paddingTop: 'clamp(56px, 8vw, 96px)',
+        paddingBottom: 'clamp(56px, 8vw, 96px)'
       }}
     >
-      {/* Subtle background glow */}
-      <div
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background: 'radial-gradient(ellipse at 80% 20%, rgba(31,172,103,0.12) 0%, transparent 60%)'
-        }}
-      />
-
-      <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-14 gap-6">
-          <div>
-            <div
-              style={{
-                fontFamily: BODY_FONT,
-                fontSize: '11px',
-                fontWeight: 700,
-                letterSpacing: '0.12em',
-                textTransform: 'uppercase',
-                color: '#C9A84C',
-                marginBottom: '12px'
-              }}
-            >
-              Industrial Real Estate & Land Parcels
-            </div>
-            <h2
-              style={{
-                fontFamily: HEADING_FONT,
-                fontSize: 'clamp(32px, 5vw, 68px)',
-                fontWeight: 700,
-                lineHeight: 1.05,
-                letterSpacing: '-1px',
-                color: '#ffffff',
-                margin: 0,
-                textTransform: 'uppercase'
-              }}
-            >
-              Prime Leasing & Development Sites
-            </h2>
-          </div>
-          <p
-            style={{
-              fontFamily: BODY_FONT,
-              fontSize: '14px',
-              lineHeight: '1.8',
-              color: 'rgba(255,255,255,0.7)',
-              maxWidth: '420px',
-              margin: 0
-            }}
-          >
-            Serviced industrial parcels, modern warehousing, and modular manufacturing facilities available for qualified investors under competitive long-term lease models.
-          </p>
-        </div>
-
-        {/* Category Filter Tabs */}
-        <div className="flex flex-wrap items-center gap-2 mb-10 pb-2 border-b border-white/10">
-          {LEASING_CATEGORIES.map(category => {
-            const isActive = selectedCategory === category;
-            return (
-              <button
-                key={category}
-                type="button"
-                onClick={() => setSelectedCategory(category)}
+        <FadeUp className="mb-8 sm:mb-10">
+          <div className="flex items-start sm:items-center justify-between gap-4 flex-wrap">
+            <div>
+              <div
                 style={{
                   fontFamily: BODY_FONT,
-                  fontSize: '13px',
-                  fontWeight: isActive ? 600 : 400,
-                  transition: 'all 0.25s ease'
+                  fontSize: '11px',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#C9A84C'
                 }}
-                className={`px-4 py-2 rounded-full cursor-pointer transition-all ${
-                  isActive
-                    ? 'bg-[#1fac67] text-white shadow-md'
-                    : 'bg-white/5 text-white/70 hover:bg-white/10 hover:text-white'
-                }`}
               >
-                {category}
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Listings Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
-          {filteredListings.map((listing, index) => (
-            <motion.div
-              key={listing.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group flex flex-col justify-between rounded-2xl p-6 sm:p-8 transition-all duration-300"
-              style={{
-                background: 'rgba(255,255,255,0.03)',
-                border: '1px solid rgba(255,255,255,0.08)',
-                boxShadow: '0 8px 32px rgba(0,0,0,0.2)'
-              }}
-              onMouseEnter={e => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = 'rgba(200,168,75,0.4)';
-                el.style.transform = 'translateY(-4px)';
-              }}
-              onMouseLeave={e => {
-                const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = 'rgba(255,255,255,0.08)';
-                el.style.transform = 'translateY(0)';
-              }}
-            >
-              <div>
-                {/* Card Top: Badges */}
-                <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                  <span
-                    className="inline-flex items-center px-3 py-1 rounded-md text-xs font-semibold uppercase tracking-wider"
-                    style={{
-                      fontFamily: BODY_FONT,
-                      background: 'rgba(201,168,76,0.15)',
-                      color: '#C9A84C',
-                      border: '1px solid rgba(201,168,76,0.3)'
-                    }}
-                  >
-                    {listing.category}
-                  </span>
-                  <span
-                    className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium"
-                    style={{
-                      fontFamily: BODY_FONT,
-                      background: 'rgba(255,255,255,0.06)',
-                      color: listing.statusColor,
-                      border: `1px solid ${listing.statusColor}40`
-                    }}
-                  >
-                    <span
-                      className="w-2 h-2 rounded-full"
-                      style={{ background: listing.statusColor }}
-                    />
-                    {listing.status}
-                  </span>
-                </div>
-
-                {/* Title & Location */}
-                <h3
+                Industrial Real Estate &amp; Land Parcels
+              </div>
+              <div
+                style={{
+                  width: '40px',
+                  height: '2px',
+                  background: '#C9A84C',
+                  margin: '8px 0 12px 0'
+                }}
+              />
+              <div className="flex flex-wrap items-center gap-3">
+                <h2
                   style={{
                     fontFamily: HEADING_FONT,
-                    fontSize: 'clamp(24px, 2.4vw, 32px)',
                     fontWeight: 700,
-                    lineHeight: 1.15,
-                    color: '#ffffff',
+                    fontSize: 'clamp(28px, 4vw, 44px)',
+                    color: '#0F3024',
                     margin: 0,
-                    marginBottom: '8px'
+                    letterSpacing: '-0.5px'
                   }}
                 >
-                  {listing.title}
-                </h3>
-                <div
-                  className="flex items-center gap-1.5 mb-4 text-xs"
+                  {activeHeading}
+                </h2>
+                <span
                   style={{
                     fontFamily: BODY_FONT,
-                    color: 'rgba(255,255,255,0.6)'
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    letterSpacing: '0.1em',
+                    textTransform: 'uppercase',
+                    color: '#888',
+                    paddingTop: '4px'
                   }}
                 >
-                  <MapPin className="w-3.5 h-3.5 text-[#C9A84C]" />
-                  <span>{listing.location}</span>
-                </div>
-
-                <p
-                  style={{
-                    fontFamily: BODY_FONT,
-                    fontSize: '13.5px',
-                    lineHeight: '1.75',
-                    color: 'rgba(255,255,255,0.72)',
-                    marginBottom: '20px'
-                  }}
-                >
-                  {listing.description}
-                </p>
-
-                {/* Specifications Bar */}
-                <div
-                  className="grid grid-cols-3 gap-2 sm:gap-4 p-3.5 rounded-xl mb-6"
-                  style={{
-                    background: 'rgba(0,0,0,0.25)',
-                    border: '1px solid rgba(255,255,255,0.05)'
-                  }}
-                >
-                  {listing.highlights.map(h => (
-                    <div key={h.label} className="text-center sm:text-left">
-                      <div
-                        style={{
-                          fontFamily: BODY_FONT,
-                          fontSize: '10.5px',
-                          color: 'rgba(255,255,255,0.5)',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.05em'
-                        }}
-                      >
-                        {h.label}
-                      </div>
-                      <div
-                        style={{
-                          fontFamily: BODY_FONT,
-                          fontSize: '12.5px',
-                          fontWeight: 600,
-                          color: '#ffffff',
-                          marginTop: '2px'
-                        }}
-                      >
-                        {h.value}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Property Specs Pill Details */}
-                <div className="space-y-2 mb-6">
-                  <div className="flex items-start gap-2 text-xs text-white/80" style={{ fontFamily: BODY_FONT }}>
-                    <span className="text-[#C9A84C] font-semibold min-w-[70px]">Size:</span>
-                    <span>{listing.size}</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-xs text-white/80" style={{ fontFamily: BODY_FONT }}>
-                    <span className="text-[#C9A84C] font-semibold min-w-[70px]">Tenure:</span>
-                    <span>{listing.leaseTerm}</span>
-                  </div>
-                  <div className="flex items-start gap-2 text-xs text-white/80" style={{ fontFamily: BODY_FONT }}>
-                    <span className="text-[#C9A84C] font-semibold min-w-[70px]">Zoning:</span>
-                    <span>{listing.zoning}</span>
-                  </div>
-                </div>
-
-                {/* Features Checkpoints */}
-                <div className="space-y-2.5 mb-8 pt-4 border-t border-white/5">
-                  {listing.features.map((feat, fIdx) => (
-                    <div key={fIdx} className="flex items-start gap-2.5 text-xs text-white/75" style={{ fontFamily: BODY_FONT }}>
-                      <CheckCircle2 className="w-4 h-4 text-[#1fac67] shrink-0 mt-0.5" />
-                      <span>{feat}</span>
-                    </div>
-                  ))}
-                </div>
+                  {filteredListings.length} result{filteredListings.length !== 1 ? 's' : ''}
+                </span>
               </div>
+            </div>
 
-              {/* Card Footer Actions */}
-              <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-white/10">
-                <a
-                  href="/contact?subject=Leasing+Inquiry"
-                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-semibold text-white no-underline transition-all"
-                  style={{
-                    fontFamily: BODY_FONT,
-                    background: '#1fac67',
-                    letterSpacing: '0.02em'
-                  }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#189657'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#1fac67'; }}
-                >
-                  <span>Inquire About Lease</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </a>
+            {selectedCategory !== 'All' && (
+              <button
+                onClick={() => {
+                  setSelectedCategory('All');
+                  setSearchQuery('');
+                }}
+                className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] hover:underline cursor-pointer"
+                style={{
+                  fontFamily: BODY_FONT,
+                  color: '#C9A84C',
+                  background: 'none',
+                  border: 'none'
+                }}
+              >
+                <span>Reset Filters</span>
+                <X size={12} />
+              </button>
+            )}
+          </div>
+        </FadeUp>
 
-                <a
-                  href="/contact?subject=Leasing+Technical+Specs"
-                  className="inline-flex items-center gap-1.5 text-xs text-white/60 hover:text-[#C9A84C] transition-colors no-underline"
-                  style={{ fontFamily: BODY_FONT }}
-                >
-                  <FileText className="w-3.5 h-3.5" />
-                  <span>Download Specs</span>
-                </a>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Bottom Banner Support */}
-        <div
-          className="mt-12 p-6 sm:p-8 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-6"
-          style={{
-            background: 'linear-gradient(135deg, rgba(31,172,103,0.12) 0%, rgba(200,168,75,0.08) 100%)',
-            border: '1px solid rgba(200,168,75,0.2)'
-          }}
-        >
-          <div>
-            <h4
+        {/* Filter Bar with tabs and search matching Tenders FilterBar */}
+        <div className="bg-[#FAFAF8] border border-black/5 rounded-2xl p-3 sm:p-4 mb-8 sm:mb-10 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-3">
+            {/* Pill tabs */}
+            <div
+              className="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0"
               style={{
-                fontFamily: HEADING_FONT,
-                fontSize: '22px',
-                fontWeight: 700,
-                color: '#ffffff',
-                textTransform: 'uppercase',
-                margin: 0,
-                marginBottom: '4px'
+                scrollbarWidth: 'none',
+                msOverflowStyle: 'none'
               }}
             >
-              Need Custom Land Allocation or Turnkey Build-to-Suit?
-            </h4>
-            <p
+              {LEASING_CATEGORIES.map(cat => {
+                const isActive = selectedCategory === cat;
+                return (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    style={{
+                      fontFamily: BODY_FONT,
+                      fontSize: '13px',
+                      fontWeight: isActive ? 600 : 500,
+                      padding: '8px 16px',
+                      borderRadius: '99px',
+                      background: isActive ? '#1fac67' : 'transparent',
+                      color: isActive ? '#ffffff' : '#0F3024',
+                      border: isActive ? '1px solid transparent' : '1px solid rgba(29,77,53,0.2)',
+                      transition: 'all 0.2s ease',
+                      cursor: 'pointer',
+                      whiteSpace: 'nowrap',
+                      flexShrink: 0,
+                      minHeight: '40px'
+                    }}
+                  >
+                    {cat === 'All' ? 'All Leases' : cat}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Search input */}
+            <div className="relative w-full md:w-80 flex-shrink-0">
+              <input
+                type="text"
+                placeholder="Search lease properties..."
+                className="w-full h-11 rounded-xl pl-11 pr-4 outline-none transition-all"
+                style={{
+                  fontFamily: BODY_FONT,
+                  fontSize: '14px',
+                  background: '#F0EFEA',
+                  border: focused ? '2px solid #1fac67' : '2px solid transparent',
+                  color: '#111111',
+                  transition: 'border-color 0.2s ease, background 0.2s ease'
+                }}
+                value={searchQuery}
+                onChange={e => setSearchQuery(e.target.value)}
+                onFocus={() => setFocused(true)}
+                onBlur={() => setFocused(false)}
+              />
+              <Search
+                className="absolute left-3.5 top-1/2 -translate-y-1/2 transition-colors"
+                size={17}
+                style={{
+                  color: focused ? '#1fac67' : '#9ca3af'
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Lease Cards Grid (3 columns matching Tenders page) */}
+        {filteredListings.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5">
+            <AnimatePresence mode="popLayout">
+              {filteredListings.map((listing, index) => (
+                <LeaseCard key={listing.id} item={listing} index={index} />
+              ))}
+            </AnimatePresence>
+          </div>
+        ) : (
+          <div className="py-20 flex flex-col items-center justify-center text-center">
+            <div className="w-16 h-16 rounded-full bg-black/[0.04] flex items-center justify-center mb-4">
+              <Search size={28} className="text-black/30" />
+            </div>
+            <h3
+              className="text-xl font-bold uppercase tracking-tight mb-2"
+              style={{ fontFamily: HEADING_FONT, color: '#0F3024' }}
+            >
+              No matching lease opportunities
+            </h3>
+            <p className="text-black/50 text-sm max-w-xs" style={{ fontFamily: BODY_FONT }}>
+              We couldn't find any lease listings matching your selected category and search.
+            </p>
+            <button
+              onClick={() => {
+                setSelectedCategory('All');
+                setSearchQuery('');
+              }}
+              className="mt-6 px-6 py-2.5 text-white rounded-lg font-bold uppercase tracking-widest text-[11px]"
               style={{
                 fontFamily: BODY_FONT,
-                fontSize: '13px',
-                color: 'rgba(255,255,255,0.7)',
-                margin: 0
+                background: '#1fac67'
               }}
             >
-              Our One-Stop-Shop investment team provides tailored master planning, environmental approvals, and bespoke industrial facility designs.
-            </p>
+              Reset Filters
+            </button>
           </div>
-          <a
-            href="/contact"
-            className="shrink-0 px-6 py-3 rounded-lg text-xs font-bold uppercase tracking-wider text-black no-underline transition-all"
-            style={{
-              fontFamily: BODY_FONT,
-              background: '#C9A84C'
-            }}
-            onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#d8b95d'; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#C9A84C'; }}
-          >
-            Speak to Investment Advisory
-          </a>
-        </div>
+        )}
       </div>
     </section>
   );
