@@ -1694,17 +1694,17 @@ export const AirCargoPage = () => {
         </FadeUp>
         <div className="relative w-full overflow-hidden">
           <motion.div className="flex gap-[110px] items-center" animate={{
-          x: [0, -1800]
+          x: [0, -2700]
         }} transition={{
           repeat: Infinity,
-          duration: 20,
+          duration: 25,
           ease: 'linear'
         }} style={{
           width: 'max-content',
           mixBlendMode: 'multiply'
         }}>
-            {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((src, i) => <img key={i} src={src} alt="Partner Logo" className="block max-h-12 flex-shrink-0" style={{
-            maxWidth: '160px',
+            {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((src, i) => <img key={i} src={src} alt="Partner Logo" className="block max-h-[72px] flex-shrink-0" style={{
+            maxWidth: '240px',
             mixBlendMode: 'multiply'
           }} />)}
           </motion.div>

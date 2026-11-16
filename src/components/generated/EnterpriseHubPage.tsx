@@ -903,7 +903,7 @@ const PartnerLogos = () => <section id="sec-partners" className="py-[80px] sm:py
     </p>
     <div className="relative w-full overflow-hidden group">
       <motion.div className="flex gap-[60px] sm:gap-[110px] items-center group-hover:[animation-play-state:paused]" animate={{
-      x: [0, -1800]
+      x: [0, -2700]
     }} transition={{
       repeat: Infinity,
       duration: 70,
@@ -912,8 +912,8 @@ const PartnerLogos = () => <section id="sec-partners" className="py-[80px] sm:py
       width: 'max-content',
       mixBlendMode: 'multiply'
     }}>
-        {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((src, i) => <img key={`logo-${i}`} src={src} alt="Partner Logo" className="block flex-shrink-0 h-16" style={{
-        maxWidth: '220px',
+        {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((src, i) => <img key={`logo-${i}`} src={src} alt="Partner Logo" className="block flex-shrink-0 h-24" style={{
+        maxWidth: '330px',
         mixBlendMode: 'multiply'
       }} />)}
       </motion.div>
