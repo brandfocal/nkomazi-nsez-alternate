@@ -98,11 +98,31 @@ const MSME_METRICS: MetricItem[] = [{
   detail: "Currently running"
 }];
 const PARTNER_LOGOS = [
-  '/partners/dp-world.png',
-  '/partners/dtic.png',
-  '/partners/economic-development-tourism.png',
-  '/partners/ehlanzeni-district-municipality.png',
-  '/partners/nkomazi-local-municipality.png'
+  {
+    name: 'DP World',
+    src: '/partners/dp-world.png',
+    url: 'https://www.dpworld.com/en'
+  },
+  {
+    name: 'the dtic',
+    src: '/partners/dtic.png',
+    url: 'https://www.thedtic.gov.za/'
+  },
+  {
+    name: 'Department of Economic Development and Tourism',
+    src: '/partners/economic-development-tourism.png',
+    url: 'https://www.mpg.gov.za/departments/dedt'
+  },
+  {
+    name: 'Ehlanzeni District Municipality',
+    src: '/partners/ehlanzeni-district-municipality.png',
+    url: 'https://www.ehlanzeni.gov.za/'
+  },
+  {
+    name: 'Nkomazi Local Municipality',
+    src: '/partners/nkomazi-local-municipality.png',
+    url: 'https://www.mpg.gov.za/municipalities/nkomazi-local-municipality'
+  }
 ];
 const BUSINESS_TYPES = ["Pty Ltd", "CC", "Sole Proprietor", "Partnership", "Co-operative", "NPO / Trust", "Other"];
 const EMPLOYEE_RANGES = ["1-5", "6-10", "11-20", "21-50", "51-200", "200+"];
@@ -912,10 +932,26 @@ const PartnerLogos = () => <section id="sec-partners" className="py-[80px] sm:py
       width: 'max-content',
       mixBlendMode: 'multiply'
     }}>
-        {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((src, i) => <img key={`logo-${i}`} src={src} alt="Partner Logo" className="block flex-shrink-0 h-24" style={{
-        maxWidth: '330px',
-        mixBlendMode: 'multiply'
-      }} />)}
+        {[...PARTNER_LOGOS, ...PARTNER_LOGOS, ...PARTNER_LOGOS].map((partner, i) => (
+          <a
+            key={`logo-${i}`}
+            href={partner.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block flex-shrink-0 transition-transform duration-300 hover:scale-105"
+            title={partner.name}
+          >
+            <img
+              src={partner.src}
+              alt={partner.name}
+              className="block flex-shrink-0 h-24"
+              style={{
+                maxWidth: '330px',
+                mixBlendMode: 'multiply'
+              }}
+            />
+          </a>
+        ))}
       </motion.div>
       <div className="pointer-events-none absolute inset-y-0 left-0 right-0" style={{
       background: `linear-gradient(90deg, ${SURFACE}, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, ${SURFACE})`

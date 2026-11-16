@@ -4,32 +4,38 @@ type PartnerLogo = {
   id: string;
   src: string;
   alt: string;
+  url: string;
 };
 const PARTNER_LOGOS: PartnerLogo[] = [
   {
     id: 'partner-dp-world',
     src: '/partners/dp-world.png',
-    alt: 'DP World'
+    alt: 'DP World',
+    url: 'https://www.dpworld.com/en'
   },
   {
     id: 'partner-dtic',
     src: '/partners/dtic.png',
-    alt: 'DTIC'
+    alt: 'DTIC',
+    url: 'https://www.thedtic.gov.za/'
   },
   {
     id: 'partner-ed',
     src: '/partners/economic-development-tourism.png',
-    alt: 'Economic Development and Tourism'
+    alt: 'Economic Development and Tourism',
+    url: 'https://www.mpg.gov.za/departments/dedt'
   },
   {
     id: 'partner-ehlanzeni',
     src: '/partners/ehlanzeni-district-municipality.png',
-    alt: 'Ehlanzeni District Municipality'
+    alt: 'Ehlanzeni District Municipality',
+    url: 'https://www.ehlanzeni.gov.za/'
   },
   {
     id: 'partner-nkomazi',
     src: '/partners/nkomazi-local-municipality.png',
-    alt: 'Nkomazi Local Municipality'
+    alt: 'Nkomazi Local Municipality',
+    url: 'https://www.mpg.gov.za/municipalities/nkomazi-local-municipality'
   }
 ];
 const SPEED = 40;
@@ -74,22 +80,38 @@ function MarqueeTrack() {
         gap: `${GAP}px`,
         flexShrink: 0
       }}>
-            {PARTNER_LOGOS.map(logo => <motion.div key={`${setIndex}-${logo.id}`} whileHover={{
-          scale: 1.1,
-          opacity: 1
-        }} style={{
-          flexShrink: 0,
-          opacity: 0.7,
-          transition: 'opacity 0.25s'
-        }}>
-                <img src={logo.src} alt={logo.alt} loading="lazy" style={{
-            display: 'inline-block',
-            verticalAlign: 'middle',
-            maxWidth: '100%',
-            height: 'auto',
-            mixBlendMode: 'multiply'
-          }} />
-              </motion.div>)}
+            {PARTNER_LOGOS.map(logo => (
+              <motion.a
+                key={`${setIndex}-${logo.id}`}
+                href={logo.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                title={logo.alt}
+                whileHover={{
+                  scale: 1.1,
+                  opacity: 1
+                }}
+                style={{
+                  display: 'block',
+                  flexShrink: 0,
+                  opacity: 0.7,
+                  transition: 'opacity 0.25s'
+                }}
+              >
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  style={{
+                    display: 'inline-block',
+                    verticalAlign: 'middle',
+                    maxWidth: '100%',
+                    height: 'auto',
+                    mixBlendMode: 'multiply'
+                  }}
+                />
+              </motion.a>
+            ))}
           </div>)}
       </motion.div>
     </div>;
