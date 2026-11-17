@@ -135,13 +135,7 @@ export function NSEZNavbar() {
   const navLinks: NavItem[] = [
     {
       label: 'About Us',
-      href: '/about-us',
-      submenu: [
-        { label: 'About Overview', href: '/about-us', desc: 'Vision, Mission & Mandate' },
-        { label: 'Finance', href: '/about-us#finance', desc: 'Financial Governance & Reporting' },
-        { label: 'Office of the CEO', href: '/about-us#office-of-the-ceo', desc: 'Executive Leadership & Direction' },
-        { label: 'Our Board', href: '/about-us#our-board', desc: 'Board of Directors & Oversight' }
-      ]
+      href: '/about-us'
     },
     { label: 'Investor Hub', href: '/investor-hub' },
     { label: 'Sectors', href: '/sectors' },

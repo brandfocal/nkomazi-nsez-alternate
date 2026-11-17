@@ -186,3 +186,4 @@ export const CookieConsentBanner: React.FC = () => {
     </AnimatePresence>
   );
 };
+
