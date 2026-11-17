@@ -804,7 +804,7 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
   const opacity = isMobile ? 1 : scrollOpacity;
-  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 h-[calc(100svh-42px)] min-h-[540px] max-h-[920px] overflow-hidden">
+  return <section ref={heroRef} className="relative flex flex-col justify-end rounded-2xl sm:rounded-3xl mx-1.5 sm:mx-2.5 min-h-[580px] sm:min-h-[100svh] sm:h-[calc(100svh-36px)] sm:max-h-[calc(100svh-36px)] overflow-hidden">
     <div style={{
       position: 'absolute',
       inset: 0,
@@ -838,7 +838,7 @@ const Hero = () => {
       <span style={{
         fontFamily: HEADING_FONT,
         fontWeight: 900,
-        fontSize: 'clamp(100px, 22vw, 280px)',
+        fontSize: 'clamp(120px, 28vw, 360px)',
         color: 'rgba(255,255,255,0.035)',
         lineHeight: 1,
         userSelect: 'none',
@@ -848,30 +848,31 @@ const Hero = () => {
       </span>
     </div>
 
-    <motion.div className="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pb-8 sm:pb-10 md:pb-9 lg:pb-8 pt-20 sm:pt-24 md:pt-16" style={{
+    <motion.div className="relative w-full px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 pt-32 sm:pt-0" style={{
+      paddingBottom: 'clamp(28px, 5vh, 56px)',
       opacity,
       zIndex: 2
     }}>
-      <motion.div className="w-full flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6 lg:gap-8" initial={{
+      <motion.div className="w-full flex flex-col lg:flex-row lg:items-end gap-6 lg:gap-8" initial={{
         opacity: 0,
-        y: 40
+        y: 50
       }} animate={{
         opacity: 1,
         y: 0
       }} transition={{
-        duration: 0.9,
+        duration: 1.0,
         delay: 0.2,
         ease: [0.22, 1, 0.36, 1]
       }}>
-        <div className="flex flex-col gap-0 flex-1 min-w-0 pr-0 md:pr-4 lg:pr-8">
-          <div className="flex items-center gap-2 mb-2 sm:mb-2.5" style={{
+        <div className="flex flex-col gap-0 flex-none w-full lg:w-[50%]">
+          <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
             fontFamily: BODY_FONT,
-            fontSize: '11px',
+            fontSize: '12px',
             color: 'rgba(255,255,255,0.5)',
-            letterSpacing: '0.08em'
+            letterSpacing: '0.1em'
           }}>
             <span>Home</span>
-            <ChevronRight size={11} />
+            <ChevronRight size={12} />
             <span style={{ color: GOLD }}>Stakeholders</span>
           </div>
 
@@ -887,8 +888,8 @@ const Hero = () => {
             ease: [0.22, 1, 0.36, 1]
           }} style={{
             fontFamily: HEADING_FONT,
-            fontSize: 'clamp(28px, 4.2vw, 56px)',
-            lineHeight: '1.04',
+            fontSize: 'clamp(32px, 5.5vw, 80px)',
+            lineHeight: '1.05',
             letterSpacing: '-0.5px',
             fontWeight: 700,
             color: '#ffffff',
@@ -916,32 +917,32 @@ const Hero = () => {
             ease: 'easeOut'
           }} className="hidden sm:block" style={{
             fontFamily: BODY_FONT,
-            fontSize: 'clamp(12px, 1.1vw, 13.5px)',
-            lineHeight: '1.65',
+            fontSize: 'clamp(12px, 1.4vw, 14px)',
+            lineHeight: '1.8',
             color: 'rgba(255,255,255,0.85)',
             marginBottom: 0,
-            marginTop: '8px',
-            fontWeight: 400,
-            maxWidth: '480px'
+            marginTop: '12px',
+            fontWeight: 500,
+            maxWidth: '520px'
           }}>
             MPUMALANGA NKOMAZI SEZ is committed to inclusive economic growth and community development across the Nkomazi Local Municipality and the broader Ehlanzeni District.
           </motion.p>
         </div>
 
-        <div ref={statsRowRef} className="flex flex-col gap-0 w-full md:w-[48%] lg:w-[44%] xl:w-[42%] shrink-0" style={{
-          background: 'rgba(5, 18, 10, 0.65)',
+        <div ref={statsRowRef} className="flex flex-col gap-0 w-full lg:w-[50%] flex-none" style={{
+          background: 'rgba(5, 18, 10, 0.60)',
           backdropFilter: 'blur(14px)',
           WebkitBackdropFilter: 'blur(14px)',
           borderRadius: '14px',
-          padding: 'clamp(12px, 1.6vw, 18px) clamp(14px, 1.8vw, 22px)',
+          padding: 'clamp(14px, 2.5vw, 22px) clamp(14px, 2.5vw, 26px)',
           border: '1px solid rgba(255,255,255,0.1)'
         }}>
-          <div className="flex flex-row items-center flex-nowrap gap-x-3 sm:gap-x-4 mb-2.5 sm:mb-3">
-            {HERO_STATS.map((stat, i) => <div key={stat.label} className="flex flex-row items-center gap-2.5 sm:gap-3 flex-shrink-0">
+          <div className="flex flex-row items-center flex-nowrap gap-x-3 sm:gap-x-5 mb-3 sm:mb-4">
+            {HERO_STATS.map((stat, i) => <div key={stat.label} className="flex flex-row items-center gap-3 sm:gap-4 flex-shrink-0">
               <HeroStatItem stat={stat} inView={statsInView} />
               {i < HERO_STATS.length - 1 && <div style={{
                 width: '1px',
-                height: '26px',
+                height: '30px',
                 backgroundColor: 'rgba(255,255,255,0.2)',
                 flexShrink: 0
               }} />}
@@ -960,17 +961,39 @@ const Hero = () => {
             ease: 'easeOut'
           }} style={{
             fontFamily: BODY_FONT,
-            fontSize: 'clamp(11px, 1vw, 12.5px)',
-            lineHeight: '1.65',
-            color: 'rgba(255,255,255,0.88)',
-            marginBottom: '10px',
+            fontSize: 'clamp(11px, 1.1vw, 13px)',
+            lineHeight: '1.8',
+            color: 'rgba(255,255,255,0.9)',
+            marginBottom: '6px',
             marginTop: 0,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
-            The MPUMALANGA NKOMAZI SEZ is driving inclusive growth by investing in the communities at the heart of the zone — supporting skills development, youth empowerment, and regional stakeholder partnerships.
+            The MPUMALANGA NKOMAZI SEZ is driving inclusive economic growth by investing in the communities at the heart of the zone — supporting skills development, youth empowerment, and stakeholder partnerships.
           </motion.p>
 
-          <motion.div className="flex flex-row flex-wrap items-center gap-2 sm:gap-2.5 mt-0.5" initial={{
+          <motion.p initial={{
+            opacity: 0,
+            y: 10
+          }} animate={{
+            opacity: 1,
+            y: 0
+          }} transition={{
+            duration: 0.5,
+            delay: 0.72,
+            ease: 'easeOut'
+          }} className="hidden md:block" style={{
+            fontFamily: BODY_FONT,
+            fontSize: 'clamp(11px, 1.1vw, 13px)',
+            lineHeight: '1.8',
+            color: 'rgba(255,255,255,0.7)',
+            marginBottom: '12px',
+            marginTop: 0,
+            textShadow: '0 1px 3px rgba(0,0,0,0.5)'
+          }}>
+            Whether you're a community organisation, government partner, or resident of the Nkomazi region, discover how MPUMALANGA NKOMAZI SEZ is building a future that works for everyone.
+          </motion.p>
+
+          <motion.div className="flex flex-row flex-wrap items-center gap-2 sm:gap-3 mt-1 sm:mt-0" initial={{
             opacity: 0,
             y: 16
           }} animate={{
@@ -989,7 +1012,7 @@ const Hero = () => {
     </motion.div>
 
     <motion.div className="absolute z-10 flex flex-col items-center" style={{
-      bottom: '8px',
+      bottom: '14px',
       left: '50%',
       transform: 'translateX(-50%)',
       pointerEvents: 'none'
