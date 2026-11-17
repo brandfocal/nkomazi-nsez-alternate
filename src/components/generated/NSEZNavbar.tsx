@@ -85,8 +85,9 @@ const GreenButton = ({ label, href = '/contact' }: { label: string; href?: strin
 
 interface SubMenuItem {
   label: string;
-  href: string;
+  href?: string;
   desc?: string;
+  inactive?: boolean;
 }
 
 interface NavItem {
@@ -135,7 +136,12 @@ export function NSEZNavbar() {
   const navLinks: NavItem[] = [
     {
       label: 'About Us',
-      href: '/about-us'
+      href: '/about-us',
+      submenu: [
+        { label: 'Finance', inactive: true },
+        { label: 'Office of the CEO', inactive: true },
+        { label: 'Our Board', inactive: true }
+      ]
     },
     { label: 'Investor Hub', href: '/investor-hub' },
     { label: 'Sectors', href: '/sectors' },
@@ -285,29 +291,54 @@ export function NSEZNavbar() {
                             }}
                           >
                             <div className="py-2">
-                              {link.submenu.map(sub => (
-                                <a
-                                  key={sub.label}
-                                  href={sub.href}
-                                  onClick={() => setAboutDropdownOpen(false)}
-                                  className="flex flex-col px-4 py-2.5 hover:bg-white/10 transition-all duration-150 no-underline group"
-                                >
-                                  <span
-                                    style={{ fontFamily: BODY_FONT }}
-                                    className="text-sm font-semibold text-white group-hover:text-[#C8A84C] transition-colors"
+                              {link.submenu.map(sub => {
+                                if (sub.inactive) {
+                                  return (
+                                    <div
+                                      key={sub.label}
+                                      className="flex items-center justify-between px-4 py-2.5 cursor-not-allowed select-none text-white/50 hover:bg-white/[0.04] transition-colors"
+                                      title={`${sub.label} - Inactive`}
+                                    >
+                                      <span
+                                        style={{ fontFamily: BODY_FONT }}
+                                        className="text-sm font-medium text-white/60"
+                                      >
+                                        {sub.label}
+                                      </span>
+                                      <span
+                                        style={{ fontFamily: BODY_FONT }}
+                                        className="text-[10px] tracking-wider uppercase px-1.5 py-0.5 rounded bg-white/10 text-white/40 border border-white/10 font-medium"
+                                      >
+                                        Inactive
+                                      </span>
+                                    </div>
+                                  );
+                                }
+
+                                return (
+                                  <a
+                                    key={sub.label}
+                                    href={sub.href || '#'}
+                                    onClick={() => setAboutDropdownOpen(false)}
+                                    className="flex flex-col px-4 py-2.5 hover:bg-white/10 transition-all duration-150 no-underline group"
                                   >
-                                    {sub.label}
-                                  </span>
-                                  {sub.desc && (
                                     <span
                                       style={{ fontFamily: BODY_FONT }}
-                                      className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors mt-0.5"
+                                      className="text-sm font-semibold text-white group-hover:text-[#C8A84C] transition-colors"
                                     >
-                                      {sub.desc}
+                                      {sub.label}
                                     </span>
-                                  )}
-                                </a>
-                              ))}
+                                    {sub.desc && (
+                                      <span
+                                        style={{ fontFamily: BODY_FONT }}
+                                        className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors mt-0.5"
+                                      >
+                                        {sub.desc}
+                                      </span>
+                                    )}
+                                  </a>
+                                );
+                              })}
                             </div>
                           </motion.div>
                         )}
@@ -396,17 +427,35 @@ export function NSEZNavbar() {
 
                         {mobileAboutOpen && (
                           <div className="pl-4 pr-2 py-1 flex flex-col gap-1 border-l-2 border-[#C8A84C]/40 ml-4 my-1">
-                            {l.submenu.map(sub => (
-                              <a
-                                key={sub.label}
-                                href={sub.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="text-white/90 text-sm font-medium py-2 px-3 rounded-lg hover:bg-white/10 no-underline"
-                                style={{ fontFamily: BODY_FONT }}
-                              >
-                                {sub.label}
-                              </a>
-                            ))}
+                            {l.submenu.map(sub => {
+                              if (sub.inactive) {
+                                return (
+                                  <div
+                                    key={sub.label}
+                                    className="flex items-center justify-between text-white/50 text-sm font-medium py-2 px-3 cursor-not-allowed select-none"
+                                    style={{ fontFamily: BODY_FONT }}
+                                    title={`${sub.label} - Inactive`}
+                                  >
+                                    <span>{sub.label}</span>
+                                    <span className="text-[10px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/40 border border-white/10 font-medium">
+                                      Inactive
+                                    </span>
+                                  </div>
+                                );
+                              }
+
+                              return (
+                                <a
+                                  key={sub.label}
+                                  href={sub.href || '#'}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="text-white/90 text-sm font-medium py-2 px-3 rounded-lg hover:bg-white/10 no-underline"
+                                  style={{ fontFamily: BODY_FONT }}
+                                >
+                                  {sub.label}
+                                </a>
+                              );
+                            })}
                           </div>
                         )}
                       </div>
