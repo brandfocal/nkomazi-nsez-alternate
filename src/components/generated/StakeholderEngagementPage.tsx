@@ -878,20 +878,6 @@ const Hero = () => {
             <span style={{ color: GOLD }}>Stakeholders</span>
           </div>
 
-          <motion.div initial={{
-            opacity: 0,
-            y: 14
-          }} animate={{
-            opacity: 1,
-            y: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.28,
-            ease: [0.22, 1, 0.36, 1]
-          }}>
-            <EyebrowLabel label="Stakeholder Relations" />
-          </motion.div>
-
           <motion.h1 initial={{
             opacity: 0,
             y: 14
