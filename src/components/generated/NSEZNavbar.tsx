@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
@@ -83,9 +83,35 @@ const GreenButton = ({ label, href = '/contact' }: { label: string; href?: strin
 
 
 
+interface SubMenuItem {
+  label: string;
+  href: string;
+  desc?: string;
+}
+
+interface NavItem {
+  label: string;
+  href: string;
+  submenu?: SubMenuItem[];
+}
+
 export function NSEZNavbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+
+  const handleDropdownEnter = () => {
+    if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
+    setAboutDropdownOpen(true);
+  };
+
+  const handleDropdownLeave = () => {
+    dropdownTimeoutRef.current = setTimeout(() => {
+      setAboutDropdownOpen(false);
+    }, 180);
+  };
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
@@ -106,8 +132,17 @@ export function NSEZNavbar() {
     return currentPath === href;
   };
 
-  const navLinks = [
-    { label: 'About Us', href: '/about-us' },
+  const navLinks: NavItem[] = [
+    {
+      label: 'About Us',
+      href: '/about-us',
+      submenu: [
+        { label: 'About Overview', href: '/about-us', desc: 'Vision, Mission & Mandate' },
+        { label: 'Finance', href: '/about-us#finance', desc: 'Financial Governance & Reporting' },
+        { label: 'Office of the CEO', href: '/about-us#office-of-the-ceo', desc: 'Executive Leadership & Direction' },
+        { label: 'Our Board', href: '/about-us#our-board', desc: 'Board of Directors & Oversight' }
+      ]
+    },
     { label: 'Investor Hub', href: '/investor-hub' },
     { label: 'Sectors', href: '/sectors' },
     { label: 'MSME Hub', href: '/enterprise-hub' },
@@ -213,6 +248,80 @@ export function NSEZNavbar() {
             <div className="hidden lg:flex items-center gap-0 backdrop-blur-[26px] bg-white/10 border border-white/20 rounded-xl p-[4.6px]">
               {navLinks.map(link => {
                 const active = isActive(link.href);
+
+                if (link.submenu) {
+                  return (
+                    <div
+                      key={link.label}
+                      className="relative"
+                      onMouseEnter={handleDropdownEnter}
+                      onMouseLeave={handleDropdownLeave}
+                    >
+                      <a
+                        href={link.href}
+                        className="flex items-center gap-1.5 text-white text-[15px] font-medium rounded-lg px-3 py-2.5 hover:bg-white/10 transition-all duration-300 no-underline tracking-[0.01em]"
+                        style={{
+                          fontFamily: BODY_FONT,
+                          borderBottom: `2px solid ${active || aboutDropdownOpen ? '#C8A84C' : 'transparent'}`,
+                          color: active || aboutDropdownOpen ? '#C8A84C' : '#ffffff',
+                          transition: 'background 0.2s ease, border-color 0.2s ease, color 0.2s ease'
+                        }}
+                      >
+                        <span>{link.label}</span>
+                        <ChevronDown
+                          size={13}
+                          className={`transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-[#C8A84C]' : 'opacity-70'}`}
+                        />
+                      </a>
+
+                      <AnimatePresence>
+                        {aboutDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 6, scale: 0.96 }}
+                            transition={{ duration: 0.16, ease: 'easeOut' }}
+                            className="absolute top-full left-0 mt-2 w-64 rounded-xl overflow-hidden shadow-2xl z-[10001] border"
+                            style={{
+                              background: 'rgba(10, 24, 16, 0.97)',
+                              backdropFilter: 'blur(20px)',
+                              WebkitBackdropFilter: 'blur(20px)',
+                              borderColor: 'rgba(200, 168, 75, 0.3)',
+                              boxShadow: '0 16px 40px rgba(0, 0, 0, 0.5)'
+                            }}
+                          >
+                            <div className="py-2">
+                              {link.submenu.map(sub => (
+                                <a
+                                  key={sub.label}
+                                  href={sub.href}
+                                  onClick={() => setAboutDropdownOpen(false)}
+                                  className="flex flex-col px-4 py-2.5 hover:bg-white/10 transition-all duration-150 no-underline group"
+                                >
+                                  <span
+                                    style={{ fontFamily: BODY_FONT }}
+                                    className="text-sm font-semibold text-white group-hover:text-[#C8A84C] transition-colors"
+                                  >
+                                    {sub.label}
+                                  </span>
+                                  {sub.desc && (
+                                    <span
+                                      style={{ fontFamily: BODY_FONT }}
+                                      className="text-[11px] text-white/50 group-hover:text-white/70 transition-colors mt-0.5"
+                                    >
+                                      {sub.desc}
+                                    </span>
+                                  )}
+                                </a>
+                              ))}
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
+                  );
+                }
+
                 return (
                   <a
                     key={link.label}
@@ -261,6 +370,55 @@ export function NSEZNavbar() {
               <div className="p-4 flex flex-col gap-2">
                 {navLinks.map(l => {
                   const active = isActive(l.href);
+
+                  if (l.submenu) {
+                    return (
+                      <div key={l.label} className="flex flex-col">
+                        <div className="flex items-center justify-between">
+                          <a
+                            href={l.href}
+                            onClick={() => setMobileMenuOpen(false)}
+                            className="text-white text-[15px] font-medium rounded-lg px-3 py-2.5 hover:bg-white/10 no-underline flex-1"
+                            style={{
+                              fontFamily: BODY_FONT,
+                              color: active ? '#C8A84C' : '#ffffff',
+                              background: active ? 'rgba(200, 168, 76, 0.1)' : 'transparent'
+                            }}
+                          >
+                            {l.label}
+                          </a>
+                          <button
+                            type="button"
+                            onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                            className="p-2 text-white/80 hover:text-white bg-transparent border-none cursor-pointer"
+                            aria-label="Toggle submenu"
+                          >
+                            <ChevronDown
+                              size={18}
+                              className={`transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180 text-[#C8A84C]' : ''}`}
+                            />
+                          </button>
+                        </div>
+
+                        {mobileAboutOpen && (
+                          <div className="pl-4 pr-2 py-1 flex flex-col gap-1 border-l-2 border-[#C8A84C]/40 ml-4 my-1">
+                            {l.submenu.map(sub => (
+                              <a
+                                key={sub.label}
+                                href={sub.href}
+                                onClick={() => setMobileMenuOpen(false)}
+                                className="text-white/90 text-sm font-medium py-2 px-3 rounded-lg hover:bg-white/10 no-underline"
+                                style={{ fontFamily: BODY_FONT }}
+                              >
+                                {sub.label}
+                              </a>
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    );
+                  }
+
                   return (
                     <a
                       key={l.label}

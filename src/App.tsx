@@ -14,6 +14,9 @@ import { TendersPage } from './components/generated/TendersPage';
 import { CareersPage } from './components/generated/CareersPage';
 import { NewsAndMediaPage } from './components/generated/NewsAndMediaPage';
 import { AboutNSEZPage } from './components/generated/AboutNSEZPage';
+import { PrivacyPolicyPage } from './components/generated/PrivacyPolicyPage';
+import { CookiePolicyPage } from './components/generated/CookiePolicyPage';
+import { CookieConsentBanner } from './components/generated/CookieConsentBanner';
 
 let theme: Theme = 'light';
 
@@ -23,10 +26,16 @@ function ScrollToTopOnNavigation() {
     if (!hash) {
       window.scrollTo(0, 0);
     } else {
-      const element = document.getElementById(hash.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
+      const targetId = hash.substring(1);
+      const scroll = () => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      };
+      scroll();
+      const timer = setTimeout(scroll, 120);
+      return () => clearTimeout(timer);
     }
   }, [pathname, hash]);
   return null;
@@ -59,7 +68,13 @@ function App() {
         <Route path="/news-media" element={<NewsAndMediaPage />} />
         <Route path="/compliance-portal" element={<CompliancePortalPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+        <Route path="/finance" element={<AboutNSEZPage />} />
+        <Route path="/office-of-the-ceo" element={<AboutNSEZPage />} />
+        <Route path="/our-board" element={<AboutNSEZPage />} />
       </Routes>
+      <CookieConsentBanner />
     </BrowserRouter>
   );
 }

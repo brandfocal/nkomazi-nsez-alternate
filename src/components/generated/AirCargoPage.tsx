@@ -1937,12 +1937,15 @@ export const AirCargoPage = () => {
 
             <div className="pt-5 flex flex-wrap justify-between items-center gap-4">
               <div className="flex items-center gap-5">
-                <a href="#" onClick={e => e.preventDefault()} className="text-white/40 text-[14px] font-normal no-underline hover:text-white/70 transition-colors duration-200" style={{
-                fontFamily: BODY_FONT
-              }}>Terms of Use</a>
-                <a href="#" onClick={e => e.preventDefault()} className="text-white/40 text-[14px] font-normal no-underline hover:text-white/70 transition-colors duration-200" style={{
+                <a href="/privacy-policy" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#C8A84B] transition-colors duration-200" style={{
                 fontFamily: BODY_FONT
               }}>Privacy Policy</a>
+                <a href="/cookie-policy" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#C8A84B] transition-colors duration-200" style={{
+                fontFamily: BODY_FONT
+              }}>Cookie Policy</a>
+                <a href="mailto:whistleblower@nkomazisez.gov.za" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#C8A84B] transition-colors duration-200" style={{
+                fontFamily: BODY_FONT
+              }}>Whistleblower</a>
               </div>
 
               <div className="flex items-center gap-2.5">

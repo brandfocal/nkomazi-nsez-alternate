@@ -237,6 +237,19 @@ export function NSEZFooterSection() {
               </div>
               <div className="flex flex-col gap-1">
                 <span style={{ fontFamily: BODY_FONT, fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  Whistleblower Hotline
+                </span>
+                <a
+                  href="mailto:whistleblower@nkomazisez.gov.za"
+                  style={{ fontFamily: BODY_FONT, fontSize: '13px', color: '#C9A84C', textDecoration: 'none', fontWeight: 500 }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+                >
+                  whistleblower@nkomazisez.gov.za
+                </a>
+              </div>
+              <div className="flex flex-col gap-1">
+                <span style={{ fontFamily: BODY_FONT, fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                   Komatipoort Office
                 </span>
                 <span style={{ fontFamily: BODY_FONT, fontSize: '13px', color: 'rgba(255,255,255,0.65)' }}>
@@ -262,24 +275,30 @@ export function NSEZFooterSection() {
           <p style={{ fontFamily: BODY_FONT, fontSize: '12px', color: 'rgba(255,255,255,0.4)', margin: 0 }}>
             <span>© 2026 Nkomazi Special Economic Zone. All rights reserved.</span>
           </p>
-          <div style={{ display: 'flex', gap: '20px' }}>
+          <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap' }}>
             <a
-              href="#"
-              onClick={e => e.preventDefault()}
+              href="/privacy-policy"
               style={{ fontFamily: BODY_FONT, fontSize: '12px', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.7)'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)'; }}
             >
               Privacy Policy
             </a>
             <a
-              href="#"
-              onClick={e => e.preventDefault()}
+              href="/cookie-policy"
               style={{ fontFamily: BODY_FONT, fontSize: '12px', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.7)'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)'; }}
             >
-              Terms of Use
+              Cookie Policy
+            </a>
+            <a
+              href="mailto:whistleblower@nkomazisez.gov.za"
+              style={{ fontFamily: BODY_FONT, fontSize: '12px', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)'; }}
+            >
+              Whistleblower
             </a>
           </div>
         </div>

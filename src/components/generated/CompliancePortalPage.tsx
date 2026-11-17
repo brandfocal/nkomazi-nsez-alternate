@@ -330,9 +330,9 @@ const Footer = () => {
 
           <div className="flex flex-col gap-6 lg:flex-row justify-between items-center">
             <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-white/40 text-[14px]">
-              <a href="#" className="hover:text-white transition-colors">Terms of Use</a>
-              <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-
+              <a href="/privacy-policy" className="hover:text-[#C9A84C] transition-colors">Privacy Policy</a>
+              <a href="/cookie-policy" className="hover:text-[#C9A84C] transition-colors">Cookie Policy</a>
+              <a href="mailto:whistleblower@nkomazisez.gov.za" className="hover:text-[#C9A84C] transition-colors">Whistleblower: whistleblower@nkomazisez.gov.za</a>
             </div>
             <div className="flex items-center gap-3">
               {['X', 'Instagram', 'LinkedIn'].map(social => <motion.a key={social} href="#" whileHover={{
