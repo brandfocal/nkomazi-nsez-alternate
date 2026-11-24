@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, Cookie, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 export const CookieConsentBanner: React.FC = () => {
@@ -57,7 +57,7 @@ export const CookieConsentBanner: React.FC = () => {
               background: 'rgba(11, 28, 19, 0.96)',
               backdropFilter: 'blur(20px)',
               WebkitBackdropFilter: 'blur(20px)',
-              borderColor: 'rgba(200, 168, 75, 0.3)',
+              borderColor: 'rgba(242, 174, 55, 0.3)',
               boxShadow: '0 20px 50px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.05)'
             }}
           >
@@ -65,7 +65,7 @@ export const CookieConsentBanner: React.FC = () => {
             <div
               className="pointer-events-none absolute -top-12 -right-12 w-36 h-36 rounded-full"
               style={{
-                background: 'radial-gradient(circle, rgba(31,172,103,0.2) 0%, transparent 70%)'
+                background: 'radial-gradient(circle, rgba(40, 182, 116,0.2) 0%, transparent 70%)'
               }}
             />
 
@@ -75,9 +75,9 @@ export const CookieConsentBanner: React.FC = () => {
                 <div
                   className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
                   style={{
-                    background: 'rgba(200, 168, 75, 0.15)',
-                    border: '1px solid rgba(200, 168, 75, 0.35)',
-                    color: '#C9A84C'
+                    background: 'rgba(242, 174, 55, 0.15)',
+                    border: '1px solid rgba(242, 174, 55, 0.35)',
+                    color: '#F2AE37'
                   }}
                 >
                   <Cookie size={18} />
@@ -100,7 +100,7 @@ export const CookieConsentBanner: React.FC = () => {
                     style={{
                       fontFamily: BODY_FONT,
                       fontSize: '11px',
-                      color: '#C9A84C',
+                      color: '#F2AE37',
                       fontWeight: 500,
                       letterSpacing: '0.05em',
                       textTransform: 'uppercase'
@@ -135,7 +135,7 @@ export const CookieConsentBanner: React.FC = () => {
               <Link
                 to="/privacy-policy"
                 className="underline hover:text-white transition-colors font-medium"
-                style={{ color: '#C9A84C' }}
+                style={{ color: '#F2AE37' }}
               >
                 Privacy Policy
               </Link>{' '}
@@ -143,7 +143,7 @@ export const CookieConsentBanner: React.FC = () => {
               <Link
                 to="/cookie-policy"
                 className="underline hover:text-white transition-colors font-medium"
-                style={{ color: '#C9A84C' }}
+                style={{ color: '#F2AE37' }}
               >
                 Cookie Policy
               </Link>.
@@ -157,11 +157,11 @@ export const CookieConsentBanner: React.FC = () => {
                 className="flex-1 py-2.5 px-4 rounded-xl font-medium text-xs tracking-wider uppercase transition-all duration-200 cursor-pointer text-white shadow-md"
                 style={{
                   fontFamily: BODY_FONT,
-                  background: '#1fac67',
-                  border: '1px solid #1fac67'
+                  background: '#28B674',
+                  border: '1px solid #28B674'
                 }}
                 onMouseEnter={e => { (e.currentTarget as HTMLElement).style.background = '#189657'; }}
-                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#1fac67'; }}
+                onMouseLeave={e => { (e.currentTarget as HTMLElement).style.background = '#28B674'; }}
               >
                 Accept All
               </button>

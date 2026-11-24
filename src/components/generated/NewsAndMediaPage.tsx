@@ -5,7 +5,7 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 // ─── STYLING CONSTANTS ─────────────────────────────────────────────────────────
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 // ─── MOCK DATA ──────────────────────────────────────────────────────────────────
@@ -220,12 +220,12 @@ const GreenButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
     fontFamily: BODY_FONT
   }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -327,7 +327,7 @@ const SectionHeading = ({
     x: 0
   }} viewport={{
     once: true
-  }} className={`uppercase tracking-[0.18em] text-[11px] font-bold mb-3 ${light ? 'text-white/60' : 'text-[#1fac67]'}`} style={{
+  }} className={`uppercase tracking-[0.18em] text-[11px] font-bold mb-3 ${light ? 'text-white/60' : 'text-[#28B674]'}`} style={{
     fontFamily: BODY_FONT
   }}>
         {subtitle}
@@ -356,7 +356,7 @@ const SectionHeading = ({
     delay: 0.2
   }} className="mt-4" style={{
     height: '3px',
-    background: '#C9A84C'
+    background: '#F2AE37'
   }} />
   </div>;
 
@@ -393,13 +393,13 @@ const SectorsDropdown = () => {
       }} className="absolute top-full left-0 mt-2 z-[999]" style={{
         minWidth: '240px'
       }}>
-            <div className="bg-[#1fac67] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
+            <div className="bg-[#28B674] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
           boxShadow: '0 20px 60px rgba(0,0,0,0.35)'
         }}>
               {NAV_SECTORS.map(item => <a key={item} href="#" onClick={e => e.preventDefault()} className="block text-white text-[14px] font-medium rounded-lg px-3 py-2 transition-all duration-200 whitespace-nowrap no-underline tracking-[0.01em]" style={{
             fontFamily: BODY_FONT
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E8521A';
+            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E77227';
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
           }}>
@@ -502,7 +502,7 @@ const HeroSection = () => {
       width: '240px',
       height: '240px',
       borderRadius: '50%',
-      background: 'rgba(200,168,75,0.07)',
+      background: 'rgba(242, 174, 55,0.07)',
       filter: 'blur(50px)',
       top: '38%',
       right: '12%',
@@ -577,7 +577,7 @@ const HeroSection = () => {
           }}>
               <span>Home</span>
               <ChevronRight size={12} />
-              <span className="text-[#C9A84C]">News and Media</span>
+              <span className="text-[#F2AE37]">News and Media</span>
             </motion.div>
 
             <div>
@@ -601,7 +601,7 @@ const HeroSection = () => {
               margin: 0
             }}>
                 <span style={{
-                color: '#5DBB3A',
+                color: '#28B674',
                 display: 'block'
               }}>News &amp;</span>
                 <span style={{
@@ -747,7 +747,7 @@ const EditorialNewsSection = () => {
                     <div className="absolute top-3 left-3">
                       <span className="inline-block px-2.5 py-1 rounded-full text-white text-[9px] font-bold uppercase tracking-widest" style={{
                     fontFamily: HEADING_FONT,
-                    background: 'rgba(29,77,53,0.9)',
+                    background: 'rgba(2, 58, 35,0.9)',
                     backdropFilter: 'blur(8px)'
                   }}>
                         {article.category}
@@ -757,7 +757,7 @@ const EditorialNewsSection = () => {
                   <div className="flex flex-col flex-1 p-4">
                     <div className="flex items-center gap-2 mb-2">
                       <Calendar size={12} style={{
-                    color: '#C9A84C',
+                    color: '#F2AE37',
                     flexShrink: 0
                   }} />
                       <span className="text-[10px] font-bold uppercase tracking-widest" style={{
@@ -785,7 +785,7 @@ const EditorialNewsSection = () => {
                     </p>
                     <a href={article.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-bold uppercase text-[11px] tracking-widest" style={{
                   fontFamily: BODY_FONT,
-                  color: '#1fac67',
+                  color: '#28B674',
                   textDecoration: 'none'
                 }} onClick={e => e.stopPropagation()}>
                       <span>Read More</span>
@@ -807,7 +807,7 @@ const EditorialNewsSection = () => {
               overflow: 'hidden',
               boxShadow: '0 2px 12px rgba(0,0,0,0.04)'
             }} onMouseEnter={e => {
-              (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(31,172,103,0.2)';
+              (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(40, 182, 116,0.2)';
               (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 32px rgba(0,0,0,0.09)';
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(230,230,230,0.8)';
@@ -820,7 +820,7 @@ const EditorialNewsSection = () => {
                     <div className="absolute top-3 left-3">
                       <span className="inline-block px-2.5 py-1 rounded-full text-white text-[9px] font-bold uppercase tracking-widest" style={{
                     fontFamily: HEADING_FONT,
-                    background: 'rgba(29,77,53,0.9)',
+                    background: 'rgba(2, 58, 35,0.9)',
                     backdropFilter: 'blur(8px)'
                   }}>
                         {article.category}
@@ -830,7 +830,7 @@ const EditorialNewsSection = () => {
                   <div className="flex flex-col flex-1 p-5">
                     <div className="flex items-center gap-2 mb-3">
                       <Calendar size={12} style={{
-                    color: '#C9A84C',
+                    color: '#F2AE37',
                     flexShrink: 0
                   }} />
                       <span className="text-[10px] font-bold uppercase tracking-widest" style={{
@@ -840,7 +840,7 @@ const EditorialNewsSection = () => {
                         {article.date}
                       </span>
                     </div>
-                    <h4 className="font-bold uppercase leading-snug mb-2 group-hover:text-[#1fac67] transition-colors duration-300" style={{
+                    <h4 className="font-bold uppercase leading-snug mb-2 group-hover:text-[#28B674] transition-colors duration-300" style={{
                   fontFamily: HEADING_FONT,
                   fontWeight: 700,
                   fontSize: '18px',
@@ -858,7 +858,7 @@ const EditorialNewsSection = () => {
                     </p>
                     <a href={article.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-bold uppercase text-[11px] tracking-widest group-hover:gap-2.5 transition-all duration-300 mt-auto" style={{
                   fontFamily: BODY_FONT,
-                  color: '#1fac67',
+                  color: '#28B674',
                   textDecoration: 'none'
                 }} onClick={e => e.stopPropagation()}>
                       <span>Read More</span>
@@ -923,7 +923,7 @@ const GallerySection = () => {
   return (
     <>
       <section className="py-16 sm:py-20 lg:py-24 overflow-hidden" style={{
-        background: '#1D4D35'
+        background: '#023A23'
       }}>
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
           <SectionHeading light subtitle="Gallery">Photo Gallery</SectionHeading>
@@ -973,7 +973,7 @@ const GallerySection = () => {
                 </div>
                 {/* Modern Hover overlay without text labels */}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-white bg-[#1fac67] shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-full flex items-center justify-center text-white bg-[#28B674] shadow-lg transform scale-90 group-hover:scale-100 transition-transform duration-300">
                     <Maximize2 size={20} />
                   </div>
                 </div>
@@ -991,9 +991,9 @@ const GallerySection = () => {
                 outline: 'none'
               }}
             >
-              <Camera size={16} style={{ color: '#C9A84C' }} />
+              <Camera size={16} style={{ color: '#F2AE37' }} />
               <span>{showAllPhotos ? "Show Less" : "View Full Gallery"}</span>
-              <ChevronRight size={14} className={`group-hover:translate-x-1 transition-transform ${showAllPhotos ? 'rotate-90' : ''}`} style={{ color: '#C9A84C' }} />
+              <ChevronRight size={14} className={`group-hover:translate-x-1 transition-transform ${showAllPhotos ? 'rotate-90' : ''}`} style={{ color: '#F2AE37' }} />
             </button>
           </div>
         </div>
@@ -1020,7 +1020,7 @@ const GallerySection = () => {
 
             {/* Navigation Left */}
             <button
-              className="absolute left-4 sm:left-8 text-white hover:text-[#1fac67] transition-colors z-[100000] bg-black/40 hover:bg-black/60 p-3 rounded-full border-0 outline-none cursor-pointer"
+              className="absolute left-4 sm:left-8 text-white hover:text-[#28B674] transition-colors z-[100000] bg-black/40 hover:bg-black/60 p-3 rounded-full border-0 outline-none cursor-pointer"
               onClick={handlePrev}
               aria-label="Previous image"
             >
@@ -1045,7 +1045,7 @@ const GallerySection = () => {
 
             {/* Navigation Right */}
             <button
-              className="absolute right-4 sm:right-8 text-white hover:text-[#1fac67] transition-colors z-[100000] bg-black/40 hover:bg-black/60 p-3 rounded-full border-0 outline-none cursor-pointer"
+              className="absolute right-4 sm:right-8 text-white hover:text-[#28B674] transition-colors z-[100000] bg-black/40 hover:bg-black/60 p-3 rounded-full border-0 outline-none cursor-pointer"
               onClick={handleNext}
               aria-label="Next image"
             >
@@ -1179,7 +1179,7 @@ const VideosSection = () => {
                     <motion.div
                       whileHover={{ scale: 1.15 }}
                       whileTap={{ scale: 0.95 }}
-                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1fac67] text-white flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:bg-[#189556] group-hover:scale-110"
+                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#28B674] text-white flex items-center justify-center shadow-2xl transition-all duration-300 group-hover:bg-[#189556] group-hover:scale-110"
                       aria-label={`Play ${video.title}`}
                     >
                       <Play size={24} fill="currentColor" className="ml-0.5" />
@@ -1189,7 +1189,7 @@ const VideosSection = () => {
                   {/* Description text in the video cards aligned to the bottom */}
                   <div className="relative z-10 p-4 sm:p-6 bg-gradient-to-t from-black/95 via-black/80 to-transparent flex flex-col justify-end pt-14">
                     <div className="flex items-center gap-2 mb-1.5">
-                      <span className="text-[#C9A84C] text-[10px] sm:text-xs font-bold uppercase tracking-widest" style={{ fontFamily: BODY_FONT }}>
+                      <span className="text-[#F2AE37] text-[10px] sm:text-xs font-bold uppercase tracking-widest" style={{ fontFamily: BODY_FONT }}>
                         Runtime: {video.runtime}
                       </span>
                       <span className="text-white/40 text-xs">•</span>
@@ -1197,7 +1197,7 @@ const VideosSection = () => {
                         {video.source}
                       </span>
                     </div>
-                    <h4 className="text-white text-base sm:text-lg md:text-xl font-bold uppercase tracking-tight leading-snug mb-1 sm:mb-1.5 group-hover:text-[#1fac67] transition-colors line-clamp-2" style={{
+                    <h4 className="text-white text-base sm:text-lg md:text-xl font-bold uppercase tracking-tight leading-snug mb-1 sm:mb-1.5 group-hover:text-[#28B674] transition-colors line-clamp-2" style={{
                       fontFamily: HEADING_FONT
                     }}>
                       {video.title}
@@ -1287,7 +1287,7 @@ const VideosSection = () => {
                   href={activeVideo.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex sm:hidden items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#1fac67] hover:text-[#22c55e] bg-white/5 hover:bg-white/10 rounded-lg transition-colors flex-shrink-0"
+                  className="inline-flex sm:hidden items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-[#28B674] hover:text-[#22c55e] bg-white/5 hover:bg-white/10 rounded-lg transition-colors flex-shrink-0"
                 >
                   Watch on YouTube <ExternalLink size={14} />
                 </a>
@@ -1315,7 +1315,7 @@ const PressReleasesSection = () => <section className="py-16 sm:py-20 lg:py-24" 
           border: '1px solid rgba(230,230,230,0.9)',
           boxShadow: '0 2px 16px rgba(0,0,0,0.04)'
         }} onMouseEnter={e => {
-          (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(31,172,103,0.18)';
+          (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(40, 182, 116,0.18)';
           (e.currentTarget as HTMLDivElement).style.boxShadow = '0 8px 36px rgba(0,0,0,0.09)';
         }} onMouseLeave={e => {
           (e.currentTarget as HTMLDivElement).style.borderColor = 'rgba(230,230,230,0.9)';
@@ -1323,22 +1323,22 @@ const PressReleasesSection = () => <section className="py-16 sm:py-20 lg:py-24" 
         }}>
               <div className="flex flex-col gap-4 p-5 sm:p-6 flex-1">
                 <div className="flex items-center gap-3">
-                  <div className="p-2.5 sm:p-3 rounded-xl flex-shrink-0 group-hover:bg-[#1fac67] transition-colors duration-300" style={{
-                background: 'rgba(31,172,103,0.08)',
-                color: '#1fac67'
+                  <div className="p-2.5 sm:p-3 rounded-xl flex-shrink-0 group-hover:bg-[#28B674] transition-colors duration-300" style={{
+                background: 'rgba(40, 182, 116,0.08)',
+                color: '#28B674'
               }}>
                     <FileText size={18} />
                   </div>
                   <div className="flex flex-wrap items-center gap-2">
                     <span className="text-[10px] font-bold uppercase tracking-widest" style={{
                   fontFamily: HEADING_FONT,
-                  color: '#1fac67',
+                  color: '#28B674',
                   letterSpacing: '0.15em'
                 }}>
                       {release.type}
                     </span>
                     <span className="w-1 h-1 rounded-full inline-block" style={{
-                  background: '#C9A84C',
+                  background: '#F2AE37',
                   opacity: 0.6
                 }} />
                     <span className="text-[11px]" style={{
@@ -1351,7 +1351,7 @@ const PressReleasesSection = () => <section className="py-16 sm:py-20 lg:py-24" 
                   </div>
                 </div>
 
-                <h4 className="uppercase leading-snug group-hover:text-[#1fac67] transition-colors duration-300" style={{
+                <h4 className="uppercase leading-snug group-hover:text-[#28B674] transition-colors duration-300" style={{
               fontFamily: HEADING_FONT,
               fontWeight: 700,
               fontSize: 'clamp(15px, 2vw, 18px)',
@@ -1362,7 +1362,7 @@ const PressReleasesSection = () => <section className="py-16 sm:py-20 lg:py-24" 
 
                 <a href="#" onClick={e => e.preventDefault()} className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest transition-colors mt-auto" style={{
               fontFamily: BODY_FONT,
-              color: '#C9A84C',
+              color: '#F2AE37',
               textDecoration: 'none'
             }}>
                   <span>Read Statement</span>
@@ -1449,13 +1449,13 @@ const NewsletterSection = () => <section style={{
               width: '6px',
               height: '6px',
               borderRadius: '50%',
-              background: '#C8A84B',
+              background: '#F2AE37',
               flexShrink: 0
             }} />
               <div style={{
               width: '1px',
               flex: 1,
-              background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+              background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
               minHeight: '80px',
               marginTop: '6px'
             }} />
@@ -1626,13 +1626,13 @@ export const NewsAndMediaPage = () => {
           scrollbarWidth: 'none',
           msOverflowStyle: 'none'
         } as React.CSSProperties}>
-            <Filter size={16} className="text-[#1D4D35] mr-1 sm:mr-2 flex-shrink-0" />
+            <Filter size={16} className="text-[#023A23] mr-1 sm:mr-2 flex-shrink-0" />
             {TABS.map(tab => <button key={tab} onClick={() => setActiveTab(tab)} className="whitespace-nowrap px-3 sm:px-5 py-1.5 sm:py-2 rounded-full text-[12px] sm:text-[13px] font-medium transition-all duration-200 flex-shrink-0" style={{
             fontFamily: BODY_FONT,
-            background: activeTab === tab ? '#1D4D35' : 'transparent',
-            color: activeTab === tab ? '#ffffff' : 'rgba(29,77,53,0.55)',
-            border: `1px solid ${activeTab === tab ? '#1D4D35' : 'rgba(29,77,53,0.2)'}`,
-            boxShadow: activeTab === tab ? '0 4px 14px rgba(29,77,53,0.25)' : 'none'
+            background: activeTab === tab ? '#023A23' : 'transparent',
+            color: activeTab === tab ? '#ffffff' : 'rgba(2, 58, 35,0.55)',
+            border: `1px solid ${activeTab === tab ? '#023A23' : 'rgba(2, 58, 35,0.2)'}`,
+            boxShadow: activeTab === tab ? '0 4px 14px rgba(2, 58, 35,0.25)' : 'none'
           }}>
                 {tab}
               </button>)}

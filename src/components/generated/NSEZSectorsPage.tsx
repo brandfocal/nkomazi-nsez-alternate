@@ -7,9 +7,9 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 // ─── Font Constants ────────────────────────────────────────────────────────────
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
-const GOLD = "#C9A84C";
+const GOLD = "#F2AE37";
 
 // ─── Data ──────────────────────────────────────────────────────────────────────
 
@@ -63,7 +63,7 @@ const SECTORS = [{
   }],
   image: '/agro-processing.jpg',
   icon: Sprout,
-  color: '#1fac67'
+  color: '#28B674'
 }, {
   id: '02',
   title: 'Manufacturing',
@@ -83,7 +83,7 @@ const SECTORS = [{
   }],
   image: 'https://images.unsplash.com/photo-1565793298595-6a879b1d9492?q=80&w=2000&auto=format&fit=crop',
   icon: Factory,
-  color: '#E8521A'
+  color: '#E77227'
 }, {
   id: '03',
   title: 'Logistics and Warehousing',
@@ -103,7 +103,7 @@ const SECTORS = [{
   }],
   image: '/warehousing.jpg',
   icon: Truck,
-  color: '#C9A84C'
+  color: '#F2AE37'
 }, {
   id: '04',
   title: 'Green Economy',
@@ -123,7 +123,7 @@ const SECTORS = [{
   }],
   image: 'https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=2000&auto=format&fit=crop',
   icon: Zap,
-  color: '#1fac67'
+  color: '#28B674'
 }, {
   id: '05',
   title: 'Nutraceuticals',
@@ -143,7 +143,7 @@ const SECTORS = [{
   }],
   image: '/Neutraceuticals.jpg',
   icon: FlaskConical,
-  color: '#E8521A'
+  color: '#E77227'
 }];
 const FOOTER_EXPLORE_LINKS = [{
   label: 'About MPUMALANGA NKOMAZI SEZ',
@@ -184,7 +184,7 @@ const HERO_PARTICLES = [{
   x: 28,
   delay: 2.5,
   duration: 18,
-  color: 'rgba(200,168,75,0.08)'
+  color: 'rgba(242, 174, 55,0.08)'
 }, {
   id: 'p3',
   size: 8,
@@ -198,7 +198,7 @@ const HERO_PARTICLES = [{
   x: 62,
   delay: 3.8,
   duration: 20,
-  color: 'rgba(200,168,75,0.07)'
+  color: 'rgba(242, 174, 55,0.07)'
 }, {
   id: 'p5',
   size: 7,
@@ -212,7 +212,7 @@ const HERO_PARTICLES = [{
   x: 88,
   delay: 4.5,
   duration: 17,
-  color: 'rgba(200,168,75,0.10)'
+  color: 'rgba(242, 174, 55,0.10)'
 }, {
   id: 'p7',
   size: 6,
@@ -226,7 +226,7 @@ const HERO_PARTICLES = [{
   x: 55,
   delay: 7.2,
   duration: 13,
-  color: 'rgba(200,168,75,0.09)'
+  color: 'rgba(242, 174, 55,0.09)'
 }, {
   id: 'p9',
   size: 8,
@@ -240,7 +240,7 @@ const HERO_PARTICLES = [{
   x: 35,
   delay: 5.5,
   duration: 16,
-  color: 'rgba(200,168,75,0.08)'
+  color: 'rgba(242, 174, 55,0.08)'
 }];
 const HERO_STATS = [{
   label: 'Priority Sectors',
@@ -309,12 +309,12 @@ const GoldButton = ({
 >
     <div className="flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT,
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -353,12 +353,12 @@ const GreenButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT
     }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -447,12 +447,12 @@ const GhostButtonDark = ({
     const left = el.querySelector('.ghost-dark-left') as HTMLDivElement;
     const right = el.querySelector('.ghost-dark-right') as HTMLDivElement;
     if (left) {
-      left.style.borderColor = '#C8A84B';
-      left.style.color = '#C8A84B';
+      left.style.borderColor = '#F2AE37';
+      left.style.color = '#F2AE37';
     }
     if (right) {
-      right.style.borderColor = '#C8A84B';
-      right.style.color = '#C8A84B';
+      right.style.borderColor = '#F2AE37';
+      right.style.color = '#F2AE37';
     }
   }}
   onMouseLeave={e => {
@@ -540,14 +540,14 @@ const SectionHeading = ({
       fontWeight: 500,
       letterSpacing: '0.18em',
       textTransform: 'uppercase' as const,
-      color: '#1fac67'
+      color: '#28B674'
     }}>{eyebrow}</span>
     <div>
       <h2 style={{
         fontFamily: HEADING_FONT,
         fontWeight: 900,
         fontSize: 'clamp(28px, 4vw, 48px)',
-        color: light ? '#ffffff' : '#1D4D35',
+        color: light ? '#ffffff' : '#023A23',
         letterSpacing: '-0.5px',
         lineHeight: 1.05,
         margin: 0
@@ -555,7 +555,7 @@ const SectionHeading = ({
       <div style={{
         width: '40px',
         height: '3px',
-        background: '#C9A84C',
+        background: '#F2AE37',
         marginTop: '10px',
         borderRadius: '2px'
       }} />
@@ -618,14 +618,14 @@ const HeroStatItem = ({
 }) => {
   const count = useCountUp(stat.value, inView, 1600);
   return <div className="flex flex-col gap-0.5" style={{
-    borderLeft: '3px solid #C9A84C',
+    borderLeft: '3px solid #F2AE37',
     paddingLeft: '14px'
   }}>
     <span style={{
       fontFamily: HEADING_FONT,
       fontWeight: 900,
       fontSize: 'clamp(20px, 2.5vw, 30px)',
-      color: '#1D4D35',
+      color: '#023A23',
       lineHeight: 1.1,
       letterSpacing: '-0.5px'
     }}>
@@ -636,7 +636,7 @@ const HeroStatItem = ({
     <span style={{
       fontFamily: BODY_FONT,
       fontSize: '10px',
-      color: 'rgba(29,77,53,0.55)',
+      color: 'rgba(2, 58, 35,0.55)',
       letterSpacing: '0.08em',
       textTransform: 'uppercase' as const
     }}>{stat.label}</span>
@@ -661,7 +661,7 @@ const HeroStatsBar = () => {
             <HeroStatItem stat={stat} inView={inView} />
           </div>
           {i < HERO_STATS.length - 1 && <div className="hidden lg:block w-px self-stretch mx-6" style={{
-            background: 'rgba(29,77,53,0.12)'
+            background: 'rgba(2, 58, 35,0.12)'
           }} />}
         </React.Fragment>)}
       </div>
@@ -809,7 +809,7 @@ const SectorsHero = () => {
                 hyphens: 'auto'
               }}>
                 <span style={{
-                  color: '#5DBB3A',
+                  color: '#28B674',
                   display: 'block'
                 }}>Priority</span>
                 <span style={{
@@ -947,7 +947,7 @@ const SectorStrip = ({
   const isEven = index % 2 === 0;
   return <div ref={ref} style={{
     background: bgColor,
-    borderTop: '1px solid rgba(200,168,75,0.2)',
+    borderTop: '1px solid rgba(242, 174, 55,0.2)',
     position: 'relative',
     overflow: 'hidden'
   }}>
@@ -1039,7 +1039,7 @@ const SectorStrip = ({
                   width: '36px',
                   height: '36px',
                   borderRadius: '50%',
-                  background: 'rgba(29,77,53,0.12)',
+                  background: 'rgba(2, 58, 35,0.12)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
@@ -1055,7 +1055,7 @@ const SectorStrip = ({
                   fontWeight: 500,
                   letterSpacing: '0.18em',
                   textTransform: 'uppercase' as const,
-                  color: '#1fac67'
+                  color: '#28B674'
                 }}>
                   Sector {sector.id}
                 </span>
@@ -1064,7 +1064,7 @@ const SectorStrip = ({
                 fontFamily: HEADING_FONT,
                 fontWeight: 700,
                 fontSize: 'clamp(22px, 3.5vw, 40px)',
-                color: '#1D4D35',
+                color: '#023A23',
                 letterSpacing: '-0.5px',
                 lineHeight: 1.05,
                 margin: 0,
@@ -1075,7 +1075,7 @@ const SectorStrip = ({
               <div style={{
                 width: '40px',
                 height: '3px',
-                background: '#C9A84C',
+                background: '#F2AE37',
                 marginTop: '10px',
                 borderRadius: '2px'
               }} />
@@ -1165,7 +1165,7 @@ const IntroSection = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 900,
                 fontSize: 'clamp(24px, 3vw, 36px)',
-                color: '#1D4D35',
+                color: '#023A23',
                 letterSpacing: '-1px'
               }}>{item.value}</span>
               <span style={{
@@ -1240,13 +1240,13 @@ const CTASection = () => <section style={{
               width: '6px',
               height: '6px',
               borderRadius: '50%',
-              background: '#C8A84B',
+              background: '#F2AE37',
               flexShrink: 0
             }} />
             <div style={{
               width: '1px',
               flex: 1,
-              background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+              background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
               minHeight: '100px',
               marginTop: '6px'
             }} />
@@ -1321,7 +1321,7 @@ const CTASection = () => <section style={{
             <a href="mailto:invest@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
-              color: '#C8A84B',
+              color: '#F2AE37',
               textDecoration: 'none',
               fontWeight: 500,
               transition: 'opacity 0.2s'
@@ -1360,7 +1360,7 @@ const CTASection = () => <section style={{
 
 export const SectorsPage = () => {
   const sectorBgs = ['#FFFFFF', '#F7F6F2', '#FFFFFF', '#F7F6F2', '#FFFFFF'];
-  return <div className="min-h-screen text-slate-800 overflow-x-hidden selection:bg-[#1D4D35] selection:text-white" style={{
+  return <div className="min-h-screen text-slate-800 overflow-x-hidden selection:bg-[#023A23] selection:text-white" style={{
     fontFamily: BODY_FONT,
     background: '#F7F6F2'
   }}>

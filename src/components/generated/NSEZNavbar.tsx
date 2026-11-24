@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 
@@ -71,10 +71,10 @@ const GreenButton = ({ label, href = '/contact' }: { label: string; href?: strin
     whileTap={{ scale: 0.97 }}
     transition={{ duration: 0.2, ease: 'easeOut' }}
   >
-    <div className="flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{ fontFamily: BODY_FONT }}>
+    <div className="flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{ fontFamily: BODY_FONT }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{ background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%)' }} />
@@ -164,11 +164,11 @@ export function NSEZNavbar() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <a href="mailto:invest@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#1D4D35', textDecoration: 'none', letterSpacing: '0.04em' }}>
+          <a href="mailto:invest@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
             invest@nkomazisez.gov.za
           </a>
-          <span style={{ color: '#1D4D35', opacity: 0.35, fontSize: '11px' }}>|</span>
-          <a href="mailto:info@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#1D4D35', textDecoration: 'none', letterSpacing: '0.04em' }}>
+          <span style={{ color: '#023A23', opacity: 0.35, fontSize: '11px' }}>|</span>
+          <a href="mailto:info@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
             info@nkomazisez.gov.za
           </a>
         </div>
@@ -184,7 +184,7 @@ export function NSEZNavbar() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                color: '#1D4D35',
+                color: '#023A23',
                 transition: 'color 0.2s',
                 width: '16px',
                 height: '16px',
@@ -215,14 +215,14 @@ export function NSEZNavbar() {
             background: 'rgba(10, 24, 16, 0.85)',
             backdropFilter: 'blur(16px)',
             WebkitBackdropFilter: 'blur(16px)',
-            boxShadow: scrolled ? '0 1px 0 rgba(200,168,75,0.15)' : 'none',
+            boxShadow: scrolled ? '0 1px 0 rgba(242, 174, 55,0.15)' : 'none',
             transition: 'background 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease'
           }}
         />
         <div
           className="absolute bottom-0 left-0 right-0 h-[1px]"
           style={{
-            background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.4), transparent)',
+            background: 'linear-gradient(90deg, transparent, rgba(242, 174, 55,0.4), transparent)',
             opacity: scrolled ? 1 : 0,
             transition: 'opacity 0.35s ease'
           }}
@@ -286,7 +286,7 @@ export function NSEZNavbar() {
                               background: 'rgba(10, 24, 16, 0.97)',
                               backdropFilter: 'blur(20px)',
                               WebkitBackdropFilter: 'blur(20px)',
-                              borderColor: 'rgba(200, 168, 75, 0.3)',
+                              borderColor: 'rgba(242, 174, 55, 0.3)',
                               boxShadow: '0 16px 40px rgba(0, 0, 0, 0.5)'
                             }}
                           >
@@ -372,7 +372,7 @@ export function NSEZNavbar() {
                 <GreenButton label="Get In Touch" href="/contact" />
               </div>
               <button
-                className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#1fac67] text-white flex-shrink-0 border-none cursor-pointer"
+                className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#28B674] text-white flex-shrink-0 border-none cursor-pointer"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle menu"
               >
@@ -390,7 +390,7 @@ export function NSEZNavbar() {
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
               transition={{ duration: 0.25 }}
-              className="relative lg:hidden mt-2 rounded-2xl bg-[#26b573]/95 backdrop-blur-md overflow-hidden"
+              className="relative lg:hidden mt-2 rounded-2xl bg-[#28B674]/95 backdrop-blur-md overflow-hidden"
             >
               <div className="p-4 flex flex-col gap-2">
                 {navLinks.map(l => {

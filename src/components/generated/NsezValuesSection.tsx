@@ -78,9 +78,9 @@ const VALUES: ValueItem[] = [{
 }];
 
 const COLORS = {
-  green: '#5DBB3A',
-  deepGreen: '#0D2B1E',
-  gold: '#C9A84C',
+  green: '#28B674',
+  deepGreen: '#023A23',
+  gold: '#F2AE37',
   brightGold: '#D4A853',
   amber: '#A07830',
   sage: '#4A6258',
@@ -334,9 +334,9 @@ export const NsezValuesSection = () => {
       <span aria-hidden="true" className="pointer-events-none absolute inset-0 z-0 opacity-[0.025] mix-blend-multiply" style={{
       backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E\")"
     }} />
-      <span aria-hidden="true" className="nsez-values-arc pointer-events-none absolute -bottom-64 -right-48 z-0 h-[520px] w-[520px] rounded-full border-[3px] border-[#C9A84C]/[0.05] md:-bottom-80 md:-right-56 md:h-[720px] md:w-[720px]" />
+      <span aria-hidden="true" className="nsez-values-arc pointer-events-none absolute -bottom-64 -right-48 z-0 h-[520px] w-[520px] rounded-full border-[3px] border-[#F2AE37]/[0.05] md:-bottom-80 md:-right-56 md:h-[720px] md:w-[720px]" />
       <div className="pointer-events-none absolute inset-0 z-0 flex select-none items-center justify-center overflow-hidden">
-        <span className="text-[30vw] font-black tracking-tighter text-[#0D2B1E] opacity-[0.015]">
+        <span className="text-[30vw] font-black tracking-tighter text-[#023A23] opacity-[0.015]">
           NSEZ
         </span>
       </div>
@@ -457,7 +457,7 @@ export const NsezValuesSection = () => {
                 delay: 0.28 + index * 0.08,
                 duration: 0.42,
                 ease: EASE_OUT
-              }} className="nsez-letter-tick mt-1 h-[2px] w-6 origin-center bg-[#C9A84C]" />
+              }} className="nsez-letter-tick mt-1 h-[2px] w-6 origin-center bg-[#F2AE37]" />
                 </motion.div>)}
             </motion.div>
           </motion.aside>
@@ -507,14 +507,14 @@ export const NsezValuesSection = () => {
               duration: 0.35,
               ease: EASE_OUT
             }
-          }} className={cn('group relative cursor-pointer overflow-hidden rounded-lg transition-[transform] duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C9A84C]/55 focus-visible:ring-offset-4 focus-visible:ring-offset-[#F7F8F2]')} onClick={() => toggleExpand(item.id)} onMouseEnter={() => setActiveValueId(item.id)} onMouseLeave={() => setActiveValueId(null)} onFocus={() => setActiveValueId(item.id)} onBlur={() => setActiveValueId(null)} onKeyDown={event => {
+          }} className={cn('group relative cursor-pointer overflow-hidden rounded-lg transition-[transform] duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#F2AE37]/55 focus-visible:ring-offset-4 focus-visible:ring-offset-[#F7F8F2]')} onClick={() => toggleExpand(item.id)} onMouseEnter={() => setActiveValueId(item.id)} onMouseLeave={() => setActiveValueId(null)} onFocus={() => setActiveValueId(item.id)} onBlur={() => setActiveValueId(null)} onKeyDown={event => {
             if (event.key === 'Enter' || event.key === ' ') {
               event.preventDefault();
               toggleExpand(item.id);
             }
           }} aria-expanded={expandedId === item.id} role="button" tabIndex={0}>
                 <span aria-hidden="true" className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:opacity-100 group-focus-visible:opacity-100 bg-[linear-gradient(90deg,transparent_0%,rgba(201,168,75,0.1)_48%,transparent_100%)]" />
-                <motion.span aria-hidden="true" className="absolute left-0 top-0 h-full rounded-full bg-[linear-gradient(180deg,#D4A853_0%,#C9A84C_58%,#A07830_100%)]" initial={false} animate={{
+                <motion.span aria-hidden="true" className="absolute left-0 top-0 h-full rounded-full bg-[linear-gradient(180deg,#D4A853_0%,#F2AE37_58%,#A07830_100%)]" initial={false} animate={{
               scaleY: expandedId === item.id || activeValueId === item.id ? 1 : 0,
               width: expandedId === item.id ? 4 : 3
             }} transition={{
@@ -530,7 +530,7 @@ export const NsezValuesSection = () => {
                 borderColor: expandedId === item.id || activeValueId === item.id ? COLORS.brightGold : COLORS.gold,
                 backgroundColor: expandedId === item.id ? '#081B12' : activeValueId === item.id ? '#102A1D' : 'rgba(255,255,255,0)'
               }}>
-                    <motion.span aria-hidden="true" className="absolute inset-0 rounded-lg border border-[#C9A84C]" animate={{
+                    <motion.span aria-hidden="true" className="absolute inset-0 rounded-lg border border-[#F2AE37]" animate={{
                   scale: activeValueId === item.id ? [1, 1.5] : 1,
                   opacity: activeValueId === item.id ? [0.42, 0] : 0
                 }} transition={{

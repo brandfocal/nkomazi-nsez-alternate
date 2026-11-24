@@ -38,7 +38,7 @@ const FoundationItem = ({
   }}>
       {/* Gold gradient divider at top (not on first item) */}
       {index > 0 && <div className="absolute top-0 left-0 w-full h-px" style={{
-      background: 'linear-gradient(to right, #C9A84C 0%, #C9A84C 30%, transparent 100%)'
+      background: 'linear-gradient(to right, #F2AE37 0%, #F2AE37 30%, transparent 100%)'
     }} />}
 
       <div className="flex flex-col relative z-10">
@@ -47,14 +47,14 @@ const FoundationItem = ({
           <div className="flex-shrink-0" style={{
           width: hovered ? '5px' : '4px',
           height: hovered ? '54px' : '48px',
-          background: hovered ? 'linear-gradient(to bottom, #F0C850, #C9A84C)' : 'linear-gradient(to bottom, #D4B060, #C9A84C)',
-          boxShadow: hovered ? '0 0 14px 3px rgba(201,168,76,0.55)' : '0 0 4px 0 rgba(201,168,76,0.18)',
+          background: hovered ? 'linear-gradient(to bottom, #F0C850, #F2AE37)' : 'linear-gradient(to bottom, #D4B060, #F2AE37)',
+          boxShadow: hovered ? '0 0 14px 3px rgba(242, 174, 55,0.55)' : '0 0 4px 0 rgba(242, 174, 55,0.18)',
           borderRadius: '2px',
           transition: TRANSITION
         }} />
           <div className="ml-6">
             <h3 className="font-sans uppercase mb-3" style={{
-            color: '#C9A84C',
+            color: '#F2AE37',
             fontWeight: 700,
             letterSpacing: '0.22em',
             fontSize: '11px'
@@ -83,7 +83,7 @@ const FoundationItem = ({
         <span className="font-serif font-black" style={{
         fontSize: 'clamp(120px, 14vw, 160px)',
         lineHeight: 1,
-        WebkitTextStroke: '2px #C9A84C',
+        WebkitTextStroke: '2px #F2AE37',
         color: 'transparent',
         display: 'block'
       }}>
@@ -113,8 +113,8 @@ export const FoundationSection = () => {
       background: 'linear-gradient(to bottom, #1A3D2B 0%, #112A1D 50%, #0D1F16 100%)'
     }}>
         {/* Decorative corner accents */}
-        <div className="absolute top-10 left-10 w-24 h-24 border-t border-l border-[#C9A84C]/30 pointer-events-none" />
-        <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-[#C9A84C]/30 pointer-events-none" />
+        <div className="absolute top-10 left-10 w-24 h-24 border-t border-l border-[#F2AE37]/30 pointer-events-none" />
+        <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-[#F2AE37]/30 pointer-events-none" />
 
         {/* Thin gold vertical rule on right edge */}
         <div className="hidden md:block pointer-events-none" style={{
@@ -123,7 +123,7 @@ export const FoundationSection = () => {
         right: 0,
         width: '1.5px',
         height: '100%',
-        background: 'linear-gradient(to bottom, transparent 0%, #C9A84C 20%, #D4B060 50%, #C9A84C 80%, transparent 100%)',
+        background: 'linear-gradient(to bottom, transparent 0%, #F2AE37 20%, #D4B060 50%, #F2AE37 80%, transparent 100%)',
         opacity: 0.7
       }} />
 
@@ -138,7 +138,7 @@ export const FoundationSection = () => {
       }} transition={{
         duration: 0.8
       }} className="relative z-10">
-          <span className="inline-block text-[#C9A84C] font-sans font-semibold tracking-[0.2em] uppercase text-xs md:text-sm mb-6">
+          <span className="inline-block text-[#F2AE37] font-sans font-semibold tracking-[0.2em] uppercase text-xs md:text-sm mb-6">
             Our Foundation
           </span>
 
@@ -151,7 +151,7 @@ export const FoundationSection = () => {
             transform: 'translate(-50%, -50%)',
             width: '340px',
             height: '200px',
-            background: 'radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, rgba(201,168,76,0.04) 50%, transparent 75%)',
+            background: 'radial-gradient(ellipse at center, rgba(242, 174, 55,0.12) 0%, rgba(242, 174, 55,0.04) 50%, transparent 75%)',
             borderRadius: '50%'
           }} />
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight text-white mb-8 relative">
@@ -166,7 +166,7 @@ export const FoundationSection = () => {
           </div>
 
           <div className="w-20 h-px" style={{
-          background: '#C9A84C'
+          background: '#F2AE37'
         }} />
 
           <p className="text-white/60 font-sans mt-8 max-w-sm text-sm md:text-base leading-relaxed">

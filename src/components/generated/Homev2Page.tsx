@@ -4,9 +4,9 @@ import { Menu, X, ChevronRight, Calendar } from 'lucide-react';
 import { InvestmentCorridors } from './InvestmentCorridors';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
-const GOLD = "#C9A84C";
+const GOLD = "#F2AE37";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 
@@ -57,10 +57,10 @@ interface JourneyStage {
 const INVESTMENT_STAGES: JourneyStage[] = [
   {
     name: "STAGE 1: Investor Enquiries",
-    color: "#C8A84B", // Gold
-    badgeBg: "rgba(200, 168, 75, 0.12)",
-    hoverBg: "rgba(200, 168, 75, 0.08)",
-    borderColor: "rgba(200, 168, 75, 0.4)",
+    color: "#F2AE37", // Gold
+    badgeBg: "rgba(242, 174, 55, 0.12)",
+    hoverBg: "rgba(242, 174, 55, 0.08)",
+    borderColor: "rgba(242, 174, 55, 0.4)",
     steps: [
       {
         number: "Step 1",
@@ -81,10 +81,10 @@ const INVESTMENT_STAGES: JourneyStage[] = [
   },
   {
     name: "STAGE 2: Investor Facilitation",
-    color: "#1fac67", // Green
-    badgeBg: "rgba(31, 172, 103, 0.12)",
-    hoverBg: "rgba(31, 172, 103, 0.08)",
-    borderColor: "rgba(31, 172, 103, 0.4)",
+    color: "#28B674", // Green
+    badgeBg: "rgba(40, 182, 116, 0.12)",
+    hoverBg: "rgba(40, 182, 116, 0.08)",
+    borderColor: "rgba(40, 182, 116, 0.4)",
     steps: [
       {
         number: "Step 4",
@@ -123,7 +123,7 @@ const INVESTMENT_STAGES: JourneyStage[] = [
     ]
   }
 ];
-const SECTOR_BOTTOM_COLORS = ['#1D4D35', '#1A2744', '#1A3320', '#2C1A0E'] as string[];
+const SECTOR_BOTTOM_COLORS = ['#023A23', '#1A2744', '#1A3320', '#2C1A0E'] as string[];
 const SEZ_SECTORS = [{
   id: 'agro',
   label: '01',
@@ -250,7 +250,7 @@ const ENTERPRISE_HUB_CARDS = [{
   desc: string;
   bgImage: string;
 }[];
-const ENTERPRISE_CARD_BOTTOM_COLORS = ['#0F1923', '#1D4D35', '#1A2744', '#0F1923', '#1D4D35', '#1A2744'] as string[];
+const ENTERPRISE_CARD_BOTTOM_COLORS = ['#0F1923', '#023A23', '#1A2744', '#0F1923', '#023A23', '#1A2744'] as string[];
 const INVESTOR_STORIES = [{
   id: 's1',
   quote: "Establishing our agro-processing facility in MPUMALANGA NKOMAZI SEZ was the best investment decision we've made. The infrastructure, incentives, and hands-on support exceeded every expectation.",
@@ -323,7 +323,7 @@ const EH_METRICS = [{
 }];
 const GoldDivider = () => <div style={{
   height: '1px',
-  background: 'rgba(200,168,75,0.25)',
+  background: 'rgba(242, 174, 55,0.25)',
   width: '100%'
 }} />;
 
@@ -392,21 +392,21 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
     <a href="mailto:invest@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
-      color: '#1D4D35',
+      color: '#023A23',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
       invest@nkomazisez.gov.za
     </a>
     <span style={{
-      color: '#1D4D35',
+      color: '#023A23',
       opacity: 0.35,
       fontSize: '11px'
     }}>|</span>
     <a href="mailto:info@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
-      color: '#1D4D35',
+      color: '#023A23',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
@@ -426,7 +426,7 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: '#1D4D35',
+      color: '#023A23',
       transition: 'color 0.2s',
       width: '16px',
       height: '16px',
@@ -473,12 +473,12 @@ const GreenButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT
     }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -518,12 +518,12 @@ const GoldButton = ({
 >
     <div className="flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT,
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -600,7 +600,7 @@ const Subtitle = ({
   ease: 'easeOut'
 }} className="inline-block text-xs rounded-full px-3 py-2 leading-[21px] tracking-[0.06em] uppercase" style={{
   fontFamily: BODY_FONT,
-  background: light ? 'rgba(255,255,255,0.12)' : '#1fac67',
+  background: light ? 'rgba(255,255,255,0.12)' : '#28B674',
   color: light ? 'rgba(255,255,255,0.85)' : '#ffffff'
 }}>
     {children}
@@ -716,7 +716,7 @@ const SectorsHoverDropdown = () => {
       borderBottom: '2px solid transparent',
       transition: 'background 0.2s ease, border-color 0.2s ease'
     }} onMouseEnter={e => {
-      (e.currentTarget as HTMLButtonElement).style.borderBottomColor = 'rgba(200,168,75,0.6)';
+      (e.currentTarget as HTMLButtonElement).style.borderBottomColor = 'rgba(242, 174, 55,0.6)';
     }} onMouseLeave={e => {
       (e.currentTarget as HTMLButtonElement).style.borderBottomColor = 'transparent';
     }} aria-haspopup="true" aria-expanded={open}>
@@ -744,13 +744,13 @@ const SectorsHoverDropdown = () => {
       }} className="absolute top-full left-0 mt-2 z-[999]" style={{
         minWidth: '240px'
       }}>
-        <div className="bg-[#1fac67] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
+        <div className="bg-[#28B674] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
           boxShadow: '0 20px 60px rgba(0,0,0,0.35)'
         }}>
           {NAV_SECTORS.map(item => <a key={item} href="#" onClick={e => e.preventDefault()} className="block text-white text-[14px] font-medium rounded-lg px-3 py-2 transition-all duration-200 whitespace-nowrap no-underline tracking-[0.01em]" style={{
             fontFamily: BODY_FONT
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E8521A';
+            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E77227';
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
           }}>
@@ -790,11 +790,11 @@ const StickyNav = ({
       background: 'rgba(10, 24, 16, 0.85)',
       backdropFilter: 'blur(16px)',
       WebkitBackdropFilter: 'blur(16px)',
-      boxShadow: scrolled ? '0 1px 0 rgba(200,168,75,0.15)' : 'none',
+      boxShadow: scrolled ? '0 1px 0 rgba(242, 174, 55,0.15)' : 'none',
       transition: 'background 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease'
     }} />
     <div className="absolute bottom-0 left-0 right-0 h-[1px]" style={{
-      background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.4), transparent)',
+      background: 'linear-gradient(90deg, transparent, rgba(242, 174, 55,0.4), transparent)',
       opacity: scrolled ? 1 : 0,
       transition: 'opacity 0.35s ease'
     }} />
@@ -814,7 +814,7 @@ const StickyNav = ({
             borderBottom: '2px solid transparent',
             transition: 'background 0.2s ease, border-color 0.2s ease'
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(200,168,75,0.6)';
+            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(242, 174, 55,0.6)';
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'transparent';
           }}>
@@ -826,7 +826,7 @@ const StickyNav = ({
             borderBottom: '2px solid transparent',
             transition: 'background 0.2s ease, border-color 0.2s ease'
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(200,168,75,0.6)';
+            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(242, 174, 55,0.6)';
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'transparent';
           }}>
@@ -838,7 +838,7 @@ const StickyNav = ({
           <div className="hidden lg:block">
             <GreenButton label="Invest Now" />
           </div>
-          <button className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#1fac67] text-white flex-shrink-0" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+          <button className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#28B674] text-white flex-shrink-0" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -857,7 +857,7 @@ const StickyNav = ({
         height: 0
       }} transition={{
         duration: 0.25
-      }} className="relative lg:hidden mt-2 rounded-2xl bg-[#26b573]/95 backdrop-blur-md overflow-hidden">
+      }} className="relative lg:hidden mt-2 rounded-2xl bg-[#28B674]/95 backdrop-blur-md overflow-hidden">
         <div className="p-4 flex flex-col gap-2">
           {NAV_SIMPLE_LINKS.map(l => <a key={l} href="#" onClick={e => {
             e.preventDefault();
@@ -1070,7 +1070,7 @@ const VideoHero = () => {
             margin: 0
           }}>
             <span style={{
-              color: '#5DBB3A',
+              color: '#28B674',
               display: 'block'
             }}>{STATIC_HERO_HEADLINE_GREEN}</span>
             <span style={{
@@ -1265,14 +1265,14 @@ const FaqItem = ({
       fontFamily: BODY_FONT
     }} aria-expanded={open}>
       <motion.div animate={{
-        backgroundColor: open ? '#1fac67' : '#EEF3EF',
+        backgroundColor: open ? '#28B674' : '#EEF3EF',
         rotate: open ? 45 : 0
       }} transition={{
         duration: 0.25,
         ease: 'easeOut'
       }} className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center mt-0.5">
         <motion.span animate={{
-          color: open ? '#ffffff' : '#1fac67'
+          color: open ? '#ffffff' : '#28B674'
         }} transition={{
           duration: 0.25
         }} className="text-xl font-light leading-none select-none" style={{
@@ -1282,7 +1282,7 @@ const FaqItem = ({
         </motion.span>
       </motion.div>
       <div className="flex-1 flex flex-col gap-0">
-        <h3 className="text-[#111111] font-semibold leading-[1.3] tracking-[-0.3px] m-0 group-hover:text-[#1fac67] transition-colors duration-200 text-[18px] sm:text-[22px]" style={{
+        <h3 className="text-[#111111] font-semibold leading-[1.3] tracking-[-0.3px] m-0 group-hover:text-[#28B674] transition-colors duration-200 text-[18px] sm:text-[22px]" style={{
           fontFamily: HEADING_FONT
         }}>
           {question}
@@ -1317,7 +1317,7 @@ const FaqItem = ({
       }} transition={{
         duration: 0.25,
         ease: 'easeOut'
-      }} className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-[#1fac67] mt-0.5">
+      }} className="flex-shrink-0 w-8 h-8 flex items-center justify-center text-[#28B674] mt-0.5">
         <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
           <path d="M8 3V13M3 8H13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
         </svg>
@@ -1373,7 +1373,7 @@ const StatsStripItem = ({
       fontWeight: 300,
       fontSize: 'clamp(40px, 5vw, 52px)',
       lineHeight: '1',
-      color: '#C8A84B',
+      color: '#F2AE37',
       letterSpacing: '-2px'
     }}>
       {stat.prefix}{count.toLocaleString()}{stat.suffix}
@@ -1494,12 +1494,12 @@ const ZoneOverview = () => <section style={{
         }}>
           <div style={{
             height: '2px',
-            background: 'rgba(15,36,25,0.2)',
+            background: 'rgba(2, 58, 35,0.2)',
             width: '32px'
           }} />
           <div style={{
             height: '1px',
-            background: 'rgba(15,36,25,0.2)',
+            background: 'rgba(2, 58, 35,0.2)',
             width: '14px'
           }} />
         </div>
@@ -1581,7 +1581,7 @@ const ZoneOverview = () => <section style={{
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(135deg, rgba(15,36,25,0.6) 0%, transparent 60%)'
+          background: 'linear-gradient(135deg, rgba(2, 58, 35,0.6) 0%, transparent 60%)'
         }} />
         <div style={{
           position: 'absolute',
@@ -1637,7 +1637,7 @@ const EnterpriseHubSection = () => {
             fontFamily: BODY_FONT,
             fontSize: '11px',
             fontWeight: 700,
-            color: '#C9A84C',
+            color: '#F2AE37',
             letterSpacing: '0.2em',
             textTransform: 'uppercase' as const,
             display: 'block'
@@ -1651,7 +1651,7 @@ const EnterpriseHubSection = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 400,
                 fontSize: 'clamp(32px, 4vw, 48px)',
-                color: '#1D4D35',
+                color: '#023A23',
                 display: 'block',
                 letterSpacing: '-0.5px'
               }}>The Case for</span>
@@ -1659,7 +1659,7 @@ const EnterpriseHubSection = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 900,
                 fontSize: 'clamp(52px, 7vw, 72px)',
-                color: '#1D4D35',
+                color: '#023A23',
                 display: 'block',
                 letterSpacing: '-2px',
                 lineHeight: 0.95
@@ -1671,7 +1671,7 @@ const EnterpriseHubSection = () => {
               fontFamily: BODY_FONT,
               fontSize: '18px',
               fontWeight: 600,
-              color: '#1D4D35',
+              color: '#023A23',
               margin: 0,
               maxWidth: '480px',
               lineHeight: 1.55
@@ -1697,7 +1697,7 @@ const EnterpriseHubSection = () => {
                   fontFamily: HEADING_FONT,
                   fontSize: 'clamp(32px, 4vw, 52px)',
                   fontWeight: 200,
-                  color: '#C8A84B',
+                  color: '#F2AE37',
                   letterSpacing: '-0.03em',
                   lineHeight: 1
                 }}>
@@ -1758,7 +1758,7 @@ const EnterpriseHubSection = () => {
             }} transition={{
               duration: 0.4
             }} style={{
-              background: 'linear-gradient(135deg, rgba(200,168,75,0.15) 0%, transparent 60%)'
+              background: 'linear-gradient(135deg, rgba(242, 174, 55,0.15) 0%, transparent 60%)'
             }} />
             <motion.div className="absolute top-0 left-0 right-0 h-[2px]" animate={{
               scaleX: hovered === b.id ? 1 : 0,
@@ -1767,14 +1767,14 @@ const EnterpriseHubSection = () => {
               duration: 0.4,
               ease: [0.22, 1, 0.36, 1]
             }} style={{
-              background: '#C8A84B',
+              background: '#F2AE37',
               transformOrigin: 'left'
             }} />
             <div className="relative z-10 h-full flex flex-col justify-end p-6 sm:p-8" style={{
               minHeight: '400px'
             }}>
               <div className="flex flex-col gap-3">
-                <span className="text-[#C8A84B] font-light" style={{
+                <span className="text-[#F2AE37] font-light" style={{
                   fontFamily: HEADING_FONT,
                   fontSize: 'clamp(44px, 6vw, 64px)',
                   lineHeight: '1',
@@ -1808,7 +1808,7 @@ const EnterpriseHubSection = () => {
         <FadeUp delay={0.2}>
           <div className="flex flex-col items-center gap-5">
             <div className="w-16 h-px" style={{
-              background: 'rgba(200,168,75,0.3)'
+              background: 'rgba(242, 174, 55,0.3)'
             }} />
             <p className="text-[#111111]/40 text-[13px] tracking-[0.08em] uppercase text-center m-0" style={{
               fontFamily: BODY_FONT
@@ -1874,7 +1874,7 @@ const KeySectors = ({
   }, [userClicked]);
   const activeBottomColor = SECTOR_BOTTOM_COLORS[activeSector];
   return <section className="mx-1.5 sm:mx-2.5 mb-2.5" style={{
-    borderTop: '2px solid #E8521A',
+    borderTop: '2px solid #E77227',
     background: '#F5F0E8'
   }}>
     <style>{`@keyframes fillBar { from { width: 0% } to { width: 100% } }`}</style>
@@ -1886,7 +1886,7 @@ const KeySectors = ({
           <AnimatedHeading className="font-light m-0 text-[32px] sm:text-[40px] lg:text-[52px]" style={{
             lineHeight: '1.1',
             letterSpacing: '-1px',
-            color: '#1D4D35'
+            color: '#023A23'
           }}>
             Sectors strengthening regional value chains
           </AnimatedHeading>
@@ -1897,9 +1897,9 @@ const KeySectors = ({
             setUserClicked(true);
           }} className="relative px-4 sm:px-5 py-2.5 rounded-full text-[13px] font-medium tracking-[0.04em] overflow-hidden flex flex-col gap-0" style={{
             fontFamily: BODY_FONT,
-            border: `1px solid ${activeSector === i ? '#1D4D35' : 'rgba(0,0,0,0.15)'}`,
+            border: `1px solid ${activeSector === i ? '#023A23' : 'rgba(0,0,0,0.15)'}`,
             color: activeSector === i ? '#ffffff' : '#555',
-            background: activeSector === i ? '#1D4D35' : 'rgba(0,0,0,0.04)'
+            background: activeSector === i ? '#023A23' : 'rgba(0,0,0,0.04)'
           }} whileTap={{
             scale: 0.96
           }} transition={{
@@ -1908,7 +1908,7 @@ const KeySectors = ({
             <span>{s.tag}</span>
             <div style={{
               height: '2px',
-              background: '#C8A84B',
+              background: '#F2AE37',
               animation: activeSector === i && !userClicked ? 'fillBar 6s linear forwards' : 'none',
               transformOrigin: 'left',
               width: activeSector === i && !userClicked ? undefined : '0%'
@@ -2096,7 +2096,7 @@ const VoicesSection = () => {
           fontFamily: BODY_FONT,
           fontSize: '11px',
           fontWeight: 700,
-          color: '#C9A84C',
+          color: '#F2AE37',
           letterSpacing: '0.2em',
           textTransform: 'uppercase' as const,
           display: 'inline-block'
@@ -2151,7 +2151,7 @@ const VoicesSection = () => {
               height: '52px',
               borderRadius: '50%',
               objectFit: 'cover',
-              border: '2px solid rgba(201,168,76,0.4)'
+              border: '2px solid rgba(242, 174, 55,0.4)'
             }} loading="lazy" />
             <div style={{
               textAlign: 'left'
@@ -2169,8 +2169,8 @@ const VoicesSection = () => {
               }}>{story.role}, {story.company}</div>
             </div>
             <span style={{
-              background: 'rgba(201,168,76,0.15)',
-              color: '#C9A84C',
+              background: 'rgba(242, 174, 55,0.15)',
+              color: '#F2AE37',
               fontSize: '11px',
               fontWeight: 700,
               padding: '4px 12px',
@@ -2196,7 +2196,7 @@ const VoicesSection = () => {
           height: '8px',
           width: active === i ? '28px' : '8px',
           borderRadius: '99px',
-          background: active === i ? '#C9A84C' : 'rgba(255,255,255,0.25)',
+          background: active === i ? '#F2AE37' : 'rgba(255,255,255,0.25)',
           transition: 'width 0.3s ease'
         }} />)}
       </div>
@@ -2246,7 +2246,7 @@ const CommunityStatItem = ({
       fontWeight: 300,
       fontSize: 'clamp(40px, 5vw, 52px)',
       lineHeight: '1',
-      color: '#C8A84B',
+      color: '#F2AE37',
       letterSpacing: '-2px'
     }}>
       {stat.display(count)}
@@ -2468,7 +2468,7 @@ const ScrollProgressBar = () => {
   });
   return <motion.div className="fixed top-0 left-0 right-0 z-[99999] h-[2px] origin-left" style={{
     scaleX,
-    background: 'linear-gradient(90deg, #E8521A, #f07040, #E8521A)'
+    background: 'linear-gradient(90deg, #E77227, #f07040, #E77227)'
   }} />;
 };
 
@@ -2506,9 +2506,9 @@ const BackToTop = () => {
       top: 0,
       behavior: 'smooth'
     })} className="fixed bottom-8 right-6 sm:right-8 z-[9998] w-12 h-12 rounded-full flex items-center justify-center" style={{
-      background: hovered ? '#C8A84B' : '#26b573',
-      border: `1.5px solid ${hovered ? '#C8A84B' : 'rgba(200,168,75,0.35)'}`,
-      boxShadow: hovered ? '0 8px 32px rgba(200,168,75,0.35)' : '0 4px 20px rgba(0,0,0,0.35)',
+      background: hovered ? '#F2AE37' : '#28B674',
+      border: `1.5px solid ${hovered ? '#F2AE37' : 'rgba(242, 174, 55,0.35)'}`,
+      boxShadow: hovered ? '0 8px 32px rgba(242, 174, 55,0.35)' : '0 4px 20px rgba(0,0,0,0.35)',
       transition: 'background 0.25s, border-color 0.25s, box-shadow 0.25s'
     }}>
       <motion.svg width="16" height="16" viewBox="0 0 16 16" fill="none" animate={{
@@ -2516,7 +2516,7 @@ const BackToTop = () => {
       }} transition={{
         duration: 0.2
       }}>
-        <path d="M8 12V4M4 7l4-4 4 4" stroke={hovered ? '#111111' : '#C8A84B'} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 12V4M4 7l4-4 4 4" stroke={hovered ? '#111111' : '#F2AE37'} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </motion.svg>
     </motion.button>}
   </AnimatePresence>;
@@ -2573,8 +2573,8 @@ const AboutStatPill = ({
   }, [sectionInView, hasAnimated, pill.isCountUp, pill.value]);
   const displayValue = pill.isCountUp ? count.toLocaleString() + ' ha' : pill.display;
   return <div ref={pillRef} style={{
-    background: 'rgba(29,77,53,0.08)',
-    border: '1px solid rgba(29,77,53,0.15)',
+    background: 'rgba(2, 58, 35,0.08)',
+    border: '1px solid rgba(2, 58, 35,0.15)',
     borderRadius: '999px',
     padding: '8px 16px',
     display: 'flex',
@@ -2587,7 +2587,7 @@ const AboutStatPill = ({
       fontFamily: BODY_FONT,
       fontWeight: 700,
       fontSize: '16px',
-      color: '#1D4D35',
+      color: '#023A23',
       lineHeight: 1.2
     }}>
       {displayValue}
@@ -2597,7 +2597,7 @@ const AboutStatPill = ({
       fontSize: '10px',
       textTransform: 'uppercase',
       letterSpacing: '0.06em',
-      color: '#1D4D35',
+      color: '#023A23',
       opacity: 0.6,
       lineHeight: 1.4,
       marginTop: '2px'
@@ -2610,7 +2610,7 @@ const ABOUT_HIGHLIGHT_CARDS = [{
   id: 'loc',
   title: 'Strategic Location',
   body: 'Positioned along the Maputo Development Corridor, with direct access to South Africa, Mozambique, Eswatini and broader SADC markets.',
-  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E77227" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
     <circle cx="12" cy="10" r="3" />
   </svg>
@@ -2618,7 +2618,7 @@ const ABOUT_HIGHLIGHT_CARDS = [{
   id: 'incentives',
   title: 'Investor Incentives',
   body: 'Access to SEZ incentives, government support programmes, customs-controlled areas and investment facilitation services.',
-  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E77227" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <rect x="2" y="7" width="20" height="14" rx="2" />
     <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2" />
     <line x1="12" y1="12" x2="12" y2="16" />
@@ -2628,7 +2628,7 @@ const ABOUT_HIGHLIGHT_CARDS = [{
   id: 'infra',
   title: 'Infrastructure Ready',
   body: 'MPUMALANGA NKOMAZI SEZ is developing responsive infrastructure that supports industrial growth, logistics operations and large-scale manufacturing investment.',
-  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E77227" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
     <polyline points="16 7 22 7 22 13" />
   </svg>
@@ -2636,7 +2636,7 @@ const ABOUT_HIGHLIGHT_CARDS = [{
   id: 'gov',
   title: 'Government Backing',
   body: 'Supported by the Mpumalanga Provincial Government, DEDT and DTIC, under the Special Economic Zones Act.',
-  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E8521A" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+  icon: <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#E77227" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
     <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
     <path d="M12 8v4l3 3" />
   </svg>
@@ -2649,9 +2649,9 @@ const AboutUs = () => {
   });
   return <section id="sec-about" ref={ref} style={{
     backgroundColor: '#F8F7F0',
-    backgroundImage: 'radial-gradient(circle, rgba(29,77,53,0.07) 1.5px, transparent 1.5px)',
+    backgroundImage: 'radial-gradient(circle, rgba(2, 58, 35,0.07) 1.5px, transparent 1.5px)',
     backgroundSize: '24px 24px',
-    borderTop: '3px solid #E8521A',
+    borderTop: '3px solid #E77227',
     paddingTop: '80px',
     paddingBottom: '80px',
     paddingLeft: 'clamp(48px, 6vw, 96px)',
@@ -2679,7 +2679,7 @@ const AboutUs = () => {
         <div style={{
           position: 'absolute',
           inset: 0,
-          background: 'linear-gradient(to bottom, transparent 0%, transparent 45%, rgba(15,36,25,0.7) 75%, #0F2419 100%)'
+          background: 'linear-gradient(to bottom, transparent 0%, transparent 45%, rgba(2, 58, 35,0.7) 75%, #023A23 100%)'
         }} />
         <div style={{
           position: 'absolute',
@@ -2722,7 +2722,7 @@ const AboutUs = () => {
               fontWeight: 700,
               letterSpacing: '0.12em',
               textTransform: 'uppercase',
-              color: '#E8521A',
+              color: '#E77227',
               marginBottom: '14px',
               fontFamily: BODY_FONT
             }}>
@@ -2735,7 +2735,7 @@ const AboutUs = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 500,
                 fontSize: 'clamp(32px, 3.8vw, 52px)',
-                color: '#1D4D35',
+                color: '#023A23',
                 display: 'block',
                 lineHeight: 1.0
               }}>
@@ -2746,7 +2746,7 @@ const AboutUs = () => {
                 fontWeight: 900,
                 fontStyle: 'italic',
                 fontSize: 'clamp(38px, 4.8vw, 64px)',
-                color: '#E8521A',
+                color: '#E77227',
                 display: 'block',
                 lineHeight: 1.0,
                 marginTop: '-4px'
@@ -2817,7 +2817,7 @@ const AboutUs = () => {
             ease: [0.22, 1, 0.36, 1]
           }}>
             <motion.a href="/about" onClick={e => e.preventDefault()} className="inline-flex items-center gap-2 no-underline" style={{
-              background: '#E8521A',
+              background: '#E77227',
               color: '#ffffff',
               fontWeight: 600,
               fontSize: '14px',
@@ -2854,8 +2854,8 @@ const AboutUs = () => {
               delay: 0.15 + i * 0.08,
               ease: [0.22, 1, 0.36, 1]
             }} style={{
-              background: 'rgba(29,77,53,0.06)',
-              border: '1px solid rgba(29,77,53,0.1)',
+              background: 'rgba(2, 58, 35,0.06)',
+              border: '1px solid rgba(2, 58, 35,0.1)',
               borderRadius: '12px',
               padding: '20px'
             }}>
@@ -2866,7 +2866,7 @@ const AboutUs = () => {
                 fontFamily: BODY_FONT,
                 fontWeight: 700,
                 fontSize: '14px',
-                color: '#1D4D35',
+                color: '#023A23',
                 margin: '0 0 6px 0',
                 lineHeight: 1.3
               }}>
@@ -2875,7 +2875,7 @@ const AboutUs = () => {
               <p style={{
                 fontFamily: BODY_FONT,
                 fontSize: '13px',
-                color: 'rgba(29,77,53,0.65)',
+                color: 'rgba(2, 58, 35,0.65)',
                 lineHeight: 1.5,
                 margin: 0
               }}>
@@ -2927,17 +2927,17 @@ const OPPORTUNITIES_SUBSET: Opportunity[] = [{
 const getCategoryColor = (cat: OpportunityCategory) => {
   switch (cat) {
     case 'Tender':
-      return '#1D4D35';
+      return '#023A23';
     case 'RFQ':
       return '#1A3320';
     case 'Partnership':
-      return '#C9A84C';
+      return '#F2AE37';
     case 'Leasing':
-      return '#E8521A';
+      return '#E77227';
     case 'EOI':
       return '#1A2744';
     default:
-      return '#1D4D35';
+      return '#023A23';
   }
 };
 
@@ -2956,12 +2956,12 @@ const OpportunityCard = ({
   const [hovered, setHovered] = useState(false);
   const statusStyles = {
     Open: {
-      bg: 'rgba(31,172,103,0.12)',
-      text: '#1fac67'
+      bg: 'rgba(40, 182, 116,0.12)',
+      text: '#28B674'
     },
     'Closing Soon': {
       bg: 'rgba(232,82,26,0.12)',
-      text: '#E8521A'
+      text: '#E77227'
     },
     Closed: {
       bg: 'rgba(0,0,0,0.08)',
@@ -2984,7 +2984,7 @@ const OpportunityCard = ({
     scale: 1.005
   }} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{
     background: '#FAFAF8',
-    border: '1px solid rgba(29,77,53,0.1)',
+    border: '1px solid rgba(2, 58, 35,0.1)',
     borderRadius: '20px',
     overflow: 'hidden',
     boxShadow: hovered ? '0 12px 40px rgba(0,0,0,0.09)' : '0 4px 24px rgba(0,0,0,0.05)',
@@ -3077,7 +3077,7 @@ const OpportunityCard = ({
 
       {/* Card footer */}
       <div style={{
-        borderTop: '1px solid rgba(29,77,53,0.08)',
+        borderTop: '1px solid rgba(2, 58, 35,0.08)',
         paddingTop: '16px',
         marginTop: '16px',
         display: 'flex',
@@ -3086,7 +3086,7 @@ const OpportunityCard = ({
       }}>
         <div className="flex items-center gap-2">
           <Calendar size={13} style={{
-            color: '#C9A84C',
+            color: '#F2AE37',
             flexShrink: 0
           }} />
           <span style={{
@@ -3102,7 +3102,7 @@ const OpportunityCard = ({
           fontFamily: BODY_FONT,
           fontSize: '11px',
           fontWeight: 700,
-          color: '#1fac67',
+          color: '#28B674',
           letterSpacing: '0.08em',
           textTransform: 'uppercase'
         }}>
@@ -3111,7 +3111,7 @@ const OpportunityCard = ({
             width: '28px',
             height: '28px',
             borderRadius: '50%',
-            background: hovered ? '#1fac67' : 'rgba(29,77,53,0.08)',
+            background: hovered ? '#28B674' : 'rgba(2, 58, 35,0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -3181,12 +3181,12 @@ const ActiveTendersSection = () => {
           }}>
             <div className="flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
               fontFamily: BODY_FONT,
-              background: '#E8521A'
+              background: '#E77227'
             }}>
               View All Tenders
             </div>
             <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-              background: '#E8521A'
+              background: '#E77227'
             }}>
               <ArrowUpRightIcon />
             </div>
@@ -3370,7 +3370,7 @@ export function Homev2Page() {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
-                borderBottom: '1.5px solid #C8A84B',
+                borderBottom: '1.5px solid #F2AE37',
                 paddingBottom: '2px'
               }} whileHover={{
                 gap: '10px'
@@ -3396,10 +3396,10 @@ export function Homev2Page() {
         backgroundSize: 'cover'
       }} />
       <div className="absolute inset-0" style={{
-        background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(15,36,25,0.75) 65%, #0F2419 90%)'
+        background: 'linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(2, 58, 35,0.75) 65%, #023A23 90%)'
       }} />
       <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'linear-gradient(135deg, transparent 40%, rgba(200,168,75,0.04) 60%, transparent 80%)'
+        background: 'linear-gradient(135deg, transparent 40%, rgba(242, 174, 55,0.04) 60%, transparent 80%)'
       }} />
 
       <div className="relative z-10 max-w-[1372px] mx-auto w-full px-4 sm:px-6 lg:px-8 py-10 pb-12 sm:pb-16">
@@ -3416,8 +3416,8 @@ export function Homev2Page() {
             duration: 0.6,
             ease: 'easeOut'
           }} className="flex items-center gap-3">
-            <div className="w-8 h-px bg-[#C8A84B]" />
-            <span className="text-[#C8A84B] text-xs font-medium tracking-[0.16em] uppercase" style={{
+            <div className="w-8 h-px bg-[#F2AE37]" />
+            <span className="text-[#F2AE37] text-xs font-medium tracking-[0.16em] uppercase" style={{
               fontFamily: BODY_FONT
             }}>
               Ready to Invest?

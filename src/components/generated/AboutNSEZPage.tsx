@@ -7,7 +7,7 @@ import { NSEZFooterSection } from "./NSEZFooterSection";
 import { NsezValuesSection } from "./NsezValuesSection";
 
 // ─── Font constants ───────────────────────────────────────────────────────────
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 // ─── Easing ───────────────────────────────────────────────────────────────────
@@ -228,12 +228,12 @@ const GreenButton = ({
     ease: "easeOut"
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT
     }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -273,12 +273,12 @@ const GoldButton = ({
 >
     <div className="flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT,
-      background: "#E8521A"
+      background: "#E77227"
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: "#E8521A"
+      background: "#E77227"
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -323,17 +323,17 @@ const GhostButton = ({
     <div className="flex items-center justify-center px-5 text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT,
       background: "transparent",
-      border: `1.5px solid ${light ? "rgba(29,77,53,0.6)" : "rgba(255,255,255,0.55)"}`,
+      border: `1.5px solid ${light ? "rgba(2, 58, 35,0.6)" : "rgba(255,255,255,0.55)"}`,
       borderRight: "none",
-      color: light ? "#1D4D35" : "#ffffff"
+      color: light ? "#023A23" : "#ffffff"
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] rounded-r-lg flex-shrink-0" style={{
       background: "transparent",
-      border: `1.5px solid ${light ? "rgba(29,77,53,0.6)" : "rgba(255,255,255,0.55)"}`,
+      border: `1.5px solid ${light ? "rgba(2, 58, 35,0.6)" : "rgba(255,255,255,0.55)"}`,
       borderLeft: "none",
-      color: light ? "#1D4D35" : "#ffffff"
+      color: light ? "#023A23" : "#ffffff"
     }}>
       <ArrowRightIcon />
     </div>
@@ -372,7 +372,7 @@ function useCountUp(target: number, duration: number, isInView: boolean, decimal
 
 const GoldMicroDivider = () => <div style={{
   height: "1px",
-  background: "linear-gradient(90deg, transparent, rgba(200,168,75,0.35), transparent)",
+  background: "linear-gradient(90deg, transparent, rgba(242, 174, 55,0.35), transparent)",
   maxWidth: "480px",
   margin: "0 auto",
   width: "100%"
@@ -382,7 +382,7 @@ const GoldMicroDivider = () => <div style={{
 
 const GoldDivider = () => <div style={{
   height: "1px",
-  background: "linear-gradient(90deg, transparent, rgba(200,168,75,0.4) 20%, rgba(200,168,75,0.4) 80%, transparent)",
+  background: "linear-gradient(90deg, transparent, rgba(242, 174, 55,0.4) 20%, rgba(242, 174, 55,0.4) 80%, transparent)",
   width: "100%"
 }} />;
 
@@ -403,7 +403,7 @@ const EyebrowLabel = ({
     <div style={{
       width: "1px",
       height: "14px",
-      background: "#5DBB3A",
+      background: "#28B674",
       flexShrink: 0
     }} />
     <span style={{
@@ -412,7 +412,7 @@ const EyebrowLabel = ({
       fontWeight: 600,
       textTransform: "uppercase" as const,
       letterSpacing: "0.12em",
-      color: dark ? "rgba(255,255,255,0.7)" : "#5DBB3A"
+      color: dark ? "rgba(255,255,255,0.7)" : "#28B674"
     }}>
       {label}
     </span>
@@ -454,7 +454,7 @@ const SplitHeading = ({
       delay: 0,
       ease: EASE_PREMIUM
     }} style={{
-      color: "#5DBB3A",
+      color: "#28B674",
       display: "inline"
     }}>
       {firstWord}
@@ -470,7 +470,7 @@ const SplitHeading = ({
       delay: 0.08,
       ease: EASE_PREMIUM
     }} style={{
-      color: lightBg ? "#0D2B1E" : "#ffffff",
+      color: lightBg ? "#023A23" : "#ffffff",
       display: "inline"
     }}>
       {" "}{rest}
@@ -501,9 +501,9 @@ const SubtitlePill = ({
   fontFamily: BODY_FONT,
   display: "inline-flex",
   alignItems: "center",
-  background: dark ? "rgba(201,168,76,0.12)" : "rgba(29,77,53,0.08)",
-  border: `1px solid ${dark ? "rgba(201,168,76,0.35)" : "rgba(29,77,53,0.2)"}`,
-  color: dark ? "#C9A84C" : "#1D4D35",
+  background: dark ? "rgba(242, 174, 55,0.12)" : "rgba(2, 58, 35,0.08)",
+  border: `1px solid ${dark ? "rgba(242, 174, 55,0.35)" : "rgba(2, 58, 35,0.2)"}`,
+  color: dark ? "#F2AE37" : "#023A23",
   borderRadius: "9999px",
   padding: "4px 14px",
   fontSize: "11px",
@@ -650,13 +650,13 @@ const SectorsHoverDropdown = () => {
       }} className="absolute top-full left-0 mt-2 z-[999]" style={{
         minWidth: "240px"
       }}>
-        <div className="bg-[#1fac67] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
+        <div className="bg-[#28B674] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
           boxShadow: "0 20px 60px rgba(0,0,0,0.35)"
         }}>
           {NAV_SECTORS.map(item => <a key={item} href="#" onClick={e => e.preventDefault()} className="block text-white text-[14px] font-medium rounded-lg px-3 py-2 transition-all duration-200 whitespace-nowrap no-underline tracking-[0.01em]" style={{
             fontFamily: BODY_FONT
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#E8521A";
+            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "#E77227";
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.backgroundColor = "transparent";
           }}>
@@ -683,19 +683,19 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
     <a href="mailto:invest@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: "11px",
-      color: "#1D4D35",
+      color: "#023A23",
       textDecoration: "none",
       letterSpacing: "0.04em"
     }}>invest@nkomazisez.gov.za</a>
     <span style={{
-      color: "#1D4D35",
+      color: "#023A23",
       opacity: 0.35,
       fontSize: "11px"
     }}>|</span>
     <a href="mailto:info@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: "11px",
-      color: "#1D4D35",
+      color: "#023A23",
       textDecoration: "none",
       letterSpacing: "0.04em"
     }}>info@nkomazisez.gov.za</a>
@@ -713,7 +713,7 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      color: "#1D4D35",
+      color: "#023A23",
       transition: "color 0.2s",
       width: "16px",
       height: "16px",
@@ -755,11 +755,11 @@ const StickyNav = ({
       background: "rgba(10, 24, 16, 0.88)",
       backdropFilter: "blur(20px)",
       WebkitBackdropFilter: "blur(20px)",
-      boxShadow: scrolled ? "0 1px 0 rgba(200,168,75,0.2)" : "none",
+      boxShadow: scrolled ? "0 1px 0 rgba(242, 174, 55,0.2)" : "none",
       transition: "background 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease"
     }} />
     <div className="absolute bottom-0 left-0 right-0 h-[1px]" style={{
-      background: "linear-gradient(90deg, transparent, rgba(200,168,75,0.5), transparent)",
+      background: "linear-gradient(90deg, transparent, rgba(242, 174, 55,0.5), transparent)",
       opacity: scrolled ? 1 : 0,
       transition: "opacity 0.35s ease"
     }} />
@@ -795,7 +795,7 @@ const StickyNav = ({
           <div className="hidden lg:block">
             <GreenButton label="Invest Now" />
           </div>
-          <button className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#1fac67] text-white flex-shrink-0" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+          <button className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#28B674] text-white flex-shrink-0" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -814,7 +814,7 @@ const StickyNav = ({
         height: 0
       }} transition={{
         duration: 0.25
-      }} className="relative lg:hidden mt-2 rounded-2xl bg-[#26b573]/95 backdrop-blur-md overflow-hidden">
+      }} className="relative lg:hidden mt-2 rounded-2xl bg-[#28B674]/95 backdrop-blur-md overflow-hidden">
         <div className="p-4 flex flex-col gap-2">
           {NAV_SIMPLE_LINKS.map(l => <a key={l} href="#" onClick={e => {
             e.preventDefault();
@@ -965,7 +965,7 @@ const HeroSection = () => {
           margin: 0
         }}>
           <span style={{
-            color: "#5DBB3A",
+            color: "#28B674",
             display: "block"
           }}>About</span>
           <span style={{
@@ -1031,7 +1031,7 @@ const WhoWeAreSection = () => <section id="story" style={{
         <AnimatedHeading text="Who We Are" style={{
           fontSize: "clamp(40px, 5vw, 68px)",
           textTransform: "uppercase",
-          color: "#0D2B1E",
+          color: "#023A23",
           letterSpacing: "-0.02em",
           lineHeight: 1.02,
           marginBottom: "2.25rem"
@@ -1114,7 +1114,7 @@ const WhoWeAreSection = () => <section id="story" style={{
             left: 0,
             right: 0,
             height: "3px",
-            background: "linear-gradient(90deg, #C9A84C, rgba(201,168,76,0.3))"
+            background: "linear-gradient(90deg, #F2AE37, rgba(242, 174, 55,0.3))"
           }} />
         </div>
       </FadeUp>
@@ -1160,7 +1160,7 @@ const FoundationItem = ({
   }}>
     {/* Gold gradient divider at top (not on first item) */}
     {index > 0 && <div className="absolute top-0 left-0 w-full h-px" style={{
-      background: 'linear-gradient(to right, #C8A84B 0%, #C8A84B 30%, transparent 100%)'
+      background: 'linear-gradient(to right, #F2AE37 0%, #F2AE37 30%, transparent 100%)'
     }} />}
 
     <div className="flex flex-col relative z-10">
@@ -1169,15 +1169,15 @@ const FoundationItem = ({
         <div className="flex-shrink-0" style={{
           width: hovered ? '5px' : '4px',
           height: hovered ? '54px' : '48px',
-          background: hovered ? 'linear-gradient(to bottom, #F0C850, #C8A84B)' : 'linear-gradient(to bottom, #D4B060, #C8A84B)',
-          boxShadow: hovered ? '0 0 14px 3px rgba(200,168,75,0.55)' : '0 0 4px 0 rgba(200,168,75,0.18)',
+          background: hovered ? 'linear-gradient(to bottom, #F0C850, #F2AE37)' : 'linear-gradient(to bottom, #D4B060, #F2AE37)',
+          boxShadow: hovered ? '0 0 14px 3px rgba(242, 174, 55,0.55)' : '0 0 4px 0 rgba(242, 174, 55,0.18)',
           borderRadius: '2px',
           transition: TRANSITION
         }} />
         <div className="ml-6">
           <h3 className="uppercase mb-3" style={{
             fontFamily: HEADING_FONT,
-            color: '#C8A84B',
+            color: '#F2AE37',
             fontWeight: 700,
             letterSpacing: '0.22em',
             fontSize: '14px'
@@ -1208,7 +1208,7 @@ const FoundationItem = ({
         fontFamily: HEADING_FONT,
         fontSize: 'clamp(120px, 14vw, 160px)',
         lineHeight: 1,
-        WebkitTextStroke: '2px #C8A84B',
+        WebkitTextStroke: '2px #F2AE37',
         color: 'transparent',
         display: 'block'
       }}>
@@ -1235,11 +1235,11 @@ const VisionMissionSection = () => {
   return <section className="relative w-full min-h-screen flex flex-col md:flex-row overflow-hidden">
     {/* Left Panel: Deep green-to-near-black gradient */}
     <div className="w-full md:w-[45%] p-8 md:p-20 lg:p-28 flex flex-col justify-center relative" style={{
-      background: 'linear-gradient(to bottom, #1D4D35 0%, #112A1D 50%, #0D1F16 100%)'
+      background: 'linear-gradient(to bottom, #023A23 0%, #112A1D 50%, #0D1F16 100%)'
     }}>
       {/* Decorative corner accents */}
-      <div className="absolute top-10 left-10 w-24 h-24 border-t border-l border-[#C8A84B]/30 pointer-events-none" />
-      <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-[#C8A84B]/30 pointer-events-none" />
+      <div className="absolute top-10 left-10 w-24 h-24 border-t border-l border-[#F2AE37]/30 pointer-events-none" />
+      <div className="absolute bottom-10 right-10 w-16 h-16 border-b border-r border-[#F2AE37]/30 pointer-events-none" />
 
       {/* Thin gold vertical rule on right edge */}
       <div className="hidden md:block pointer-events-none" style={{
@@ -1248,7 +1248,7 @@ const VisionMissionSection = () => {
         right: 0,
         width: '1.5px',
         height: '100%',
-        background: 'linear-gradient(to bottom, transparent 0%, #C8A84B 20%, #C8A84B 50%, #C8A84B 80%, transparent 100%)',
+        background: 'linear-gradient(to bottom, transparent 0%, #F2AE37 20%, #F2AE37 50%, #F2AE37 80%, transparent 100%)',
         opacity: 0.7
       }} />
 
@@ -1263,7 +1263,7 @@ const VisionMissionSection = () => {
       }} transition={{
         duration: 0.8
       }} className="relative z-10">
-        <span className="inline-block text-[#C8A84B] font-semibold tracking-[0.2em] uppercase text-xs md:text-sm mb-6" style={{ fontFamily: BODY_FONT }}>
+        <span className="inline-block text-[#F2AE37] font-semibold tracking-[0.2em] uppercase text-xs md:text-sm mb-6" style={{ fontFamily: BODY_FONT }}>
           Our Foundation
         </span>
 
@@ -1276,12 +1276,12 @@ const VisionMissionSection = () => {
             transform: 'translate(-50%, -50%)',
             width: '340px',
             height: '200px',
-            background: 'radial-gradient(ellipse at center, rgba(200,168,75,0.12) 0%, rgba(200,168,75,0.04) 50%, transparent 75%)',
+            background: 'radial-gradient(ellipse at center, rgba(242, 174, 55,0.12) 0%, rgba(242, 174, 55,0.04) 50%, transparent 75%)',
             borderRadius: '50%'
           }} />
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-white mb-8 relative" style={{ fontFamily: HEADING_FONT }}>
             <span className="block mb-2" style={{
-              color: '#5DBB3A'
+              color: '#28B674'
             }}>
               Vision
             </span>
@@ -1291,7 +1291,7 @@ const VisionMissionSection = () => {
         </div>
 
         <div className="w-20 h-px" style={{
-          background: '#C8A84B'
+          background: '#F2AE37'
         }} />
 
         <p className="text-white/60 mt-8 max-w-sm text-sm md:text-base leading-relaxed" style={{ fontFamily: BODY_FONT }}>
@@ -1338,8 +1338,8 @@ const StatCounter = ({
     ease: EASE_PREMIUM
   }} className="flex flex-col items-center text-center" style={{
     background: "#ffffff",
-    border: "1px solid rgba(29,77,53,0.12)",
-    borderTop: "2px solid #C8A84B",
+    border: "1px solid rgba(2, 58, 35,0.12)",
+    borderTop: "2px solid #F2AE37",
     boxShadow: "0 4px 24px rgba(0,0,0,0.06)",
     borderRadius: "14px",
     padding: "2.5rem 2rem"
@@ -1348,7 +1348,7 @@ const StatCounter = ({
       fontFamily: HEADING_FONT,
       fontWeight: 700,
       fontSize: "clamp(32px,4vw,52px)",
-      color: "#1D4D35",
+      color: "#023A23",
       lineHeight: 1,
       letterSpacing: "-0.02em"
     }}>
@@ -1439,7 +1439,7 @@ const PhotoBannerSection = () => {
         <div style={{
           width: "48px",
           height: "3px",
-          background: "#C8A84B",
+          background: "#F2AE37",
           margin: "0 auto 24px",
           borderRadius: "2px"
         }} />
@@ -1454,14 +1454,14 @@ const PhotoBannerSection = () => {
           maxWidth: "900px"
         }}>
           <span style={{
-            color: "#5DBB3A"
+            color: "#28B674"
           }}>1,600 hectares</span>
           {" "}of purpose-built industrial land, positioned at the gateway to Southern Africa.
         </blockquote>
         <div style={{
           width: "48px",
           height: "3px",
-          background: "#C8A84B",
+          background: "#F2AE37",
           margin: "24px auto 0",
           borderRadius: "2px"
         }} />
@@ -1518,13 +1518,13 @@ const LeadershipSection = () => <section style={{
         overflow: "hidden",
         background: "#ffffff",
         boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
-        border: "1px solid rgba(200,168,75,0)",
+        border: "1px solid rgba(242, 174, 55,0)",
         transition: "border-color 0.35s ease, box-shadow 0.35s ease"
       }} onMouseEnter={e => {
-        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(200,168,75,0.45)";
+        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(242, 174, 55,0.45)";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "0 12px 40px rgba(0,0,0,0.12)";
       }} onMouseLeave={e => {
-        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(200,168,75,0)";
+        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(242, 174, 55,0)";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.08)";
       }}>
         {/* Portrait 3:4 image */}
@@ -1562,7 +1562,7 @@ const LeadershipSection = () => <section style={{
             <div style={{
               fontFamily: BODY_FONT,
               fontSize: "11px",
-              color: "#C8A84B",
+              color: "#F2AE37",
               fontWeight: 600,
               letterSpacing: "0.1em",
               textTransform: "uppercase" as const,
@@ -1587,7 +1587,7 @@ const LeadershipSection = () => <section style={{
             fontFamily: HEADING_FONT,
             fontWeight: 800,
             fontSize: "20px",
-            color: "#0D2B1E",
+            color: "#023A23",
             textTransform: "uppercase" as const,
             marginBottom: "4px",
             letterSpacing: "-0.01em"
@@ -1595,7 +1595,7 @@ const LeadershipSection = () => <section style={{
           <p style={{
             fontFamily: BODY_FONT,
             fontSize: "11px",
-            color: "#C8A84B",
+            color: "#F2AE37",
             fontWeight: 600,
             letterSpacing: "0.1em",
             textTransform: "uppercase" as const,
@@ -1632,7 +1632,7 @@ const WhyNSEZSection = () => <section id="strategy" style={{
         </p>
         <div style={{
           height: "1px",
-          background: "linear-gradient(90deg, rgba(200,168,75,0.6), rgba(200,168,75,0.1))"
+          background: "linear-gradient(90deg, rgba(242, 174, 55,0.6), rgba(242, 174, 55,0.1))"
         }} />
         <p style={{
           fontFamily: BODY_FONT,
@@ -1653,7 +1653,7 @@ const WhyNSEZSection = () => <section id="strategy" style={{
 
 // ─── Values Section — creative editorial INVEST layout ───────────────────────
 
-const INVEST_LETTER_COLORS = ["#5DBB3A", "#C8A84B", "#5DBB3A", "#C8A84B", "#5DBB3A", "#C8A84B", "#5DBB3A"];
+const INVEST_LETTER_COLORS = ["#28B674", "#F2AE37", "#28B674", "#F2AE37", "#28B674", "#F2AE37", "#28B674"];
 const ValuesSection = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -1677,7 +1677,7 @@ const ValuesSection = () => {
       fontFamily: HEADING_FONT,
       fontWeight: 900,
       fontSize: "clamp(200px, 30vw, 420px)",
-      color: "rgba(29,77,53,0.02)",
+      color: "rgba(2, 58, 35,0.02)",
       lineHeight: 1,
       whiteSpace: "nowrap",
       userSelect: "none",
@@ -1702,10 +1702,10 @@ const ValuesSection = () => {
           lineHeight: 1.05
         }}>
           <span style={{
-            color: "#5DBB3A"
+            color: "#28B674"
           }}>Our</span>
           <span style={{
-            color: "#0D2B1E"
+            color: "#023A23"
           }}>{" "}Values</span>
         </h2>
       </SectionWrapper>
@@ -1758,8 +1758,8 @@ const ValuesSection = () => {
           }} onClick={() => setExpandedIndex(expandedIndex === idx ? null : idx)} style={{
             cursor: "pointer",
             padding: "20px 24px",
-            borderBottom: "1px solid rgba(29,77,53,0.1)",
-            background: expandedIndex === idx ? "rgba(29,77,53,0.04)" : "transparent",
+            borderBottom: "1px solid rgba(2, 58, 35,0.1)",
+            background: expandedIndex === idx ? "rgba(2, 58, 35,0.04)" : "transparent",
             transition: "background 0.3s ease",
             borderRadius: "8px"
           }}>
@@ -1769,12 +1769,12 @@ const ValuesSection = () => {
                 width: "48px",
                 height: "48px",
                 borderRadius: "50%",
-                border: "2px solid #C8A84B",
+                border: "2px solid #F2AE37",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 flexShrink: 0,
-                background: expandedIndex === idx ? "rgba(200,168,75,0.08)" : "transparent",
+                background: expandedIndex === idx ? "rgba(242, 174, 55,0.08)" : "transparent",
                 transition: "background 0.3s ease"
               }}>
                 <span style={{
@@ -1795,7 +1795,7 @@ const ValuesSection = () => {
                   fontFamily: HEADING_FONT,
                   fontWeight: 800,
                   fontSize: "26px",
-                  color: "#0D2B1E",
+                  color: "#023A23",
                   textTransform: "uppercase" as const,
                   letterSpacing: "0.02em",
                   display: "block",
@@ -1937,15 +1937,15 @@ const LocationsSection = () => <section id="locations" style={{
         ease: EASE_PREMIUM
       }} className="group overflow-hidden" style={{
         borderRadius: "16px",
-        border: "1px solid rgba(29,77,53,0.08)",
+        border: "1px solid rgba(2, 58, 35,0.08)",
         transition: "border-color 0.35s ease, box-shadow 0.35s ease",
         background: "#ffffff",
         boxShadow: "0 4px 20px rgba(0,0,0,0.06)"
       }} onMouseEnter={e => {
-        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(200,168,75,0.4)";
+        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(242, 174, 55,0.4)";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 32px rgba(0,0,0,0.10)";
       }} onMouseLeave={e => {
-        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(29,77,53,0.08)";
+        (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(2, 58, 35,0.08)";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)";
         (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 20px rgba(0,0,0,0.06)"
       }}>
@@ -1973,9 +1973,9 @@ const LocationsSection = () => <section id="locations" style={{
               fontFamily: BODY_FONT,
               fontSize: "10px",
               fontWeight: 600,
-              color: "#C8A84B",
+              color: "#F2AE37",
               background: "rgba(5,18,12,0.75)",
-              border: "1px solid rgba(200,168,75,0.5)",
+              border: "1px solid rgba(242, 174, 55,0.5)",
               borderRadius: "9999px",
               padding: "3px 11px",
               letterSpacing: "0.08em",
@@ -2006,12 +2006,12 @@ const LocationsSection = () => <section id="locations" style={{
                 background: "rgba(93,187,58,0.25)",
                 animation: "locPing 1.8s cubic-bezier(0,0,0.2,1) infinite"
               }} />
-              <MapPin size={16} color="#5DBB3A" />
+              <MapPin size={16} color="#28B674" />
             </span>
             <span style={{
               fontFamily: BODY_FONT,
               fontSize: "12px",
-              color: "#5DBB3A",
+              color: "#28B674",
               fontWeight: 600,
               letterSpacing: "0.04em"
             }}>{loc.address}</span>
@@ -2020,7 +2020,7 @@ const LocationsSection = () => <section id="locations" style={{
             fontFamily: HEADING_FONT,
             fontWeight: 800,
             fontSize: "24px",
-            color: "#0D2B1E",
+            color: "#023A23",
             textTransform: "uppercase" as const,
             marginBottom: "10px",
             letterSpacing: "-0.01em"
@@ -2046,7 +2046,7 @@ const LocationsSection = () => <section id="locations" style={{
 // ─── Main Page Component ──────────────────────────────────────────────────────
 
 export const AboutNSEZPage = () => {
-  return <div className="w-full selection:bg-[#1D4D35] selection:text-white overflow-x-hidden" style={{
+  return <div className="w-full selection:bg-[#023A23] selection:text-white overflow-x-hidden" style={{
     fontFamily: BODY_FONT,
     background: "#F7F9F7"
   }}>

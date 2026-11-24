@@ -6,9 +6,9 @@ import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring,
 import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, Sun, Menu, X, ChevronRight, ArrowDownToLine, Building2, Warehouse, Layers, CheckCircle2, FileText, Check, ArrowRight, Search } from 'lucide-react';
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
-const GOLD = "#C9A84C";
+const GOLD = "#F2AE37";
 
 // ─── Easing ───────────────────────────────────────────────────────────────────
 const EASE_NATURAL = [0.22, 1, 0.36, 1] as const;
@@ -81,10 +81,10 @@ interface JourneyStage {
 const INVESTMENT_STAGES: JourneyStage[] = [
   {
     name: "STAGE 1: Investor Enquiries",
-    color: "#C8A84B", // Gold
-    badgeBg: "rgba(200, 168, 75, 0.12)",
-    hoverBg: "rgba(200, 168, 75, 0.08)",
-    borderColor: "rgba(200, 168, 75, 0.4)",
+    color: "#F2AE37", // Gold
+    badgeBg: "rgba(242, 174, 55, 0.12)",
+    hoverBg: "rgba(242, 174, 55, 0.08)",
+    borderColor: "rgba(242, 174, 55, 0.4)",
     steps: [
       {
         number: "Step 1",
@@ -105,10 +105,10 @@ const INVESTMENT_STAGES: JourneyStage[] = [
   },
   {
     name: "STAGE 2: Investor Facilitation",
-    color: "#1fac67", // Green
-    badgeBg: "rgba(31, 172, 103, 0.12)",
-    hoverBg: "rgba(31, 172, 103, 0.08)",
-    borderColor: "rgba(31, 172, 103, 0.4)",
+    color: "#28B674", // Green
+    badgeBg: "rgba(40, 182, 116, 0.12)",
+    hoverBg: "rgba(40, 182, 116, 0.08)",
+    borderColor: "rgba(40, 182, 116, 0.4)",
     steps: [
       {
         number: "Step 4",
@@ -244,7 +244,7 @@ const ArrowRightIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" 
 // ─── Utility Components ───────────────────────────────────────────────────────
 const GoldDivider = () => <div style={{
   height: '1px',
-  background: 'rgba(200,168,75,0.4)',
+  background: 'rgba(242, 174, 55,0.4)',
   width: '100%'
 }} />;
 const FadeUp = ({
@@ -278,7 +278,7 @@ const FadeUp = ({
 const AnimatedHeading = ({
   eyebrow,
   heading,
-  eyebrowColor = '#C9A84C',
+  eyebrowColor = '#F2AE37',
   headingColor = '#ffffff',
   delay = 0
 }: {
@@ -365,12 +365,12 @@ const GreenButton = ({
       fontFamily: BODY_FONT,
       fontSize: '15px',
       fontWeight: 500,
-      background: '#1fac67'
+      background: '#28B674'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[46px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#1fac67'
+      background: '#28B674'
     }}>
       <ArrowRightIcon />
     </div>
@@ -413,12 +413,12 @@ const GoldButton = ({
       fontFamily: BODY_FONT,
       fontSize: '15px',
       fontWeight: 500,
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[46px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -707,12 +707,12 @@ const Hero = () => {
     {/* Scroll progress bar */}
     <div className="absolute bottom-0 left-0 right-0" style={{
       height: '2px',
-      background: 'rgba(200,168,75,0.12)',
+      background: 'rgba(242, 174, 55,0.12)',
       zIndex: 10
     }}>
       <motion.div style={{
         height: '100%',
-        background: 'linear-gradient(90deg, #C8A84B, #E8B84B)',
+        background: 'linear-gradient(90deg, #F2AE37, #E8B84B)',
         width: springProgress.get() + '%',
         originX: 0
       }} animate={{
@@ -762,7 +762,7 @@ const WhyInvestSection = () => {
             width: '100%'
           }} className="group" onMouseEnter={e => {
             const el = e.currentTarget as HTMLDivElement;
-            el.style.borderLeftColor = '#C8A84B';
+            el.style.borderLeftColor = '#F2AE37';
             el.style.transform = 'scale(1.03)';
           }} onMouseLeave={e => {
             const el = e.currentTarget as HTMLDivElement;
@@ -830,7 +830,7 @@ const JourneySection = () => {
   }}>
     <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 sm:mb-16 gap-6">
-        <AnimatedHeading eyebrow="Evaluation & Approval Process" heading="Your Path to Investing in MPUMALANGA NKOMAZI SEZ" eyebrowColor="#C9A84C" headingColor="#ffffff" />
+        <AnimatedHeading eyebrow="Evaluation & Approval Process" heading="Your Path to Investing in MPUMALANGA NKOMAZI SEZ" eyebrowColor="#F2AE37" headingColor="#ffffff" />
         <FadeUp delay={0.1}>
           <p style={{
             fontFamily: BODY_FONT,
@@ -1058,7 +1058,7 @@ const OpportunitiesSection = () => {
               width: '40px',
               height: '40px',
               borderRadius: '8px',
-              background: 'rgba(200,168,75,0.25)',
+              background: 'rgba(242, 174, 55,0.25)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
@@ -1159,7 +1159,7 @@ const OpportunitiesSection = () => {
             width: '36px',
             height: '36px',
             borderRadius: '8px',
-            background: 'rgba(200,168,75,0.25)',
+            background: 'rgba(242, 174, 55,0.25)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -1343,15 +1343,15 @@ const LEASING_CATEGORIES = ['All', 'Agro-Processing', 'Logistics & Warehousing',
 const getLeasingCategoryColor = (cat: string) => {
   switch (cat) {
     case 'Agro-Processing':
-      return '#1fac67';
+      return '#28B674';
     case 'Logistics & Warehousing':
-      return '#C9A84C';
+      return '#F2AE37';
     case 'Manufacturing':
       return '#0F3024';
     case 'Commercial & Office':
       return '#1A2744';
     default:
-      return '#1fac67';
+      return '#28B674';
   }
 };
 
@@ -1372,16 +1372,16 @@ const LeaseCard = ({
 
   const statusStyles: Record<string, { bg: string; text: string }> = {
     Available: {
-      bg: 'rgba(31,172,103,0.12)',
-      text: '#1fac67'
+      bg: 'rgba(40, 182, 116,0.12)',
+      text: '#28B674'
     },
     'Phase 1 Allocation': {
-      bg: 'rgba(201,168,76,0.18)',
-      text: '#C9A84C'
+      bg: 'rgba(242, 174, 55,0.18)',
+      text: '#F2AE37'
     },
     'Pre-Leasing': {
       bg: 'rgba(232,82,26,0.12)',
-      text: '#E8521A'
+      text: '#E77227'
     },
     'EOI Open': {
       bg: 'rgba(26,39,68,0.12)',
@@ -1390,8 +1390,8 @@ const LeaseCard = ({
   };
 
   const ss = statusStyles[item.status] || {
-    bg: 'rgba(31,172,103,0.12)',
-    text: '#1fac67'
+    bg: 'rgba(40, 182, 116,0.12)',
+    text: '#28B674'
   };
   const catColor = getLeasingCategoryColor(item.category);
 
@@ -1421,7 +1421,7 @@ const LeaseCard = ({
       }}
       style={{
         background: '#FAFAF8',
-        border: '1px solid rgba(29,77,53,0.1)',
+        border: '1px solid rgba(2, 58, 35,0.1)',
         borderRadius: '20px',
         overflow: 'hidden',
         boxShadow: hovered ? '0 12px 40px rgba(0,0,0,0.09)' : '0 4px 24px rgba(0,0,0,0.05)',
@@ -1544,7 +1544,7 @@ const LeaseCard = ({
               fontSize: '11px',
               fontWeight: 600,
               color: '#0F3024',
-              background: 'rgba(29,77,53,0.06)',
+              background: 'rgba(2, 58, 35,0.06)',
               padding: '3px 8px',
               borderRadius: '6px'
             }}
@@ -1569,7 +1569,7 @@ const LeaseCard = ({
         {/* Card footer */}
         <div
           style={{
-            borderTop: '1px solid rgba(29,77,53,0.08)',
+            borderTop: '1px solid rgba(2, 58, 35,0.08)',
             paddingTop: '16px',
             marginTop: '16px',
             display: 'flex',
@@ -1607,7 +1607,7 @@ const LeaseCard = ({
               fontFamily: BODY_FONT,
               fontSize: '11px',
               fontWeight: 700,
-              color: '#1fac67',
+              color: '#28B674',
               letterSpacing: '0.08em',
               textTransform: 'uppercase'
             }}
@@ -1624,8 +1624,8 @@ const LeaseCard = ({
                 width: '28px',
                 height: '28px',
                 borderRadius: '50%',
-                background: hovered ? '#1fac67' : 'rgba(29,77,53,0.08)',
-                color: hovered ? '#ffffff' : '#1fac67',
+                background: hovered ? '#28B674' : 'rgba(2, 58, 35,0.08)',
+                color: hovered ? '#ffffff' : '#28B674',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -1682,7 +1682,7 @@ const LeasingListingsSection = () => {
                   fontWeight: 700,
                   letterSpacing: '0.12em',
                   textTransform: 'uppercase',
-                  color: '#C9A84C'
+                  color: '#F2AE37'
                 }}
               >
                 Industrial Real Estate &amp; Land Parcels
@@ -1691,7 +1691,7 @@ const LeasingListingsSection = () => {
                 style={{
                   width: '40px',
                   height: '2px',
-                  background: '#C9A84C',
+                  background: '#F2AE37',
                   margin: '8px 0 12px 0'
                 }}
               />
@@ -1733,7 +1733,7 @@ const LeasingListingsSection = () => {
                 className="flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-[0.1em] hover:underline cursor-pointer"
                 style={{
                   fontFamily: BODY_FONT,
-                  color: '#C9A84C',
+                  color: '#F2AE37',
                   background: 'none',
                   border: 'none'
                 }}
@@ -1768,9 +1768,9 @@ const LeasingListingsSection = () => {
                       fontWeight: isActive ? 600 : 500,
                       padding: '8px 16px',
                       borderRadius: '99px',
-                      background: isActive ? '#1fac67' : 'transparent',
+                      background: isActive ? '#28B674' : 'transparent',
                       color: isActive ? '#ffffff' : '#0F3024',
-                      border: isActive ? '1px solid transparent' : '1px solid rgba(29,77,53,0.2)',
+                      border: isActive ? '1px solid transparent' : '1px solid rgba(2, 58, 35,0.2)',
                       transition: 'all 0.2s ease',
                       cursor: 'pointer',
                       whiteSpace: 'nowrap',
@@ -1794,7 +1794,7 @@ const LeasingListingsSection = () => {
                   fontFamily: BODY_FONT,
                   fontSize: '14px',
                   background: '#F0EFEA',
-                  border: focused ? '2px solid #1fac67' : '2px solid transparent',
+                  border: focused ? '2px solid #28B674' : '2px solid transparent',
                   color: '#111111',
                   transition: 'border-color 0.2s ease, background 0.2s ease'
                 }}
@@ -1807,7 +1807,7 @@ const LeasingListingsSection = () => {
                 className="absolute left-3.5 top-1/2 -translate-y-1/2 transition-colors"
                 size={17}
                 style={{
-                  color: focused ? '#1fac67' : '#9ca3af'
+                  color: focused ? '#28B674' : '#9ca3af'
                 }}
               />
             </div>
@@ -1845,7 +1845,7 @@ const LeasingListingsSection = () => {
               className="mt-6 px-6 py-2.5 text-white rounded-lg font-bold uppercase tracking-widest text-[11px]"
               style={{
                 fontFamily: BODY_FONT,
-                background: '#1fac67'
+                background: '#28B674'
               }}
             >
               Reset Filters
@@ -1884,8 +1884,8 @@ const ResourcesSection = () => {
       <div className="flex flex-col">
         {RESOURCES.map((resource, idx) => <FadeUp key={resource.title} delay={idx * 0.07}>
           <div style={{
-            borderTop: idx === 0 ? '1px solid rgba(29,77,53,0.12)' : 'none',
-            borderBottom: '1px solid rgba(29,77,53,0.12)'
+            borderTop: idx === 0 ? '1px solid rgba(2, 58, 35,0.12)' : 'none',
+            borderBottom: '1px solid rgba(2, 58, 35,0.12)'
           }}>
             <a href={resource.href} onClick={e => e.preventDefault()} className="group no-underline py-6 sm:py-8 gap-4 sm:gap-8" style={{
               color: 'inherit',
@@ -1894,7 +1894,7 @@ const ResourcesSection = () => {
               borderRadius: '8px',
               transition: 'background 0.2s ease'
             }} onMouseEnter={e => {
-              (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(200,168,75,0.08)';
+              (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(242, 174, 55,0.08)';
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
             }}>
@@ -1903,12 +1903,12 @@ const ResourcesSection = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 900,
                 fontSize: 'clamp(32px, 5vw, 64px)',
-                color: 'rgba(200,168,75,0.18)',
+                color: 'rgba(242, 174, 55,0.18)',
                 lineHeight: 1,
                 flexShrink: 0,
                 width: 'clamp(52px, 6vw, 80px)',
                 transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
-              }} className="group-hover:[color:rgba(200,168,75,0.38)]">
+              }} className="group-hover:[color:rgba(242, 174, 55,0.38)]">
                 {resource.index}
               </div>
 
@@ -1918,14 +1918,14 @@ const ResourcesSection = () => {
                   fontFamily: HEADING_FONT,
                   fontSize: 'clamp(18px, 2.8vw, 32px)',
                   fontWeight: 700,
-                  color: '#1D4D35',
+                  color: '#023A23',
                   textTransform: 'uppercase',
                   margin: 0,
                   marginBottom: resource.description ? '8px' : 0,
                   letterSpacing: '-0.3px',
                   lineHeight: 1.1,
                   transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
-                }} className="group-hover:[color:#1fac67]">
+                }} className="group-hover:[color:#28B674]">
                   {resource.title}
                 </h3>
                 {resource.description && <p style={{
@@ -1945,18 +1945,18 @@ const ResourcesSection = () => {
                 width: '44px',
                 height: '44px',
                 borderRadius: '50%',
-                border: '1.5px solid rgba(29,77,53,0.18)',
-                color: '#1D4D35',
+                border: '1.5px solid rgba(2, 58, 35,0.18)',
+                color: '#023A23',
                 transition: 'all 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
               }} onMouseEnter={e => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = '#1fac67';
-                el.style.color = '#1fac67';
-                el.style.background = 'rgba(31,172,103,0.06)';
+                el.style.borderColor = '#28B674';
+                el.style.color = '#28B674';
+                el.style.background = 'rgba(40, 182, 116,0.06)';
               }} onMouseLeave={e => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = 'rgba(29,77,53,0.18)';
-                el.style.color = '#1D4D35';
+                el.style.borderColor = 'rgba(2, 58, 35,0.18)';
+                el.style.color = '#023A23';
                 el.style.background = 'transparent';
               }}>
                 <ArrowDownToLine size={16} style={{
@@ -2019,13 +2019,13 @@ const CTASection = () => {
                 width: '6px',
                 height: '6px',
                 borderRadius: '50%',
-                background: '#C8A84B',
+                background: '#F2AE37',
                 flexShrink: 0
               }} />
               <div style={{
                 width: '1px',
                 flex: 1,
-                background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+                background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
                 minHeight: '100px',
                 marginTop: '6px'
               }} />
@@ -2100,7 +2100,7 @@ const CTASection = () => {
               <a href="mailto:invest@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
-                color: '#C8A84B',
+                color: '#F2AE37',
                 textDecoration: 'none',
                 fontWeight: 500,
                 transition: 'opacity 0.2s'
@@ -2157,12 +2157,12 @@ const HeroScrollBar = () => {
   }, []);
   return <div style={{
     height: '2px',
-    background: 'rgba(200,168,75,0.12)',
+    background: 'rgba(242, 174, 55,0.12)',
     width: '100%'
   }}>
     <motion.div style={{
       height: '100%',
-      background: 'linear-gradient(90deg, #C8A84B, #f0c860)',
+      background: 'linear-gradient(90deg, #F2AE37, #f0c860)',
       scaleX: springWidth,
       originX: 0,
       transformOrigin: 'left'

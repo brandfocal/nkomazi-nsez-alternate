@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 const CORRIDOR_STAT_PILLS = [{
   id: 'dist',
@@ -249,8 +249,8 @@ export const InvestmentCorridors: React.FC = () => {
   const trailTail = getPointOnPath(CORRIDOR_PTS, trailProgress);
   return <section ref={sectionRef} style={{
     background: '#FFFFFF',
-    borderTop: '1px solid rgba(200,168,75,0.15)',
-    borderBottom: '1px solid rgba(200,168,75,0.15)'
+    borderTop: '1px solid rgba(242, 174, 55,0.15)',
+    borderBottom: '1px solid rgba(242, 174, 55,0.15)'
   }}>
       <div style={{
       display: 'grid',
@@ -283,7 +283,7 @@ export const InvestmentCorridors: React.FC = () => {
           fontFamily: BODY_FONT,
           fontSize: '11px',
           fontWeight: 700,
-          color: '#C9A84C',
+          color: '#F2AE37',
           letterSpacing: '0.2em',
           textTransform: 'uppercase',
           display: 'block'
@@ -295,7 +295,7 @@ export const InvestmentCorridors: React.FC = () => {
           fontFamily: HEADING_FONT,
           fontSize: 'clamp(38px, 4.5vw, 52px)',
           fontWeight: 700,
-          color: '#1D4D35',
+          color: '#023A23',
           lineHeight: 1.0,
           letterSpacing: '-0.5px',
           margin: 0
@@ -306,7 +306,7 @@ export const InvestmentCorridors: React.FC = () => {
           <div style={{
           width: '40px',
           height: '1px',
-          background: '#C9A84C',
+          background: '#F2AE37',
           flexShrink: 0
         }} />
 
@@ -330,8 +330,8 @@ export const InvestmentCorridors: React.FC = () => {
             fontFamily: BODY_FONT,
             fontSize: '13px',
             fontWeight: 700,
-            color: '#1D4D35',
-            border: '1.5px solid #1D4D35',
+            color: '#023A23',
+            border: '1.5px solid #023A23',
             borderRadius: '999px',
             padding: '6px 14px',
             display: 'inline-block',
@@ -355,7 +355,7 @@ export const InvestmentCorridors: React.FC = () => {
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none" style={{
               flexShrink: 0
             }}>
-                  <path d="M2 7h10M8 3l4 4-4 4" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <path d="M2 7h10M8 3l4 4-4 4" stroke="#F2AE37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                 </svg>
                 <span style={{
               fontFamily: BODY_FONT,
@@ -390,7 +390,7 @@ export const InvestmentCorridors: React.FC = () => {
           maxWidth: '660px',
           background: '#F5F0E8',
           borderRadius: '20px',
-          boxShadow: '0 12px 56px rgba(29,77,53,0.16), 0 4px 16px rgba(0,0,0,0.09)',
+          boxShadow: '0 12px 56px rgba(2, 58, 35,0.16), 0 4px 16px rgba(0,0,0,0.09)',
           padding: '28px 24px 20px',
           position: 'relative'
         }}>
@@ -405,7 +405,7 @@ export const InvestmentCorridors: React.FC = () => {
               fontFamily: BODY_FONT,
               fontSize: '10px',
               fontWeight: 700,
-              color: '#1D4D35',
+              color: '#023A23',
               letterSpacing: '0.14em',
               textTransform: 'uppercase',
               opacity: 0.7
@@ -427,13 +427,13 @@ export const InvestmentCorridors: React.FC = () => {
                 width: '6px',
                 height: '6px',
                 borderRadius: '50%',
-                background: '#1D4D35',
+                background: '#023A23',
                 display: 'inline-block'
               }} />
                 <span style={{
                 fontFamily: BODY_FONT,
                 fontSize: '9px',
-                color: '#1D4D35',
+                color: '#023A23',
                 opacity: 0.5
               }}>
                   LIVE ROUTE
@@ -463,9 +463,9 @@ export const InvestmentCorridors: React.FC = () => {
                 {/* Corridor shimmer gradient */}
                 <linearGradient id="ic-corridor-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#9B7D2C" />
-                  <stop offset="40%" stopColor="#C9A84C" />
+                  <stop offset="40%" stopColor="#F2AE37" />
                   <stop offset="70%" stopColor="#E8C96A" />
-                  <stop offset="100%" stopColor="#C9A84C" />
+                  <stop offset="100%" stopColor="#F2AE37" />
                   <animateTransform attributeName="gradientTransform" type="translate" values="-1 0; 1 0; -1 0" dur="2s" repeatCount="indefinite" />
                 </linearGradient>
                 {/* Sage glow filter for corridor-adjacent countries */}
@@ -522,7 +522,7 @@ export const InvestmentCorridors: React.FC = () => {
                 </motion.text>)}
 
               {/* Corridor glow halo */}
-              <motion.path d={corridorPathD} fill="none" stroke="#C9A84C" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" opacity={0.08} style={{
+              <motion.path d={corridorPathD} fill="none" stroke="#F2AE37" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round" opacity={0.08} style={{
               filter: 'url(#ic-gold-glow)'
             }} initial={{
               pathLength: 0,
@@ -554,7 +554,7 @@ export const InvestmentCorridors: React.FC = () => {
                   <line x1={trailTail.x} y1={trailTail.y} x2={cometHead.x} y2={cometHead.y} stroke="#E8C96A" strokeWidth="2" strokeLinecap="round" opacity={0.5} style={{
                 filter: 'url(#ic-gold-glow)'
               }} />
-                  <circle cx={cometHead.x} cy={cometHead.y} r={7} fill="#C9A84C" opacity={0.2} style={{
+                  <circle cx={cometHead.x} cy={cometHead.y} r={7} fill="#F2AE37" opacity={0.2} style={{
                 filter: 'url(#ic-gold-glow)'
               }} />
                   <circle cx={cometHead.x} cy={cometHead.y} r={4} fill="#E8C96A" style={{
@@ -645,29 +645,29 @@ export const InvestmentCorridors: React.FC = () => {
               delay: 1.2
             }}>
                 {/* Three concentric pulse rings with staggered delay */}
-                {mapInView && <PulseRing cx={312} cy={172} color="#C9A84C" delay={0} maxR={20} />}
-                {mapInView && <PulseRing cx={312} cy={172} color="#C9A84C" delay={0.8} maxR={28} />}
-                {mapInView && <PulseRing cx={312} cy={172} color="#C9A84C" delay={1.6} maxR={36} />}
+                {mapInView && <PulseRing cx={312} cy={172} color="#F2AE37" delay={0} maxR={20} />}
+                {mapInView && <PulseRing cx={312} cy={172} color="#F2AE37" delay={0.8} maxR={28} />}
+                {mapInView && <PulseRing cx={312} cy={172} color="#F2AE37" delay={1.6} maxR={36} />}
 
                 {/* Gold diamond pin */}
-                <polygon points={`${312},${162} ${318},${172} ${312},${182} ${306},${172}`} fill="#C9A84C" style={{
+                <polygon points={`${312},${162} ${318},${172} ${312},${182} ${306},${172}`} fill="#F2AE37" style={{
                 filter: 'url(#ic-nsez-glow)'
               }} />
                 <polygon points={`${312},${165} ${316},${172} ${312},${179} ${308},${172}`} fill="#E8C96A" />
 
                 {/* Elevated label card */}
-                <rect x={320} y={158} width={88} height={28} rx={5} fill="#FFFFFF" stroke="#C9A84C" strokeWidth="1.2" style={{
-                filter: 'drop-shadow(0px 2px 6px rgba(29,77,53,0.2))'
+                <rect x={320} y={158} width={88} height={28} rx={5} fill="#FFFFFF" stroke="#F2AE37" strokeWidth="1.2" style={{
+                filter: 'drop-shadow(0px 2px 6px rgba(2, 58, 35,0.2))'
               }} />
-                <text x={364} y={169} textAnchor="middle" fontSize="8.5" fill="#1D4D35" style={{
+                <text x={364} y={169} textAnchor="middle" fontSize="8.5" fill="#023A23" style={{
                 fontFamily: BODY_FONT,
                 fontWeight: 700,
                 letterSpacing: '0.05em'
               }}>
                   NSEZ
                 </text>
-                <line x1={330} y1={172} x2={406} y2={172} stroke="rgba(201,168,76,0.35)" strokeWidth="0.5" />
-                <text x={364} y={181} textAnchor="middle" fontSize="6.5" fill="rgba(29,77,53,0.6)" style={{
+                <line x1={330} y1={172} x2={406} y2={172} stroke="rgba(242, 174, 55,0.35)" strokeWidth="0.5" />
+                <text x={364} y={181} textAnchor="middle" fontSize="6.5" fill="rgba(2, 58, 35,0.6)" style={{
                 fontFamily: BODY_FONT
               }}>
                   Komatipoort
@@ -678,7 +678,7 @@ export const InvestmentCorridors: React.FC = () => {
               <g>
                 <circle cx={468} cy={28} r={13} stroke="rgba(100,80,40,0.25)" strokeWidth="0.8" fill="rgba(255,255,255,0.5)" />
                 <line x1={468} y1={28} x2={468} y2={17} stroke="rgba(100,80,40,0.7)" strokeWidth="1.2" />
-                <polygon points="468,14 466,21 470,21" fill="#C9A84C" />
+                <polygon points="468,14 466,21 470,21" fill="#F2AE37" />
                 <text x={468} y={12} textAnchor="middle" fontSize="6.5" fill="rgba(100,80,40,0.8)" style={{
                 fontFamily: BODY_FONT,
                 fontWeight: 700
@@ -694,14 +694,14 @@ export const InvestmentCorridors: React.FC = () => {
               duration: 0.5,
               delay: 1.6
             }}>
-                <rect x="8" y="270" width="230" height="62" rx="5" fill="rgba(255,255,255,0.82)" stroke="rgba(201,168,76,0.25)" strokeWidth="0.7" />
+                <rect x="8" y="270" width="230" height="62" rx="5" fill="rgba(255,255,255,0.82)" stroke="rgba(242, 174, 55,0.25)" strokeWidth="0.7" />
                 {/* NSEZ diamond */}
-                <polygon points="22,284 27,290 22,296 17,290" fill="#C9A84C" />
+                <polygon points="22,284 27,290 22,296 17,290" fill="#F2AE37" />
                 <text x="34" y="294" fontSize="7.5" fill="rgba(60,40,10,0.7)" style={{
                 fontFamily: BODY_FONT
               }}>NSEZ Location</text>
                 {/* Corridor line */}
-                <line x1="12" y1="308" x2="32" y2="308" stroke="#C9A84C" strokeWidth="2" strokeLinecap="round" />
+                <line x1="12" y1="308" x2="32" y2="308" stroke="#F2AE37" strokeWidth="2" strokeLinecap="round" />
                 <text x="38" y="312" fontSize="7.5" fill="rgba(60,40,10,0.7)" style={{
                 fontFamily: BODY_FONT
               }}>Maputo Corridor</text>

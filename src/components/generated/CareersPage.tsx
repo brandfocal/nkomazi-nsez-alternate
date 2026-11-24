@@ -5,9 +5,9 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
-const GOLD = "#C9A84C";
+const GOLD = "#F2AE37";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
 const NAV_SECTORS = ['Agro-processing & Agriculture', 'Manufacturing', 'Green Economy', 'Logistics & Warehousing'];
@@ -181,12 +181,12 @@ const GreenButton = ({
   duration: 0.2,
   ease: 'easeOut'
 }}>
-    <div className={`flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em] ${fullWidth ? 'flex-1' : ''}`} style={{
+    <div className={`flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em] ${fullWidth ? 'flex-1' : ''}`} style={{
       fontFamily: BODY_FONT
     }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -219,12 +219,12 @@ const GoldButton = ({
 }}>
     <div className={`flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em] ${fullWidth ? 'flex-1' : ''}`} style={{
       fontFamily: BODY_FONT,
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -553,7 +553,7 @@ const PageHero = () => {
             margin: 0
           }}>
             <span style={{
-              color: '#5DBB3A',
+              color: '#28B674',
               display: 'block'
             }}>Shape Your Future.</span>
             <span style={{
@@ -715,19 +715,19 @@ const WhyWorkAtNSEZ = () => <section className="py-16 sm:py-24 bg-white px-4 sm:
       <FadeUp>
         <span className="inline-block text-xs rounded-full px-3 py-2 leading-[21px] tracking-[0.06em] uppercase mb-5 text-white" style={{
           fontFamily: BODY_FONT,
-          background: '#1fac67'
+          background: '#28B674'
         }}>
           Why MPUMALANGA NKOMAZI SEZ
         </span>
       </FadeUp>
-      <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] text-[#1D4D35] uppercase text-center mb-4" style={{
+      <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] text-[#023A23] uppercase text-center mb-4" style={{
         lineHeight: 1.05
       }}>
         Why Work at MPUMALANGA NKOMAZI SEZ
       </AnimatedHeading>
       <div style={{
         height: '2px',
-        background: 'rgba(200,168,75,0.6)',
+        background: 'rgba(242, 174, 55,0.6)',
         width: '64px',
         margin: '0 auto'
       }} />
@@ -738,7 +738,7 @@ const WhyWorkAtNSEZ = () => <section className="py-16 sm:py-24 bg-white px-4 sm:
       {WHY_WORK_CARDS.map((card, idx) => {
         const IconComp = card.icon;
         return <FadeUp key={card.id} delay={idx * 0.15} className="group">
-          <div className="bg-[#FAFAF8] rounded-2xl border border-gray-100 hover:border-[#1fac67]/30 transition-all duration-300 h-full flex flex-col hover:shadow-xl hover:shadow-green-900/5 overflow-hidden">
+          <div className="bg-[#FAFAF8] rounded-2xl border border-gray-100 hover:border-[#28B674]/30 transition-all duration-300 h-full flex flex-col hover:shadow-xl hover:shadow-green-900/5 overflow-hidden">
             {/* Top image — fixed aspect ratio container */}
             <div className="w-full overflow-hidden" style={{
               height: '200px',
@@ -748,10 +748,10 @@ const WhyWorkAtNSEZ = () => <section className="py-16 sm:py-24 bg-white px-4 sm:
             </div>
             {/* Content */}
             <div className="p-6 sm:p-8 lg:p-10 flex flex-col items-center text-center flex-1">
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#1D4D35] rounded-xl flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-500">
+              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#023A23] rounded-xl flex items-center justify-center mb-6 sm:mb-8 group-hover:scale-110 transition-transform duration-500">
                 <IconComp className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
               </div>
-              <h3 className="text-[22px] sm:text-[24px] font-bold text-[#1D4D35] uppercase mb-3 sm:mb-4" style={{
+              <h3 className="text-[22px] sm:text-[24px] font-bold text-[#023A23] uppercase mb-3 sm:mb-4" style={{
                 fontFamily: HEADING_FONT
               }}>
                 {card.title}
@@ -783,14 +783,14 @@ const CareersSection = () => {
   return <section className="py-16 sm:py-24 bg-[#FAFAF8] px-4 sm:px-6 lg:px-12" id="opportunities">
     <div className="max-w-[1440px] mx-auto">
       <div className="text-center mb-10 sm:mb-12">
-        <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] text-[#1D4D35] uppercase text-center mb-4" style={{
+        <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] text-[#023A23] uppercase text-center mb-4" style={{
           lineHeight: 1.05
         }}>
           Open Positions
         </AnimatedHeading>
         <div style={{
           height: '2px',
-          background: 'rgba(200,168,75,0.6)',
+          background: 'rgba(242, 174, 55,0.6)',
           width: '64px',
           margin: '0 auto 32px'
         }} />
@@ -800,7 +800,7 @@ const CareersSection = () => {
       <div className="flex overflow-x-auto gap-2 mb-10 sm:mb-12 pb-2 sm:flex-wrap sm:justify-center scrollbar-none" style={{
         WebkitOverflowScrolling: 'touch'
       }}>
-        {CAREER_CATEGORIES.map(cat => <button key={cat.id} onClick={() => setActiveCategory(cat.id)} className={`flex-shrink-0 px-5 sm:px-6 py-2.5 rounded-full text-[12px] sm:text-[13px] font-medium tracking-[0.04em] uppercase transition-all duration-300 border min-h-[44px] ${activeCategory === cat.id ? 'bg-[#1D4D35] text-white border-[#1D4D35] shadow-lg shadow-green-900/20' : 'bg-white text-gray-500 border-gray-200 hover:border-[#1D4D35]/30'}`} style={{
+        {CAREER_CATEGORIES.map(cat => <button key={cat.id} onClick={() => setActiveCategory(cat.id)} className={`flex-shrink-0 px-5 sm:px-6 py-2.5 rounded-full text-[12px] sm:text-[13px] font-medium tracking-[0.04em] uppercase transition-all duration-300 border min-h-[44px] ${activeCategory === cat.id ? 'bg-[#023A23] text-white border-[#023A23] shadow-lg shadow-green-900/20' : 'bg-white text-gray-500 border-gray-200 hover:border-[#023A23]/30'}`} style={{
           fontFamily: BODY_FONT
         }}>
           {cat.label}
@@ -825,13 +825,13 @@ const CareersSection = () => {
               if (job.pdfUrl) {
                 window.open(job.pdfUrl, '_blank');
               }
-            }} className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 hover:shadow-lg hover:border-[#1fac67]/20 transition-all duration-300 cursor-pointer">
+            }} className="bg-white p-6 sm:p-8 rounded-2xl border border-gray-100 flex flex-col lg:flex-row lg:items-center justify-between gap-6 sm:gap-8 hover:shadow-lg hover:border-[#28B674]/20 transition-all duration-300 cursor-pointer">
               <div className="flex-1 min-w-0 space-y-3 sm:space-y-4">
                 <div className="flex flex-wrap items-center gap-2 sm:gap-3">
                   <span className="px-3 py-1 rounded-full text-[11px] font-medium uppercase tracking-widest" style={{
                     fontFamily: BODY_FONT,
-                    background: 'rgba(200,168,75,0.12)',
-                    color: '#C8A84B'
+                    background: 'rgba(242, 174, 55,0.12)',
+                    color: '#F2AE37'
                   }}>
                     {job.category}
                   </span>
@@ -842,7 +842,7 @@ const CareersSection = () => {
                     <span>{job.department}</span>
                   </span>
                 </div>
-                <h4 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-[#1D4D35] uppercase leading-tight" style={{
+                <h4 className="text-[24px] sm:text-[28px] lg:text-[32px] font-bold text-[#023A23] uppercase leading-tight" style={{
                   fontFamily: HEADING_FONT
                 }}>
                   {job.title}
@@ -856,13 +856,13 @@ const CareersSection = () => {
                   <div className="flex items-center gap-2 text-gray-500 text-sm" style={{
                     fontFamily: BODY_FONT
                   }}>
-                    <MapPin size={16} className="text-[#1fac67] flex-shrink-0" />
+                    <MapPin size={16} className="text-[#28B674] flex-shrink-0" />
                     <span>{job.location}</span>
                   </div>
                   <div className="flex items-center gap-2 text-gray-500 text-sm" style={{
                     fontFamily: BODY_FONT
                   }}>
-                    <Calendar size={16} className="text-[#1fac67] flex-shrink-0" />
+                    <Calendar size={16} className="text-[#28B674] flex-shrink-0" />
                     <span>
                       <span>Closing: </span>
                       <strong className="text-gray-700">{job.closingDate}</strong>
@@ -905,7 +905,7 @@ const CareersSection = () => {
 
 // ─── Learnerships Band ────────────────────────────────────────────────────────
 
-const LearnershipsBand = () => <section className="bg-[#1D4D35] text-white relative overflow-hidden" style={{
+const LearnershipsBand = () => <section className="bg-[#023A23] text-white relative overflow-hidden" style={{
   paddingTop: 'clamp(56px, 8vw, 112px)',
   paddingBottom: 'clamp(56px, 8vw, 112px)'
 }}>
@@ -940,7 +940,7 @@ const LearnershipsBand = () => <section className="bg-[#1D4D35] text-white relat
       <FadeUp>
         <span className="inline-block rounded-full px-4 py-1.5 text-white text-[12px] font-semibold uppercase tracking-widest mb-5 sm:mb-6" style={{
           fontFamily: BODY_FONT,
-          background: '#E8521A'
+          background: '#E77227'
         }}>
           Opportunities for Young Talent
         </span>
@@ -952,7 +952,7 @@ const LearnershipsBand = () => <section className="bg-[#1D4D35] text-white relat
       </AnimatedHeading>
       <div style={{
         height: '2px',
-        background: 'linear-gradient(90deg, transparent, #C8A84B, transparent)',
+        background: 'linear-gradient(90deg, transparent, #F2AE37, transparent)',
         width: '64px',
         margin: '0 auto 20px'
       }} />
@@ -1012,13 +1012,13 @@ const RegisterInterestCTA = () => {
                 width: '6px',
                 height: '6px',
                 borderRadius: '50%',
-                background: '#C8A84B',
+                background: '#F2AE37',
                 flexShrink: 0
               }} />
               <div style={{
                 width: '1px',
                 flex: 1,
-                background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+                background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
                 minHeight: '80px',
                 marginTop: '6px'
               }} />
@@ -1028,7 +1028,7 @@ const RegisterInterestCTA = () => {
                 fontFamily: BODY_FONT,
                 fontSize: '11px',
                 fontWeight: 700,
-                color: '#E8521A',
+                color: '#E77227',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 marginBottom: '16px'
@@ -1100,7 +1100,7 @@ const RegisterInterestCTA = () => {
               <div className="flex flex-col sm:flex-row gap-3">
                 <motion.button type="button" className="flex items-center justify-center gap-2 text-white font-semibold rounded-xl px-6 py-3.5 text-[14px] tracking-[0.01em] min-h-[44px]" style={{
                   fontFamily: BODY_FONT,
-                  background: '#E8521A',
+                  background: '#E77227',
                   border: 'none',
                   cursor: 'pointer'
                 }} whileHover={{
@@ -1127,7 +1127,7 @@ const RegisterInterestCTA = () => {
               <a href="mailto:careers@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
-                color: '#C8A84B',
+                color: '#F2AE37',
                 textDecoration: 'none',
                 fontWeight: 500,
                 transition: 'opacity 0.2s'
@@ -1171,7 +1171,7 @@ const Footer = () => <footer style={{
   {/* Top bar */}
   <div style={{
     background: '#0F3024',
-    borderBottom: '1px solid rgba(201,168,76,0.25)'
+    borderBottom: '1px solid rgba(242, 174, 55,0.25)'
   }}>
     <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
       <div style={{
@@ -1213,8 +1213,8 @@ const Footer = () => <footer style={{
           display: 'inline-flex',
           alignItems: 'center'
         }} onMouseEnter={e => {
-          (e.currentTarget as HTMLAnchorElement).style.borderColor = '#C9A84C';
-          (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C';
+          (e.currentTarget as HTMLAnchorElement).style.borderColor = '#F2AE37';
+          (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37';
         }} onMouseLeave={e => {
           (e.currentTarget as HTMLAnchorElement).style.borderColor = 'rgba(255,255,255,0.6)';
           (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
@@ -1227,7 +1227,7 @@ const Footer = () => <footer style={{
 
   <div style={{
     height: '2px',
-    background: '#C9A84C',
+    background: '#F2AE37',
     opacity: 0.85
   }} />
 
@@ -1278,8 +1278,8 @@ const Footer = () => <footer style={{
             transition: 'border-color 0.2s, color 0.2s, background 0.2s'
           }} onMouseEnter={e => {
             const el = e.currentTarget as HTMLAnchorElement;
-            el.style.borderColor = '#C9A84C';
-            el.style.color = '#C9A84C';
+            el.style.borderColor = '#F2AE37';
+            el.style.color = '#F2AE37';
           }} onMouseLeave={e => {
             const el = e.currentTarget as HTMLAnchorElement;
             el.style.borderColor = 'rgba(255,255,255,0.25)';
@@ -1297,7 +1297,7 @@ const Footer = () => <footer style={{
             fontFamily: HEADING_FONT,
             fontWeight: 700,
             fontSize: '13px',
-            color: '#C9A84C',
+            color: '#F2AE37',
             letterSpacing: '0.1em',
             textTransform: 'uppercase' as const
           }}>
@@ -1324,7 +1324,7 @@ const Footer = () => <footer style={{
             fontFamily: HEADING_FONT,
             fontWeight: 700,
             fontSize: '13px',
-            color: '#C9A84C',
+            color: '#F2AE37',
             letterSpacing: '0.1em',
             textTransform: 'uppercase' as const
           }}>
@@ -1354,7 +1354,7 @@ const Footer = () => <footer style={{
           fontFamily: HEADING_FONT,
           fontWeight: 700,
           fontSize: '13px',
-          color: '#C9A84C',
+          color: '#F2AE37',
           letterSpacing: '0.1em',
           textTransform: 'uppercase' as const
         }}>
@@ -1376,7 +1376,7 @@ const Footer = () => <footer style={{
               color: 'rgba(255,255,255,0.75)',
               textDecoration: 'none'
             }} onMouseEnter={e => {
-              (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C';
+              (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37';
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)';
             }}>
@@ -1398,7 +1398,7 @@ const Footer = () => <footer style={{
               color: 'rgba(255,255,255,0.75)',
               textDecoration: 'none'
             }} onMouseEnter={e => {
-              (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C';
+              (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37';
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)';
             }}>
@@ -1478,7 +1478,7 @@ const Footer = () => <footer style={{
 
 export const CareersPage = () => <div className="min-h-screen bg-white overflow-x-hidden w-full" style={{
   fontFamily: BODY_FONT,
-  color: '#1D4D35'
+  color: '#023A23'
 }}>
   <NSEZNavbar />
   <main style={{ paddingTop: '36px' }}>

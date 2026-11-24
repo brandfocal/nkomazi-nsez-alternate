@@ -4,7 +4,7 @@ import { NSEZFooterSection } from './NSEZFooterSection';
 import { Cookie, ChevronRight, CheckCircle2, SlidersHorizontal } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 export const CookiePolicyPage: React.FC = () => {
@@ -25,8 +25,8 @@ export const CookiePolicyPage: React.FC = () => {
         <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex items-center gap-2 mb-4 text-xs font-semibold text-white/50 tracking-wider uppercase">
             <Link to="/" className="text-white/60 hover:text-white no-underline">Home</Link>
-            <ChevronRight size={12} className="text-[#C9A84C]" />
-            <span className="text-[#C9A84C]">Cookie Policy</span>
+            <ChevronRight size={12} className="text-[#F2AE37]" />
+            <span className="text-[#F2AE37]">Cookie Policy</span>
           </div>
 
           <h1
@@ -63,7 +63,7 @@ export const CookiePolicyPage: React.FC = () => {
         <div className="max-w-[1000px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#FAFAF8] border border-black/5 rounded-2xl p-6 sm:p-10 mb-12 shadow-sm">
             <div className="flex items-center gap-3 mb-4">
-              <Cookie className="text-[#C9A84C] w-6 h-6" />
+              <Cookie className="text-[#F2AE37] w-6 h-6" />
               <h3 style={{ fontFamily: HEADING_FONT, fontSize: '24px', fontWeight: 700, margin: 0, textTransform: 'uppercase', color: '#0F3024' }}>
                 Cookie Usage Summary
               </h3>

@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
-const HEADING_FONT = "'Inter', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'DM Sans', system-ui, sans-serif";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -189,12 +189,12 @@ const CITY_NODES: CityNode[] = [{
 const FILTER_REGIONS: FilterRegion[] = [{
   id: 'all',
   label: 'All Corridors',
-  color: '#C8A84B',
+  color: '#F2AE37',
   nodeIds: []
 }, {
   id: 'sadc',
   label: 'SADC',
-  color: '#C8A84B',
+  color: '#F2AE37',
   nodeIds: ['map', 'jnb', 'hre', 'lun', 'bla', 'dbn']
 }, {
   id: 'africa',
@@ -439,75 +439,75 @@ const TRADE_ROUTES: TradeRoute[] = [{
 
 const CONTINENT_PATHS = [{
   d: `M 390 90 C 408 72 440 66 468 72 L 500 76 C 530 78 556 90 570 108 L 590 130 C 606 154 608 182 600 206 L 588 234 C 574 262 554 278 534 286 L 510 294 C 488 300 464 296 448 282 L 430 264 C 414 244 408 216 412 190 L 416 166 C 420 142 410 118 390 90 Z`,
-  fill: 'rgba(200,168,75,0.13)',
-  stroke: 'rgba(200,168,75,0.32)'
+  fill: 'rgba(242, 174, 55,0.13)',
+  stroke: 'rgba(242, 174, 55,0.32)'
 }, {
   d: `M 448 282 C 460 292 480 298 500 294 L 530 286 C 548 278 558 268 560 280 L 554 310 C 546 332 528 346 508 348 L 484 346 C 462 342 448 326 444 306 L 444 290 Z`,
-  fill: 'rgba(200,168,75,0.14)',
-  stroke: 'rgba(200,168,75,0.30)'
+  fill: 'rgba(242, 174, 55,0.14)',
+  stroke: 'rgba(242, 174, 55,0.30)'
 }, {
   d: `M 570 108 C 586 104 610 108 624 120 L 636 138 C 630 154 614 158 598 150 L 578 134 Z`,
-  fill: 'rgba(200,168,75,0.10)',
-  stroke: 'rgba(200,168,75,0.22)'
+  fill: 'rgba(242, 174, 55,0.10)',
+  stroke: 'rgba(242, 174, 55,0.22)'
 }, {
   d: `M 578 294 C 584 282 596 280 602 290 L 606 318 L 592 328 L 578 312 Z`,
-  fill: 'rgba(200,168,75,0.08)',
-  stroke: 'rgba(200,168,75,0.18)'
+  fill: 'rgba(242, 174, 55,0.08)',
+  stroke: 'rgba(242, 174, 55,0.18)'
 }, {
   d: `M 402 20 C 422 10 466 8 498 16 L 522 24 C 538 34 538 50 520 58 L 490 64 L 456 60 L 424 48 Z`,
-  fill: 'rgba(200,168,75,0.08)',
-  stroke: 'rgba(200,168,75,0.18)'
+  fill: 'rgba(242, 174, 55,0.08)',
+  stroke: 'rgba(242, 174, 55,0.18)'
 }, {
   d: `M 390 42 C 398 32 414 32 418 42 L 414 58 L 396 56 Z`,
-  fill: 'rgba(200,168,75,0.07)',
-  stroke: 'rgba(200,168,75,0.15)'
+  fill: 'rgba(242, 174, 55,0.07)',
+  stroke: 'rgba(242, 174, 55,0.15)'
 }, {
   d: `M 584 110 C 604 98 644 100 662 118 L 672 140 C 668 160 648 168 624 164 L 600 152 L 582 132 Z`,
-  fill: 'rgba(200,168,75,0.09)',
-  stroke: 'rgba(200,168,75,0.20)'
+  fill: 'rgba(242, 174, 55,0.09)',
+  stroke: 'rgba(242, 174, 55,0.20)'
 }, {
   d: `M 660 130 C 686 116 728 118 748 136 L 762 160 C 760 186 740 202 712 202 L 680 192 L 658 168 Z`,
-  fill: 'rgba(200,168,75,0.08)',
-  stroke: 'rgba(200,168,75,0.18)'
+  fill: 'rgba(242, 174, 55,0.08)',
+  stroke: 'rgba(242, 174, 55,0.18)'
 }, {
   d: `M 768 186 C 796 172 844 174 864 192 L 876 216 C 870 238 848 248 820 244 L 788 232 L 768 210 Z`,
-  fill: 'rgba(200,168,75,0.08)',
-  stroke: 'rgba(200,168,75,0.18)'
+  fill: 'rgba(242, 174, 55,0.08)',
+  stroke: 'rgba(242, 174, 55,0.18)'
 }, {
   d: `M 796 246 C 808 238 824 242 830 254 L 832 274 L 812 278 L 796 262 Z`,
-  fill: 'rgba(200,168,75,0.07)',
-  stroke: 'rgba(200,168,75,0.15)'
+  fill: 'rgba(242, 174, 55,0.07)',
+  stroke: 'rgba(242, 174, 55,0.15)'
 }, {
   d: `M 870 96 C 880 84 898 84 902 96 L 900 116 L 882 120 Z`,
-  fill: 'rgba(200,168,75,0.07)',
-  stroke: 'rgba(200,168,75,0.15)'
+  fill: 'rgba(242, 174, 55,0.07)',
+  stroke: 'rgba(242, 174, 55,0.15)'
 }, {
   d: `M 830 320 C 858 302 916 300 940 322 L 956 350 C 960 382 944 410 918 420 L 882 426 C 848 426 822 406 814 378 L 812 350 Z`,
-  fill: 'rgba(200,168,75,0.09)',
-  stroke: 'rgba(200,168,75,0.20)'
+  fill: 'rgba(242, 174, 55,0.09)',
+  stroke: 'rgba(242, 174, 55,0.20)'
 }, {
   d: `M 36 54 C 58 34 104 28 140 36 L 174 46 C 196 58 200 80 188 96 L 168 114 C 146 128 118 128 98 116 L 68 96 C 44 80 30 68 36 54 Z`,
-  fill: 'rgba(200,168,75,0.08)',
-  stroke: 'rgba(200,168,75,0.18)'
+  fill: 'rgba(242, 174, 55,0.08)',
+  stroke: 'rgba(242, 174, 55,0.18)'
 }, {
   d: `M 188 96 L 208 106 L 216 124 L 196 130 L 182 114 Z`,
-  fill: 'rgba(200,168,75,0.07)',
-  stroke: 'rgba(200,168,75,0.14)'
+  fill: 'rgba(242, 174, 55,0.07)',
+  stroke: 'rgba(242, 174, 55,0.14)'
 }, {
   d: `M 96 274 C 118 252 164 248 190 264 L 214 284 C 232 308 232 346 218 374 L 196 402 C 172 424 140 428 118 412 C 96 396 86 366 90 336 L 90 304 Z`,
-  fill: 'rgba(200,168,75,0.09)',
-  stroke: 'rgba(200,168,75,0.20)'
+  fill: 'rgba(242, 174, 55,0.09)',
+  stroke: 'rgba(242, 174, 55,0.20)'
 }, {
   d: `M 490 0 C 560 0 700 0 800 8 L 880 18 C 900 26 892 40 860 44 L 780 48 L 680 40 L 580 32 L 490 26 Z`,
-  fill: 'rgba(200,168,75,0.06)',
-  stroke: 'rgba(200,168,75,0.12)'
+  fill: 'rgba(242, 174, 55,0.06)',
+  stroke: 'rgba(242, 174, 55,0.12)'
 }];
 
 // ─── Region colours ───────────────────────────────────────────────────────────
 
 const REGION_COLORS: Record<string, string> = {
-  Mozambique: '#C8A84B',
-  SADC: '#C8A84B',
+  Mozambique: '#F2AE37',
+  SADC: '#F2AE37',
   'East Africa': '#FCD34D',
   'North Africa': '#FB923C',
   'West Africa': '#F97316',
@@ -544,28 +544,28 @@ const INSET_NODES = [{
   x: 100,
   y: 100,
   isHub: true,
-  color: '#C8A84B'
+  color: '#F2AE37'
 }, {
   id: 'map-i',
   label: 'Maputo',
   x: 148,
   y: 118,
   isHub: false,
-  color: '#C8A84B'
+  color: '#F2AE37'
 }, {
   id: 'jnb-i',
   label: 'Johannesburg',
   x: 44,
   y: 124,
   isHub: false,
-  color: '#C8A84B'
+  color: '#F2AE37'
 }, {
   id: 'dbn-i',
   label: 'Durban',
   x: 68,
   y: 160,
   isHub: false,
-  color: '#C8A84B'
+  color: '#F2AE37'
 }, {
   id: 'hre-i',
   label: 'Harare',
@@ -830,7 +830,7 @@ const RadiusPulse = ({
   cy: number;
   baseR: number;
   delay: number;
-}) => <motion.circle cx={cx} cy={cy} r={baseR} fill="none" stroke="#C8A84B" strokeWidth={0.6} strokeDasharray="4 6" initial={{
+}) => <motion.circle cx={cx} cy={cy} r={baseR} fill="none" stroke="#F2AE37" strokeWidth={0.6} strokeDasharray="4 6" initial={{
   r: baseR,
   opacity: 0
 }} animate={{
@@ -851,7 +851,7 @@ const PulseRing = ({
   cx: number;
   cy: number;
   delay: number;
-}) => <motion.circle cx={cx} cy={cy} r={4} fill="none" stroke="#C8A84B" strokeWidth={1.2} initial={{
+}) => <motion.circle cx={cx} cy={cy} r={4} fill="none" stroke="#F2AE37" strokeWidth={1.2} initial={{
   r: 4,
   opacity: 0.8
 }} animate={{
@@ -874,7 +874,7 @@ const TradeDot = ({
   delay: number;
   duration: number;
   isHub: boolean;
-}) => <motion.circle r={isHub ? 3.5 : 2.2} fill={isHub ? '#C8A84B' : 'rgba(200,168,75,0.9)'} filter="url(#dot-glow)" style={{
+}) => <motion.circle r={isHub ? 3.5 : 2.2} fill={isHub ? '#F2AE37' : 'rgba(242, 174, 55,0.9)'} filter="url(#dot-glow)" style={{
   offsetPath: `path("${pathStr}")`
 } as React.CSSProperties} initial={{
   offsetDistance: '0%',
@@ -903,7 +903,7 @@ const RouteLabel = ({
   if (!mid) return null;
   return <AnimatePresence>
       {visible && <motion.g key={label}>
-          <motion.rect x={mid.x - 36} y={mid.y - 9} width={72} height={16} rx={4} ry={4} fill="rgba(15,36,25,0.88)" stroke="rgba(200,168,75,0.5)" strokeWidth={0.5} initial={{
+          <motion.rect x={mid.x - 36} y={mid.y - 9} width={72} height={16} rx={4} ry={4} fill="rgba(2, 58, 35,0.88)" stroke="rgba(242, 174, 55,0.5)" strokeWidth={0.5} initial={{
         opacity: 0,
         scale: 0.85
       }} animate={{
@@ -917,7 +917,7 @@ const RouteLabel = ({
       }} style={{
         transformOrigin: `${mid.x}px ${mid.y}px`
       }} />
-          <motion.text x={mid.x} y={mid.y + 3} textAnchor="middle" fontSize="7" fill="#C8A84B" style={{
+          <motion.text x={mid.x} y={mid.y + 3} textAnchor="middle" fontSize="7" fill="#F2AE37" style={{
         fontFamily: BODY_FONT,
         fontWeight: 600,
         letterSpacing: '0.04em'
@@ -959,20 +959,20 @@ const InsetPanel = ({
   }} className="absolute bottom-[56px] left-[20px] z-20 rounded-2xl overflow-hidden" style={{
     width: '190px',
     background: 'rgba(10,25,16,0.92)',
-    border: '1px solid rgba(200,168,75,0.3)',
+    border: '1px solid rgba(242, 174, 55,0.3)',
     backdropFilter: 'blur(12px)',
     boxShadow: '0 12px 48px rgba(0,0,0,0.5)'
   }}>
       <div className="flex items-center justify-between px-3 py-2" style={{
-      borderBottom: '1px solid rgba(200,168,75,0.15)'
+      borderBottom: '1px solid rgba(242, 174, 55,0.15)'
     }}>
-        <span className="text-[#C8A84B] uppercase tracking-widest" style={{
+        <span className="text-[#F2AE37] uppercase tracking-widest" style={{
         fontFamily: BODY_FONT,
         fontSize: '8px',
         fontWeight: 700
       }}>N4 Corridor · Zoom</span>
         <div className="flex items-center gap-1">
-          <div className="w-1.5 h-1.5 rounded-full bg-[#C8A84B] animate-pulse" />
+          <div className="w-1.5 h-1.5 rounded-full bg-[#F2AE37] animate-pulse" />
           <span style={{
           fontFamily: BODY_FONT,
           fontSize: '7px',
@@ -985,7 +985,7 @@ const InsetPanel = ({
     }}>
         <defs>
           <radialGradient id="inset-spotlight" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="rgba(200,168,75,0.08)" />
+            <stop offset="0%" stopColor="rgba(242, 174, 55,0.08)" />
             <stop offset="100%" stopColor="transparent" stopOpacity="0" />
           </radialGradient>
           <filter id="inset-glow" x="-100%" y="-100%" width="300%" height="300%">
@@ -997,7 +997,7 @@ const InsetPanel = ({
         {[50, 100, 150].map(v => <line key={`ig-v${v}`} x1={v} y1={0} x2={v} y2={200} stroke="rgba(255,255,255,0.03)" strokeWidth="0.5" />)}
         {[50, 100, 150].map(v => <line key={`ig-h${v}`} x1={0} y1={v} x2={200} y2={v} stroke="rgba(255,255,255,0.03)" strokeWidth="0.5" />)}
         {inView && <>
-            <motion.circle cx={100} cy={100} r={18} fill="none" stroke="#C8A84B" strokeWidth={0.5} strokeDasharray="3 5" animate={{
+            <motion.circle cx={100} cy={100} r={18} fill="none" stroke="#F2AE37" strokeWidth={0.5} strokeDasharray="3 5" animate={{
           r: [18, 34],
           opacity: [0.4, 0]
         }} transition={{
@@ -1006,7 +1006,7 @@ const InsetPanel = ({
           ease: 'easeOut',
           repeatDelay: 1
         }} />
-            <motion.circle cx={100} cy={100} r={30} fill="none" stroke="#C8A84B" strokeWidth={0.4} strokeDasharray="2 6" animate={{
+            <motion.circle cx={100} cy={100} r={30} fill="none" stroke="#F2AE37" strokeWidth={0.4} strokeDasharray="2 6" animate={{
           r: [30, 50],
           opacity: [0.3, 0]
         }} transition={{
@@ -1020,7 +1020,7 @@ const InsetPanel = ({
         {INSET_ROUTES.map((r, i) => {
         const pathStr = buildArcSimple(r.from.x, r.from.y, r.to.x, r.to.y);
         const isHov = hoveredInset === r.label;
-        return <path key={`ir-${i}`} d={pathStr} fill="none" stroke={isHov ? '#C8A84B' : 'rgba(200,168,75,0.35)'} strokeWidth={isHov ? 1.2 : 0.7} style={{
+        return <path key={`ir-${i}`} d={pathStr} fill="none" stroke={isHov ? '#F2AE37' : 'rgba(242, 174, 55,0.35)'} strokeWidth={isHov ? 1.2 : 0.7} style={{
           transition: 'stroke 0.2s, stroke-width 0.2s'
         }} />;
       })}
@@ -1037,7 +1037,7 @@ const InsetPanel = ({
               {n.label}
             </text>
           </g>)}
-        <motion.circle cx={100} cy={100} r={7} fill="#C8A84B" filter="url(#inset-glow)" animate={inView ? {
+        <motion.circle cx={100} cy={100} r={7} fill="#F2AE37" filter="url(#inset-glow)" animate={inView ? {
         scale: [1, 1.18, 1]
       } : {}} transition={{
         duration: 2.4,
@@ -1045,14 +1045,14 @@ const InsetPanel = ({
         ease: 'easeInOut'
       }} />
         <circle cx={100} cy={100} r={3} fill="#0A1910" />
-        <text x={100} y={113} textAnchor="middle" fontSize="7" fill="#C8A84B" style={{
+        <text x={100} y={113} textAnchor="middle" fontSize="7" fill="#F2AE37" style={{
         fontFamily: BODY_FONT,
         fontWeight: 700,
         letterSpacing: '0.05em'
       }}>MPUMALANGA NKOMAZI SEZ</text>
       </svg>
       <div className="px-3 pb-2.5 flex items-center gap-1.5">
-        <div className="w-2 h-px bg-[#C8A84B]" />
+        <div className="w-2 h-px bg-[#F2AE37]" />
         <span style={{
         fontFamily: BODY_FONT,
         fontSize: '7px',
@@ -1090,12 +1090,12 @@ const RegionFilterBar = ({
     }} className="relative flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-[0.05em] overflow-hidden" style={{
       fontFamily: BODY_FONT,
       border: `1px solid ${isActive ? region.color : 'rgba(255,255,255,0.12)'}`,
-      color: isActive ? '#0F2419' : 'rgba(255,255,255,0.55)',
+      color: isActive ? '#023A23' : 'rgba(255,255,255,0.55)',
       background: isActive ? region.color : 'rgba(255,255,255,0.04)',
       transition: 'background 0.25s, border-color 0.25s, color 0.25s'
     }}>
           {region.id !== 'all' && <span className="w-2 h-2 rounded-full flex-shrink-0" style={{
-        backgroundColor: isActive ? '#0F2419' : region.color,
+        backgroundColor: isActive ? '#023A23' : region.color,
         opacity: isActive ? 0.7 : 1
       }} />}
           <span>{region.label}</span>
@@ -1131,7 +1131,7 @@ const MaputoCorridorMap = ({
   return <div className="w-full relative">
       <svg ref={svgRef} viewBox="0 0 900 580" preserveAspectRatio="xMidYMid meet" className="w-full" style={{
       display: 'block',
-      background: '#0F2419'
+      background: '#023A23'
     }} aria-label="Maputo Development Corridor regional map">
         <defs>
           <filter id="corridor-glow" x="-150%" y="-150%" width="400%" height="400%">
@@ -1170,7 +1170,7 @@ const MaputoCorridorMap = ({
         <polyline points="604,318 648,400" fill="none" stroke="#3DBE6C" strokeWidth="2" />
 
         {/* Primary Corridor base */}
-        <polyline points="190,380 220,340 290,330 340,310 395,295 460,305 478,282 542,308 604,318" fill="none" stroke="#E8521A" strokeWidth="4" filter="url(#corridor-glow)" />
+        <polyline points="190,380 220,340 290,330 340,310 395,295 460,305 478,282 542,308 604,318" fill="none" stroke="#E77227" strokeWidth="4" filter="url(#corridor-glow)" />
 
         {/* Animated flow line */}
         {inView && <motion.polyline points="190,380 220,340 290,330 340,310 395,295 460,305 478,282 542,308 604,318" fill="none" stroke="white" strokeOpacity="0.25" strokeWidth="3" strokeDasharray="12 8" animate={{
@@ -1233,7 +1233,7 @@ const MaputoCorridorMap = ({
         {CORRIDOR_URBAN_NODES.map(node => <g key={node.id} style={{
         cursor: 'pointer'
       }} onMouseEnter={() => showTooltip(node.label, node.description, node.cx, node.cy)} onMouseLeave={hideTooltip}>
-            <circle cx={node.cx} cy={node.cy} r={11} fill="#E8521A" stroke="white" strokeWidth="2" />
+            <circle cx={node.cx} cy={node.cy} r={11} fill="#E77227" stroke="white" strokeWidth="2" />
             {node.labelPos === 'right' ? <text x={node.cx + 16} y={node.cy + 4} fontSize="10" fill="white" fillOpacity="0.85" fontFamily={BODY_FONT}>{node.label}</text> : <text x={node.cx} y={node.cy + 24} textAnchor="middle" fontSize="10" fill="white" fillOpacity="0.85" fontFamily={BODY_FONT}>{node.label}</text>}
           </g>)}
 
@@ -1242,7 +1242,7 @@ const MaputoCorridorMap = ({
         cursor: 'pointer'
       }} onMouseEnter={() => showTooltip('MPUMALANGA NKOMAZI SEZ', 'Special Economic Zone — Komatipoort, Mpumalanga', 542, 308)} onMouseLeave={hideTooltip}>
           {/* Animated outer pulse */}
-          {inView && <motion.circle cx={542} cy={308} r={20} stroke="#C8A84B" strokeWidth={2} fill="none" animate={{
+          {inView && <motion.circle cx={542} cy={308} r={20} stroke="#F2AE37" strokeWidth={2} fill="none" animate={{
           opacity: [1, 0.3]
         }} transition={{
           duration: 1.5,
@@ -1251,11 +1251,11 @@ const MaputoCorridorMap = ({
           ease: 'easeInOut'
         }} />}
           {/* Second ring */}
-          <circle cx={542} cy={308} r={14} stroke="#C8A84B" strokeWidth={1.5} strokeOpacity={0.6} fill="none" />
+          <circle cx={542} cy={308} r={14} stroke="#F2AE37" strokeWidth={1.5} strokeOpacity={0.6} fill="none" />
           {/* Inner dot */}
-          <circle cx={542} cy={308} r={7} fill="#C8A84B" filter="url(#node-glow)" />
+          <circle cx={542} cy={308} r={7} fill="#F2AE37" filter="url(#node-glow)" />
           {/* Labels */}
-          <text x={542} y={280} textAnchor="middle" fontSize="11" fill="#C8A84B" fontFamily={BODY_FONT} fontWeight="700" letterSpacing="0.5">MPUMALANGA NKOMAZI SEZ</text>
+          <text x={542} y={280} textAnchor="middle" fontSize="11" fill="#F2AE37" fontFamily={BODY_FONT} fontWeight="700" letterSpacing="0.5">MPUMALANGA NKOMAZI SEZ</text>
           <text x={542} y={328} textAnchor="middle" fontSize="9" fill="white" fillOpacity="0.7" fontFamily={BODY_FONT}>Komatipoort</text>
         </g>
 
@@ -1267,7 +1267,7 @@ const MaputoCorridorMap = ({
           letterSpacing: '1px'
         }}>LEGEND</text>
           {/* Urban Nodes */}
-          <circle cx={46} cy={492} r={5} fill="#E8521A" />
+          <circle cx={46} cy={492} r={5} fill="#E77227" />
           <text x={58} y={496} fontSize="9" fill="white" fillOpacity="0.75" fontFamily={BODY_FONT}>Urban Nodes</text>
           {/* Tertiary Resource Nodes */}
           <circle cx={46} cy={508} r={4} fill="#3DBE6C" />
@@ -1276,7 +1276,7 @@ const MaputoCorridorMap = ({
           <circle cx={46} cy={524} r={3} fill="white" fillOpacity="0.65" />
           <text x={58} y={528} fontSize="9" fill="white" fillOpacity="0.75" fontFamily={BODY_FONT}>Main Towns</text>
           {/* Primary Corridor */}
-          <line x1={38} y1={540} x2={54} y2={540} stroke="#E8521A" strokeWidth="2.5" />
+          <line x1={38} y1={540} x2={54} y2={540} stroke="#E77227" strokeWidth="2.5" />
           <text x={58} y={544} fontSize="9" fill="white" fillOpacity="0.75" fontFamily={BODY_FONT}>Primary Corridor (N4)</text>
           {/* Sub-Corridors */}
           <line x1={38} y1={556} x2={54} y2={556} stroke="#3DBE6C" strokeWidth="2" />
@@ -1294,14 +1294,14 @@ const MaputoCorridorMap = ({
         {/* MPUMALANGA NKOMAZI SEZ gold ring in legend - overlaid after rect */}
         <g>
           <rect x={30} y={576} width={190} height={20} rx="0" fill="rgba(0,0,0,0.4)" />
-          <circle cx={46} cy={589} r={5} stroke="#C8A84B" strokeWidth="1.5" fill="none" />
-          <circle cx={46} cy={589} r={2} fill="#C8A84B" />
+          <circle cx={46} cy={589} r={5} stroke="#F2AE37" strokeWidth="1.5" fill="none" />
+          <circle cx={46} cy={589} r={2} fill="#F2AE37" />
           <text x={58} y={593} fontSize="9" fill="white" fillOpacity="0.75" fontFamily={BODY_FONT}>MPUMALANGA NKOMAZI SEZ Hub</text>
         </g>
 
         {/* SVG Tooltip */}
         {tooltip && <g>
-            <rect x={tooltip.x > 720 ? tooltip.x - 160 : tooltip.x + 16} y={tooltip.y > 450 ? tooltip.y - 52 : tooltip.y - 8} width={144} height={44} rx="4" fill="#1D4D35" stroke="#C8A84B" strokeWidth="1" />
+            <rect x={tooltip.x > 720 ? tooltip.x - 160 : tooltip.x + 16} y={tooltip.y > 450 ? tooltip.y - 52 : tooltip.y - 8} width={144} height={44} rx="4" fill="#023A23" stroke="#F2AE37" strokeWidth="1" />
             <text x={tooltip.x > 720 ? tooltip.x - 152 : tooltip.x + 24} y={tooltip.y > 450 ? tooltip.y - 34 : tooltip.y + 10} fontSize="11" fill="white" fontFamily={BODY_FONT} fontWeight="600">
               {tooltip.name}
             </text>
@@ -1336,7 +1336,7 @@ const TabSwitcher = ({
         fontFamily: BODY_FONT,
         background: 'none',
         border: 'none',
-        borderBottom: isActive ? '2px solid #E8521A' : '2px solid transparent',
+        borderBottom: isActive ? '2px solid #E77227' : '2px solid transparent',
         color: 'white',
         fontSize: '14px',
         fontWeight: isActive ? 600 : 400,
@@ -1404,11 +1404,11 @@ export const GlobalRouteMap: React.FC = () => {
     const isHighlighted = highlightedRouteIds.includes(`${route.from}-${route.to}`);
     const active = isRouteActive(route);
     if (!active) return 'rgba(255,255,255,0.06)';
-    if (isHighlighted) return '#C8A84B';
+    if (isHighlighted) return '#F2AE37';
     const isHubRoute = route.from === 'nkz' || route.to === 'nkz';
     const isRegional = REGIONAL_IDS.includes(route.from) || REGIONAL_IDS.includes(route.to);
     if (activeFilter !== 'all') return activeFilterDef.color;
-    return isHubRoute && isRegional ? 'rgba(200,168,75,0.45)' : isHubRoute ? 'rgba(200,168,75,0.22)' : 'rgba(200,168,75,0.09)';
+    return isHubRoute && isRegional ? 'rgba(242, 174, 55,0.45)' : isHubRoute ? 'rgba(242, 174, 55,0.22)' : 'rgba(242, 174, 55,0.09)';
   };
   const getRouteWidth = (route: RouteWithPath): number => {
     const isHighlighted = highlightedRouteIds.includes(`${route.from}-${route.to}`);
@@ -1421,7 +1421,7 @@ export const GlobalRouteMap: React.FC = () => {
     return isHubRoute && isRegional ? 1.0 : isHubRoute ? 0.7 : 0.4;
   };
   return <section ref={sectionRef} className="py-[120px] mx-2.5">
-      <div className="bg-[#0F2419] rounded-3xl overflow-hidden">
+      <div className="bg-[#023A23] rounded-3xl overflow-hidden">
 
         {/* Header */}
         <motion.div initial={{
@@ -1564,16 +1564,16 @@ export const GlobalRouteMap: React.FC = () => {
                       <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
                     </filter>
                     <radialGradient id="hub-pulse" cx="50%" cy="50%" r="50%">
-                      <stop offset="0%" stopColor="#C8A84B" stopOpacity="0.55" />
-                      <stop offset="100%" stopColor="#C8A84B" stopOpacity="0" />
+                      <stop offset="0%" stopColor="#F2AE37" stopOpacity="0.55" />
+                      <stop offset="100%" stopColor="#F2AE37" stopOpacity="0" />
                     </radialGradient>
                     <radialGradient id="hub-spotlight" cx="50%" cy="64%" r="45%">
-                      <stop offset="0%" stopColor="rgba(200,168,75,0.07)" stopOpacity="1" />
+                      <stop offset="0%" stopColor="rgba(242, 174, 55,0.07)" stopOpacity="1" />
                       <stop offset="100%" stopColor="transparent" stopOpacity="0" />
                     </radialGradient>
                     <radialGradient id="map-vignette" cx="50%" cy="50%" r="55%">
                       <stop offset="35%" stopColor="transparent" stopOpacity="0" />
-                      <stop offset="100%" stopColor="#0F2419" stopOpacity="0.75" />
+                      <stop offset="100%" stopColor="#023A23" stopOpacity="0.75" />
                     </radialGradient>
                   </defs>
 
@@ -1623,7 +1623,7 @@ export const GlobalRouteMap: React.FC = () => {
 
                   {/* City nodes */}
                   {CITY_NODES.map(city => {
-                const color = REGION_COLORS[city.region] || '#C8A84B';
+                const color = REGION_COLORS[city.region] || '#F2AE37';
                 const isHovered = hoveredCity === city.id;
                 const isRegionalNode = REGIONAL_IDS.includes(city.id);
                 const nodeActive = isNodeActive(city.id);
@@ -1655,22 +1655,22 @@ export const GlobalRouteMap: React.FC = () => {
               }} onMouseEnter={() => setHoveredCity('nkz')} onMouseLeave={() => setHoveredCity(null)}>
                     <PulseRing cx={NKOMAZI_HUB.cx} cy={NKOMAZI_HUB.cy} delay={0} />
                     <PulseRing cx={NKOMAZI_HUB.cx} cy={NKOMAZI_HUB.cy} delay={1.2} />
-                    <motion.circle cx={NKOMAZI_HUB.cx} cy={NKOMAZI_HUB.cy} r={10} fill="#C8A84B" filter="url(#hub-glow)" animate={inView ? {
+                    <motion.circle cx={NKOMAZI_HUB.cx} cy={NKOMAZI_HUB.cy} r={10} fill="#F2AE37" filter="url(#hub-glow)" animate={inView ? {
                   scale: [1, 1.15, 1]
                 } : {}} transition={{
                   duration: 2.4,
                   repeat: Infinity,
                   ease: 'easeInOut'
                 }} />
-                    <circle cx={NKOMAZI_HUB.cx} cy={NKOMAZI_HUB.cy} r={4.5} fill="#0F2419" />
-                    <text x={NKOMAZI_HUB.cx} y={NKOMAZI_HUB.cy + 22} textAnchor="middle" fontSize="10" fill="#C8A84B" style={{
+                    <circle cx={NKOMAZI_HUB.cx} cy={NKOMAZI_HUB.cy} r={4.5} fill="#023A23" />
+                    <text x={NKOMAZI_HUB.cx} y={NKOMAZI_HUB.cy + 22} textAnchor="middle" fontSize="10" fill="#F2AE37" style={{
                   fontFamily: BODY_FONT,
                   fontWeight: 700,
                   letterSpacing: '0.04em'
                 }}>
                       MPUMALANGA NKOMAZI SEZ
                     </text>
-                    <text x={NKOMAZI_HUB.cx} y={NKOMAZI_HUB.cy + 34} textAnchor="middle" fontSize="8" fill="rgba(200,168,75,0.55)" style={{
+                    <text x={NKOMAZI_HUB.cx} y={NKOMAZI_HUB.cy + 34} textAnchor="middle" fontSize="8" fill="rgba(242, 174, 55,0.55)" style={{
                   fontFamily: BODY_FONT
                 }}>
                       Mpumalanga · South Africa
@@ -1682,12 +1682,12 @@ export const GlobalRouteMap: React.FC = () => {
                     {hoveredCity && hoveredCity !== 'nkz' && (() => {
                   const city = CITY_NODES.find(c => c.id === hoveredCity);
                   if (!city) return null;
-                  const color = REGION_COLORS[city.region] || '#C8A84B';
+                  const color = REGION_COLORS[city.region] || '#F2AE37';
                   const routes = routePaths.filter(r => r.from === hoveredCity || r.to === hoveredCity);
                   const tx = city.cx > 750 ? city.cx - 126 : city.cx + 12;
                   const ty = city.cy > 360 ? city.cy - 64 : city.cy + 12;
                   return <g key={`tooltip-${hoveredCity}`}>
-                          <motion.rect x={tx} y={ty} width={116} height={50} rx={6} ry={6} fill="rgba(15,36,25,0.95)" stroke="rgba(200,168,75,0.4)" strokeWidth={0.7} initial={{
+                          <motion.rect x={tx} y={ty} width={116} height={50} rx={6} ry={6} fill="rgba(2, 58, 35,0.95)" stroke="rgba(242, 174, 55,0.4)" strokeWidth={0.7} initial={{
                       opacity: 0,
                       scale: 0.9
                     }} animate={{
@@ -1731,7 +1731,7 @@ export const GlobalRouteMap: React.FC = () => {
               pointerEvents: 'none'
             }}>
                   <svg width="40" height="30" viewBox="0 0 40 30">
-                    <path d="M 0 28 Q 20 28 40 14" fill="none" stroke="rgba(200,168,75,0.25)" strokeWidth="0.8" strokeDasharray="3 4" />
+                    <path d="M 0 28 Q 20 28 40 14" fill="none" stroke="rgba(242, 174, 55,0.25)" strokeWidth="0.8" strokeDasharray="3 4" />
                   </svg>
                 </motion.div>
               </motion.div>
@@ -1748,10 +1748,10 @@ export const GlobalRouteMap: React.FC = () => {
             delay: 0.6
           }} className="grid gap-px mx-4 mb-4 rounded-2xl overflow-hidden" style={{
             gridTemplateColumns: 'repeat(4, 1fr)',
-            background: 'rgba(200,168,75,0.12)'
+            background: 'rgba(242, 174, 55,0.12)'
           }}>
                 {MAP_STATS.map(stat => <div key={stat.label} className="flex flex-col items-center justify-center gap-1.5 py-7 px-4" style={{
-              background: 'rgba(200,168,75,0.06)'
+              background: 'rgba(242, 174, 55,0.06)'
             }}>
                     <span className="text-white font-light" style={{
                 fontSize: '36px',

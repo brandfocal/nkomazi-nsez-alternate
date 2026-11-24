@@ -5,12 +5,12 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
 // --- Constants & Styling ---
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
-const PRIMARY_GREEN = "#1D4D35";
-const ACCENT_GREEN = "#1fac67";
-const GOLD = "#C9A84C";
-const ORANGE = "#E8521A";
+const PRIMARY_GREEN = "#023A23";
+const ACCENT_GREEN = "#28B674";
+const GOLD = "#F2AE37";
+const ORANGE = "#E77227";
 
 // --- Types ---
 type OpportunityCategory = 'Tender' | 'RFQ' | 'Partnership' | 'EOI';
@@ -271,12 +271,12 @@ const GreenButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center flex-1 px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center flex-1 px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
     fontFamily: BODY_FONT
   }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -529,7 +529,7 @@ const Hero = () => {
 
       {/* Floating orbs */}
       <FloatingOrb size={320} color="rgba(93,187,58,0.10)" x="8%" y="20%" delay={0} />
-      <FloatingOrb size={240} color="rgba(200,168,75,0.07)" x="72%" y="15%" delay={2.5} />
+      <FloatingOrb size={240} color="rgba(242, 174, 55,0.07)" x="72%" y="15%" delay={2.5} />
       <FloatingOrb size={180} color="rgba(93,187,58,0.07)" x="55%" y="55%" delay={1.2} />
 
       {/* Top dark overlay */}
@@ -610,7 +610,7 @@ const Hero = () => {
             margin: 0
           }}>
               <span style={{
-              color: '#5DBB3A',
+              color: '#28B674',
               display: 'block'
             }}>Partner with Us.</span>
               <span style={{
@@ -713,7 +713,7 @@ const Hero = () => {
             {/* Gold thin rule above CTAs */}
             <div style={{
             height: '1px',
-            background: `rgba(201,168,76,0.3)`,
+            background: `rgba(242, 174, 55,0.3)`,
             marginBottom: '16px'
           }} />
 
@@ -805,12 +805,12 @@ const OpportunityCard = ({
   const [hovered, setHovered] = useState(false);
   const statusStyles = {
     Open: {
-      bg: 'rgba(31,172,103,0.12)',
-      text: '#1fac67'
+      bg: 'rgba(40, 182, 116,0.12)',
+      text: '#28B674'
     },
     'Closing Soon': {
       bg: 'rgba(232,82,26,0.12)',
-      text: '#E8521A'
+      text: '#E77227'
     },
     Closed: {
       bg: 'rgba(0,0,0,0.08)',
@@ -837,7 +837,7 @@ const OpportunityCard = ({
     }
   }} style={{
     background: '#FAFAF8',
-    border: '1px solid rgba(29,77,53,0.1)',
+    border: '1px solid rgba(2, 58, 35,0.1)',
     borderRadius: '20px',
     overflow: 'hidden',
     boxShadow: hovered ? '0 12px 40px rgba(0,0,0,0.09)' : '0 4px 24px rgba(0,0,0,0.05)',
@@ -930,7 +930,7 @@ const OpportunityCard = ({
 
         {/* Card footer */}
         <div style={{
-        borderTop: '1px solid rgba(29,77,53,0.08)',
+        borderTop: '1px solid rgba(2, 58, 35,0.08)',
         paddingTop: '16px',
         marginTop: '16px',
         display: 'flex',
@@ -974,7 +974,7 @@ const OpportunityCard = ({
             width: '28px',
             height: '28px',
             borderRadius: '50%',
-            background: hovered ? '#1fac67' : 'rgba(29,77,53,0.08)',
+            background: hovered ? '#28B674' : 'rgba(2, 58, 35,0.08)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -1019,7 +1019,7 @@ const FilterBar = ({
             borderRadius: '99px',
             background: activeFilter === cat.value ? PRIMARY_GREEN : 'transparent',
             color: activeFilter === cat.value ? '#ffffff' : PRIMARY_GREEN,
-            border: activeFilter === cat.value ? '1px solid transparent' : `1px solid rgba(29,77,53,0.2)`,
+            border: activeFilter === cat.value ? '1px solid transparent' : `1px solid rgba(2, 58, 35,0.2)`,
             transition: 'all 0.2s ease',
             cursor: 'pointer',
             whiteSpace: 'nowrap',
@@ -1086,13 +1086,13 @@ const ConnectSection = () => {
                 width: '6px',
                 height: '6px',
                 borderRadius: '50%',
-                background: '#C8A84B',
+                background: '#F2AE37',
                 flexShrink: 0
               }} />
                 <div style={{
                 width: '1px',
                 flex: 1,
-                background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+                background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
                 minHeight: '100px',
                 marginTop: '6px'
               }} />
@@ -1168,7 +1168,7 @@ const ConnectSection = () => {
                 <a href="mailto:invest@nkomazisez.gov.za" style={{
                 fontFamily: BODY_FONT,
                 fontSize: '14px',
-                color: '#C8A84B',
+                color: '#F2AE37',
                 textDecoration: 'none',
                 fontWeight: 500,
                 transition: 'opacity 0.2s'

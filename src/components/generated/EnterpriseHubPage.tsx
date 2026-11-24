@@ -7,12 +7,12 @@ import { NSEZFooterSection } from './NSEZFooterSection';
 
 
 // ─── Font constants ────────────────────────────────────────────────────────────
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 // ─── Color tokens ──────────────────────────────────────────────────────────────
 const GREEN = "#162E20";
-const GREEN_MID = "#1D4D35";
+const GREEN_MID = "#023A23";
 const BRIGHT_GREEN = "#1a9e5e";
 const EMERALD_GLOW = "#22c778";
 const GOLD = "#B8963A";
@@ -207,7 +207,7 @@ const SectionTag = ({
   ease: "easeOut"
 }} className="inline-block text-xs rounded-full px-3 py-2 leading-[21px] tracking-[0.06em] uppercase" style={{
   fontFamily: BODY_FONT,
-  background: light ? 'rgba(255,255,255,0.12)' : '#1fac67',
+  background: light ? 'rgba(255,255,255,0.12)' : '#28B674',
   color: light ? 'rgba(255,255,255,0.85)' : '#ffffff'
 }}>
     {children}
@@ -391,7 +391,7 @@ const GoldButton = ({
     fontFamily: BODY_FONT,
     fontWeight: 600,
     fontSize: large ? "13px" : "12px",
-    background: `linear-gradient(135deg, #E8521A 0%, #c43d10 100%)`
+    background: `linear-gradient(135deg, #E77227 0%, #c43d10 100%)`
   }}>
       {label}
     </div>
@@ -700,7 +700,7 @@ const MetricsStrip = () => {
     margin: "-50px"
   });
   return <section ref={ref} style={{
-    background: `linear-gradient(135deg, ${GREEN} 0%, #1a3d28 50%, #0f2419 100%)`
+    background: `linear-gradient(135deg, ${GREEN} 0%, #1a3d28 50%, #023A23 100%)`
   }}>
       <div style={{
       height: "1px",
@@ -1038,7 +1038,7 @@ const HowToJoin = () => <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8
               fontFamily: BODY_FONT,
               fontWeight: 700,
               fontSize: "9px",
-              color: "#E8521A",
+              color: "#E77227",
               letterSpacing: "0.14em",
               textTransform: "uppercase",
               background: "rgba(232,82,26,0.12)",
@@ -1078,7 +1078,7 @@ const HowToJoin = () => <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8
 
 // ─── Registration Form ─────────────────────────────────────────────────────────
 const RegistrationForm = () => <section id="registration" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8 lg:px-12" style={{
-  background: `linear-gradient(160deg, ${GREEN} 0%, #0f2419 40%, #162e20 100%)`
+  background: `linear-gradient(160deg, ${GREEN} 0%, #023A23 40%, #162e20 100%)`
 }}>
     <div className="max-w-4xl mx-auto w-full">
       <div className="text-center mb-12 sm:mb-16">
@@ -1600,14 +1600,14 @@ const ContactCTA = () => {
                   width: "6px",
                   height: "6px",
                   borderRadius: "50%",
-                  background: "#C8A84B",
+                  background: "#F2AE37",
                   flexShrink: 0
                 }} />
                   <div style={{
                   width: "1px",
                   minHeight: "100px",
                   marginTop: "6px",
-                  background: "linear-gradient(to bottom, #C8A84B, transparent)"
+                  background: "linear-gradient(to bottom, #F2AE37, transparent)"
                 }} />
                 </div>
                 <div>
@@ -1679,7 +1679,7 @@ const ContactCTA = () => {
                 fontFamily: BODY_FONT,
                 fontSize: "14px",
                 fontWeight: 500,
-                color: "#C8A84B",
+                color: "#F2AE37",
                 textDecoration: "none",
                 transition: "color 0.2s"
               }}>

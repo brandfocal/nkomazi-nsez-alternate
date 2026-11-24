@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
 
 const SOCIAL_LINKS = [
@@ -48,10 +48,10 @@ export function NSEZFooterSection() {
   return (
     <footer
       style={{
-        background: '#0F2419',
+        background: '#023A23',
         paddingTop: '80px',
         color: '#ffffff',
-        borderTop: '1px solid rgba(200, 168, 75, 0.15)'
+        borderTop: '1px solid rgba(242, 174, 55, 0.15)'
       }}
     >
       <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">
@@ -97,8 +97,8 @@ export function NSEZFooterSection() {
                   }}
                   onMouseEnter={e => {
                     const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.borderColor = '#C9A84C';
-                    el.style.color = '#C9A84C';
+                    el.style.borderColor = '#F2AE37';
+                    el.style.color = '#F2AE37';
                   }}
                   onMouseLeave={e => {
                     const el = e.currentTarget as HTMLAnchorElement;
@@ -120,7 +120,7 @@ export function NSEZFooterSection() {
                   fontFamily: HEADING_FONT,
                   fontWeight: 700,
                   fontSize: '13px',
-                  color: '#C9A84C',
+                  color: '#F2AE37',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase'
                 }}
@@ -160,7 +160,7 @@ export function NSEZFooterSection() {
                   fontFamily: HEADING_FONT,
                   fontWeight: 700,
                   fontSize: '13px',
-                  color: '#C9A84C',
+                  color: '#F2AE37',
                   letterSpacing: '0.1em',
                   textTransform: 'uppercase'
                 }}
@@ -201,7 +201,7 @@ export function NSEZFooterSection() {
                 fontFamily: HEADING_FONT,
                 fontWeight: 700,
                 fontSize: '13px',
-                color: '#C9A84C',
+                color: '#F2AE37',
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}
@@ -216,7 +216,7 @@ export function NSEZFooterSection() {
                 <a
                   href="mailto:invest@nkomazisez.gov.za"
                   style={{ fontFamily: BODY_FONT, fontSize: '13px', color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)'; }}
                 >
                   invest@nkomazisez.gov.za
@@ -229,7 +229,7 @@ export function NSEZFooterSection() {
                 <a
                   href="mailto:info@nkomazisez.gov.za"
                   style={{ fontFamily: BODY_FONT, fontSize: '13px', color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}
-                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37'; }}
                   onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)'; }}
                 >
                   info@nkomazisez.gov.za
@@ -241,9 +241,9 @@ export function NSEZFooterSection() {
                 </span>
                 <a
                   href="mailto:whistleblower@nkomazisez.gov.za"
-                  style={{ fontFamily: BODY_FONT, fontSize: '13px', color: '#C9A84C', textDecoration: 'none', fontWeight: 500 }}
+                  style={{ fontFamily: BODY_FONT, fontSize: '13px', color: '#F2AE37', textDecoration: 'none', fontWeight: 500 }}
                   onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff'; }}
-                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37'; }}
                 >
                   whistleblower@nkomazisez.gov.za
                 </a>
@@ -279,7 +279,7 @@ export function NSEZFooterSection() {
             <a
               href="/privacy-policy"
               style={{ fontFamily: BODY_FONT, fontSize: '12px', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)'; }}
             >
               Privacy Policy
@@ -287,7 +287,7 @@ export function NSEZFooterSection() {
             <a
               href="/cookie-policy"
               style={{ fontFamily: BODY_FONT, fontSize: '12px', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)'; }}
             >
               Cookie Policy
@@ -295,7 +295,7 @@ export function NSEZFooterSection() {
             <a
               href="mailto:whistleblower@nkomazisez.gov.za"
               style={{ fontFamily: BODY_FONT, fontSize: '12px', color: 'rgba(255,255,255,0.4)', textDecoration: 'none', transition: 'color 0.2s' }}
-              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#C9A84C'; }}
+              onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37'; }}
               onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.4)'; }}
             >
               Whistleblower

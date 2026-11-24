@@ -3,9 +3,9 @@ import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring 
 import { Menu, X, ChevronRight } from 'lucide-react';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
-const GOLD = "#C9A84C";
+const GOLD = "#F2AE37";
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
 
@@ -144,12 +144,12 @@ const GreenButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT
     }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -189,12 +189,12 @@ const GoldButton = ({
 >
     <div className="flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT,
-      background: '#C8A84B'
+      background: '#F2AE37'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#C8A84B'
+      background: '#F2AE37'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -235,12 +235,12 @@ const OrangeButton = ({
 >
     <div className="flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
       fontFamily: BODY_FONT,
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -448,7 +448,7 @@ const ScrollProgressBar = () => {
   });
   return <motion.div className="fixed top-0 left-0 right-0 z-[99999] h-[2px] origin-left" style={{
     scaleX,
-    background: 'linear-gradient(90deg, #E8521A, #f07040, #E8521A)'
+    background: 'linear-gradient(90deg, #E77227, #f07040, #E77227)'
   }} />;
 };
 
@@ -486,9 +486,9 @@ const BackToTop = () => {
       top: 0,
       behavior: 'smooth'
     })} className="fixed bottom-8 right-6 sm:right-8 z-[9998] w-12 h-12 rounded-full flex items-center justify-center" style={{
-      background: hovered ? '#C8A84B' : '#26b573',
-      border: `1.5px solid ${hovered ? '#C8A84B' : 'rgba(200,168,75,0.35)'}`,
-      boxShadow: hovered ? '0 8px 32px rgba(200,168,75,0.35)' : '0 4px 20px rgba(0,0,0,0.35)',
+      background: hovered ? '#F2AE37' : '#28B674',
+      border: `1.5px solid ${hovered ? '#F2AE37' : 'rgba(242, 174, 55,0.35)'}`,
+      boxShadow: hovered ? '0 8px 32px rgba(242, 174, 55,0.35)' : '0 4px 20px rgba(0,0,0,0.35)',
       transition: 'background 0.25s, border-color 0.25s, box-shadow 0.25s'
     }}>
       <motion.svg width="16" height="16" viewBox="0 0 16 16" fill="none" animate={{
@@ -496,7 +496,7 @@ const BackToTop = () => {
       }} transition={{
         duration: 0.2
       }}>
-        <path d="M8 12V4M4 7l4-4 4 4" stroke={hovered ? '#111111' : '#C8A84B'} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 12V4M4 7l4-4 4 4" stroke={hovered ? '#111111' : '#F2AE37'} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
       </motion.svg>
     </motion.button>}
   </AnimatePresence>;
@@ -517,21 +517,21 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
     <a href="mailto:invest@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
-      color: '#1D4D35',
+      color: '#023A23',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
       invest@nkomazisez.gov.za
     </a>
     <span style={{
-      color: '#1D4D35',
+      color: '#023A23',
       opacity: 0.35,
       fontSize: '11px'
     }}>|</span>
     <a href="mailto:info@nkomazisez.gov.za" style={{
       fontFamily: BODY_FONT,
       fontSize: '11px',
-      color: '#1D4D35',
+      color: '#023A23',
       textDecoration: 'none',
       letterSpacing: '0.04em'
     }}>
@@ -551,7 +551,7 @@ const TopBanner = () => <div className="fixed top-0 left-0 right-0 z-[10000] fle
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      color: '#1D4D35',
+      color: '#023A23',
       transition: 'color 0.2s',
       width: '16px',
       height: '16px',
@@ -577,7 +577,7 @@ const SectorsHoverDropdown = () => {
       borderBottom: '2px solid transparent',
       transition: 'background 0.2s ease, border-color 0.2s ease'
     }} onMouseEnter={e => {
-      (e.currentTarget as HTMLButtonElement).style.borderBottomColor = 'rgba(200,168,75,0.6)';
+      (e.currentTarget as HTMLButtonElement).style.borderBottomColor = 'rgba(242, 174, 55,0.6)';
     }} onMouseLeave={e => {
       (e.currentTarget as HTMLButtonElement).style.borderBottomColor = 'transparent';
     }} aria-haspopup="true" aria-expanded={open}>
@@ -605,13 +605,13 @@ const SectorsHoverDropdown = () => {
       }} className="absolute top-full left-0 mt-2 z-[999]" style={{
         minWidth: '240px'
       }}>
-        <div className="bg-[#1fac67] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
+        <div className="bg-[#28B674] rounded-[8px] p-2.5 flex flex-col gap-0.5" style={{
           boxShadow: '0 20px 60px rgba(0,0,0,0.35)'
         }}>
           {NAV_SECTORS.map(item => <a key={item} href="#" onClick={e => e.preventDefault()} className="block text-white text-[14px] font-medium rounded-lg px-3 py-2 transition-all duration-200 whitespace-nowrap no-underline tracking-[0.01em]" style={{
             fontFamily: BODY_FONT
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E8521A';
+            (e.currentTarget as HTMLAnchorElement).style.backgroundColor = '#E77227';
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.backgroundColor = 'transparent';
           }}>
@@ -651,11 +651,11 @@ const StickyNav = ({
       background: 'rgba(10, 24, 16, 0.85)',
       backdropFilter: 'blur(16px)',
       WebkitBackdropFilter: 'blur(16px)',
-      boxShadow: scrolled ? '0 1px 0 rgba(200,168,75,0.15)' : 'none',
+      boxShadow: scrolled ? '0 1px 0 rgba(242, 174, 55,0.15)' : 'none',
       transition: 'background 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease'
     }} />
     <div className="absolute bottom-0 left-0 right-0 h-[1px]" style={{
-      background: 'linear-gradient(90deg, transparent, rgba(200,168,75,0.4), transparent)',
+      background: 'linear-gradient(90deg, transparent, rgba(242, 174, 55,0.4), transparent)',
       opacity: scrolled ? 1 : 0,
       transition: 'opacity 0.35s ease'
     }} />
@@ -675,7 +675,7 @@ const StickyNav = ({
             borderBottom: '2px solid transparent',
             transition: 'background 0.2s ease, border-color 0.2s ease'
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(200,168,75,0.6)';
+            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(242, 174, 55,0.6)';
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'transparent';
           }}>
@@ -687,7 +687,7 @@ const StickyNav = ({
             borderBottom: '2px solid transparent',
             transition: 'background 0.2s ease, border-color 0.2s ease'
           }} onMouseEnter={e => {
-            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(200,168,75,0.6)';
+            (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'rgba(242, 174, 55,0.6)';
           }} onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.borderBottomColor = 'transparent';
           }}>
@@ -699,7 +699,7 @@ const StickyNav = ({
           <div className="hidden lg:block">
             <GreenButton label="Invest Now" />
           </div>
-          <button className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#1fac67] text-white flex-shrink-0" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
+          <button className="lg:hidden flex items-center justify-center w-11 h-11 rounded-full bg-[#28B674] text-white flex-shrink-0" onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle menu">
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
@@ -718,7 +718,7 @@ const StickyNav = ({
         height: 0
       }} transition={{
         duration: 0.25
-      }} className="relative lg:hidden mt-2 rounded-2xl bg-[#26b573]/95 backdrop-blur-md overflow-hidden">
+      }} className="relative lg:hidden mt-2 rounded-2xl bg-[#28B674]/95 backdrop-blur-md overflow-hidden">
         <div className="p-4 flex flex-col gap-2">
           {NAV_SIMPLE_LINKS.map(l => <a key={l} href="#" onClick={e => {
             e.preventDefault();
@@ -767,7 +767,7 @@ const EyebrowLabel = ({
     <div style={{
       width: "1px",
       height: "14px",
-      background: "#5DBB3A",
+      background: "#28B674",
       flexShrink: 0
     }} />
     <span style={{
@@ -776,7 +776,7 @@ const EyebrowLabel = ({
       fontWeight: 600,
       textTransform: "uppercase" as const,
       letterSpacing: "0.12em",
-      color: dark ? "rgba(255,255,255,0.7)" : "#5DBB3A"
+      color: dark ? "rgba(255,255,255,0.7)" : "#28B674"
     }}>
       {label}
     </span>
@@ -896,7 +896,7 @@ const Hero = () => {
             margin: 0
           }}>
             <span style={{
-              color: '#5DBB3A',
+              color: '#28B674',
               display: 'block'
             }}>Built on People.</span>
             <span style={{
@@ -1071,7 +1071,7 @@ const StatCounter = ({
     <div style={{
       width: '32px',
       height: '3px',
-      background: '#1fac67',
+      background: '#28B674',
       borderRadius: '2px'
     }} />
     <div style={{
@@ -1084,7 +1084,7 @@ const StatCounter = ({
     }}>
       <span>{count}</span>
       <span style={{
-        color: '#C8A84B'
+        color: '#F2AE37'
       }}>{stat.suffix}</span>
     </div>
     <p style={{
@@ -1140,13 +1140,13 @@ const ImpactStatsStrip = () => <section id="impact" style={{
               width: '6px',
               height: '6px',
               borderRadius: '50%',
-              background: '#C8A84B',
+              background: '#F2AE37',
               flexShrink: 0
             }} />
             <div style={{
               width: '1px',
               flex: 1,
-              background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+              background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
               minHeight: '80px',
               marginTop: '6px'
             }} />
@@ -1156,7 +1156,7 @@ const ImpactStatsStrip = () => <section id="impact" style={{
               fontFamily: BODY_FONT,
               fontSize: '11px',
               fontWeight: 700,
-              color: '#1fac67',
+              color: '#28B674',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               marginBottom: '14px'
@@ -1235,13 +1235,13 @@ const ContactCTA = () => <section style={{
               width: '6px',
               height: '6px',
               borderRadius: '50%',
-              background: '#C8A84B',
+              background: '#F2AE37',
               flexShrink: 0
             }} />
             <div style={{
               width: '1px',
               flex: 1,
-              background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+              background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
               minHeight: '80px',
               marginTop: '6px'
             }} />
@@ -1251,7 +1251,7 @@ const ContactCTA = () => <section style={{
               fontFamily: BODY_FONT,
               fontSize: '11px',
               fontWeight: 700,
-              color: '#E8521A',
+              color: '#E77227',
               letterSpacing: '0.1em',
               textTransform: 'uppercase',
               marginBottom: '14px'
@@ -1341,7 +1341,7 @@ const ContactCTA = () => <section style={{
             <a href="mailto:community@nkomazisez.gov.za" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
-              color: '#C8A84B',
+              color: '#F2AE37',
               textDecoration: 'none',
               fontWeight: 500,
               transition: 'opacity 0.2s'

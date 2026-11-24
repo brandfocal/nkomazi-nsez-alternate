@@ -140,14 +140,14 @@ const SplitButton = ({
       text: "text-white"
     },
     gold: {
-      main: "bg-[#C8A84B] text-[#0F2419]",
-      icon: "bg-[#C8A84B]",
-      text: "text-[#0F2419]"
+      main: "bg-[#F2AE37] text-[#023A23]",
+      icon: "bg-[#F2AE37]",
+      text: "text-[#023A23]"
     },
     white: {
-      main: "bg-white text-[#0F2419]",
+      main: "bg-white text-[#023A23]",
       icon: "bg-white",
-      text: "text-[#0F2419]"
+      text: "text-[#023A23]"
     }
   };
   const currentStyle = styles[variant];
@@ -177,7 +177,7 @@ const BenefitCard = ({
   scale: 1.02
 }} className="relative rounded-2xl overflow-hidden min-h-[280px] group cursor-pointer">
     <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-    <div className="absolute inset-0 bg-gradient-to-br from-[#0F2419]/95 via-[#0F2419]/60 to-[#0F2419]/20" />
+    <div className="absolute inset-0 bg-gradient-to-br from-[#023A23]/95 via-[#023A23]/60 to-[#023A23]/20" />
     <div className="relative z-10 p-7 h-full flex flex-col justify-between min-h-[280px]">
       <div className="flex justify-between items-start">
         <div className="w-9 h-9 bg-white/10 rounded-xl flex items-center justify-center text-white backdrop-blur-sm">
@@ -185,7 +185,7 @@ const BenefitCard = ({
         </div>
       </div>
       <div>
-        <h4 className="text-[#C8A84B] text-[42px] font-light leading-none font-['Inter'] mb-1">
+        <h4 className="text-[#F2AE37] text-[42px] font-light leading-none font-['Inter'] mb-1">
           {number}
         </h4>
         <h3 className="text-white font-semibold text-[18px] sm:text-[22px] font-['Inter'] mb-2">
@@ -210,8 +210,8 @@ const StepCard = ({
   scale: 1.015
 }} className="relative rounded-2xl overflow-hidden min-h-[280px] sm:min-h-[340px] group cursor-pointer">
     <img src={image} alt={title} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
-    <div className="absolute inset-0 bg-gradient-to-t from-[#0F2419]/90 via-[#0F2419]/30 to-transparent" />
-    <div className="absolute top-6 left-6 w-9 h-9 bg-[#C8A84B] text-[#0F2419] font-bold rounded-full flex items-center justify-center text-sm shadow-lg">
+    <div className="absolute inset-0 bg-gradient-to-t from-[#023A23]/90 via-[#023A23]/30 to-transparent" />
+    <div className="absolute top-6 left-6 w-9 h-9 bg-[#F2AE37] text-[#023A23] font-bold rounded-full flex items-center justify-center text-sm shadow-lg">
       {number}
     </div>
     <div className="absolute bottom-0 left-0 p-6 w-full">
@@ -232,15 +232,15 @@ const ResourceCard = ({
   y: -4
 }} className="bg-white rounded-2xl p-8 flex flex-col shadow-sm hover:shadow-md transition-all duration-300 border border-[#EFF0EB]">
     <div className="w-12 h-12 bg-[#EFF0EB] rounded-xl flex items-center justify-center mb-6 shrink-0">
-      <FileText className="w-6 h-6 text-[#C8A84B]" />
+      <FileText className="w-6 h-6 text-[#F2AE37]" />
     </div>
-    <h3 className="text-[#0F2419] font-semibold text-[18px] sm:text-[22px] mb-3 font-['Inter']">
+    <h3 className="text-[#023A23] font-semibold text-[18px] sm:text-[22px] mb-3 font-['Inter']">
       {title}
     </h3>
-    <p className="text-[#0F2419]/65 text-[15px] sm:text-[16px] leading-[1.65] mb-6 flex-grow">
+    <p className="text-[#023A23]/65 text-[15px] sm:text-[16px] leading-[1.65] mb-6 flex-grow">
       {desc}
     </p>
-    <a href="/contact" className="flex items-center text-[#C8A84B] text-[14px] font-medium group">
+    <a href="/contact" className="flex items-center text-[#F2AE37] text-[14px] font-medium group">
       {linkText}
       <ArrowUpRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
     </a>
@@ -257,12 +257,12 @@ const FeatureCard = ({
   y: -4
 }} className="bg-[#EFF0EB] rounded-2xl p-8 flex flex-col gap-4 shadow-sm hover:shadow-md transition-all duration-300">
     <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shrink-0">
-      <Icon className="w-6 h-6 text-[#C8A84B]" />
+      <Icon className="w-6 h-6 text-[#F2AE37]" />
     </div>
-    <h3 className="text-[#0F2419] font-semibold text-[18px] sm:text-[22px] font-['Inter']">
+    <h3 className="text-[#023A23] font-semibold text-[18px] sm:text-[22px] font-['Inter']">
       {title}
     </h3>
-    <p className="text-[#0F2419]/65 text-[15px] sm:text-[16px] leading-[1.65]">
+    <p className="text-[#023A23]/65 text-[15px] sm:text-[16px] leading-[1.65]">
       {desc}
     </p>
     <div className="mt-2">
@@ -294,12 +294,12 @@ const Footer = () => {
         <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-[60px]">
             {footerSections.map(section => <div key={section.title}>
-                <h4 className="text-[#0F2419] font-semibold tracking-[0.04em] uppercase text-sm mb-6 sm:mb-8">
+                <h4 className="text-[#023A23] font-semibold tracking-[0.04em] uppercase text-sm mb-6 sm:mb-8">
                   {section.title}
                 </h4>
                 <ul className="flex flex-col gap-4">
                   {section.links.map(link => <li key={link}>
-                      <a href="#" className="text-[#0F2419]/60 text-[15px] hover:text-[#0F2419] transition-colors">
+                      <a href="#" className="text-[#023A23]/60 text-[15px] hover:text-[#023A23] transition-colors">
                         {link}
                       </a>
                     </li>)}
@@ -309,7 +309,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="bg-[#0F2419] pt-14 pb-12">
+      <div className="bg-[#023A23] pt-14 pb-12">
         <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 sm:gap-12 border-b border-white/10 pb-12 mb-12">
             <div>
@@ -330,14 +330,14 @@ const Footer = () => {
 
           <div className="flex flex-col gap-6 lg:flex-row justify-between items-center">
             <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-white/40 text-[14px]">
-              <a href="/privacy-policy" className="hover:text-[#C9A84C] transition-colors">Privacy Policy</a>
-              <a href="/cookie-policy" className="hover:text-[#C9A84C] transition-colors">Cookie Policy</a>
-              <a href="mailto:whistleblower@nkomazisez.gov.za" className="hover:text-[#C9A84C] transition-colors">Whistleblower: whistleblower@nkomazisez.gov.za</a>
+              <a href="/privacy-policy" className="hover:text-[#F2AE37] transition-colors">Privacy Policy</a>
+              <a href="/cookie-policy" className="hover:text-[#F2AE37] transition-colors">Cookie Policy</a>
+              <a href="mailto:whistleblower@nkomazisez.gov.za" className="hover:text-[#F2AE37] transition-colors">Whistleblower: whistleblower@nkomazisez.gov.za</a>
             </div>
             <div className="flex items-center gap-3">
               {['X', 'Instagram', 'LinkedIn'].map(social => <motion.a key={social} href="#" whileHover={{
-              backgroundColor: '#C8A84B',
-              color: '#0F2419',
+              backgroundColor: '#F2AE37',
+              color: '#023A23',
               scale: 1.05
             }} className="w-11 h-11 rounded-[10px] border border-white/10 flex items-center justify-center text-white/50 transition-colors">
                   <span className="text-xs font-bold uppercase">{social.slice(0, 2)}</span>
@@ -363,7 +363,7 @@ const Hero = () => {
       opacity
     }} className="absolute inset-0 z-0">
         <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1800&q=85" alt="Regulatory Background" className="w-full h-full object-cover scale-110" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#0F2419]/85 via-[#0F2419]/70 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#023A23]/85 via-[#023A23]/70 to-transparent" />
       </motion.div>
 
       <div className="relative z-10 px-6 py-10 sm:p-10 md:p-20 max-w-[1372px] mx-auto w-full">
@@ -405,7 +405,7 @@ const Hero = () => {
           </FadeUp>
           
           <div className="flex gap-2">
-            {[0, 1, 2].map(i => <div key={i} className={cn("w-2 h-2 rounded-full", i === 0 ? "bg-[#C8A84B]" : "bg-white/30")} />)}
+            {[0, 1, 2].map(i => <div key={i} className={cn("w-2 h-2 rounded-full", i === 0 ? "bg-[#F2AE37]" : "bg-white/30")} />)}
           </div>
         </div>
       </div>
@@ -445,13 +445,13 @@ const CentralizedServices = () => {
           </FadeUp>
           
           <div className="mb-12 sm:mb-16">
-            <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.1] tracking-[-1.5px] text-[#0F2419] font-['Inter'] mb-6" style={{
-            color: '#0F2419'
+            <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.1] tracking-[-1.5px] text-[#023A23] font-['Inter'] mb-6" style={{
+            color: '#023A23'
           }}>
               Four integrated government service channels under one roof.
             </AnimatedHeading>
             <FadeUp delay={0.2} className="max-w-2xl">
-              <p className="text-[#0F2419]/70 text-[15px] sm:text-[17px] leading-[1.65]">
+              <p className="text-[#023A23]/70 text-[15px] sm:text-[17px] leading-[1.65]">
                 Every approval required to commence industrial operations in the MPUMALANGA NKOMAZI SEZ is coordinated through a single submission desk eliminating multi-agency delays.
               </p>
             </FadeUp>
@@ -485,7 +485,7 @@ const OnboardingRoadmap = () => {
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80"
   }];
   return <section className="mx-1.5 sm:mx-2.5 mb-1.5 sm:mb-2.5" id="roadmap">
-      <div className="bg-[#0F2419] rounded-3xl py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative">
+      <div className="bg-[#023A23] rounded-3xl py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative">
         <div className="max-w-[1372px] mx-auto">
           <div className="flex flex-col lg:flex-row lg:items-end justify-between mb-12 sm:mb-16 gap-8">
             <div className="max-w-3xl">
@@ -509,7 +509,7 @@ const OnboardingRoadmap = () => {
 
           <FadeUp delay={0.4} className="mt-10 sm:mt-12 text-center">
             <p className="text-white/40 text-[13px]">
-              Hover each step to explore the approval pathway - Operational sign-off typically within <span className="font-bold text-[#C8A84B]">30 working days</span>
+              Hover each step to explore the approval pathway - Operational sign-off typically within <span className="font-bold text-[#F2AE37]">30 working days</span>
             </p>
           </FadeUp>
         </div>
@@ -549,13 +549,13 @@ const IncentiveTracking = () => {
           <FadeUp>
             <SubtitlePill className="mb-6">INCENTIVE COMPLIANCE TRACKING</SubtitlePill>
           </FadeUp>
-          <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.1] tracking-[-1.5px] text-[#0F2419] font-['Inter'] mb-6" style={{
-          color: '#0F2419'
+          <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.1] tracking-[-1.5px] text-[#023A23] font-['Inter'] mb-6" style={{
+          color: '#023A23'
         }}>
             Maintaining compliance to protect your fiscal incentives.
           </AnimatedHeading>
           <FadeUp delay={0.2} className="max-w-2xl">
-            <p className="text-[#0F2419]/70 text-[15px] sm:text-[17px] leading-[1.65]">
+            <p className="text-[#023A23]/70 text-[15px] sm:text-[17px] leading-[1.65]">
               Operational tenants use the NSEZ digital compliance dashboard to log ongoing performance metrics and protect their active SEZ fiscal benefit status.
             </p>
           </FadeUp>
@@ -565,12 +565,12 @@ const IncentiveTracking = () => {
           {features.map((feature, i) => <FeatureCard key={feature.title} {...feature} />)}
         </div>
 
-        <div className="bg-[#C8A84B] py-10 px-6 sm:px-8 rounded-3xl mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
+        <div className="bg-[#F2AE37] py-10 px-6 sm:px-8 rounded-3xl mt-12 grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, i) => <div key={stat.label} className="text-center">
-              <div className="text-[24px] sm:text-[36px] md:text-[48px] font-light text-[#0F2419] font-['Inter'] leading-none mb-2">
+              <div className="text-[24px] sm:text-[36px] md:text-[48px] font-light text-[#023A23] font-['Inter'] leading-none mb-2">
                 {stat.value}
               </div>
-              <div className="text-[#0F2419]/70 text-[11px] sm:text-[13px] uppercase tracking-[0.06em] max-w-[150px] mx-auto">
+              <div className="text-[#023A23]/70 text-[11px] sm:text-[13px] uppercase tracking-[0.06em] max-w-[150px] mx-auto">
                 {stat.label}
               </div>
             </div>)}
@@ -596,13 +596,13 @@ const ResourceLibrary = () => {
             <FadeUp>
               <SubtitlePill className="mb-6">OSS REGULATORY RESOURCE LIBRARY</SubtitlePill>
             </FadeUp>
-            <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.1] tracking-[-1.5px] text-[#0F2419] font-['Inter'] mb-6" style={{
-            color: '#0F2419'
+            <AnimatedHeading className="text-[32px] sm:text-[40px] lg:text-[52px] font-light leading-[1.1] tracking-[-1.5px] text-[#023A23] font-['Inter'] mb-6" style={{
+            color: '#023A23'
           }}>
               Official frameworks and technical compliance documents.
             </AnimatedHeading>
             <FadeUp delay={0.2} className="max-w-2xl">
-              <p className="text-[#0F2419]/70 text-[15px] sm:text-[17px] leading-[1.65]">
+              <p className="text-[#023A23]/70 text-[15px] sm:text-[17px] leading-[1.65]">
                 All regulatory reference materials required to prepare a compliant institutional application and maintain ongoing operational status within the zone.
               </p>
             </FadeUp>
@@ -616,7 +616,7 @@ const ResourceLibrary = () => {
     </section>;
 };
 const ContactSection = () => {
-  return <section className="mx-1.5 sm:mx-2.5 mb-1.5 sm:mb-2.5 bg-[#0F2419] rounded-3xl relative overflow-hidden min-h-[620px]">
+  return <section className="mx-1.5 sm:mx-2.5 mb-1.5 sm:mb-2.5 bg-[#023A23] rounded-3xl relative overflow-hidden min-h-[620px]">
       <div className="absolute inset-0 opacity-10">
         <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=1800&q=85" alt="Contact Background" className="w-full h-full object-cover" />
       </div>
@@ -645,7 +645,7 @@ const ContactSection = () => {
               <div className="text-white/50 text-xs uppercase tracking-[0.06em] mb-2">
                 Director: One-Stop-Shop Operations and Regulatory Vetting
               </div>
-              <a href="mailto:oss@nkomazisez.gov.za" className="text-[#C8A84B] text-[20px] sm:text-[24px] md:text-[28px] font-medium font-['Inter'] hover:opacity-80 transition-opacity flex items-center gap-3 break-all">
+              <a href="mailto:oss@nkomazisez.gov.za" className="text-[#F2AE37] text-[20px] sm:text-[24px] md:text-[28px] font-medium font-['Inter'] hover:opacity-80 transition-opacity flex items-center gap-3 break-all">
                 <Mail className="w-5 h-5 sm:w-6 sm:h-6 shrink-0" />
                 oss@nkomazisez.gov.za
               </a>
@@ -675,7 +675,7 @@ const ContactSection = () => {
           once: true
         }} className="bg-[#1A3C2E] rounded-2xl p-6 sm:p-8 shadow-xl relative">
             <div className="flex gap-1 mb-6">
-              {[1, 2, 3, 4, 5].map(s => <Plus key={s} className="w-5 h-5 text-[#C8A84B]" />)}
+              {[1, 2, 3, 4, 5].map(s => <Plus key={s} className="w-5 h-5 text-[#F2AE37]" />)}
             </div>
             
             <blockquote className="text-white text-[16px] sm:text-[18px] md:text-[20px] leading-relaxed font-['Inter'] italic mb-6 sm:mb-8">
@@ -697,7 +697,7 @@ const ContactSection = () => {
               val: "100%",
               label: "Digital"
             }].map((stat, i) => <div key={stat.label}>
-                  <div className="text-[#C8A84B] text-[22px] sm:text-[24px] md:text-[28px] font-light font-['Inter'] leading-none mb-2">
+                  <div className="text-[#F2AE37] text-[22px] sm:text-[24px] md:text-[28px] font-light font-['Inter'] leading-none mb-2">
                     {stat.val}
                   </div>
                   <div className="text-white/60 text-[10px] uppercase tracking-[0.06em]">
@@ -722,7 +722,7 @@ export const CompliancePortalPage = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-  return <div className="bg-[#0F2419] min-h-screen text-[#0F2419] overflow-x-hidden selection:bg-[#C8A84B] selection:text-[#0F2419]" style={{ fontFamily: BODY_FONT }}>
+  return <div className="bg-[#023A23] min-h-screen text-[#023A23] overflow-x-hidden selection:bg-[#F2AE37] selection:text-[#023A23]" style={{ fontFamily: BODY_FONT }}>
       <NSEZNavbar />
       
       <AnimatePresence>
@@ -738,7 +738,7 @@ export const CompliancePortalPage = () => {
       }} onClick={() => window.scrollTo({
         top: 0,
         behavior: 'smooth'
-      })} className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#1A3C2E] border border-white/20 text-white flex items-center justify-center z-[100] shadow-2xl hover:bg-[#C8A84B] hover:text-[#0F2419] transition-colors">
+      })} className="fixed bottom-6 right-6 sm:bottom-8 sm:right-8 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-[#1A3C2E] border border-white/20 text-white flex items-center justify-center z-[100] shadow-2xl hover:bg-[#F2AE37] hover:text-[#023A23] transition-colors">
             <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6" />
           </motion.button>}
       </AnimatePresence>

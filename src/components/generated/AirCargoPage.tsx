@@ -3,7 +3,7 @@ import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring 
 import { Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
 import { GlobalRouteMap } from './GlobalRouteMap';
 import { NSEZNavbar } from './NSEZNavbar';
-const HEADING_FONT = "'Inter', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'DM Sans', system-ui, sans-serif";
 
 // ─── Data ─────────────────────────────────────────────────────────────────────
@@ -304,10 +304,10 @@ const GoldButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-[#C8A84B] text-[#0F2419] text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-[#F2AE37] text-[#023A23] text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
     fontFamily: BODY_FONT
   }}>{label}</div>
-    <div className="flex items-center justify-center w-[44px] bg-[#C8A84B] text-[#0F2419] rounded-r-lg flex-shrink-0"><ArrowUpRightIcon /></div>
+    <div className="flex items-center justify-center w-[44px] bg-[#F2AE37] text-[#023A23] rounded-r-lg flex-shrink-0"><ArrowUpRightIcon /></div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
     background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.22) 50%, transparent 70%)'
   }} />
@@ -343,10 +343,10 @@ const DarkButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-[#0F2419] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-[#023A23] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
     fontFamily: BODY_FONT
   }}>{label}</div>
-    <div className="flex items-center justify-center w-[44px] bg-[#0F2419] text-white rounded-r-lg flex-shrink-0"><ArrowUpRightIcon /></div>
+    <div className="flex items-center justify-center w-[44px] bg-[#023A23] text-white rounded-r-lg flex-shrink-0"><ArrowUpRightIcon /></div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
     background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%)'
   }} />
@@ -382,12 +382,12 @@ const WhiteButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className="flex items-center justify-center px-5 bg-white text-[#0F2419] text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
+    <div className="flex items-center justify-center px-5 bg-white text-[#023A23] text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{
     fontFamily: BODY_FONT
   }}>{label}</div>
-    <div className="flex items-center justify-center w-[44px] bg-white text-[#0F2419] rounded-r-lg flex-shrink-0"><ArrowUpRightIcon /></div>
+    <div className="flex items-center justify-center w-[44px] bg-white text-[#023A23] rounded-r-lg flex-shrink-0"><ArrowUpRightIcon /></div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
-    background: 'linear-gradient(105deg, transparent 30%, rgba(200,168,75,0.25) 50%, transparent 70%)'
+    background: 'linear-gradient(105deg, transparent 30%, rgba(242, 174, 55,0.25) 50%, transparent 70%)'
   }} />
   </motion.a>;
 
@@ -550,19 +550,19 @@ const CounterItem = ({
     ease: [0.22, 1, 0.36, 1]
   }} className={`${bg} rounded-2xl p-[30px] flex flex-col gap-2.5 cursor-default`}>
       <div className="flex items-end gap-0">
-        {nonNumericPrefix && <span className="text-[#0F2419] font-light text-6xl leading-none" style={{
+        {nonNumericPrefix && <span className="text-[#023A23] font-light text-6xl leading-none" style={{
         fontFamily: HEADING_FONT
       }}>{nonNumericPrefix}</span>}
-        <span className="text-[#0F2419] font-light leading-none" style={{
+        <span className="text-[#023A23] font-light leading-none" style={{
         fontFamily: HEADING_FONT,
         fontSize: '60px',
         lineHeight: '1'
       }}>{displayValue}</span>
-        {suffix && <span className="text-[#0F2419] font-light text-6xl leading-none" style={{
+        {suffix && <span className="text-[#023A23] font-light text-6xl leading-none" style={{
         fontFamily: HEADING_FONT
       }}>{suffix}</span>}
       </div>
-      <p className="text-[#0F2419] font-medium text-base tracking-[-0.2px] leading-6 m-0" style={{
+      <p className="text-[#023A23] font-medium text-base tracking-[-0.2px] leading-6 m-0" style={{
       fontFamily: BODY_FONT
     }}>{label}</p>
     </motion.div>;
@@ -633,10 +633,10 @@ const VideoHero = () => {
       </motion.div>
 
       {/* Overlays */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0F2419]/95 via-[#0F2419]/35 to-[#0F2419]/10" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0F2419]/55 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#023A23]/95 via-[#023A23]/35 to-[#023A23]/10" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#023A23]/55 to-transparent" />
       <div className="absolute inset-0" style={{
-      background: 'radial-gradient(ellipse at center, transparent 50%, rgba(15,36,25,0.4) 100%)'
+      background: 'radial-gradient(ellipse at center, transparent 50%, rgba(2, 58, 35,0.4) 100%)'
     }} />
 
       <motion.div className="relative z-10 max-w-[1372px] mx-auto w-full px-8 pb-28 pt-40" style={{
@@ -717,7 +717,7 @@ const VideoHero = () => {
         {HERO_BG_IMAGES.map((_, i) => <button key={i} onClick={() => handleSlideChange(i)} className="rounded-full transition-all duration-500" style={{
         width: activeImg === i ? '28px' : '8px',
         height: '8px',
-        backgroundColor: activeImg === i ? '#C8A84B' : 'rgba(255,255,255,0.3)'
+        backgroundColor: activeImg === i ? '#F2AE37' : 'rgba(255,255,255,0.3)'
       }} />)}
       </motion.div>
 
@@ -734,7 +734,7 @@ const VideoHero = () => {
       ease: 'easeOut'
     }}>
         <div className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-3.5 py-2">
-          <div className="w-2 h-2 rounded-full bg-[#C8A84B] animate-pulse" />
+          <div className="w-2 h-2 rounded-full bg-[#F2AE37] animate-pulse" />
           <span className="text-white/80 text-xs tracking-[0.08em]" style={{
           fontFamily: BODY_FONT
         }}>Fully operational · Est. 2024</span>
@@ -796,7 +796,7 @@ const FaqItem = ({
           </motion.span>
         </motion.div>
         <div className="flex-1 flex flex-col gap-0">
-          <h3 className="text-[#0F2419] font-semibold leading-[1.3] tracking-[-0.3px] m-0 group-hover:text-[#1A3C2E] transition-colors duration-200" style={{
+          <h3 className="text-[#023A23] font-semibold leading-[1.3] tracking-[-0.3px] m-0 group-hover:text-[#1A3C2E] transition-colors duration-200" style={{
           fontFamily: HEADING_FONT,
           fontSize: '22px'
         }}>
@@ -818,7 +818,7 @@ const FaqItem = ({
           }} style={{
             overflow: 'hidden'
           }}>
-                <p className="text-[#0F2419]/70 text-base leading-[1.75] mt-3 mb-0" style={{
+                <p className="text-[#023A23]/70 text-base leading-[1.75] mt-3 mb-0" style={{
               fontFamily: BODY_FONT,
               fontWeight: 400
             }}>{answer}</p>
@@ -940,7 +940,7 @@ const ZoneOverview = () => {
 
             {/* Gradient overlays */}
             <div className="absolute inset-0" style={{
-            background: 'linear-gradient(to right, transparent 50%, rgba(15,36,25,0.4) 100%), linear-gradient(to top, rgba(15,36,25,0.7) 0%, transparent 50%)'
+            background: 'linear-gradient(to right, transparent 50%, rgba(2, 58, 35,0.4) 100%), linear-gradient(to top, rgba(2, 58, 35,0.7) 0%, transparent 50%)'
           }} />
 
             {/* Carousel dot indicators */}
@@ -948,7 +948,7 @@ const ZoneOverview = () => {
               {ZONE_CAROUSEL_IMAGES.map((_, i) => <button key={i} onClick={() => handleDotClick(i)} className="rounded-full transition-all duration-400" style={{
               width: carouselIdx === i ? '22px' : '7px',
               height: '7px',
-              backgroundColor: carouselIdx === i ? '#C8A84B' : 'rgba(255,255,255,0.4)'
+              backgroundColor: carouselIdx === i ? '#F2AE37' : 'rgba(255,255,255,0.4)'
             }} />)}
             </div>
 
@@ -965,14 +965,14 @@ const ZoneOverview = () => {
             duration: 0.7,
             delay: 0.4
           }}>
-              <div className="bg-[#C8A84B] rounded-2xl px-7 py-5 inline-flex flex-col gap-1">
-                <span className="text-[#0F2419] font-light" style={{
+              <div className="bg-[#F2AE37] rounded-2xl px-7 py-5 inline-flex flex-col gap-1">
+                <span className="text-[#023A23] font-light" style={{
                 fontFamily: HEADING_FONT,
                 fontSize: '52px',
                 lineHeight: '1',
                 letterSpacing: '-2px'
               }}>2 400</span>
-                <span className="text-[#0F2419]/70 text-sm font-medium" style={{
+                <span className="text-[#023A23]/70 text-sm font-medium" style={{
                 fontFamily: BODY_FONT
               }}>hectares of prime industrial land</span>
               </div>
@@ -980,7 +980,7 @@ const ZoneOverview = () => {
           </div>
 
           {/* Right — dark text panel */}
-          <div className="bg-[#0F2419] px-10 py-14 flex flex-col justify-between gap-10">
+          <div className="bg-[#023A23] px-10 py-14 flex flex-col justify-between gap-10">
             <div className="flex flex-col gap-6">
               <Subtitle>Zone Overview</Subtitle>
               <AnimatedHeading className="text-white font-light m-0" style={{
@@ -1013,7 +1013,7 @@ const ZoneOverview = () => {
                     lineHeight: '1',
                     letterSpacing: '-1.5px'
                   }}>{s.value}</span>
-                      {s.unit && <span className="text-[#C8A84B] font-light text-xl leading-none mb-0.5" style={{
+                      {s.unit && <span className="text-[#F2AE37] font-light text-xl leading-none mb-0.5" style={{
                     fontFamily: HEADING_FONT
                   }}>{s.unit}</span>}
                     </div>
@@ -1041,7 +1041,7 @@ const HowToInvest = () => {
           <div className="flex flex-col lg:flex-row justify-between items-end gap-6">
             <div className="flex flex-col items-start gap-3 max-w-[520px]">
               <Subtitle>How to Invest</Subtitle>
-              <AnimatedHeading className="text-[#0F2419] font-light m-0" style={{
+              <AnimatedHeading className="text-[#023A23] font-light m-0" style={{
               fontSize: 'clamp(32px, 3.5vw, 52px)',
               lineHeight: '1.1',
               letterSpacing: '-2px'
@@ -1080,27 +1080,27 @@ const HowToInvest = () => {
               backgroundPosition: 'center'
             }} />
                 <div className="absolute inset-0" style={{
-              background: 'linear-gradient(180deg, rgba(15,36,25,0.2) 0%, rgba(15,36,25,0.85) 60%, rgba(15,36,25,0.97) 100%)'
+              background: 'linear-gradient(180deg, rgba(2, 58, 35,0.2) 0%, rgba(2, 58, 35,0.85) 60%, rgba(2, 58, 35,0.97) 100%)'
             }} />
                 <motion.div className="absolute inset-0" animate={{
               opacity: hovered === i ? 1 : 0
             }} transition={{
               duration: 0.35
             }} style={{
-              background: 'linear-gradient(135deg, rgba(200,168,75,0.08) 0%, transparent 70%)'
+              background: 'linear-gradient(135deg, rgba(242, 174, 55,0.08) 0%, transparent 70%)'
             }} />
 
                 <div className="relative z-10 h-full flex flex-col justify-between p-7">
                   <div className="flex items-center justify-between">
                     <motion.div className="w-10 h-10 rounded-full border-2 flex items-center justify-center" animate={{
-                  borderColor: hovered === i ? '#C8A84B' : 'rgba(255,255,255,0.3)',
-                  backgroundColor: hovered === i ? '#C8A84B' : 'transparent'
+                  borderColor: hovered === i ? '#F2AE37' : 'rgba(255,255,255,0.3)',
+                  backgroundColor: hovered === i ? '#F2AE37' : 'transparent'
                 }} transition={{
                   duration: 0.3
                 }}>
                       <span className="text-xs font-bold" style={{
                     fontFamily: BODY_FONT,
-                    color: hovered === i ? '#0F2419' : 'white'
+                    color: hovered === i ? '#023A23' : 'white'
                   }}>{s.step}</span>
                     </motion.div>
                     <motion.div className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center text-white" animate={{
@@ -1119,7 +1119,7 @@ const HowToInvest = () => {
                   duration: 0.35,
                   ease: [0.22, 1, 0.36, 1]
                 }}>
-                      <div className="w-8 h-px bg-[#C8A84B] mb-3" />
+                      <div className="w-8 h-px bg-[#F2AE37] mb-3" />
                       <h3 className="text-white font-semibold m-0" style={{
                     fontFamily: HEADING_FONT,
                     fontSize: '22px',
@@ -1143,7 +1143,7 @@ const HowToInvest = () => {
           </div>
 
           <FadeUp delay={0.2}>
-            <p className="text-[#0F2419]/45 text-sm text-center" style={{
+            <p className="text-[#023A23]/45 text-sm text-center" style={{
             fontFamily: BODY_FONT
           }}>
               <span>Hover each step to explore your investment journey · Operational within </span>
@@ -1165,7 +1165,7 @@ const KeyBenefits = () => {
         <div className="max-w-[1372px] mx-auto flex flex-col gap-14">
           <div className="flex flex-col items-center gap-3 text-center max-w-[520px] mx-auto">
             <Subtitle>Key Benefits</Subtitle>
-            <AnimatedHeading className="text-[#0F2419] font-light m-0" style={{
+            <AnimatedHeading className="text-[#023A23] font-light m-0" style={{
             fontSize: 'clamp(34px, 4vw, 52px)',
             lineHeight: '1.1',
             letterSpacing: '-2px'
@@ -1200,14 +1200,14 @@ const KeyBenefits = () => {
               backgroundPosition: 'center'
             }} />
                 <div className="absolute inset-0" style={{
-              background: 'linear-gradient(180deg, rgba(15,36,25,0.55) 0%, rgba(15,36,25,0.88) 100%)'
+              background: 'linear-gradient(180deg, rgba(2, 58, 35,0.55) 0%, rgba(2, 58, 35,0.88) 100%)'
             }} />
                 <motion.div className="absolute inset-0" animate={{
               opacity: hovered === b.id ? 1 : 0
             }} transition={{
               duration: 0.4
             }} style={{
-              background: 'linear-gradient(135deg, rgba(200,168,75,0.15) 0%, transparent 60%)'
+              background: 'linear-gradient(135deg, rgba(242, 174, 55,0.15) 0%, transparent 60%)'
             }} />
                 <motion.div className="absolute top-0 left-0 right-0 h-[2px]" animate={{
               scaleX: hovered === b.id ? 1 : 0,
@@ -1216,24 +1216,24 @@ const KeyBenefits = () => {
               duration: 0.4,
               ease: [0.22, 1, 0.36, 1]
             }} style={{
-              background: '#C8A84B',
+              background: '#F2AE37',
               transformOrigin: 'left'
             }} />
 
                 <div className="relative z-10 h-full flex flex-col justify-between p-7">
                   <motion.div className="w-12 h-12 rounded-xl flex items-center justify-center" animate={{
-                backgroundColor: hovered === b.id ? '#C8A84B' : 'rgba(255,255,255,0.1)'
+                backgroundColor: hovered === b.id ? '#F2AE37' : 'rgba(255,255,255,0.1)'
               }} transition={{
                 duration: 0.3
               }}>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style={{
-                  color: hovered === b.id ? '#0F2419' : 'white'
+                  color: hovered === b.id ? '#023A23' : 'white'
                 }}>
                       <path d={b.icon} />
                     </svg>
                   </motion.div>
                   <div className="flex flex-col gap-3">
-                    <span className="text-[#C8A84B] font-light" style={{
+                    <span className="text-[#F2AE37] font-light" style={{
                   fontFamily: HEADING_FONT,
                   fontSize: '56px',
                   lineHeight: '1',
@@ -1323,9 +1323,9 @@ const KeySectors = ({
             <div className="flex flex-wrap gap-2">
               {SEZ_SECTORS.map((s, i) => <motion.button key={s.id} onClick={() => setActiveSector(i)} className="relative px-5 py-2.5 rounded-full text-[13px] font-medium tracking-[0.04em] overflow-hidden" style={{
               fontFamily: BODY_FONT,
-              border: `1px solid ${activeSector === i ? '#C8A84B' : 'rgba(255,255,255,0.18)'}`,
-              color: activeSector === i ? '#0F2419' : 'rgba(255,255,255,0.65)',
-              background: activeSector === i ? '#C8A84B' : 'rgba(255,255,255,0.05)'
+              border: `1px solid ${activeSector === i ? '#F2AE37' : 'rgba(255,255,255,0.18)'}`,
+              color: activeSector === i ? '#023A23' : 'rgba(255,255,255,0.65)',
+              background: activeSector === i ? '#F2AE37' : 'rgba(255,255,255,0.05)'
             }} whileTap={{
               scale: 0.96
             }} transition={{
@@ -1354,7 +1354,7 @@ const KeySectors = ({
                 {/* Left — text content */}
                 <div className="flex flex-col gap-7">
                   <div className="flex items-center gap-4">
-                    <span className="text-[#C8A84B]/40 font-light" style={{
+                    <span className="text-[#F2AE37]/40 font-light" style={{
                   fontFamily: HEADING_FONT,
                   fontSize: '80px',
                   lineHeight: '1',
@@ -1387,9 +1387,9 @@ const KeySectors = ({
                   duration: 0.4,
                   ease: 'easeOut'
                 }}>
-                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#C8A84B]/15 border border-[#C8A84B]/30 flex items-center justify-center mt-0.5">
+                        <div className="flex-shrink-0 w-5 h-5 rounded-full bg-[#F2AE37]/15 border border-[#F2AE37]/30 flex items-center justify-center mt-0.5">
                           <svg width="8" height="8" viewBox="0 0 8 8" fill="none">
-                            <path d="M1.5 4L3.5 6L6.5 2" stroke="#C8A84B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                            <path d="M1.5 4L3.5 6L6.5 2" stroke="#F2AE37" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                           </svg>
                         </div>
                         <p className="text-white/70 text-[14px] font-normal leading-[1.65] m-0" style={{
@@ -1404,7 +1404,7 @@ const KeySectors = ({
                       {SEZ_SECTORS.map((_, dotIdx) => <button key={dotIdx} onClick={() => setActiveSector(dotIdx)} className="rounded-full transition-all duration-300" style={{
                     width: dotIdx === activeSector ? '24px' : '8px',
                     height: '8px',
-                    backgroundColor: dotIdx === activeSector ? '#C8A84B' : 'rgba(255,255,255,0.25)'
+                    backgroundColor: dotIdx === activeSector ? '#F2AE37' : 'rgba(255,255,255,0.25)'
                   }} />)}
                     </div>
                   </div>
@@ -1432,7 +1432,7 @@ const KeySectors = ({
                   <div className="absolute top-1/2 -translate-y-1/2 left-3">
                     <motion.button onClick={() => setActiveSector((activeSector - 1 + SEZ_SECTORS.length) % SEZ_SECTORS.length)} className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white" whileHover={{
                   scale: 1.1,
-                  backgroundColor: 'rgba(200,168,75,0.3)'
+                  backgroundColor: 'rgba(242, 174, 55,0.3)'
                 }} whileTap={{
                   scale: 0.95
                 }}>
@@ -1442,7 +1442,7 @@ const KeySectors = ({
                   <div className="absolute top-1/2 -translate-y-1/2 right-3">
                     <motion.button onClick={() => setActiveSector((activeSector + 1) % SEZ_SECTORS.length)} className="w-9 h-9 rounded-full bg-white/10 backdrop-blur-md border border-white/20 flex items-center justify-center text-white" whileHover={{
                   scale: 1.1,
-                  backgroundColor: 'rgba(200,168,75,0.3)'
+                  backgroundColor: 'rgba(242, 174, 55,0.3)'
                 }} whileTap={{
                   scale: 0.95
                 }}>
@@ -1450,7 +1450,7 @@ const KeySectors = ({
                     </motion.button>
                   </div>
                   <div className="absolute bottom-4 left-4">
-                    <span className="inline-block bg-[#C8A84B] text-[#0F2419] text-xs font-semibold px-3 py-1.5 rounded-full tracking-[0.06em] uppercase" style={{
+                    <span className="inline-block bg-[#F2AE37] text-[#023A23] text-xs font-semibold px-3 py-1.5 rounded-full tracking-[0.06em] uppercase" style={{
                   fontFamily: BODY_FONT
                 }}>{svc.tag}</span>
                   </div>
@@ -1480,7 +1480,7 @@ const InvestorStories = () => {
     return () => clearInterval(timer);
   }, []);
   return <section ref={ref} className="mx-2.5 mb-2.5">
-      <div className="bg-[#0F2419] rounded-3xl overflow-hidden">
+      <div className="bg-[#023A23] rounded-3xl overflow-hidden">
         {/* Compact background image strip */}
         <div className="relative" style={{
         height: '260px'
@@ -1497,10 +1497,10 @@ const InvestorStories = () => {
         }} />)}
           {/* Gradient overlays */}
           <div className="absolute inset-0" style={{
-          background: 'linear-gradient(180deg, rgba(15,36,25,0.15) 0%, rgba(15,36,25,0.7) 60%, #0F2419 100%)'
+          background: 'linear-gradient(180deg, rgba(2, 58, 35,0.15) 0%, rgba(2, 58, 35,0.7) 60%, #023A23 100%)'
         }} />
           <div className="absolute inset-0" style={{
-          background: 'linear-gradient(90deg, rgba(15,36,25,0.5) 0%, transparent 55%)'
+          background: 'linear-gradient(90deg, rgba(2, 58, 35,0.5) 0%, transparent 55%)'
         }} />
 
           {/* Sector label overlay top-right */}
@@ -1517,7 +1517,7 @@ const InvestorStories = () => {
               y: 8
             }} transition={{
               duration: 0.3
-            }} className="inline-block bg-[#C8A84B] text-[#0F2419] text-xs font-bold px-4 py-2 rounded-full tracking-[0.08em] uppercase" style={{
+            }} className="inline-block bg-[#F2AE37] text-[#023A23] text-xs font-bold px-4 py-2 rounded-full tracking-[0.08em] uppercase" style={{
               fontFamily: BODY_FONT
             }}>
                 {INVESTOR_STORIES[activeStory].sector}
@@ -1530,7 +1530,7 @@ const InvestorStories = () => {
             {INVESTOR_STORIES.map((story, i) => <button key={story.id} onClick={() => setActiveStory(i)} className="flex items-center gap-2.5 group">
                 <motion.div animate={{
               width: activeStory === i ? '28px' : '8px',
-              backgroundColor: activeStory === i ? '#C8A84B' : 'rgba(255,255,255,0.3)'
+              backgroundColor: activeStory === i ? '#F2AE37' : 'rgba(255,255,255,0.3)'
             }} transition={{
               duration: 0.4
             }} className="h-[3px] rounded-full" />
@@ -1539,7 +1539,7 @@ const InvestorStories = () => {
               x: activeStory === i ? 0 : -8
             }} transition={{
               duration: 0.3
-            }} className="text-[#C8A84B] text-xs font-medium tracking-[0.08em] uppercase" style={{
+            }} className="text-[#F2AE37] text-xs font-medium tracking-[0.08em] uppercase" style={{
               fontFamily: BODY_FONT
             }}>
                   {story.sector}
@@ -1574,7 +1574,7 @@ const InvestorStories = () => {
                       <span>"{INVESTOR_STORIES[activeStory].quote}"</span>
                     </p>
                     <div className="flex items-center gap-3">
-                      <div className="w-8 h-px bg-[#C8A84B] flex-shrink-0" />
+                      <div className="w-8 h-px bg-[#F2AE37] flex-shrink-0" />
                       <div className="flex flex-col gap-0.5">
                         <span className="text-white font-semibold text-[15px]" style={{
                         fontFamily: BODY_FONT
@@ -1592,14 +1592,14 @@ const InvestorStories = () => {
                     {INVESTOR_STORIES.map((_, i) => <button key={i} onClick={() => setActiveStory(i)} className="rounded-full transition-all duration-300" style={{
                     width: activeStory === i ? '24px' : '8px',
                     height: '8px',
-                    backgroundColor: activeStory === i ? '#C8A84B' : 'rgba(255,255,255,0.25)'
+                    backgroundColor: activeStory === i ? '#F2AE37' : 'rgba(255,255,255,0.25)'
                   }} />)}
                   </div>
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <CounterItem value="2400" label="Hectares of prime industrial land available." bg="bg-[#C8A84B]" />
+                <CounterItem value="2400" label="Hectares of prime industrial land available." bg="bg-[#F2AE37]" />
                 <CounterItem value="15" suffix="%" label="Reduced corporate tax rate for SEZ operators." bg="bg-white" />
                 <CounterItem value="30" suffix="k+" label="Direct and indirect jobs targeted by 2030." bg="bg-[#EEF3EF]" />
               </div>
@@ -1623,7 +1623,7 @@ const ScrollProgressBar = () => {
   });
   return <motion.div className="fixed top-0 left-0 right-0 z-[99999] h-[2px] origin-left" style={{
     scaleX,
-    background: 'linear-gradient(90deg, #C8A84B, #e8c96a, #C8A84B)'
+    background: 'linear-gradient(90deg, #F2AE37, #e8c96a, #F2AE37)'
   }} />;
 };
 
@@ -1661,9 +1661,9 @@ const BackToTop = () => {
       top: 0,
       behavior: 'smooth'
     })} className="fixed bottom-8 right-8 z-[9998] w-12 h-12 rounded-full flex items-center justify-center" style={{
-      background: hovered ? '#C8A84B' : '#0F2419',
-      border: `1.5px solid ${hovered ? '#C8A84B' : 'rgba(200,168,75,0.35)'}`,
-      boxShadow: hovered ? '0 8px 32px rgba(200,168,75,0.35)' : '0 4px 20px rgba(0,0,0,0.35)',
+      background: hovered ? '#F2AE37' : '#023A23',
+      border: `1.5px solid ${hovered ? '#F2AE37' : 'rgba(242, 174, 55,0.35)'}`,
+      boxShadow: hovered ? '0 8px 32px rgba(242, 174, 55,0.35)' : '0 4px 20px rgba(0,0,0,0.35)',
       transition: 'background 0.25s, border-color 0.25s, box-shadow 0.25s'
     }}>
           <motion.svg width="16" height="16" viewBox="0 0 16 16" fill="none" animate={{
@@ -1671,7 +1671,7 @@ const BackToTop = () => {
       }} transition={{
         duration: 0.2
       }}>
-            <path d="M8 12V4M4 7l4-4 4 4" stroke={hovered ? '#0F2419' : '#C8A84B'} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M8 12V4M4 7l4-4 4 4" stroke={hovered ? '#023A23' : '#F2AE37'} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" />
           </motion.svg>
         </motion.button>}
     </AnimatePresence>;
@@ -1705,7 +1705,7 @@ export const AirCargoPage = () => {
       {/* ── Partner Marquee ── */}
       <section id="sec-partners" className="py-[120px] pb-[100px] flex flex-col items-center gap-6 overflow-hidden">
         <FadeUp>
-          <p className="text-[#0F2419] text-2xl leading-[1.4] m-0 text-center font-light" style={{
+          <p className="text-[#023A23] text-2xl leading-[1.4] m-0 text-center font-light" style={{
           fontFamily: HEADING_FONT,
           letterSpacing: '-0.5px'
         }}>
@@ -1786,7 +1786,7 @@ export const AirCargoPage = () => {
           <div className="flex flex-col gap-10 overflow-hidden">
             <div className="flex flex-col items-center gap-3 text-center">
               <Subtitle>FAQs</Subtitle>
-              <AnimatedHeading className="text-[#0F2419] font-light m-0" style={{
+              <AnimatedHeading className="text-[#023A23] font-light m-0" style={{
               fontSize: 'clamp(34px, 4vw, 52px)',
               lineHeight: '1.1',
               letterSpacing: '-2px'
@@ -1811,10 +1811,10 @@ export const AirCargoPage = () => {
         backgroundSize: 'cover'
       }} />
         <div className="absolute inset-0" style={{
-        background: 'linear-gradient(135deg, rgba(10,20,14,0.96) 0%, rgba(15,36,25,0.82) 45%, rgba(15,36,25,0.45) 100%)'
+        background: 'linear-gradient(135deg, rgba(10,20,14,0.96) 0%, rgba(2, 58, 35,0.82) 45%, rgba(2, 58, 35,0.45) 100%)'
       }} />
         <div className="absolute inset-0 pointer-events-none" style={{
-        background: 'linear-gradient(135deg, transparent 40%, rgba(200,168,75,0.04) 60%, transparent 80%)'
+        background: 'linear-gradient(135deg, transparent 40%, rgba(242, 174, 55,0.04) 60%, transparent 80%)'
       }} />
 
         <div className="relative z-10 max-w-[1372px] mx-auto w-full px-8 py-10 pb-16">
@@ -1831,8 +1831,8 @@ export const AirCargoPage = () => {
             duration: 0.6,
             ease: 'easeOut'
           }} className="flex items-center gap-3">
-              <div className="w-8 h-px bg-[#C8A84B]" />
-              <span className="text-[#C8A84B] text-xs font-medium tracking-[0.16em] uppercase" style={{
+              <div className="w-8 h-px bg-[#F2AE37]" />
+              <span className="text-[#F2AE37] text-xs font-medium tracking-[0.16em] uppercase" style={{
               fontFamily: BODY_FONT
             }}>Begin Your Journey</span>
             </motion.div>
@@ -1869,7 +1869,7 @@ export const AirCargoPage = () => {
           padding: '24px'
         }}>
             <div className="flex items-center gap-2 mb-3">
-              {[1, 2, 3, 4, 5].map(s => <svg key={s} width="14" height="14" viewBox="0 0 14 14" fill="#C8A84B"><path d="M7 1l1.8 3.6L13 5.4l-3 2.9.7 4.1L7 10.3l-3.7 2.1.7-4.1-3-2.9 4.2-.8z" /></svg>)}
+              {[1, 2, 3, 4, 5].map(s => <svg key={s} width="14" height="14" viewBox="0 0 14 14" fill="#F2AE37"><path d="M7 1l1.8 3.6L13 5.4l-3 2.9.7 4.1L7 10.3l-3.7 2.1.7-4.1-3-2.9 4.2-.8z" /></svg>)}
             </div>
             <p className="text-white/80 font-light leading-[1.65] m-0 mb-3" style={{
             fontFamily: HEADING_FONT,
@@ -1894,11 +1894,11 @@ export const AirCargoPage = () => {
             gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))'
           }}>
               {Object.entries(FOOTER_LINKS).map(([cat, links]) => <FadeUp key={cat} className="flex flex-col gap-6">
-                  <span className="text-[#0F2419] text-base font-semibold tracking-[0.04em] uppercase" style={{
+                  <span className="text-[#023A23] text-base font-semibold tracking-[0.04em] uppercase" style={{
                 fontFamily: BODY_FONT
               }}>{cat}</span>
                   <div className="flex flex-col gap-2.5">
-                    {links.map(link => <a key={link} href="#" onClick={e => e.preventDefault()} className="text-[#0F2419]/60 text-[15px] font-normal no-underline hover:text-[#0F2419] transition-colors duration-200" style={{
+                    {links.map(link => <a key={link} href="#" onClick={e => e.preventDefault()} className="text-[#023A23]/60 text-[15px] font-normal no-underline hover:text-[#023A23] transition-colors duration-200" style={{
                   fontFamily: BODY_FONT
                 }}>{link}</a>)}
                   </div>
@@ -1908,7 +1908,7 @@ export const AirCargoPage = () => {
         </div>
 
         {/* Bottom — dark section */}
-        <div className="bg-[#0F2419]">
+        <div className="bg-[#023A23]">
           <div className="max-w-[1372px] mx-auto px-4 pt-14 pb-6">
             <div className="flex flex-col lg:flex-row justify-between items-start gap-10 pb-12 border-b border-white/10">
               <div className="flex flex-col gap-5">
@@ -1937,13 +1937,13 @@ export const AirCargoPage = () => {
 
             <div className="pt-5 flex flex-wrap justify-between items-center gap-4">
               <div className="flex items-center gap-5">
-                <a href="/privacy-policy" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#C8A84B] transition-colors duration-200" style={{
+                <a href="/privacy-policy" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#F2AE37] transition-colors duration-200" style={{
                 fontFamily: BODY_FONT
               }}>Privacy Policy</a>
-                <a href="/cookie-policy" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#C8A84B] transition-colors duration-200" style={{
+                <a href="/cookie-policy" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#F2AE37] transition-colors duration-200" style={{
                 fontFamily: BODY_FONT
               }}>Cookie Policy</a>
-                <a href="mailto:whistleblower@nkomazisez.gov.za" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#C8A84B] transition-colors duration-200" style={{
+                <a href="mailto:whistleblower@nkomazisez.gov.za" className="text-white/40 text-[14px] font-normal no-underline hover:text-[#F2AE37] transition-colors duration-200" style={{
                 fontFamily: BODY_FONT
               }}>Whistleblower</a>
               </div>
@@ -1959,10 +1959,10 @@ export const AirCargoPage = () => {
                 icon: <LinkedInIcon key="li" />,
                 label: 'LinkedIn'
               }].map(social => <motion.a key={social.label} href="#" onClick={e => e.preventDefault()} aria-label={social.label} className="flex items-center justify-center w-11 h-11 rounded-[10px] text-white/50 border border-white/10 no-underline" whileHover={{
-                backgroundColor: '#C8A84B',
-                color: '#0F2419',
+                backgroundColor: '#F2AE37',
+                color: '#023A23',
                 scale: 1.05,
-                borderColor: '#C8A84B'
+                borderColor: '#F2AE37'
               }} whileTap={{
                 scale: 0.95
               }} transition={{
@@ -2097,10 +2097,10 @@ const SectionSnapNav = () => {
               ease: 'easeOut'
             }} className="mr-2.5 text-[11px] font-semibold tracking-[0.06em] uppercase whitespace-nowrap px-2.5 py-1 rounded-md" style={{
               fontFamily: BODY_FONT,
-              background: 'rgba(15,36,25,0.92)',
-              color: isActive ? '#C8A84B' : 'rgba(255,255,255,0.85)',
+              background: 'rgba(2, 58, 35,0.92)',
+              color: isActive ? '#F2AE37' : 'rgba(255,255,255,0.85)',
               backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(200,168,75,0.2)'
+              border: '1px solid rgba(242, 174, 55,0.2)'
             }}>
                       {item.label}
                     </motion.span>}
@@ -2110,14 +2110,14 @@ const SectionSnapNav = () => {
                 <motion.div animate={{
             width: isActive ? '28px' : isHovered ? '18px' : '8px',
             height: isActive ? '8px' : '8px',
-            backgroundColor: isActive ? '#C8A84B' : isHovered ? 'rgba(200,168,75,0.6)' : 'rgba(255,255,255,0.3)',
+            backgroundColor: isActive ? '#F2AE37' : isHovered ? 'rgba(242, 174, 55,0.6)' : 'rgba(255,255,255,0.3)',
             borderRadius: isActive ? '4px' : '50%',
-            boxShadow: isActive ? '0 0 10px rgba(200,168,75,0.6)' : 'none'
+            boxShadow: isActive ? '0 0 10px rgba(242, 174, 55,0.6)' : 'none'
           }} transition={{
             duration: 0.28,
             ease: [0.22, 1, 0.36, 1]
           }} style={{
-            border: isActive ? '1.5px solid rgba(200,168,75,0.5)' : '1.5px solid rgba(255,255,255,0.2)',
+            border: isActive ? '1.5px solid rgba(242, 174, 55,0.5)' : '1.5px solid rgba(255,255,255,0.2)',
             flexShrink: 0
           }} />
               </button>;

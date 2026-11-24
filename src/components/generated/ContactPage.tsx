@@ -4,9 +4,9 @@ import { Menu, X, MapPin, ChevronRight } from 'lucide-react';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
-const HEADING_FONT = "'Saira Condensed', system-ui, sans-serif";
+const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
-const GOLD = "#C9A84C";
+const GOLD = "#F2AE37";
 
 // ─── SVG Icons ────────────────────────────────────────────────────────────────
 
@@ -79,12 +79,12 @@ const OrangeButton = ({
   >
     <div className={`flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em] ${fullWidthMobile ? 'flex-1 sm:flex-none' : ''}`} style={{
       fontFamily: BODY_FONT,
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -261,12 +261,12 @@ const GreenButton = ({
     ease: 'easeOut'
   }}
 >
-    <div className={`flex items-center justify-center px-5 bg-[#1fac67] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em] ${fullWidthMobile ? 'flex-1 sm:flex-none' : ''}`} style={{
+    <div className={`flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em] ${fullWidthMobile ? 'flex-1 sm:flex-none' : ''}`} style={{
       fontFamily: BODY_FONT
     }}>
       {label}
     </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#1fac67] text-white rounded-r-lg flex-shrink-0">
+    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
       <ArrowRightIcon />
     </div>
     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -308,12 +308,12 @@ const GoldButton = ({
 >
     <div className={`flex items-center justify-center px-5 text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em] ${fullWidthMobile ? 'flex-1 sm:flex-none' : ''}`} style={{
       fontFamily: BODY_FONT,
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       {label}
     </div>
     <div className="flex items-center justify-center w-[44px] text-white rounded-r-lg flex-shrink-0" style={{
-      background: '#E8521A'
+      background: '#E77227'
     }}>
       <ArrowUpRightIcon />
     </div>
@@ -388,7 +388,7 @@ const SubtitlePill = ({
   ease: 'easeOut'
 }} className="inline-block text-xs rounded-full px-3 py-2 leading-[21px] tracking-[0.06em] uppercase text-white" style={{
   fontFamily: BODY_FONT,
-  background: '#1fac67'
+  background: '#28B674'
 }}>
     {children}
   </motion.span>;
@@ -535,7 +535,7 @@ const Hero = () => {
             margin: 0
           }}>
             <span style={{
-              color: '#5DBB3A',
+              color: '#28B674',
               display: 'block'
             }}>Get in Touch.</span>
             <span style={{
@@ -705,11 +705,11 @@ const ContactSplit = () => {
         {/* Details Side — shown first on mobile */}
         <div className="lg:col-span-4 lg:order-2">
           <FadeUp delay={0.15}>
-            <div className="bg-[#1D4D35] rounded-2xl p-8 sm:p-10 md:p-12 text-white h-full flex flex-col">
+            <div className="bg-[#023A23] rounded-2xl p-8 sm:p-10 md:p-12 text-white h-full flex flex-col">
               <h3 className="font-bold uppercase mb-2" style={{
                 fontFamily: HEADING_FONT,
                 fontSize: 'clamp(24px, 3vw, 32px)',
-                color: '#C8A84B'
+                color: '#F2AE37'
               }}>
                 Contact Details
               </h3>
@@ -732,7 +732,7 @@ const ContactSplit = () => {
                     fontSize: 'clamp(16px, 2vw, 20px)',
                     color: '#ffffff'
                   }} onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.color = '#C8A84B';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37';
                   }} onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
                   }}>
@@ -751,7 +751,7 @@ const ContactSplit = () => {
                     fontSize: 'clamp(16px, 2vw, 20px)',
                     color: '#ffffff'
                   }} onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.color = '#C8A84B';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37';
                   }} onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
                   }}>
@@ -770,7 +770,7 @@ const ContactSplit = () => {
                     fontSize: 'clamp(16px, 2vw, 20px)',
                     color: '#ffffff'
                   }} onMouseEnter={e => {
-                    (e.currentTarget as HTMLAnchorElement).style.color = '#C8A84B';
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37';
                   }} onMouseLeave={e => {
                     (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
                   }}>
@@ -833,8 +833,8 @@ const ContactSplit = () => {
                     transition: 'border-color 0.2s, color 0.2s'
                   }} onMouseEnter={e => {
                     const el = e.currentTarget as HTMLAnchorElement;
-                    el.style.borderColor = '#C8A84B';
-                    el.style.color = '#C8A84B';
+                    el.style.borderColor = '#F2AE37';
+                    el.style.color = '#F2AE37';
                   }} onMouseLeave={e => {
                     const el = e.currentTarget as HTMLAnchorElement;
                     el.style.borderColor = 'rgba(255,255,255,0.2)';
@@ -854,7 +854,7 @@ const ContactSplit = () => {
             <div className="bg-white rounded-2xl p-6 sm:p-8 md:p-12 border border-gray-100" style={{
               boxShadow: '0 20px 50px rgba(0,0,0,0.06)'
             }}>
-              <h3 className="font-bold uppercase mb-2 text-[#1D4D35]" style={{
+              <h3 className="font-bold uppercase mb-2 text-[#023A23]" style={{
                 fontFamily: HEADING_FONT,
                 fontSize: 'clamp(24px, 3vw, 32px)'
               }}>
@@ -872,11 +872,11 @@ const ContactSplit = () => {
               }} animate={{
                 opacity: 1,
                 scale: 1
-              }} className="bg-[#1D4D35]/5 p-6 sm:p-8 rounded-xl border border-[#1D4D35]/10 text-center">
-                <div className="w-14 h-14 bg-[#1fac67] text-white rounded-full flex items-center justify-center mx-auto mb-4">
+              }} className="bg-[#023A23]/5 p-6 sm:p-8 rounded-xl border border-[#023A23]/10 text-center">
+                <div className="w-14 h-14 bg-[#28B674] text-white rounded-full flex items-center justify-center mx-auto mb-4">
                   <ArrowRightIcon />
                 </div>
-                <h4 className="text-2xl font-bold text-[#1D4D35] mb-2 uppercase" style={{
+                <h4 className="text-2xl font-bold text-[#023A23] mb-2 uppercase" style={{
                   fontFamily: HEADING_FONT
                 }}>
                   Thank you for your enquiry
@@ -886,7 +886,7 @@ const ContactSplit = () => {
                 }}>
                   A member of the NSEZ investment team will be in touch within 2 business days.
                 </p>
-                <button onClick={() => setSubmitted(false)} className="mt-6 text-[#1D4D35] text-sm font-medium underline hover:text-[#1fac67] transition-colors min-h-[44px]" style={{
+                <button onClick={() => setSubmitted(false)} className="mt-6 text-[#023A23] text-sm font-medium underline hover:text-[#28B674] transition-colors min-h-[44px]" style={{
                   fontFamily: BODY_FONT
                 }}>
                   Send another message
@@ -903,8 +903,8 @@ const ContactSplit = () => {
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
-                      e.currentTarget.style.borderColor = '#1fac67';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(31,172,103,0.08)';
+                      e.currentTarget.style.borderColor = '#28B674';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(40, 182, 116,0.08)';
                     }} onBlur={e => {
                       e.currentTarget.style.borderColor = '#e5e7eb';
                       e.currentTarget.style.boxShadow = 'none';
@@ -920,8 +920,8 @@ const ContactSplit = () => {
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
-                      e.currentTarget.style.borderColor = '#1fac67';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(31,172,103,0.08)';
+                      e.currentTarget.style.borderColor = '#28B674';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(40, 182, 116,0.08)';
                     }} onBlur={e => {
                       e.currentTarget.style.borderColor = '#e5e7eb';
                       e.currentTarget.style.boxShadow = 'none';
@@ -939,8 +939,8 @@ const ContactSplit = () => {
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
-                      e.currentTarget.style.borderColor = '#1fac67';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(31,172,103,0.08)';
+                      e.currentTarget.style.borderColor = '#28B674';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(40, 182, 116,0.08)';
                     }} onBlur={e => {
                       e.currentTarget.style.borderColor = '#e5e7eb';
                       e.currentTarget.style.boxShadow = 'none';
@@ -956,8 +956,8 @@ const ContactSplit = () => {
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
-                      e.currentTarget.style.borderColor = '#1fac67';
-                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(31,172,103,0.08)';
+                      e.currentTarget.style.borderColor = '#28B674';
+                      e.currentTarget.style.boxShadow = '0 0 0 3px rgba(40, 182, 116,0.08)';
                     }} onBlur={e => {
                       e.currentTarget.style.borderColor = '#e5e7eb';
                       e.currentTarget.style.boxShadow = 'none';
@@ -973,8 +973,8 @@ const ContactSplit = () => {
                   <textarea required rows={5} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all resize-none" style={{
                     fontFamily: BODY_FONT
                   }} onFocus={e => {
-                    e.currentTarget.style.borderColor = '#1fac67';
-                    e.currentTarget.style.boxShadow = '0 0 0 3px rgba(31,172,103,0.08)';
+                    e.currentTarget.style.borderColor = '#28B674';
+                    e.currentTarget.style.boxShadow = '0 0 0 3px rgba(40, 182, 116,0.08)';
                   }} onBlur={e => {
                     e.currentTarget.style.borderColor = '#e5e7eb';
                     e.currentTarget.style.boxShadow = 'none';
@@ -990,12 +990,12 @@ const ContactSplit = () => {
                     duration: 0.2,
                     ease: 'easeOut'
                   }}>
-                    <div className="flex-1 sm:flex-none flex items-center justify-center px-8 bg-[#E8521A] text-white text-[15px] font-medium tracking-[0.01em] rounded-l-lg" style={{
+                    <div className="flex-1 sm:flex-none flex items-center justify-center px-8 bg-[#E77227] text-white text-[15px] font-medium tracking-[0.01em] rounded-l-lg" style={{
                       fontFamily: BODY_FONT
                     }}>
                       Send Message
                     </div>
-                    <div className="flex items-center justify-center w-[44px] bg-[#E8521A] text-white rounded-r-lg flex-shrink-0">
+                    <div className="flex items-center justify-center w-[44px] bg-[#E77227] text-white rounded-r-lg flex-shrink-0">
                       <ArrowRightIcon />
                     </div>
                     <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{
@@ -1032,7 +1032,7 @@ const OfficeLocations = () => <section id="offices" className="py-16 sm:py-20 md
         <AnimatedHeading as="h2" style={{
           fontSize: 'clamp(28px, 4vw, 52px)',
           fontWeight: 700,
-          color: '#1D4D35',
+          color: '#023A23',
           lineHeight: '1.1',
           marginTop: '12px',
           marginBottom: 0,
@@ -1056,7 +1056,7 @@ const OfficeLocations = () => <section id="offices" className="py-16 sm:py-20 md
               background: 'rgba(0,0,0,0.18)'
             }} />
             <div className="absolute bottom-4 right-4 sm:bottom-5 sm:right-5">
-              <div className="flex items-center justify-center rounded-full bg-white text-[#1D4D35]" style={{
+              <div className="flex items-center justify-center rounded-full bg-white text-[#023A23]" style={{
                 width: '40px',
                 height: '40px',
                 boxShadow: '0 4px 12px rgba(0,0,0,0.2)'
@@ -1067,7 +1067,7 @@ const OfficeLocations = () => <section id="offices" className="py-16 sm:py-20 md
           </div>
           <div className="p-5 sm:p-6 md:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4 sm:gap-5">
             <div className="min-w-0">
-              <h4 className="font-bold uppercase text-[#1D4D35] mb-1" style={{
+              <h4 className="font-bold uppercase text-[#023A23] mb-1" style={{
                 fontFamily: HEADING_FONT,
                 fontSize: 'clamp(18px, 2.5vw, 24px)'
               }}>
@@ -1147,13 +1147,13 @@ const InvestmentCallout = () => <section style={{
               width: '6px',
               height: '6px',
               borderRadius: '50%',
-              background: '#C8A84B',
+              background: '#F2AE37',
               flexShrink: 0
             }} />
             <div style={{
               width: '1px',
               flex: 1,
-              background: 'linear-gradient(to bottom, #C8A84B, rgba(200,168,75,0))',
+              background: 'linear-gradient(to bottom, #F2AE37, rgba(242, 174, 55,0))',
               minHeight: '80px',
               marginTop: '6px'
             }} />
@@ -1256,7 +1256,7 @@ const InvestmentCallout = () => <section style={{
             <a href="mailto:invest@nkomazisez.gov.za" className="break-all" style={{
               fontFamily: BODY_FONT,
               fontSize: '14px',
-              color: '#C8A84B',
+              color: '#F2AE37',
               textDecoration: 'none',
               fontWeight: 500,
               transition: 'opacity 0.2s'
@@ -1310,7 +1310,7 @@ const InvestmentCallout = () => <section style={{
 </section>;
 
 export const ContactPage = () => {
-  return <div className="w-full bg-white selection:bg-[#C8A84B] selection:text-[#1D4D35] overflow-x-hidden">
+  return <div className="w-full bg-white selection:bg-[#F2AE37] selection:text-[#023A23] overflow-x-hidden">
     <NSEZNavbar />
     {/* Spacer for navbar top banner */}
     <div style={{ height: '36px' }} />
