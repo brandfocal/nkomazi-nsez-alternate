@@ -375,7 +375,8 @@ const AnimatedHeading = ({
       marginRight: '0.22em'
     }}>
       <motion.span style={{
-        display: 'inline-block'
+        display: 'inline-block',
+        color: i === 0 ? '#28B674' : (className?.includes('text-white') ? '#FFFFFF' : (style?.color || '#023A23'))
       }} initial={{
         y: '110%',
         opacity: 0
@@ -1039,14 +1040,14 @@ const RegisterInterestCTA = () => {
                 fontFamily: HEADING_FONT,
                 fontSize: 'clamp(32px, 6vw, 80px)',
                 fontWeight: 700,
-                color: '#111111',
                 textTransform: 'uppercase',
                 letterSpacing: '-1px',
                 lineHeight: 1.05,
                 margin: 0,
                 marginBottom: '20px'
               }}>
-                Don't See Your Role?
+                <span style={{ color: '#28B674' }}>Don't</span>{' '}
+                <span style={{ color: '#023A23' }}>See Your Role?</span>
               </h2>
               <p style={{
                 fontFamily: BODY_FONT,

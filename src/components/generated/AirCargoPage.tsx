@@ -476,7 +476,8 @@ const AnimatedHeading = ({
       marginRight: '0.22em'
     }}>
           <motion.span style={{
-        display: 'inline-block'
+        display: 'inline-block',
+        color: i === 0 ? '#28B674' : (className?.includes('text-white') ? '#FFFFFF' : (style?.color || '#023A23'))
       }} initial={{
         y: '110%',
         opacity: 0

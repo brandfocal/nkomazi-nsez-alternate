@@ -293,6 +293,10 @@ const AnimatedHeading = ({
     once: true,
     margin: '-50px'
   });
+  const words = heading.split(' ');
+  const firstWord = words[0];
+  const restWords = words.slice(1).join(' ');
+
   return <motion.div ref={ref} initial={{
     opacity: 0,
     y: 24
@@ -321,11 +325,11 @@ const AnimatedHeading = ({
       fontWeight: 700,
       lineHeight: 1.05,
       letterSpacing: '-1px',
-      color: headingColor,
       margin: 0,
       textTransform: 'uppercase'
     }}>
-      {heading}
+      <span style={{ color: '#28B674' }}>{firstWord}</span>
+      {restWords && <span style={{ color: headingColor }}>{' '}{restWords}</span>}
     </h2>
   </motion.div>;
 };
@@ -661,7 +665,8 @@ const Hero = () => {
           textTransform: 'uppercase',
           margin: 0
         }}>
-          Why Invest in MPUMALANGA NKOMAZI SEZ
+          <span style={{ color: '#28B674' }}>Why Invest </span>
+          <span style={{ color: '#ffffff' }}>in MPUMALANGA NKOMAZI SEZ</span>
         </motion.h1>
       </div>
 
@@ -1701,12 +1706,12 @@ const LeasingListingsSection = () => {
                     fontFamily: HEADING_FONT,
                     fontWeight: 700,
                     fontSize: 'clamp(28px, 4vw, 44px)',
-                    color: '#0F3024',
                     margin: 0,
                     letterSpacing: '-0.5px'
                   }}
                 >
-                  {activeHeading}
+                  <span style={{ color: '#28B674' }}>{activeHeading.split(' ')[0]}</span>
+                  {activeHeading.split(' ').slice(1).length > 0 && <span style={{ color: '#0F3024' }}>{' '}{activeHeading.split(' ').slice(1).join(' ')}</span>}
                 </h2>
                 <span
                   style={{
@@ -2046,14 +2051,14 @@ const CTASection = () => {
                 fontFamily: HEADING_FONT,
                 fontSize: 'clamp(36px, 6vw, 80px)',
                 fontWeight: 700,
-                color: '#111111',
                 textTransform: 'uppercase',
                 letterSpacing: '-1px',
                 lineHeight: 1.05,
                 margin: 0,
                 marginBottom: '20px'
               }}>
-                Investment Gateway
+                <span style={{ color: '#28B674' }}>Investment</span>{' '}
+                <span style={{ color: '#023A23' }}>Gateway</span>
               </h2>
               <p style={{
                 fontFamily: BODY_FONT,

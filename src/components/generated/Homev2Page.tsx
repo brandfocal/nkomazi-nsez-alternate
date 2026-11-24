@@ -643,12 +643,14 @@ const AnimatedHeading = ({
   children,
   className,
   style,
-  as: Tag = 'h2'
+  as: Tag = 'h2',
+  splitColor = true
 }: {
   children: string;
   className?: string;
   style?: React.CSSProperties;
   as?: 'h1' | 'h2' | 'h3';
+  splitColor?: boolean;
 }) => {
   const ref = useRef<HTMLHeadingElement>(null);
   const inView = useInView(ref, {
@@ -656,6 +658,9 @@ const AnimatedHeading = ({
     margin: '-60px'
   });
   const words = children.split(' ');
+  const isDarkBg = className?.includes('text-white') || (style?.color && (style.color === '#ffffff' || style.color === '#FFFFFF'));
+  const baseRestColor = style?.color || (isDarkBg ? '#FFFFFF' : '#023A23');
+
   return <Tag ref={ref} className={className} style={{
     ...style,
     fontFamily: HEADING_FONT,
@@ -668,7 +673,8 @@ const AnimatedHeading = ({
       marginRight: '0.22em'
     }}>
       <motion.span style={{
-        display: 'inline-block'
+        display: 'inline-block',
+        color: splitColor && i === 0 ? '#28B674' : baseRestColor
       }} initial={{
         y: '110%',
         opacity: 0
@@ -1507,12 +1513,12 @@ const ZoneOverview = () => <section style={{
           fontFamily: HEADING_FONT,
           fontSize: 'clamp(40px,6vw,72px)',
           fontWeight: 700,
-          color: '#111111',
           lineHeight: 1.05,
           letterSpacing: '-0.02em',
           margin: '0 0 24px 0'
         }}>
-          A Platform for Industrial Growth
+          <span style={{ color: '#28B674' }}>A Platform</span>{' '}
+          <span style={{ color: '#023A23' }}>for Industrial Growth</span>
         </h2>
         <p style={{
           margin: '0 0 24px 0',
@@ -1651,7 +1657,7 @@ const EnterpriseHubSection = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 400,
                 fontSize: 'clamp(32px, 4vw, 48px)',
-                color: '#023A23',
+                color: '#28B674',
                 display: 'block',
                 letterSpacing: '-0.5px'
               }}>The Case for</span>
@@ -2735,7 +2741,7 @@ const AboutUs = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 500,
                 fontSize: 'clamp(32px, 3.8vw, 52px)',
-                color: '#023A23',
+                color: '#28B674',
                 display: 'block',
                 lineHeight: 1.0
               }}>
@@ -2746,7 +2752,7 @@ const AboutUs = () => {
                 fontWeight: 900,
                 fontStyle: 'italic',
                 fontSize: 'clamp(38px, 4.8vw, 64px)',
-                color: '#E77227',
+                color: '#023A23',
                 display: 'block',
                 lineHeight: 1.0,
                 marginTop: '-4px'

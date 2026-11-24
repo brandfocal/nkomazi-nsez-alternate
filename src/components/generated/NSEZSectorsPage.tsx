@@ -547,11 +547,13 @@ const SectionHeading = ({
         fontFamily: HEADING_FONT,
         fontWeight: 900,
         fontSize: 'clamp(28px, 4vw, 48px)',
-        color: light ? '#ffffff' : '#023A23',
         letterSpacing: '-0.5px',
         lineHeight: 1.05,
         margin: 0
-      }}>{title}</h2>
+      }}>
+        <span style={{ color: '#28B674' }}>{title.split(' ')[0]}</span>
+        {title.split(' ').slice(1).length > 0 && <span style={{ color: light ? '#ffffff' : '#023A23' }}>{' '}{title.split(' ').slice(1).join(' ')}</span>}
+      </h2>
       <div style={{
         width: '40px',
         height: '3px',
@@ -1064,13 +1066,13 @@ const SectorStrip = ({
                 fontFamily: HEADING_FONT,
                 fontWeight: 700,
                 fontSize: 'clamp(22px, 3.5vw, 40px)',
-                color: '#023A23',
                 letterSpacing: '-0.5px',
                 lineHeight: 1.05,
                 margin: 0,
                 wordBreak: 'break-word'
               }}>
-                {sector.title}
+                <span style={{ color: '#28B674' }}>{sector.title.split(' ')[0]}</span>
+                {sector.title.split(' ').slice(1).length > 0 && <span style={{ color: '#023A23' }}>{' '}{sector.title.split(' ').slice(1).join(' ')}</span>}
               </h2>
               <div style={{
                 width: '40px',
@@ -1267,14 +1269,14 @@ const CTASection = () => <section style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(28px, 8vw, 80px)',
               fontWeight: 700,
-              color: '#111111',
               textTransform: 'uppercase' as const,
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '20px'
             }}>
-              Investment Gateway
+              <span style={{ color: '#28B674' }}>Investment</span>{' '}
+              <span style={{ color: '#023A23' }}>Gateway</span>
             </h2>
             <p style={{
               fontFamily: BODY_FONT,

@@ -156,7 +156,7 @@ export const FoundationSection = () => {
           }} />
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight text-white mb-8 relative">
               <span className="block mb-2" style={{
-              color: '#7DAA7A'
+              color: '#28B674'
             }}>
                 Vision
               </span>

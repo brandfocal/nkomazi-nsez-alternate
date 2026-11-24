@@ -209,7 +209,8 @@ const AnimatedHeading = ({
       marginRight: '0.22em'
     }}>
       <motion.span style={{
-        display: 'inline-block'
+        display: 'inline-block',
+        color: i === 0 ? '#28B674' : (className?.includes('text-white') ? '#FFFFFF' : (style?.color || '#023A23'))
       }} initial={{
         y: '110%',
         opacity: 0
@@ -1174,14 +1175,14 @@ const InvestmentCallout = () => <section style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(28px, 5vw, 80px)',
               fontWeight: 700,
-              color: '#111111',
               textTransform: 'uppercase',
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '20px'
             }}>
-              For Investment Enquiries
+              <span style={{ color: '#28B674' }}>For</span>{' '}
+              <span style={{ color: '#023A23' }}>Investment Enquiries</span>
             </h2>
             <p style={{
               fontFamily: BODY_FONT,

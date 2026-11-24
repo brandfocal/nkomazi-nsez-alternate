@@ -360,7 +360,8 @@ const AnimatedHeading = ({
       marginRight: '0.22em'
     }}>
       <motion.span style={{
-        display: 'inline-block'
+        display: 'inline-block',
+        color: i === 0 ? '#28B674' : (className?.includes('text-white') ? '#FFFFFF' : (style?.color || '#023A23'))
       }} initial={{
         y: '110%',
         opacity: 0
@@ -1167,14 +1168,14 @@ const ImpactStatsStrip = () => <section id="impact" style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(36px, 6vw, 80px)',
               fontWeight: 700,
-              color: '#ffffff',
               textTransform: 'uppercase',
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '18px'
             }}>
-              Measurable Impact Across Nkomazi
+              <span style={{ color: '#28B674' }}>Measurable</span>{' '}
+              <span style={{ color: '#ffffff' }}>Impact Across Nkomazi</span>
             </h2>
             <p style={{
               fontFamily: BODY_FONT,
@@ -1262,14 +1263,14 @@ const ContactCTA = () => <section style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(36px, 6vw, 80px)',
               fontWeight: 700,
-              color: '#111111',
               textTransform: 'uppercase',
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '18px'
             }}>
-              Get Involved
+              <span style={{ color: '#28B674' }}>Get</span>{' '}
+              <span style={{ color: '#023A23' }}>Involved</span>
             </h2>
             <p style={{
               fontFamily: BODY_FONT,

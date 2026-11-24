@@ -356,13 +356,14 @@ export function NSEZStakeholderSection() {
               letterSpacing: '-0.5px',
               maxWidth: '560px'
             }}>
-                {PORTALS_HEADING_WORDS.map(word => <span key={word.id} style={{
+                {PORTALS_HEADING_WORDS.map((word, idx) => <span key={word.id} style={{
                 display: 'inline-block',
                 overflow: 'hidden',
                 verticalAlign: 'bottom'
               }}>
                     <motion.span variants={wordVariants} style={{
-                  display: 'inline-block'
+                  display: 'inline-block',
+                  color: idx === 0 ? '#28B674' : '#023A23'
                 }}>
                       {word.text}
                     </motion.span>
@@ -594,13 +595,14 @@ export function NSEZStakeholderSection() {
                 color: '#101218',
                 letterSpacing: '-0.5px'
               }}>
-                  {DASHBOARD_HEADING_WORDS.map(word => <span key={word.id} style={{
+                  {DASHBOARD_HEADING_WORDS.map((word, idx) => <span key={word.id} style={{
                   display: 'inline-block',
                   overflow: 'hidden',
                   verticalAlign: 'bottom'
                 }}>
                       <motion.span variants={wordVariants} style={{
-                    display: 'inline-block'
+                    display: 'inline-block',
+                    color: idx === 0 ? '#28B674' : '#023A23'
                   }}>
                         {word.text}
                       </motion.span>

@@ -41,7 +41,8 @@ export const CookiePolicyPage: React.FC = () => {
               textTransform: 'uppercase'
             }}
           >
-            Cookie Policy
+            <span style={{ color: '#28B674' }}>Cookie</span>{' '}
+            <span style={{ color: '#ffffff' }}>Policy</span>
           </h1>
           <p
             style={{

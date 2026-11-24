@@ -294,7 +294,7 @@ export function NSEZHeroSection() {
             }}>
                   <motion.span variants={wordVariants} style={{
                 display: 'inline-block',
-                color: word.accent ? '#ED8E0B' : '#FFFFFF'
+                color: word.id === 'w-nkomazi' || word.id === 'w-sez' ? '#28B674' : (word.accent ? '#F2AE37' : '#FFFFFF')
               }}>
                     {word.text}
                   </motion.span>

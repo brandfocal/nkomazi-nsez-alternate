@@ -549,7 +549,8 @@ const AnimatedHeading = ({
       ease: EASE_PREMIUM
     }} style={{
       display: "inline-block",
-      marginRight: "0.28em"
+      marginRight: "0.28em",
+      color: i === 0 ? "#28B674" : (style?.color || "#023A23")
     }}>
       {word}
     </motion.span>)}

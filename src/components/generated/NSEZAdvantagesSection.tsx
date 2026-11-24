@@ -330,13 +330,14 @@ export function NSEZAdvantagesSection() {
                   color: '#FFFFFF',
                   letterSpacing: '-0.5px'
                 }}>
-                    {HEADING_WORDS.map(word => <span key={word.id} style={{
+                    {HEADING_WORDS.map((word, idx) => <span key={word.id} style={{
                     display: 'inline-block',
                     overflow: 'hidden',
                     verticalAlign: 'bottom'
                   }}>
                         <motion.span variants={wordVariants} style={{
-                      display: 'inline-block'
+                      display: 'inline-block',
+                      color: idx === 0 ? '#28B674' : '#FFFFFF'
                     }}>
                           {word.text}
                         </motion.span>

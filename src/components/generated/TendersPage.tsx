@@ -1113,14 +1113,14 @@ const ConnectSection = () => {
                 fontFamily: HEADING_FONT,
                 fontSize: 'clamp(28px, 5vw, 80px)',
                 fontWeight: 700,
-                color: '#111111',
                 textTransform: 'uppercase',
                 letterSpacing: '-1px',
                 lineHeight: 1.05,
                 margin: 0,
                 marginBottom: '20px'
               }}>
-                  Connect With Us
+                  <span style={{ color: '#28B674' }}>Connect</span>{' '}
+                  <span style={{ color: '#023A23' }}>With Us</span>
                 </h2>
                 <p style={{
                 fontFamily: BODY_FONT,
@@ -1246,11 +1246,11 @@ export const TendersPage = () => {
                   fontFamily: HEADING_FONT,
                   fontWeight: 700,
                   fontSize: 'clamp(24px, 3vw, 38px)',
-                  color: '#0F3024',
                   margin: 0,
                   letterSpacing: '-0.5px'
                 }}>
-                    {activeHeading}
+                    <span style={{ color: '#28B674' }}>{activeHeading.split(' ')[0]}</span>
+                    {activeHeading.split(' ').slice(1).length > 0 && <span style={{ color: '#0F3024' }}>{' '}{activeHeading.split(' ').slice(1).join(' ')}</span>}
                   </h2>
                   <span style={{
                   fontFamily: BODY_FONT,
@@ -1348,10 +1348,10 @@ export const TendersPage = () => {
               <GoldDash />
               <h2 className="font-bold uppercase leading-none mt-2 mb-4 sm:mb-6" style={{
               fontFamily: HEADING_FONT,
-              fontSize: 'clamp(28px, 4vw, 56px)',
-              color: '#ffffff'
+              fontSize: 'clamp(28px, 4vw, 56px)'
             }}>
-                Stay Updated
+                <span style={{ color: '#28B674' }}>Stay</span>{' '}
+                <span style={{ color: '#ffffff' }}>Updated</span>
               </h2>
               <p className="text-base sm:text-lg leading-relaxed" style={{
               fontFamily: BODY_FONT,

@@ -340,10 +340,17 @@ const SectionHeading = ({
     y: 0
   }} viewport={{
     once: true
-  }} className={`text-3xl sm:text-4xl md:text-5xl font-bold uppercase ${light ? 'text-white' : 'text-[#0F3024]'}`} style={{
+  }} className="text-3xl sm:text-4xl md:text-5xl font-bold uppercase" style={{
     fontFamily: HEADING_FONT
   }}>
-      {children}
+      {typeof children === 'string' ? (
+        <>
+          <span style={{ color: '#28B674' }}>{children.split(' ')[0]}</span>
+          {children.split(' ').slice(1).length > 0 && (
+            <span style={{ color: light ? '#ffffff' : '#023A23' }}>{' '}{children.split(' ').slice(1).join(' ')}</span>
+          )}
+        </>
+      ) : children}
     </motion.h2>
     <motion.div initial={{
     width: 0
@@ -1476,14 +1483,13 @@ const NewsletterSection = () => <section style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(32px, 6vw, 80px)',
               fontWeight: 700,
-              color: '#111111',
               textTransform: 'uppercase',
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '16px'
             }}>
-                Newsletter
+                <span style={{ color: '#28B674' }}>News</span><span style={{ color: '#023A23' }}>letter</span>
               </h2>
               <p style={{
               fontFamily: BODY_FONT,

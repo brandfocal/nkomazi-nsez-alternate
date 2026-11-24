@@ -244,7 +244,8 @@ const AnimatedHeading = ({
       marginRight: "0.2em"
     }}>
           <motion.span style={{
-        display: "inline-block"
+        display: "inline-block",
+        color: (words.length > 1 && i === 0) ? "#28B674" : (className?.includes("text-white") ? "#FFFFFF" : (style?.color || "#023A23"))
       }} initial={{
         y: "110%",
         opacity: 0
@@ -597,7 +598,7 @@ const Hero = () => {
         lineHeight: 1.05,
         letterSpacing: "-1px",
         fontWeight: 700,
-        color: "#ffffff",
+        color: "#28B674",
         margin: "0 0 2px 0",
         textTransform: "uppercase"
       }}>
@@ -608,7 +609,7 @@ const Hero = () => {
         lineHeight: 1.05,
         letterSpacing: "-1px",
         fontWeight: 700,
-        color: EMERALD_GLOW,
+        color: "#ffffff",
         margin: "0 0 20px 0",
         textTransform: "uppercase"
       }}>

@@ -41,7 +41,8 @@ export const PrivacyPolicyPage: React.FC = () => {
               textTransform: 'uppercase'
             }}
           >
-            Privacy Policy &amp; Data Protection
+            <span style={{ color: '#28B674' }}>Privacy</span>{' '}
+            <span style={{ color: '#ffffff' }}>Policy &amp; Data Protection</span>
           </h1>
           <p
             style={{
