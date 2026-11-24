@@ -726,6 +726,25 @@ const ContactSplit = () => {
                     fontFamily: BODY_FONT,
                     color: 'rgba(255,255,255,0.45)'
                   }}>
+                    Telephone
+                  </p>
+                  <a href="tel:+27137522440" className="font-bold transition-colors no-underline break-all" style={{
+                    fontFamily: HEADING_FONT,
+                    fontSize: 'clamp(16px, 2vw, 20px)',
+                    color: '#ffffff'
+                  }} onMouseEnter={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37';
+                  }} onMouseLeave={e => {
+                    (e.currentTarget as HTMLAnchorElement).style.color = '#ffffff';
+                  }}>
+                    +27 13 752 2440
+                  </a>
+                </div>
+                <div>
+                  <p className="text-[11px] uppercase font-semibold tracking-[0.1em] mb-2" style={{
+                    fontFamily: BODY_FONT,
+                    color: 'rgba(255,255,255,0.45)'
+                  }}>
                     Investment Enquiries
                   </p>
                   <a href="mailto:invest@nkomazisez.gov.za" className="font-bold transition-colors no-underline break-all" style={{

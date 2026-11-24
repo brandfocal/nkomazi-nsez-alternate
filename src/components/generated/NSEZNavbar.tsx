@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
 
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
@@ -164,6 +164,11 @@ export function NSEZNavbar() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <a href="tel:+27137522440" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em', display: 'flex', alignItems: 'center', gap: '5px' }}>
+            <Phone size={11} style={{ color: '#28B674' }} />
+            <span>+27 13 752 2440</span>
+          </a>
+          <span style={{ color: '#023A23', opacity: 0.35, fontSize: '11px' }}>|</span>
           <a href="mailto:invest@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
             invest@nkomazisez.gov.za
           </a>
@@ -171,6 +176,9 @@ export function NSEZNavbar() {
           <a href="mailto:info@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
             info@nkomazisez.gov.za
           </a>
+        </div>
+        <div className="hidden md:flex items-center gap-1.5" style={{ fontFamily: HEADING_FONT, fontSize: '11px', fontWeight: 600, color: '#E77227', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
+          <span>Treasure of Opportunities</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           {SOCIAL_LINKS.map(({ Icon, label, href }) => (

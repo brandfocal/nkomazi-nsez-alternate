@@ -943,8 +943,12 @@ const HeroSection = () => {
           duration: 0.5,
           delay: 0.28,
           ease: EASE_V5
-        }}>
+        }} className="flex items-center gap-3 flex-wrap">
           <EyebrowLabel label="About MPUMALANGA NKOMAZI SEZ" />
+          <span className="hidden sm:inline" style={{ color: "rgba(255,255,255,0.3)" }}>•</span>
+          <span className="hidden sm:inline text-[#F2AE37] tracking-[0.16em] uppercase text-[11px] font-semibold">
+            Treasure of Opportunities
+          </span>
         </motion.div>
 
         <motion.h1 initial={{

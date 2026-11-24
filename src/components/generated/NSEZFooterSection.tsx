@@ -58,11 +58,27 @@ export function NSEZFooterSection() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
           {/* Column 1 — 30% */}
           <div className="md:col-span-4 flex flex-col gap-6">
-            <img
-              src="/NSEZ-Horizontal-Logo-white.png"
-              alt="MPUMALANGA NKOMAZI SEZ"
-              className="h-10 sm:h-12 w-auto object-contain self-start"
-            />
+            <div>
+              <img
+                src="/NSEZ-Horizontal-Logo-white.png"
+                alt="MPUMALANGA NKOMAZI SEZ"
+                className="h-10 sm:h-12 w-auto object-contain self-start"
+              />
+              <span
+                style={{
+                  fontFamily: HEADING_FONT,
+                  fontSize: '11px',
+                  fontWeight: 600,
+                  color: '#F2AE37',
+                  letterSpacing: '0.14em',
+                  textTransform: 'uppercase',
+                  display: 'block',
+                  marginTop: '10px'
+                }}
+              >
+                Treasure of Opportunities
+              </span>
+            </div>
             <p
               style={{
                 fontFamily: BODY_FONT,
@@ -209,6 +225,19 @@ export function NSEZFooterSection() {
               Get in Touch
             </span>
             <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-1">
+                <span style={{ fontFamily: BODY_FONT, fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
+                  Telephone
+                </span>
+                <a
+                  href="tel:+27137522440"
+                  style={{ fontFamily: BODY_FONT, fontSize: '13px', color: 'rgba(255,255,255,0.75)', textDecoration: 'none' }}
+                  onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = '#F2AE37'; }}
+                  onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.color = 'rgba(255,255,255,0.75)'; }}
+                >
+                  +27 13 752 2440
+                </a>
+              </div>
               <div className="flex flex-col gap-1">
                 <span style={{ fontFamily: BODY_FONT, fontSize: '11px', fontWeight: 600, color: 'rgba(255,255,255,0.4)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                   Investment Enquiries
