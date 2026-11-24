@@ -177,9 +177,6 @@ export function NSEZNavbar() {
             info@nkomazisez.gov.za
           </a>
         </div>
-        <div className="hidden md:flex items-center gap-1.5" style={{ fontFamily: HEADING_FONT, fontSize: '11px', fontWeight: 600, color: '#E77227', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-          <span>Treasure of Opportunities</span>
-        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
           {SOCIAL_LINKS.map(({ Icon, label, href }) => (
             <a

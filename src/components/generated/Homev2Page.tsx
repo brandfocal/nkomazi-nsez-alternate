@@ -1046,7 +1046,7 @@ const VideoHero = () => {
       }}>
         {/* Left column */}
         <div className="flex flex-col gap-0 flex-none w-full lg:w-[50%]">
-          <div className="flex items-center gap-3 mb-3 sm:mb-4 flex-wrap" style={{
+          <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
             fontFamily: BODY_FONT,
             fontSize: '12px',
             color: 'rgba(255,255,255,0.5)',
@@ -1055,10 +1055,6 @@ const VideoHero = () => {
             <span>Home</span>
             <ChevronRight size={12} />
             <span style={{ color: GOLD }}>Overview</span>
-            <span className="hidden sm:inline" style={{ opacity: 0.35 }}>•</span>
-            <span className="hidden sm:inline text-[#F2AE37] tracking-[0.16em] uppercase text-[11px] font-semibold">
-              Treasure of Opportunities
-            </span>
           </div>
           <motion.h1 initial={{
             opacity: 0,
