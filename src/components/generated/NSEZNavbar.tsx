@@ -66,18 +66,14 @@ const ArrowRightIcon = () => (
 const GreenButton = ({ label, href = '/contact' }: { label: string; href?: string }) => (
   <motion.a
     href={href}
-    className="group flex h-[44px] items-stretch no-underline relative overflow-hidden rounded-lg"
-    whileHover={{ y: -2, scale: 1.015 }}
+    className="group flex h-[40px] xl:h-[44px] items-center justify-center px-4 xl:px-5 bg-[#28B674] text-white text-[13px] xl:text-[14px] font-medium no-underline relative overflow-hidden rounded-lg tracking-[0.01em] shadow-sm hover:bg-[#239f65] transition-colors whitespace-nowrap"
+    style={{ fontFamily: BODY_FONT }}
+    whileHover={{ y: -2, scale: 1.02 }}
     whileTap={{ scale: 0.97 }}
     transition={{ duration: 0.2, ease: 'easeOut' }}
   >
-    <div className="flex items-center justify-center px-5 bg-[#28B674] text-white text-[15px] font-medium overflow-hidden rounded-l-lg tracking-[0.01em]" style={{ fontFamily: BODY_FONT }}>
-      {label}
-    </div>
-    <div className="flex items-center justify-center w-[44px] bg-[#28B674] text-white rounded-r-lg flex-shrink-0">
-      <ArrowRightIcon />
-    </div>
-    <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{ background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.12) 50%, transparent 70%)' }} />
+    <span>{label}</span>
+    <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-500 ease-in-out" style={{ background: 'linear-gradient(105deg, transparent 30%, rgba(255,255,255,0.15) 50%, transparent 70%)' }} />
   </motion.a>
 );
 
@@ -245,12 +241,12 @@ export function NSEZNavbar() {
               <img
                 src="/NSEZ-Horizontal-Logo-white.png"
                 alt="MPUMALANGA NKOMAZI SEZ"
-                className="h-12 sm:h-[60px] w-auto object-contain"
+                className="h-10 sm:h-11 xl:h-[54px] w-auto object-contain"
               />
             </a>
 
             {/* Desktop menu */}
-            <div className="hidden lg:flex items-center gap-0 backdrop-blur-[26px] bg-white/10 border border-white/20 rounded-xl p-[4.6px]">
+            <div className="hidden lg:flex items-center gap-0 backdrop-blur-[26px] bg-white/10 border border-white/20 rounded-xl p-1">
               {navLinks.map(link => {
                 const active = isActive(link.href);
 
@@ -264,7 +260,7 @@ export function NSEZNavbar() {
                     >
                       <a
                         href={link.href}
-                        className="flex items-center gap-1.5 text-white text-[15px] font-medium rounded-lg px-3 py-2.5 hover:bg-white/10 transition-all duration-300 no-underline tracking-[0.01em]"
+                        className="flex items-center gap-1 text-white text-[13px] xl:text-[14px] font-medium rounded-lg px-2 xl:px-2.5 py-2 hover:bg-white/10 transition-all duration-300 no-underline tracking-[0.01em] whitespace-nowrap"
                         style={{
                           fontFamily: BODY_FONT,
                           borderBottom: `2px solid ${active || aboutDropdownOpen ? '#C8A84C' : 'transparent'}`,
@@ -274,7 +270,7 @@ export function NSEZNavbar() {
                       >
                         <span>{link.label}</span>
                         <ChevronDown
-                          size={13}
+                          size={12}
                           className={`transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180 text-[#C8A84C]' : 'opacity-70'}`}
                         />
                       </a>
@@ -356,7 +352,7 @@ export function NSEZNavbar() {
                   <a
                     key={link.label}
                     href={link.href}
-                    className="text-white text-[15px] font-medium rounded-lg px-3 py-2.5 hover:bg-white/10 transition-all duration-300 no-underline tracking-[0.01em]"
+                    className="text-white text-[13px] xl:text-[14px] font-medium rounded-lg px-2 xl:px-2.5 py-2 hover:bg-white/10 transition-all duration-300 no-underline tracking-[0.01em] whitespace-nowrap"
                     style={{
                       fontFamily: BODY_FONT,
                       borderBottom: `2px solid ${active ? '#C8A84C' : 'transparent'}`,
