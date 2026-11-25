@@ -325,11 +325,11 @@ const AnimatedHeading = ({
       fontWeight: 700,
       lineHeight: 1.05,
       letterSpacing: '-1px',
+      color: headingColor,
       margin: 0,
       textTransform: 'uppercase'
     }}>
-      <span style={{ color: '#28B674' }}>{firstWord}</span>
-      {restWords && <span style={{ color: headingColor }}>{' '}{restWords}</span>}
+      {heading}
     </h2>
   </motion.div>;
 };
@@ -1706,12 +1706,12 @@ const LeasingListingsSection = () => {
                     fontFamily: HEADING_FONT,
                     fontWeight: 700,
                     fontSize: 'clamp(28px, 4vw, 44px)',
+                    color: '#0F3024',
                     margin: 0,
                     letterSpacing: '-0.5px'
                   }}
                 >
-                  <span style={{ color: '#28B674' }}>{activeHeading.split(' ')[0]}</span>
-                  {activeHeading.split(' ').slice(1).length > 0 && <span style={{ color: '#0F3024' }}>{' '}{activeHeading.split(' ').slice(1).join(' ')}</span>}
+                  {activeHeading}
                 </h2>
                 <span
                   style={{
@@ -2051,14 +2051,14 @@ const CTASection = () => {
                 fontFamily: HEADING_FONT,
                 fontSize: 'clamp(36px, 6vw, 80px)',
                 fontWeight: 700,
+                color: '#111111',
                 textTransform: 'uppercase',
                 letterSpacing: '-1px',
                 lineHeight: 1.05,
                 margin: 0,
                 marginBottom: '20px'
               }}>
-                <span style={{ color: '#28B674' }}>Investment</span>{' '}
-                <span style={{ color: '#023A23' }}>Gateway</span>
+                Investment Gateway
               </h2>
               <p style={{
                 fontFamily: BODY_FONT,

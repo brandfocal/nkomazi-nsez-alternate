@@ -295,12 +295,12 @@ export const InvestmentCorridors: React.FC = () => {
           fontFamily: HEADING_FONT,
           fontSize: 'clamp(38px, 4.5vw, 52px)',
           fontWeight: 700,
+          color: '#023A23',
           lineHeight: 1.0,
           letterSpacing: '-0.5px',
           margin: 0
         }}>
-            <span style={{ color: '#28B674' }}>Our</span>{' '}
-            <span style={{ color: '#023A23' }}>Strategic Position</span>
+            Our Strategic Position
           </h2>
 
           <div style={{

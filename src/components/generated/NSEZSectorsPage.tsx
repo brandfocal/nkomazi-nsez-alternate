@@ -547,13 +547,11 @@ const SectionHeading = ({
         fontFamily: HEADING_FONT,
         fontWeight: 900,
         fontSize: 'clamp(28px, 4vw, 48px)',
+        color: light ? '#ffffff' : '#023A23',
         letterSpacing: '-0.5px',
         lineHeight: 1.05,
         margin: 0
-      }}>
-        <span style={{ color: '#28B674' }}>{title.split(' ')[0]}</span>
-        {title.split(' ').slice(1).length > 0 && <span style={{ color: light ? '#ffffff' : '#023A23' }}>{' '}{title.split(' ').slice(1).join(' ')}</span>}
-      </h2>
+      }}>{title}</h2>
       <div style={{
         width: '40px',
         height: '3px',
@@ -890,42 +888,6 @@ const SectorsHero = () => {
         </div>
       </motion.div>
 
-      {/* Scroll indicator — desktop only */}
-      <motion.div className="hidden lg:flex absolute z-10 flex-col items-center" style={{
-        bottom: '32px',
-        left: '50%',
-        transform: 'translateX(-50%)'
-      }} initial={{
-        opacity: 0
-      }} animate={{
-        opacity: 1
-      }} transition={{
-        delay: 1.6,
-        duration: 0.6
-      }}>
-        <span style={{
-          fontFamily: BODY_FONT,
-          fontSize: '11px',
-          color: 'rgba(255,255,255,0.45)',
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          marginBottom: '6px',
-          whiteSpace: 'nowrap'
-        }}>
-          Scroll to explore
-        </span>
-        <motion.svg width="16" height="10" viewBox="0 0 16 10" fill="none" animate={{
-          y: [0, 6]
-        }} transition={{
-          duration: 1.4,
-          ease: 'easeInOut',
-          repeat: Infinity,
-          repeatType: 'reverse'
-        }}>
-          <path d="M1 1L8 8L15 1" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </motion.svg>
-      </motion.div>
-
     </div>
   </section>;
 };
@@ -1066,13 +1028,13 @@ const SectorStrip = ({
                 fontFamily: HEADING_FONT,
                 fontWeight: 700,
                 fontSize: 'clamp(22px, 3.5vw, 40px)',
+                color: '#023A23',
                 letterSpacing: '-0.5px',
                 lineHeight: 1.05,
                 margin: 0,
                 wordBreak: 'break-word'
               }}>
-                <span style={{ color: '#28B674' }}>{sector.title.split(' ')[0]}</span>
-                {sector.title.split(' ').slice(1).length > 0 && <span style={{ color: '#023A23' }}>{' '}{sector.title.split(' ').slice(1).join(' ')}</span>}
+                {sector.title}
               </h2>
               <div style={{
                 width: '40px',
@@ -1269,14 +1231,14 @@ const CTASection = () => <section style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(28px, 8vw, 80px)',
               fontWeight: 700,
+              color: '#111111',
               textTransform: 'uppercase' as const,
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '20px'
             }}>
-              <span style={{ color: '#28B674' }}>Investment</span>{' '}
-              <span style={{ color: '#023A23' }}>Gateway</span>
+              Investment Gateway
             </h2>
             <p style={{
               fontFamily: BODY_FONT,

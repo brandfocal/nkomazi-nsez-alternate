@@ -250,7 +250,7 @@ const ENTERPRISE_HUB_CARDS = [{
   desc: string;
   bgImage: string;
 }[];
-const ENTERPRISE_CARD_BOTTOM_COLORS = ['#0F1923', '#023A23', '#1A2744', '#0F1923', '#023A23', '#1A2744'] as string[];
+const ENTERPRISE_CARD_BOTTOM_COLORS = ['#023A23', '#28B674', '#E77227', '#F2AE37', '#023A23', '#28B674'] as string[];
 const INVESTOR_STORIES = [{
   id: 's1',
   quote: "Establishing our agro-processing facility in MPUMALANGA NKOMAZI SEZ was the best investment decision we've made. The infrastructure, incentives, and hands-on support exceeded every expectation.",
@@ -644,7 +644,7 @@ const AnimatedHeading = ({
   className,
   style,
   as: Tag = 'h2',
-  splitColor = true
+  splitColor = false
 }: {
   children: string;
   className?: string;
@@ -1078,11 +1078,11 @@ const VideoHero = () => {
             <span style={{
               color: '#28B674',
               display: 'block'
-            }}>{STATIC_HERO_HEADLINE_GREEN}</span>
+            }}>Invest in</span>
             <span style={{
               color: '#FFFFFF',
               display: 'block'
-            }}>Invest in MPUMALANGA NKOMAZI SEZ.</span>
+            }}>MPUMALANGA NKOMAZI SEZ.</span>
           </motion.h1>
 
           <motion.p initial={{
@@ -1197,41 +1197,6 @@ const VideoHero = () => {
       </motion.div>
     </motion.div>
 
-    {/* Animated scroll indicator bottom-centre */}
-    <motion.div className="absolute z-10 flex flex-col items-center" style={{
-      bottom: '24px',
-      left: '50%',
-      transform: 'translateX(-50%)'
-    }} initial={{
-      opacity: 0
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      delay: 1.6,
-      duration: 0.6
-    }}>
-      <span style={{
-        fontFamily: BODY_FONT,
-        fontSize: '11px',
-        color: 'rgba(255,255,255,0.45)',
-        letterSpacing: '0.1em',
-        textTransform: 'uppercase',
-        marginBottom: '6px',
-        whiteSpace: 'nowrap'
-      }}>
-        Scroll to explore
-      </span>
-      <motion.svg width="16" height="10" viewBox="0 0 16 10" fill="none" animate={{
-        y: [0, 6]
-      }} transition={{
-        duration: 1.4,
-        ease: 'easeInOut',
-        repeat: Infinity,
-        repeatType: 'reverse'
-      }}>
-        <path d="M1 1L8 8L15 1" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </motion.svg>
-    </motion.div>
   </section>;
 };
 
@@ -1515,10 +1480,10 @@ const ZoneOverview = () => <section style={{
           fontWeight: 700,
           lineHeight: 1.05,
           letterSpacing: '-0.02em',
-          margin: '0 0 24px 0'
+          margin: '0 0 24px 0',
+          color: '#023A23'
         }}>
-          <span style={{ color: '#28B674' }}>A Platform</span>{' '}
-          <span style={{ color: '#023A23' }}>for Industrial Growth</span>
+          A Platform for Industrial Growth
         </h2>
         <p style={{
           margin: '0 0 24px 0',
@@ -1633,7 +1598,7 @@ const EnterpriseHubSection = () => {
   const [hovered, setHovered] = useState<string | null>(null);
   return <section className="py-[80px] mx-1.5 sm:mx-2.5 mb-2.5">
     <div className="relative rounded-3xl py-14 sm:py-20 px-4 sm:px-6" style={{
-      background: '#EDF3EE'
+      background: '#FFFFFF'
     }}>
       <div className="relative max-w-[1372px] mx-auto flex flex-col gap-10 sm:gap-14" style={{
         zIndex: 1
@@ -1651,13 +1616,13 @@ const EnterpriseHubSection = () => {
           <FadeUp delay={0}>
             <h2 style={{
               margin: 0,
-              lineHeight: 1.0
+              lineHeight: 1.0,
+              color: '#023A23'
             }}>
               <span style={{
                 fontFamily: HEADING_FONT,
                 fontWeight: 400,
                 fontSize: 'clamp(32px, 4vw, 48px)',
-                color: '#28B674',
                 display: 'block',
                 letterSpacing: '-0.5px'
               }}>The Case for</span>
@@ -1665,7 +1630,6 @@ const EnterpriseHubSection = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 900,
                 fontSize: 'clamp(52px, 7vw, 72px)',
-                color: '#023A23',
                 display: 'block',
                 letterSpacing: '-2px',
                 lineHeight: 0.95
@@ -1881,7 +1845,7 @@ const KeySectors = ({
   const activeBottomColor = SECTOR_BOTTOM_COLORS[activeSector];
   return <section className="mx-1.5 sm:mx-2.5 mb-2.5" style={{
     borderTop: '2px solid #E77227',
-    background: '#F5F0E8'
+    background: '#FFFFFF'
   }}>
     <style>{`@keyframes fillBar { from { width: 0% } to { width: 100% } }`}</style>
 
@@ -2735,13 +2699,13 @@ const AboutUs = () => {
               About Us
             </span>
             <h2 style={{
-              margin: 0
+              margin: 0,
+              color: '#023A23'
             }}>
               <span style={{
                 fontFamily: HEADING_FONT,
                 fontWeight: 500,
                 fontSize: 'clamp(32px, 3.8vw, 52px)',
-                color: '#28B674',
                 display: 'block',
                 lineHeight: 1.0
               }}>
@@ -2752,7 +2716,6 @@ const AboutUs = () => {
                 fontWeight: 900,
                 fontStyle: 'italic',
                 fontSize: 'clamp(38px, 4.8vw, 64px)',
-                color: '#023A23',
                 display: 'block',
                 lineHeight: 1.0,
                 marginTop: '-4px'
@@ -3136,7 +3099,7 @@ const OpportunityCard = ({
 const ActiveTendersSection = () => {
   return <section id="sec-tenders" className="py-[80px] mx-1.5 sm:mx-2.5 mb-2.5">
     <div className="relative rounded-3xl py-14 sm:py-20 px-4 sm:px-6" style={{
-      background: '#EDF3EE'
+      background: '#FFFFFF'
     }}>
       <div className="max-w-[1372px] mx-auto flex flex-col gap-12 sm:gap-16 relative z-10">
         <FadeUp delay={0} className="flex flex-col items-center gap-3 text-center">
@@ -3338,7 +3301,7 @@ export function Homev2Page() {
 
     {/* FAQs */}
     <section id="sec-faq" className="py-[80px] sm:py-[120px]" style={{
-      background: '#F8F7F0'
+      background: '#FFFFFF'
     }}>
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 sm:gap-10 overflow-hidden">
@@ -3422,8 +3385,8 @@ export function Homev2Page() {
             duration: 0.6,
             ease: 'easeOut'
           }} className="flex items-center gap-3">
-            <div className="w-8 h-px bg-[#F2AE37]" />
-            <span className="text-[#F2AE37] text-xs font-medium tracking-[0.16em] uppercase" style={{
+            <div className="w-8 h-px bg-white" />
+            <span className="text-white text-xs font-medium tracking-[0.16em] uppercase" style={{
               fontFamily: BODY_FONT
             }}>
               Ready to Invest?
@@ -3431,7 +3394,8 @@ export function Homev2Page() {
           </motion.div>
           <AnimatedHeading className="text-white font-light m-0 text-[32px] sm:text-[40px] lg:text-[52px]" style={{
             lineHeight: '1.06',
-            letterSpacing: '-1px'
+            letterSpacing: '-1px',
+            color: '#FFFFFF'
           }}>
             Speak to our investment team and discover opportunities within the Nkomazi Special Economic Zone.
           </AnimatedHeading>

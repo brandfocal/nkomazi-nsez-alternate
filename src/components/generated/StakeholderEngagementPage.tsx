@@ -360,8 +360,7 @@ const AnimatedHeading = ({
       marginRight: '0.22em'
     }}>
       <motion.span style={{
-        display: 'inline-block',
-        color: i === 0 ? '#28B674' : (className?.includes('text-white') ? '#FFFFFF' : (style?.color || '#023A23'))
+        display: 'inline-block'
       }} initial={{
         y: '110%',
         opacity: 0
@@ -1012,41 +1011,6 @@ const Hero = () => {
       </motion.div>
     </motion.div>
 
-    <motion.div className="absolute z-10 flex flex-col items-center" style={{
-      bottom: '14px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      pointerEvents: 'none'
-    }} initial={{
-      opacity: 0
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      delay: 1.6,
-      duration: 0.6
-    }}>
-      <span className="hidden sm:block" style={{
-        fontFamily: BODY_FONT,
-        fontSize: '11px',
-        color: 'rgba(255,255,255,0.4)',
-        letterSpacing: '0.1em',
-        textTransform: 'uppercase',
-        marginBottom: '6px',
-        whiteSpace: 'nowrap'
-      }}>
-        Scroll to explore
-      </span>
-      <motion.svg width="16" height="10" viewBox="0 0 16 10" fill="none" animate={{
-        y: [0, 6]
-      }} transition={{
-        duration: 1.4,
-        ease: 'easeInOut',
-        repeat: Infinity,
-        repeatType: 'reverse'
-      }}>
-        <path d="M1 1L8 8L15 1" stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-      </motion.svg>
-    </motion.div>
   </section>;
 };
 
@@ -1168,14 +1132,14 @@ const ImpactStatsStrip = () => <section id="impact" style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(36px, 6vw, 80px)',
               fontWeight: 700,
+              color: '#ffffff',
               textTransform: 'uppercase',
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '18px'
             }}>
-              <span style={{ color: '#28B674' }}>Measurable</span>{' '}
-              <span style={{ color: '#ffffff' }}>Impact Across Nkomazi</span>
+              Measurable Impact Across Nkomazi
             </h2>
             <p style={{
               fontFamily: BODY_FONT,
@@ -1263,14 +1227,14 @@ const ContactCTA = () => <section style={{
               fontFamily: HEADING_FONT,
               fontSize: 'clamp(36px, 6vw, 80px)',
               fontWeight: 700,
+              color: '#111111',
               textTransform: 'uppercase',
               letterSpacing: '-1px',
               lineHeight: 1.05,
               margin: 0,
               marginBottom: '18px'
             }}>
-              <span style={{ color: '#28B674' }}>Get</span>{' '}
-              <span style={{ color: '#023A23' }}>Involved</span>
+              Get Involved
             </h2>
             <p style={{
               fontFamily: BODY_FONT,

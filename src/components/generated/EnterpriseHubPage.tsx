@@ -244,8 +244,7 @@ const AnimatedHeading = ({
       marginRight: "0.2em"
     }}>
           <motion.span style={{
-        display: "inline-block",
-        color: (words.length > 1 && i === 0) ? "#28B674" : (className?.includes("text-white") ? "#FFFFFF" : (style?.color || "#023A23"))
+        display: "inline-block"
       }} initial={{
         y: "110%",
         opacity: 0
@@ -655,41 +654,6 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div className="absolute z-10 flex flex-col items-center" style={{
-      bottom: "20px",
-      left: "50%",
-      transform: "translateX(-50%)"
-    }} initial={{
-      opacity: 0
-    }} animate={{
-      opacity: 1
-    }} transition={{
-      delay: 1.5,
-      duration: 0.6
-    }}>
-        <span style={{
-        fontFamily: BODY_FONT,
-        fontSize: "9px",
-        color: "rgba(255,255,255,0.35)",
-        letterSpacing: "0.14em",
-        textTransform: "uppercase",
-        marginBottom: "8px",
-        whiteSpace: "nowrap"
-      }}>
-          Scroll to explore
-        </span>
-        <motion.svg width="14" height="8" viewBox="0 0 14 8" fill="none" animate={{
-        y: [0, 5]
-      }} transition={{
-        duration: 1.4,
-        ease: "easeInOut",
-        repeat: Infinity,
-        repeatType: "reverse"
-      }}>
-          <path d="M1 1L7 7L13 1" stroke="rgba(255,255,255,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </motion.svg>
-      </motion.div>
     </section>;
 };
 

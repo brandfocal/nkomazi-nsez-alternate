@@ -1444,8 +1444,7 @@ export const GlobalRouteMap: React.FC = () => {
           letterSpacing: '-2px',
           fontFamily: HEADING_FONT
         }}>
-            <span style={{ color: '#28B674' }}>From</span>{' '}
-            <span style={{ color: '#FFFFFF' }}>Komatipoort to the world</span>
+            From Komatipoort to the world
           </h2>
           <p className="text-white/55 text-base leading-[1.7] m-0 max-w-[560px]" style={{
           fontFamily: BODY_FONT
