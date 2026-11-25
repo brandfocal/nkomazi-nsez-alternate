@@ -1170,7 +1170,7 @@ const IntroSection = () => {
 // ─── CTA Section ──────────────────────────────────────────────────────────────
 
 const CTASection = () => <section style={{
-  background: '#F8F7F0',
+  background: '#FFFFFF',
   position: 'relative',
   overflow: 'hidden'
 }} className="py-12 sm:py-16 lg:py-24">
@@ -1323,10 +1323,10 @@ const CTASection = () => <section style={{
 // ─── Main Component ─────────────────────────────────────────────────────────────
 
 export const SectorsPage = () => {
-  const sectorBgs = ['#FFFFFF', '#F7F6F2', '#FFFFFF', '#F7F6F2', '#FFFFFF'];
+  const sectorBgs = ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'];
   return <div className="min-h-screen text-slate-800 overflow-x-hidden selection:bg-[#023A23] selection:text-white" style={{
     fontFamily: BODY_FONT,
-    background: '#F7F6F2'
+    background: '#FFFFFF'
   }}>
     <NSEZNavbar />
 

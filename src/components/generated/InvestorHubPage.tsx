@@ -1979,7 +1979,7 @@ const ResourcesSection = () => {
 // ─── CTA Section ─────────────────────────────────────────────────────────────
 const CTASection = () => {
   return <section style={{
-    background: '#F8F7F0',
+    background: '#FFFFFF',
     paddingTop: 'clamp(48px, 8vw, 96px)',
     paddingBottom: 'clamp(48px, 8vw, 96px)',
     position: 'relative',

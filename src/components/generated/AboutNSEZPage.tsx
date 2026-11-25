@@ -418,7 +418,7 @@ const EyebrowLabel = ({
     </span>
   </div>;
 
-// ─── SplitHeading — first word green, rest dark/white based on bg ─────────────
+// ─── SplitHeading — single solid color based on bg ─────────────────────────────
 
 const SplitHeading = ({
   text,
@@ -427,9 +427,6 @@ const SplitHeading = ({
   text: string;
   lightBg?: boolean;
 }) => {
-  const words = text.split(" ");
-  const firstWord = words[0];
-  const rest = words.slice(1).join(" ");
   const ref = useRef<HTMLHeadingElement>(null);
   const inView = useInView(ref, {
     once: true,
@@ -441,7 +438,8 @@ const SplitHeading = ({
     fontSize: "clamp(28px, 3.5vw, 44px)",
     letterSpacing: "-0.01em",
     lineHeight: 1.08,
-    margin: 0
+    margin: 0,
+    color: lightBg ? "#023A23" : "#ffffff"
   }}>
     <motion.span initial={{
       opacity: 0,
@@ -454,27 +452,10 @@ const SplitHeading = ({
       delay: 0,
       ease: EASE_PREMIUM
     }} style={{
-      color: "#28B674",
       display: "inline"
     }}>
-      {firstWord}
+      {text}
     </motion.span>
-    {rest && <motion.span initial={{
-      opacity: 0,
-      y: 30
-    }} animate={inView ? {
-      opacity: 1,
-      y: 0
-    } : {}} transition={{
-      duration: 0.7,
-      delay: 0.08,
-      ease: EASE_PREMIUM
-    }} style={{
-      color: lightBg ? "#023A23" : "#ffffff",
-      display: "inline"
-    }}>
-      {" "}{rest}
-    </motion.span>}
   </h2>;
 };
 
@@ -1280,9 +1261,7 @@ const VisionMissionSection = () => {
             borderRadius: '50%'
           }} />
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight text-white mb-8 relative" style={{ fontFamily: HEADING_FONT }}>
-            <span className="block mb-2" style={{
-              color: '#28B674'
-            }}>
+            <span className="block mb-2">
               Vision
             </span>
             <span className="block italic">Mission &amp;</span>
@@ -1302,7 +1281,7 @@ const VisionMissionSection = () => {
     </div>
 
     {/* Right Panel: Off-White / Cream */}
-    <div className="w-full md:w-[55%] bg-[#F7F4EF] p-8 md:p-20 lg:p-28 flex flex-col justify-center relative">
+    <div className="w-full md:w-[55%] bg-[#FFFFFF] p-8 md:p-20 lg:p-28 flex flex-col justify-center relative">
       <div className="max-w-2xl mx-auto w-full">
         {foundationData.map((item, index) => <FoundationItem key={item.number} number={item.number} title={item.title} content={item.content} index={index} />)}
       </div>

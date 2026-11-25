@@ -941,7 +941,7 @@ const LearnershipsBand = () => <section className="bg-[#023A23] text-white relat
 const RegisterInterestCTA = () => {
   const [email, setEmail] = useState('');
   return <section id="register" style={{
-    background: '#F8F7F0',
+    background: '#FFFFFF',
     paddingTop: 'clamp(48px, 8vw, 96px)',
     paddingBottom: 'clamp(48px, 8vw, 96px)',
     position: 'relative',

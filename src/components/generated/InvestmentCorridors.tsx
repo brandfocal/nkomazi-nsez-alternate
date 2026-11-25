@@ -388,7 +388,7 @@ export const InvestmentCorridors: React.FC = () => {
           <div style={{
           width: '100%',
           maxWidth: '660px',
-          background: '#F5F0E8',
+          background: '#FFFFFF',
           borderRadius: '20px',
           boxShadow: '0 12px 56px rgba(2, 58, 35,0.16), 0 4px 16px rgba(0,0,0,0.09)',
           padding: '28px 24px 20px',

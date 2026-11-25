@@ -155,9 +155,7 @@ export const FoundationSection = () => {
             borderRadius: '50%'
           }} />
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif font-bold leading-tight text-white mb-8 relative">
-              <span className="block mb-2" style={{
-              color: '#28B674'
-            }}>
+              <span className="block mb-2">
                 Vision
               </span>
               <span className="block italic">Mission &</span>
@@ -177,7 +175,7 @@ export const FoundationSection = () => {
       </div>
 
       {/* Right Panel: Off-White / Cream */}
-      <div className="w-full md:w-[55%] bg-[#F7F4EF] p-8 md:p-20 lg:p-28 flex flex-col justify-center relative">
+      <div className="w-full md:w-[55%] bg-[#FFFFFF] p-8 md:p-20 lg:p-28 flex flex-col justify-center relative">
         <div className="max-w-2xl mx-auto w-full">
           {foundationData.map((item, index) => <FoundationItem key={item.number} number={item.number} title={item.title} content={item.content} index={index} />)}
         </div>

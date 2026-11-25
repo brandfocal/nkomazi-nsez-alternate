@@ -1109,7 +1109,7 @@ const VideosSection = () => {
   return (
     <>
       <section className="py-16 sm:py-20 lg:py-24" style={{
-        background: '#F7F6F2'
+        background: '#FFFFFF'
       }}>
         <div className="max-w-[1440px] mx-auto px-4 sm:px-6">
           <SectionHeading subtitle="Media Center">Featured Videos</SectionHeading>
@@ -1369,7 +1369,7 @@ const PressReleasesSection = () => <section className="py-16 sm:py-20 lg:py-24" 
 // ─── NEWSLETTER CTA ────────────────────────────────────────────────────────────
 
 const NewsletterSection = () => <section style={{
-  background: '#F8F7F0',
+  background: '#FFFFFF',
   paddingTop: 'clamp(40px, 8vw, 96px)',
   paddingBottom: 'clamp(40px, 8vw, 96px)',
   position: 'relative',

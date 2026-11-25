@@ -1017,7 +1017,7 @@ const FilterBar = ({
 // --- Connect With Us Section ---
 const ConnectSection = () => {
   return <section style={{
-    background: '#F8F7F0',
+    background: '#FFFFFF',
     position: 'relative',
     overflow: 'hidden'
   }} className="py-12 sm:py-16 lg:py-24">

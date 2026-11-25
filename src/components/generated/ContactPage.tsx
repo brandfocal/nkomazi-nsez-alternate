@@ -1084,7 +1084,7 @@ const OfficeLocations = () => <section id="offices" className="py-16 sm:py-20 md
 // ─── Investment Callout ───────────────────────────────────────────────────────
 
 const InvestmentCallout = () => <section style={{
-  background: '#F8F7F0',
+  background: '#FFFFFF',
   paddingTop: 'clamp(40px, 8vw, 96px)',
   paddingBottom: 'clamp(40px, 8vw, 96px)',
   position: 'relative',

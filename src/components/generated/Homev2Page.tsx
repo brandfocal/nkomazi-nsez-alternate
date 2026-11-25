@@ -1428,7 +1428,7 @@ const ZONE_STATS_NEW = [{
   label: 'Registered Investors'
 }];
 const ZoneOverview = () => <section style={{
-  background: '#F8F7F0',
+  background: '#FFFFFF',
   paddingBottom: '100px'
 }}>
   <div style={{
@@ -1438,7 +1438,7 @@ const ZoneOverview = () => <section style={{
   }} className="flex-col lg:flex-row">
     <FadeUp delay={0}>
       <div style={{
-        background: '#F8F7F0',
+        background: '#FFFFFF',
         padding: 'clamp(60px,8vw,120px) clamp(40px,5vw,80px)',
         display: 'flex',
         flexDirection: 'column',
@@ -2618,7 +2618,7 @@ const AboutUs = () => {
     margin: '-80px'
   });
   return <section id="sec-about" ref={ref} style={{
-    backgroundColor: '#F8F7F0',
+    backgroundColor: '#FFFFFF',
     backgroundImage: 'radial-gradient(circle, rgba(2, 58, 35,0.07) 1.5px, transparent 1.5px)',
     backgroundSize: '24px 24px',
     borderTop: '3px solid #E77227',
