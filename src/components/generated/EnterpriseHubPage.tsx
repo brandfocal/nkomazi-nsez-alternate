@@ -180,8 +180,8 @@ const GoldDivider = ({
 }: {
   subtle?: boolean;
 }) => <div style={{
-  height: "1px",
-  background: subtle ? "linear-gradient(90deg, transparent 0%, rgba(184,150,58,0.18) 30%, rgba(184,150,58,0.35) 50%, rgba(184,150,58,0.18) 70%, transparent 100%)" : "linear-gradient(90deg, transparent 0%, rgba(184,150,58,0.12) 10%, rgba(184,150,58,0.45) 50%, rgba(184,150,58,0.12) 90%, transparent 100%)",
+  height: "2px",
+  background: "#F2AE37",
   width: "100%"
 }} />;
 
@@ -922,7 +922,6 @@ const PartnerLogos = () => <section id="sec-partners" className="py-[80px] sm:py
       background: `linear-gradient(90deg, ${SURFACE}, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 90%, ${SURFACE})`
     }} />
     </div>
-    <GoldDivider />
   </section>;
 
 // ─── How To Join ───────────────────────────────────────────────────────────────

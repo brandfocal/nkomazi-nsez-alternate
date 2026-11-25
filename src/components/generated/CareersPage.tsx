@@ -1136,7 +1136,7 @@ const Footer = () => <footer style={{
   {/* Top bar */}
   <div style={{
     background: '#0F3024',
-    borderBottom: '1px solid rgba(242, 174, 55,0.25)'
+    borderBottom: '1px solid #F2AE37'
   }}>
     <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-6">
       <div style={{

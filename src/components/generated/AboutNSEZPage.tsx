@@ -371,8 +371,8 @@ function useCountUp(target: number, duration: number, isInView: boolean, decimal
 // ─── GoldMicroDivider ─────────────────────────────────────────────────────────
 
 const GoldMicroDivider = () => <div style={{
-  height: "1px",
-  background: "linear-gradient(90deg, transparent, rgba(242, 174, 55,0.35), transparent)",
+  height: "2px",
+  background: "#F2AE37",
   maxWidth: "480px",
   margin: "0 auto",
   width: "100%"
@@ -381,8 +381,8 @@ const GoldMicroDivider = () => <div style={{
 // ─── GoldDivider (full-width section separator) ───────────────────────────────
 
 const GoldDivider = () => <div style={{
-  height: "1px",
-  background: "linear-gradient(90deg, transparent, rgba(242, 174, 55,0.4) 20%, rgba(242, 174, 55,0.4) 80%, transparent)",
+  height: "2px",
+  background: "#F2AE37",
   width: "100%"
 }} />;
 
@@ -422,24 +422,29 @@ const EyebrowLabel = ({
 
 const SplitHeading = ({
   text,
-  lightBg = false
+  lightBg = false,
+  className = "",
+  style = {}
 }: {
   text: string;
   lightBg?: boolean;
+  className?: string;
+  style?: React.CSSProperties;
 }) => {
   const ref = useRef<HTMLHeadingElement>(null);
   const inView = useInView(ref, {
     once: true,
     margin: "-60px"
   });
-  return <h2 ref={ref} style={{
+  return <h2 ref={ref} className={className} style={{
     fontFamily: HEADING_FONT,
     fontWeight: 800,
     fontSize: "clamp(28px, 3.5vw, 44px)",
     letterSpacing: "-0.01em",
     lineHeight: 1.08,
     margin: 0,
-    color: lightBg ? "#023A23" : "#ffffff"
+    color: lightBg ? "#023A23" : "#ffffff",
+    ...style
   }}>
     <motion.span initial={{
       opacity: 0,
@@ -1133,9 +1138,9 @@ const FoundationItem = ({
     delay: index * 0.2,
     ease: [0.21, 0.45, 0.32, 0.9]
   }} className="group relative py-12 md:py-16 last:pb-0 rounded-sm" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{
-    backgroundColor: hovered ? '#F5EFE2' : 'transparent',
+    backgroundColor: 'transparent',
     boxShadow: hovered ? '0 4px 28px 0 rgba(180,145,60,0.08), 0 1.5px 6px 0 rgba(0,0,0,0.04)' : 'none',
-    transition: `background-color 450ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-left 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-right 450ms cubic-bezier(0.4, 0, 0.2, 1)`,
+    transition: `box-shadow 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-left 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-right 450ms cubic-bezier(0.4, 0, 0.2, 1)`,
     paddingLeft: hovered ? '12px' : '0px',
     paddingRight: hovered ? '12px' : '0px'
   }}>
@@ -1349,14 +1354,14 @@ const StatCounter = ({
   </motion.div>;
 };
 const ImpactStatsSection = () => <section style={{
-  background: "#EFF4F1",
+  background: "#FFFFFF",
   paddingTop: "clamp(72px,8vh,120px)",
   paddingBottom: "clamp(72px,8vh,120px)"
 }}>
   <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionWrapper className="mb-16">
+    <SectionWrapper className="mb-16 flex flex-col items-center text-center">
       <EyebrowLabel label="Our Impact" />
-      <SplitHeading text="Numbers That Define Our Ambition" lightBg />
+      <SplitHeading text="Numbers That Define Our Ambition" lightBg style={{ textAlign: "center" }} />
     </SectionWrapper>
 
     <GoldMicroDivider />
@@ -1632,7 +1637,7 @@ const WhyNSEZSection = () => <section id="strategy" style={{
 
 // ─── Values Section — creative editorial INVEST layout ───────────────────────
 
-const INVEST_LETTER_COLORS = ["#28B674", "#F2AE37", "#28B674", "#F2AE37", "#28B674", "#F2AE37", "#28B674"];
+const INVEST_LETTER_COLORS = ["#F2AE37", "#F2AE37", "#F2AE37", "#F2AE37", "#F2AE37", "#F2AE37", "#F2AE37"];
 const ValuesSection = () => {
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
@@ -1829,9 +1834,9 @@ const LocationsSection = () => <section id="locations" style={{
   paddingBottom: "clamp(72px,8vh,120px)"
 }}>
   <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
-    <SectionWrapper className="mb-16">
+    <SectionWrapper className="mb-16 flex flex-col items-center text-center">
       <EyebrowLabel label="Our Locations" />
-      <SplitHeading text="Where We Operate" lightBg />
+      <SplitHeading text="Where We Operate" lightBg style={{ textAlign: "center" }} />
     </SectionWrapper>
 
     <GoldMicroDivider />

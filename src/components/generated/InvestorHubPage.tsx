@@ -243,8 +243,8 @@ const ArrowRightIcon = () => <svg xmlns="http://www.w3.org/2000/svg" width="14" 
 
 // ─── Utility Components ───────────────────────────────────────────────────────
 const GoldDivider = () => <div style={{
-  height: '1px',
-  background: 'rgba(242, 174, 55,0.4)',
+  height: '2px',
+  background: '#F2AE37',
   width: '100%'
 }} />;
 const FadeUp = ({
@@ -1892,14 +1892,14 @@ const ResourcesSection = () => {
             borderTop: idx === 0 ? '1px solid rgba(2, 58, 35,0.12)' : 'none',
             borderBottom: '1px solid rgba(2, 58, 35,0.12)'
           }}>
-            <a href={resource.href} onClick={e => e.preventDefault()} className="group no-underline py-6 sm:py-8 gap-4 sm:gap-8" style={{
+            <a href={resource.href} onClick={e => e.preventDefault()} className="group no-underline py-6 sm:py-8 px-4 sm:px-6 gap-4 sm:gap-8" style={{
               color: 'inherit',
               display: 'flex',
               alignItems: 'flex-start',
               borderRadius: '8px',
-              transition: 'background 0.2s ease'
+              transition: 'background 0.25s ease'
             }} onMouseEnter={e => {
-              (e.currentTarget as HTMLAnchorElement).style.background = 'rgba(242, 174, 55,0.08)';
+              (e.currentTarget as HTMLAnchorElement).style.background = '#F2AE37';
             }} onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.background = 'transparent';
             }}>
@@ -1913,7 +1913,7 @@ const ResourcesSection = () => {
                 flexShrink: 0,
                 width: 'clamp(52px, 6vw, 80px)',
                 transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
-              }} className="group-hover:[color:rgba(242, 174, 55,0.38)]">
+              }} className="group-hover:[color:rgba(2,58,35,0.25)]">
                 {resource.index}
               </div>
 
@@ -1930,23 +1930,24 @@ const ResourcesSection = () => {
                   letterSpacing: '-0.3px',
                   lineHeight: 1.1,
                   transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
-                }} className="group-hover:[color:#28B674]">
+                }} className="group-hover:[color:#023A23]">
                   {resource.title}
                 </h3>
-                {resource.description && <p style={{
+                {resource.description && <p className="group-hover:text-[#023A23]/85" style={{
                   fontFamily: BODY_FONT,
                   fontSize: '13px',
                   lineHeight: '1.75',
                   color: '#667',
                   margin: 0,
-                  maxWidth: '560px'
+                  maxWidth: '560px',
+                  transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
                 }}>
                   {resource.description}
                 </p>}
               </div>
 
               {/* Download icon */}
-              <div className="flex-shrink-0 flex items-center justify-center self-center" style={{
+              <div className="flex-shrink-0 flex items-center justify-center self-center group-hover:border-[#023A23] group-hover:bg-[#023A23]/10" style={{
                 width: '44px',
                 height: '44px',
                 borderRadius: '50%',
@@ -1955,9 +1956,9 @@ const ResourcesSection = () => {
                 transition: 'all 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
               }} onMouseEnter={e => {
                 const el = e.currentTarget as HTMLDivElement;
-                el.style.borderColor = '#28B674';
-                el.style.color = '#28B674';
-                el.style.background = 'rgba(40, 182, 116,0.06)';
+                el.style.borderColor = '#023A23';
+                el.style.color = '#023A23';
+                el.style.background = 'rgba(2, 58, 35, 0.15)';
               }} onMouseLeave={e => {
                 const el = e.currentTarget as HTMLDivElement;
                 el.style.borderColor = 'rgba(2, 58, 35,0.18)';

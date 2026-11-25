@@ -959,12 +959,12 @@ const InsetPanel = ({
   }} className="absolute bottom-[56px] left-[20px] z-20 rounded-2xl overflow-hidden" style={{
     width: '190px',
     background: 'rgba(10,25,16,0.92)',
-    border: '1px solid rgba(242, 174, 55,0.3)',
+    border: '1px solid #F2AE37',
     backdropFilter: 'blur(12px)',
     boxShadow: '0 12px 48px rgba(0,0,0,0.5)'
   }}>
       <div className="flex items-center justify-between px-3 py-2" style={{
-      borderBottom: '1px solid rgba(242, 174, 55,0.15)'
+      borderBottom: '1px solid #F2AE37'
     }}>
         <span className="text-[#F2AE37] uppercase tracking-widest" style={{
         fontFamily: BODY_FONT,

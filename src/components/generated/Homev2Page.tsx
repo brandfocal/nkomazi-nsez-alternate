@@ -322,8 +322,8 @@ const EH_METRICS = [{
   label: 'Phase 1\nCompletion'
 }];
 const GoldDivider = () => <div style={{
-  height: '1px',
-  background: 'rgba(242, 174, 55,0.25)',
+  height: '2px',
+  background: '#F2AE37',
   width: '100%'
 }} />;
 
@@ -2621,7 +2621,7 @@ const AboutUs = () => {
     backgroundColor: '#FFFFFF',
     backgroundImage: 'radial-gradient(circle, rgba(2, 58, 35,0.07) 1.5px, transparent 1.5px)',
     backgroundSize: '24px 24px',
-    borderTop: '3px solid #E77227',
+    borderTop: '2px solid #E77227',
     paddingTop: '80px',
     paddingBottom: '80px',
     paddingLeft: 'clamp(48px, 6vw, 96px)',

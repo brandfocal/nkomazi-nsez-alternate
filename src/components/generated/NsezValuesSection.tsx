@@ -32,48 +32,48 @@ const VALUES: ValueItem[] = [{
   title: 'Integrity',
   description: 'Doing the right thing, always — in every interaction, decision and commitment we make to our investors, communities and partners.',
   hint: 'Ethical excellence in every commitment.',
-  iconPath: 'M12 3v18M7 6h10M6 9l-3 6h6L6 9Zm12 0l-3 6h6l-3-6ZM5 21h14'
+  iconPath: 'M12 3v18M6 8l-3 6h6l-3-6zm12 0l-3 6h6l-3-6zM3 8h18M8 21h8'
 }, {
   id: 'nurture',
   letter: 'N',
   title: 'Nurture',
   description: 'Developing talent, growing enterprises and cultivating potential within our communities and the organisations we work with.',
   hint: 'Cultivating potential and growth.',
-  iconPath: 'M12 21V11M12 11c-4.5-.2-7-2.6-7-6.5 4.8-.2 7.2 2.1 7 6.5Zm0 0c4.5-.2 7-2.6 7-6.5-4.8-.2-7.2 2.1-7 6.5ZM7 21h10'
+  iconPath: 'M12 22v-9M12 13C8 13 5 10 5 6c4 0 7 3 7 7zm0 0c4 0 7-3 7-7-4 0-7 3-7 7zM8 22h8'
 }, {
   id: 'value',
   letter: 'V',
   title: 'Value',
   description: 'Creating sustainable economic impact that benefits investors, workers and the region through long-term industrial growth.',
   hint: 'Sustainable economic impact for all.',
-  iconPath: 'M12 3l8 4v5c0 5-3.3 8.4-8 10-4.7-1.6-8-5-8-10V7l8-4Zm-3.5 9.5 2.3 2.3 4.9-5.2'
+  iconPath: 'M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10zm-2-10l2 2 4-4'
 }, {
   id: 'excellence',
   letter: 'E',
   title: 'Excellence',
   description: 'Striving for the highest quality in service, infrastructure and investor support — setting the benchmark for SEZ performance.',
   hint: 'Setting the benchmark for SEZ performance.',
-  iconPath: 'M12 3l2.6 5.3 5.9.8-4.2 4.1 1 5.8-5.3-2.8L6.7 19l1-5.8-4.2-4.1 5.9-.8L12 3Z'
+  iconPath: 'M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z'
 }, {
   id: 'service',
   letter: 'S',
   title: 'Service',
   description: 'Delivering proactive, investor-centric solutions through efficient one-stop-shop facilitation and dedicated support systems.',
   hint: 'Proactive, investor-centric solutions.',
-  iconPath: 'M7 12h10M12 7v10M4.8 5.8a10 10 0 0 1 14.4 0M4.8 18.2a10 10 0 0 0 14.4 0M3 12h18'
+  iconPath: 'M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'
 }, {
   id: 'trust',
   letter: 'T',
   title: 'Trust',
   description: "Building enduring relationships founded on transparency, reliability, and a steadfast commitment to our stakeholders' success.",
   hint: 'Transparency and reliability.',
-  iconPath: 'M12 4.5c2.8-2.5 7-.5 7 3.3 0 4.7-7 9.7-7 9.7s-7-5-7-9.7c0-3.8 4.2-5.8 7-3.3ZM8 20h8'
+  iconPath: 'M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5zm-3 5a3 3 0 0 1 6 0v3H9V7zm3 7a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3z'
 }, {
   id: 'agility',
   letter: 'A',
   title: 'Agility',
-  description: '',
-  hint: '',
+  description: 'Adapting to changing markets, seizing new opportunities and responding swiftly to investor and developer needs.',
+  hint: 'Dynamic responsiveness and rapid execution.',
   iconPath: 'M13 2L3 14h9l-1 8 10-12h-9l1-8z'
 }];
 
@@ -92,63 +92,23 @@ const COLORS = {
   panelBottom: '#0A1F14'
 };
 
+const UNIFIED_TILE_STYLE: LetterTileStyle = {
+  background: 'radial-gradient(circle at 50% 50%, rgba(242,174,55,0.14) 0%, rgba(242,174,55,0.03) 42%, rgba(2,58,35,0) 74%), #081B12',
+  activeBackground: 'radial-gradient(circle at 50% 50%, rgba(242,174,55,0.24) 0%, rgba(242,174,55,0.08) 44%, rgba(2,58,35,0) 76%), #0D2619',
+  borderColor: 'rgba(242,174,55,0.4)',
+  activeBorderColor: '#F2AE37',
+  boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
+  activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 24px rgba(242,174,55,0.35)'
+};
+
 const LETTER_TILE_STYLES: Record<string, LetterTileStyle> = {
-  integrity: {
-    background: 'radial-gradient(circle at 52% 45%, rgba(201,168,75,0.16) 0%, rgba(201,168,75,0.04) 36%, rgba(26,61,43,0) 72%), #1A3D2B',
-    activeBackground: 'radial-gradient(circle at 52% 45%, rgba(201,168,75,0.24) 0%, rgba(201,168,75,0.08) 40%, rgba(32,74,52,0) 74%), #204A34',
-    borderColor: 'rgba(201,168,75,0.4)',
-    activeBorderColor: 'rgba(201,168,75,0.82)',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.3), inset 0 0 24px rgba(201,168,75,0.11)',
-    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 28px rgba(201,168,75,0.36), inset 0 0 34px rgba(201,168,75,0.18)'
-  },
-  nurture: {
-    background: 'radial-gradient(circle at 50% 52%, rgba(93,187,58,0.13) 0%, rgba(93,187,58,0.035) 38%, rgba(15,45,42,0) 70%), #0F2D2A',
-    activeBackground: 'radial-gradient(circle at 50% 52%, rgba(93,187,58,0.21) 0%, rgba(93,187,58,0.07) 42%, rgba(18,55,51,0) 72%), #123733',
-    borderColor: 'rgba(93,187,58,0.3)',
-    activeBorderColor: 'rgba(93,187,58,0.72)',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 26px rgba(93,187,58,0.28)'
-  },
-  value: {
-    background: 'repeating-linear-gradient(135deg, rgba(201,168,75,0.045) 0px, rgba(201,168,75,0.045) 1px, transparent 1px, transparent 10px), #1C2E1A',
-    activeBackground: 'repeating-linear-gradient(135deg, rgba(201,168,75,0.065) 0px, rgba(201,168,75,0.065) 1px, transparent 1px, transparent 10px), #223820',
-    borderColor: 'rgba(201,168,75,0.4)',
-    activeBorderColor: 'rgba(201,168,75,0.82)',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 28px rgba(201,168,75,0.32)'
-  },
-  excellence: {
-    background: 'linear-gradient(180deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.025) 12%, rgba(14,34,51,0) 38%), #0E2233',
-    activeBackground: 'linear-gradient(180deg, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0.04) 14%, rgba(16,40,61,0) 42%), #10283D',
-    borderColor: 'rgba(93,187,58,0.3)',
-    activeBorderColor: 'rgba(93,187,58,0.72)',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 26px rgba(93,187,58,0.26)'
-  },
-  service: {
-    background: 'radial-gradient(ellipse at 50% 104%, rgba(201,168,75,0.17) 0%, rgba(201,168,75,0.045) 42%, rgba(30,43,20,0) 73%), #1E2B14',
-    activeBackground: 'radial-gradient(ellipse at 50% 104%, rgba(201,168,75,0.26) 0%, rgba(201,168,75,0.075) 44%, rgba(36,52,24,0) 75%), #243418',
-    borderColor: 'rgba(201,168,75,0.4)',
-    activeBorderColor: 'rgba(201,168,75,0.82)',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 28px rgba(201,168,75,0.34)'
-  },
-  trust: {
-    background: 'linear-gradient(115deg, transparent 0%, rgba(201,168,75,0.055) 42%, rgba(201,168,75,0.012) 51%, transparent 68%), #0D1F16',
-    activeBackground: 'linear-gradient(115deg, transparent 0%, rgba(201,168,75,0.09) 42%, rgba(201,168,75,0.022) 52%, transparent 69%), #10261B',
-    borderColor: 'rgba(93,187,58,0.3)',
-    activeBorderColor: 'rgba(93,187,58,0.72)',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.24), 0 0 26px rgba(93,187,58,0.24), inset 0 0 22px rgba(201,168,75,0.055)'
-  },
-  agility: {
-    background: 'radial-gradient(circle at 50% 50%, rgba(93,187,58,0.14) 0%, rgba(93,187,58,0.035) 40%, rgba(26,61,43,0) 72%), #173324',
-    activeBackground: 'radial-gradient(circle at 50% 50%, rgba(93,187,58,0.24) 0%, rgba(93,187,58,0.08) 42%, rgba(32,74,52,0) 74%), #1E422F',
-    borderColor: 'rgba(201,168,75,0.4)',
-    activeBorderColor: 'rgba(201,168,75,0.82)',
-    boxShadow: '0 4px 20px rgba(0,0,0,0.3)',
-    activeBoxShadow: '0 4px 20px rgba(0,0,0,0.3), 0 0 28px rgba(201,168,75,0.32)'
-  }
+  integrity: UNIFIED_TILE_STYLE,
+  nurture: UNIFIED_TILE_STYLE,
+  value: UNIFIED_TILE_STYLE,
+  excellence: UNIFIED_TILE_STYLE,
+  service: UNIFIED_TILE_STYLE,
+  trust: UNIFIED_TILE_STYLE,
+  agility: UNIFIED_TILE_STYLE
 };
 
 const EASE_OUT = [0.25, 0.46, 0.45, 0.94] as const;
@@ -415,7 +375,7 @@ export const NsezValuesSection = () => {
               textShadow: '0 4px 24px rgba(0,0,0,0.35)'
             }} animate={item.controls} className="nsez-letter-item mb-3 inline-flex origin-left flex-col items-center font-black leading-[0.88] tracking-[-0.085em] will-change-transform" style={{
               fontSize: 'clamp(48px, 6vw, 72px)',
-              color: index % 2 === 0 ? COLORS.brightGold : COLORS.sageWhite,
+              color: COLORS.gold,
               opacity: item.isActive ? 1 : 0.88,
               textShadow: '0 4px 24px rgba(0,0,0,0.35)'
             }}>
@@ -539,7 +499,7 @@ export const NsezValuesSection = () => {
                   repeat: activeValueId === item.id ? Infinity : 0
                 }} />
                     <span className="nsez-value-badge-letter relative text-xl font-black transition-colors duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)]" style={{
-                  color: expandedId === item.id || activeValueId === item.id ? COLORS.brightGold : index % 2 !== 0 ? COLORS.gold : COLORS.green
+                  color: COLORS.gold
                 }}>
                       {item.letter}
                     </span>
@@ -575,8 +535,8 @@ export const NsezValuesSection = () => {
                     stiffness: 300,
                     damping: 30
                   }} className="overflow-hidden">
-                          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.15" strokeLinecap="round" strokeLinejoin="round" className="absolute right-5 top-5 h-16 w-16 opacity-25 transition-colors duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] sm:right-7 sm:top-6" style={{
-                      color: COLORS.brightGold
+                          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="absolute right-5 top-5 h-16 w-16 opacity-30 transition-colors duration-[350ms] ease-[cubic-bezier(0.25,0.46,0.45,0.94)] sm:right-7 sm:top-6" style={{
+                      color: COLORS.gold
                     }}>
                             <path d={item.iconPath} />
                           </svg>

@@ -30,9 +30,9 @@ const FoundationItem = ({
     delay: index * 0.2,
     ease: [0.21, 0.45, 0.32, 0.9]
   }} className="group relative py-12 md:py-16 last:pb-0 rounded-sm" onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)} style={{
-    backgroundColor: hovered ? '#F5EFE2' : 'transparent',
+    backgroundColor: 'transparent',
     boxShadow: hovered ? '0 4px 28px 0 rgba(180,145,60,0.08), 0 1.5px 6px 0 rgba(0,0,0,0.04)' : '0 0px 0px 0 rgba(180,145,60,0), 0 0px 0px 0 rgba(0,0,0,0)',
-    transition: `background-color 450ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-left 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-right 450ms cubic-bezier(0.4, 0, 0.2, 1)`,
+    transition: `box-shadow 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-left 450ms cubic-bezier(0.4, 0, 0.2, 1), padding-right 450ms cubic-bezier(0.4, 0, 0.2, 1)`,
     paddingLeft: hovered ? '12px' : '0px',
     paddingRight: hovered ? '12px' : '0px'
   }}>

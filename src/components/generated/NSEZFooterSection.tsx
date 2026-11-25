@@ -51,7 +51,7 @@ export function NSEZFooterSection() {
         background: '#023A23',
         paddingTop: '80px',
         color: '#ffffff',
-        borderTop: '1px solid rgba(242, 174, 55, 0.15)'
+        borderTop: '2px solid #E77227'
       }}
     >
       <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 pb-16">

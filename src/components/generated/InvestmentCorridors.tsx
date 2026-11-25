@@ -249,8 +249,8 @@ export const InvestmentCorridors: React.FC = () => {
   const trailTail = getPointOnPath(CORRIDOR_PTS, trailProgress);
   return <section ref={sectionRef} style={{
     background: '#FFFFFF',
-    borderTop: '1px solid rgba(242, 174, 55,0.15)',
-    borderBottom: '1px solid rgba(242, 174, 55,0.15)'
+    borderTop: '2px solid #E77227',
+    borderBottom: '2px solid #E77227'
   }}>
       <div style={{
       display: 'grid',

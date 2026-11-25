@@ -911,7 +911,7 @@ const SectorStrip = ({
   const isEven = index % 2 === 0;
   return <div ref={ref} style={{
     background: bgColor,
-    borderTop: '1px solid rgba(242, 174, 55,0.2)',
+    borderTop: '2px solid #E77227',
     position: 'relative',
     overflow: 'hidden'
   }}>
