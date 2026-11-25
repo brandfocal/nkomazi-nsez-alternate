@@ -50,6 +50,7 @@ export const CookiePolicyPage: React.FC = () => {
               fontSize: '15px',
               lineHeight: '1.8',
               color: 'rgba(255, 255, 255, 0.8)',
+              fontWeight: 500,
               maxWidth: '680px',
               margin: 0
             }}

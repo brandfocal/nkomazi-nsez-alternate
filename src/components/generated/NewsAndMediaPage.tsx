@@ -626,7 +626,7 @@ const HeroSection = () => {
               color: 'rgba(255,255,255,0.85)',
               marginBottom: 0,
               marginTop: '12px',
-              fontWeight: 400,
+              fontWeight: 500,
               maxWidth: '440px'
             }}>
                 The latest news, press releases, events and media from Nkomazi Special Economic Zone.

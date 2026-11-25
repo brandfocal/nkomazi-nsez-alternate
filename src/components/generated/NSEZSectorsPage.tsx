@@ -834,7 +834,7 @@ const SectorsHero = () => {
                 color: 'rgba(255,255,255,0.8)',
                 marginBottom: 0,
                 marginTop: '14px',
-                fontWeight: 400,
+                fontWeight: 500,
                 maxWidth: '520px'
               }}>
                 Five high-potential sectors where Mpumalanga's competitive advantages, strategic infrastructure, and global market access converge to create exceptional investment conditions.

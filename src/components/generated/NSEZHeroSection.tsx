@@ -309,6 +309,7 @@ export function NSEZHeroSection() {
           fontSize: 'clamp(15px, 1.8vw, 18px)',
           lineHeight: 1.65,
           color: 'rgba(255,255,255,0.7)',
+          fontWeight: 500,
           maxWidth: '661px'
         }}>
             A world-class industrial hub and One-Stop-Shop providing specialized incentives for

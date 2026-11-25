@@ -560,6 +560,7 @@ const Hero = () => {
             color: 'rgba(255,255,255,0.9)',
             marginBottom: '10px',
             marginTop: 0,
+            fontWeight: 500,
             textShadow: '0 1px 3px rgba(0,0,0,0.5)'
           }}>
             Connecting with Nkomazi Special Economic Zone is simple. Select the office location or query desk that best fits your requirements.

@@ -632,7 +632,7 @@ const Hero = () => {
         color: "rgba(255,255,255,0.7)",
         margin: "0 0 28px 0",
         maxWidth: "520px",
-        fontWeight: 400
+        fontWeight: 500
       }}>
           Supporting local enterprise and supplier participation within the Nkomazi Special Economic Zone.
         </motion.p>

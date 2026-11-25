@@ -682,7 +682,7 @@ const VideoHero = () => {
               Africa's premier Special Economic Zone for sustainable growth
             </h1>
 
-            <p className="text-white/70 text-[17px] font-normal leading-[1.78] m-0 max-w-[620px]" style={{
+            <p className="text-white/70 text-[17px] font-medium leading-[1.78] m-0 max-w-[620px]" style={{
             fontFamily: BODY_FONT
           }}>
               Strategically located on the N4 Maputo Development Corridor — unlock world-class incentives, infrastructure, and market access in the heart of Southern Africa.

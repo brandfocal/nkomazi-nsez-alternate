@@ -386,7 +386,7 @@ const Hero = () => {
         </AnimatedHeading>
 
         <FadeUp delay={0.4} className="mb-8 sm:mb-10 w-full sm:max-w-[540px]">
-          <p className="text-white/70 text-[15px] sm:text-[18px] leading-[1.65]">
+          <p className="text-white/70 text-[15px] sm:text-[18px] leading-[1.65] font-medium">
             Redefining regulatory efficiency by centralizing municipal, provincial, and national government approvals into a single coordinated digital interface for seamless business onboarding.
           </p>
         </FadeUp>

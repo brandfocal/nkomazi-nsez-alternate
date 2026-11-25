@@ -687,7 +687,7 @@ const Hero = () => {
         color: 'rgba(255,255,255,0.68)',
         margin: 0,
         marginBottom: '28px',
-        fontWeight: 300,
+        fontWeight: 500,
         maxWidth: '500px'
       }}>
         A strategically positioned Special Economic Zone in the heart of Mpumalanga, driving investment, industrialisation and sustainable economic growth.
