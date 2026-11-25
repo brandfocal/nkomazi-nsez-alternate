@@ -1908,12 +1908,11 @@ const ResourcesSection = () => {
                 fontFamily: HEADING_FONT,
                 fontWeight: 900,
                 fontSize: 'clamp(32px, 5vw, 64px)',
-                color: 'rgba(242, 174, 55,0.18)',
                 lineHeight: 1,
                 flexShrink: 0,
                 width: 'clamp(52px, 6vw, 80px)',
                 transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
-              }} className="group-hover:[color:rgba(2,58,35,0.25)]">
+              }} className="text-[#F2AE37]/50 group-hover:text-[#023A23]">
                 {resource.index}
               </div>
 
@@ -1930,14 +1929,13 @@ const ResourcesSection = () => {
                   letterSpacing: '-0.3px',
                   lineHeight: 1.1,
                   transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
-                }} className="group-hover:[color:#023A23]">
+                }} className="group-hover:text-[#023A23]">
                   {resource.title}
                 </h3>
-                {resource.description && <p className="group-hover:text-[#023A23]/85" style={{
+                {resource.description && <p className="text-[#667] group-hover:text-[#023A23]/90" style={{
                   fontFamily: BODY_FONT,
                   fontSize: '13px',
                   lineHeight: '1.75',
-                  color: '#667',
                   margin: 0,
                   maxWidth: '560px',
                   transition: 'color 0.25s cubic-bezier(0.22, 1, 0.36, 1)'
