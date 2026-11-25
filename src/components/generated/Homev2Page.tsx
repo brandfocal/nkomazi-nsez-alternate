@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Menu, X, ChevronRight, Calendar } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { InvestmentCorridors } from './InvestmentCorridors';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
@@ -1053,7 +1054,7 @@ const VideoHero = () => {
             fontWeight: 600,
             letterSpacing: '0.1em'
           }}>
-            <span>Home</span>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={12} strokeWidth={2.5} />
             <span style={{ color: GOLD, fontWeight: 600 }}>Overview</span>
           </div>

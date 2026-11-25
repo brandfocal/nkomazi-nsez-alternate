@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from 'framer-motion';
 import { Menu, X, Mail, MapPin, Calendar, Briefcase, Info, ArrowUpRight, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
@@ -530,7 +531,7 @@ const PageHero = () => {
             fontWeight: 600,
             letterSpacing: '0.1em'
           }}>
-            <span>Home</span>
+            <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">Home</Link>
             <ChevronRight size={12} strokeWidth={2.5} />
             <span style={{ color: GOLD, fontWeight: 600 }}>Careers</span>
           </div>

@@ -4,6 +4,7 @@ import { NSEZFooterSection } from './NSEZFooterSection';
 
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, Sun, Menu, X, ChevronRight, ArrowDownToLine, Building2, Warehouse, Layers, CheckCircle2, FileText, Check, ArrowRight, Search } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 // ─── Fonts ────────────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
@@ -632,7 +633,7 @@ const Hero = () => {
         fontWeight: 600,
         letterSpacing: '0.1em'
       }}>
-        <span>Home</span>
+        <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">Home</Link>
         <ChevronRight size={12} strokeWidth={2.5} />
         <span style={{
           color: GOLD,

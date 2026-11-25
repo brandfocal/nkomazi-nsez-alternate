@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring } from 'framer-motion';
 import { Menu, X, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { GlobalRouteMap } from './GlobalRouteMap';
 import { NSEZNavbar } from './NSEZNavbar';
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
@@ -661,7 +662,7 @@ const VideoHero = () => {
               fontWeight: 600,
               letterSpacing: '0.1em'
             }}>
-              <span>Home</span>
+              <Link to="/" style={{ color: 'inherit', textDecoration: 'none' }} className="hover:text-white transition-colors">Home</Link>
               <ChevronRight size={12} strokeWidth={2.5} />
               <span style={{ color: '#F2AE37', fontWeight: 600 }}>Air Cargo</span>
             </div>
