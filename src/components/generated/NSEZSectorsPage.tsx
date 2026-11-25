@@ -778,13 +778,15 @@ const SectorsHero = () => {
               }} style={{
                 fontFamily: BODY_FONT,
                 fontSize: '12px',
-                color: 'rgba(255,255,255,0.5)',
+                color: 'rgba(255,255,255,0.75)',
+                fontWeight: 600,
                 letterSpacing: '0.1em'
               }}>
                 <span>Home</span>
-                <ChevronRight size={12} />
+                <ChevronRight size={12} strokeWidth={2.5} />
                 <span style={{
-                  color: GOLD
+                  color: GOLD,
+                  fontWeight: 600
                 }}>Sectors</span>
               </motion.div>
               <motion.h1 initial={{

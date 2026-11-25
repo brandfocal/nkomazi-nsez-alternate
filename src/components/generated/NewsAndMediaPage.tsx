@@ -563,22 +563,17 @@ const HeroSection = () => {
       }}>
           {/* Left column */}
           <div className="flex flex-col gap-0 flex-none w-full lg:w-[50%]">
-            <motion.div className="flex items-center gap-2 text-white/60 mb-3 sm:mb-4 text-xs sm:text-sm uppercase tracking-widest" initial={{
-            opacity: 0,
-            x: -10
-          }} animate={{
-            opacity: 1,
-            x: 0
-          }} transition={{
-            duration: 0.5,
-            delay: 0.25
-          }} style={{
-            fontFamily: BODY_FONT
-          }}>
+            <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
+              fontFamily: BODY_FONT,
+              fontSize: '12px',
+              color: 'rgba(255,255,255,0.75)',
+              fontWeight: 600,
+              letterSpacing: '0.1em'
+            }}>
               <span>Home</span>
-              <ChevronRight size={12} />
-              <span className="text-[#F2AE37]">News and Media</span>
-            </motion.div>
+              <ChevronRight size={12} strokeWidth={2.5} />
+              <span style={{ color: '#F2AE37', fontWeight: 600 }}>News and Media</span>
+            </div>
 
             <div>
               <motion.h1 initial={{

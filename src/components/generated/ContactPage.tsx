@@ -508,12 +508,13 @@ const Hero = () => {
           <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
             fontFamily: BODY_FONT,
             fontSize: '12px',
-            color: 'rgba(255,255,255,0.5)',
+            color: 'rgba(255,255,255,0.75)',
+            fontWeight: 600,
             letterSpacing: '0.1em'
           }}>
             <span>Home</span>
-            <ChevronRight size={12} />
-            <span style={{ color: GOLD }}>Contact Us</span>
+            <ChevronRight size={12} strokeWidth={2.5} />
+            <span style={{ color: GOLD, fontWeight: 600 }}>Contact Us</span>
           </div>
           <motion.h1 initial={{
             opacity: 0,

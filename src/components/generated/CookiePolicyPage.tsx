@@ -23,9 +23,9 @@ export const CookiePolicyPage: React.FC = () => {
         }}
       >
         <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex items-center gap-2 mb-4 text-xs font-semibold text-white/50 tracking-wider uppercase">
-            <Link to="/" className="text-white/60 hover:text-white no-underline">Home</Link>
-            <ChevronRight size={12} className="text-[#F2AE37]" />
+          <div className="flex items-center gap-2 mb-4 text-xs font-bold text-white/75 tracking-wider uppercase">
+            <Link to="/" className="text-white/75 hover:text-white no-underline">Home</Link>
+            <ChevronRight size={12} strokeWidth={2.5} className="text-[#F2AE37]" />
             <span className="text-[#F2AE37]">Cookie Policy</span>
           </div>
 

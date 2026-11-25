@@ -578,16 +578,18 @@ const Hero = () => {
           {/* Left column */}
           <div className="flex flex-col gap-0 flex-none w-full lg:w-[50%]">
             <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
-            fontFamily: BODY_FONT,
-            fontSize: '12px',
-            color: 'rgba(255,255,255,0.5)',
-            letterSpacing: '0.1em'
-          }}>
+              fontFamily: BODY_FONT,
+              fontSize: '12px',
+              color: 'rgba(255,255,255,0.75)',
+              fontWeight: 600,
+              letterSpacing: '0.1em'
+            }}>
               <span>Home</span>
-              <ChevronRight size={12} />
+              <ChevronRight size={12} strokeWidth={2.5} />
               <span style={{
-              color: GOLD
-            }}>Tenders</span>
+                color: GOLD,
+                fontWeight: 600
+              }}>Tenders</span>
             </div>
 
             <motion.h1 initial={{

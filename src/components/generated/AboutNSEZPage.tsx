@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView, useScroll, useTransform } from "framer-motion";
-import { Menu, X, MapPin } from "lucide-react";
+import { Menu, X, MapPin, ChevronRight } from "lucide-react";
 import { NSEZNavbar } from "./NSEZNavbar";
 import { NSEZFooterSection } from "./NSEZFooterSection";
 import { NsezValuesSection } from "./NsezValuesSection";
@@ -918,19 +918,17 @@ const HeroSection = () => {
         delay: 0.2,
         ease: EASE_V5
       }}>
-        <motion.div initial={{
-          opacity: 0,
-          y: 14
-        }} animate={{
-          opacity: 1,
-          y: 0
-        }} transition={{
-          duration: 0.5,
-          delay: 0.28,
-          ease: EASE_V5
+        <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
+          fontFamily: BODY_FONT,
+          fontSize: '12px',
+          color: 'rgba(255,255,255,0.75)',
+          fontWeight: 600,
+          letterSpacing: '0.1em'
         }}>
-          <EyebrowLabel label="About MPUMALANGA NKOMAZI SEZ" />
-        </motion.div>
+          <span>Home</span>
+          <ChevronRight size={12} strokeWidth={2.5} />
+          <span style={{ color: '#F2AE37', fontWeight: 600 }}>About Us</span>
+        </div>
 
         <motion.h1 initial={{
           opacity: 0,

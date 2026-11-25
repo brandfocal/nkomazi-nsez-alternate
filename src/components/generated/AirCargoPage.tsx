@@ -653,7 +653,18 @@ const VideoHero = () => {
         delay: 0.2,
         ease: [0.22, 1, 0.36, 1]
       }}>
-          <div className="flex flex-col items-start gap-5">
+          <div className="flex flex-col items-start gap-4">
+            <div className="flex items-center gap-3 mb-1" style={{
+              fontFamily: BODY_FONT,
+              fontSize: '12px',
+              color: 'rgba(255,255,255,0.75)',
+              fontWeight: 600,
+              letterSpacing: '0.1em'
+            }}>
+              <span>Home</span>
+              <ChevronRight size={12} strokeWidth={2.5} />
+              <span style={{ color: '#F2AE37', fontWeight: 600 }}>Air Cargo</span>
+            </div>
             <AnimatePresence mode="wait">
               <motion.span key={activeImg} initial={{
               opacity: 0,

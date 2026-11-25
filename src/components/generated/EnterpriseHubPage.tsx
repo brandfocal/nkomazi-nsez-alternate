@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring } from "framer-motion";
-import { Menu, X, Check, ArrowRight } from "lucide-react";
+import { Menu, X, Check, ArrowRight, ChevronRight } from "lucide-react";
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 
@@ -592,6 +592,17 @@ const Hero = () => {
       opacity: opacityOut,
       zIndex: 2
     }}>
+        <div className="flex items-center gap-3 mb-3 sm:mb-4" style={{
+          fontFamily: BODY_FONT,
+          fontSize: '12px',
+          color: 'rgba(255,255,255,0.75)',
+          fontWeight: 600,
+          letterSpacing: '0.1em'
+        }}>
+          <span>Home</span>
+          <ChevronRight size={12} strokeWidth={2.5} />
+          <span style={{ color: '#F2AE37', fontWeight: 600 }}>Enterprise Hub</span>
+        </div>
         <AnimatedHeading as="h1" style={{
         fontSize: "clamp(28px, 6vw, 80px)",
         lineHeight: 1.05,

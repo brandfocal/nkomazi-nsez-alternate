@@ -368,8 +368,15 @@ const Hero = () => {
 
       <div className="relative z-10 px-6 py-10 sm:p-10 md:p-20 max-w-[1372px] mx-auto w-full">
         <FadeUp delay={0.1}>
-          <div className="text-white/60 text-[13px] uppercase tracking-[0.08em] mb-6">
-            ONE-STOP-SHOP - MPUMALANGA, SOUTH AFRICA
+          <div className="flex items-center gap-3 mb-4 sm:mb-6" style={{
+            fontSize: '12px',
+            color: 'rgba(255,255,255,0.75)',
+            fontWeight: 600,
+            letterSpacing: '0.1em'
+          }}>
+            <span>Home</span>
+            <ChevronRight size={12} strokeWidth={2.5} />
+            <span style={{ color: '#F2AE37', fontWeight: 600 }}>Compliance Portal</span>
           </div>
         </FadeUp>
         
