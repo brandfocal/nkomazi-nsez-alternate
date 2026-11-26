@@ -8,7 +8,8 @@ import {
   AuditLog,
   AdminUser,
   AdminRole,
-  SiteSettings
+  SiteSettings,
+  InquiryItem
 } from './types';
 
 export const STORAGE_KEYS = {
@@ -21,6 +22,7 @@ export const STORAGE_KEYS = {
   APPROVALS: 'approvals',
   AUDIT_LOGS: 'audit_logs',
   SETTINGS: 'site_settings',
+  INQUIRIES: 'inquiries',
 };
 
 export const INITIAL_SETTINGS: SiteSettings = {
@@ -317,6 +319,68 @@ export const INITIAL_AUDIT_LOGS: AuditLog[] = [
     target: 'Tender NSEZ/SEC/2026/009 closing date extended',
     timestamp: '2026-11-24 16:02:44',
     ipAddress: '196.25.1.75'
+  }
+];
+
+export const INITIAL_INQUIRIES: InquiryItem[] = [
+  {
+    id: 'inq-1',
+    type: 'INVESTOR_LEAD',
+    name: 'Johan van der Merwe',
+    email: 'johan@maputocoldchain.co.za',
+    phone: '+27 82 455 1290',
+    company: 'Maputo Cold Chain Logistics (Pty) Ltd',
+    sector: 'Logistics & Warehousing',
+    subject: 'Expression of Interest: 15-Hectare Cold Storage Facility in Precinct A',
+    message: 'We are seeking to expand our regional citrus and avocado export staging operations along the Maputo Development Corridor. We require high-voltage grid connection (minimum 4MVA) and rail siding access. Kindly connect us with your Investment Facilitation Directorate.',
+    submittedAt: '2026-11-26 09:14',
+    status: 'NEW',
+    priority: 'HIGH',
+    assignedTo: 'Investment Desk'
+  },
+  {
+    id: 'inq-2',
+    type: 'TENDER_QUERY',
+    name: 'Sipho Ndlovu',
+    email: 'sipho.ndlovu@ingwe-infrastructure.co.za',
+    phone: '+27 83 291 0041',
+    company: 'Ingwe Infrastructure JV',
+    sector: 'Construction & Engineering',
+    subject: 'Clarification regarding Tender NSEZ/ENG/2026/014 Substation Specs',
+    message: 'Could the procurement committee clarify whether the 33kV switchgear must be SF6-insulated or if vacuum-break with clean air insulation is acceptable as per our eco-green spec submission?',
+    submittedAt: '2026-11-25 15:40',
+    status: 'IN_REVIEW',
+    priority: 'HIGH',
+    assignedTo: 'David Ferreira'
+  },
+  {
+    id: 'inq-3',
+    type: 'MSME_REGISTRATION',
+    name: 'Nomusa Khoza',
+    email: 'nomusa@nkomazi-agrofresh.co.za',
+    phone: '+27 71 882 3419',
+    company: 'Nkomazi AgroFresh Cooperatives',
+    sector: 'Agro-processing',
+    subject: 'MSME Incubator Hub Application for Smallholder Mango Processing',
+    message: 'Our women-led cooperative represents 38 smallholder mango and sub-tropical fruit farmers around Malelane and Komatipoort. We wish to apply for incubation tenancy in Phase 1.',
+    submittedAt: '2026-11-24 11:22',
+    status: 'NEW',
+    priority: 'MEDIUM'
+  },
+  {
+    id: 'inq-4',
+    type: 'GENERAL_CONTACT',
+    name: 'Dr. Michael Stevens',
+    email: 'mstevens@sadc-tradeforum.org',
+    phone: '+27 11 789 2000',
+    company: 'SADC Trade Integration Forum',
+    subject: 'Delegation visit request to Nkomazi SEZ Corridor Logistics Site',
+    message: 'We are hosting a delegation of 14 trade ministers and cross-border customs commissioners and would like to request an official guided tour of the dry port site and customs bonded zone.',
+    submittedAt: '2026-11-22 14:05',
+    status: 'RESPONDED',
+    priority: 'LOW',
+    assignedTo: 'Corporate Communications',
+    internalNotes: 'Tour scheduled and itinerary confirmed for 18 January 2027 with DTI and Provincial Treasury.'
   }
 ];
 

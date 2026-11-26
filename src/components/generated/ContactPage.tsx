@@ -4,6 +4,8 @@ import { Menu, X, MapPin, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
+import { loadFromStorage, saveToStorage, STORAGE_KEYS, INITIAL_INQUIRIES } from '../../admin/mockData';
+import { InquiryItem } from '../../admin/types';
 
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
@@ -661,9 +663,29 @@ const Hero = () => {
 // ─── Contact Split Section ────────────────────────────────────────────────────
 
 const ContactSplit = () => {
+  const [firstName, setFirstName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [email, setEmail] = useState('');
+  const [organisation, setOrganisation] = useState('');
+  const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const currentInquiries = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);
+    const newInquiry: InquiryItem = {
+      id: `inq-${Date.now()}`,
+      type: 'GENERAL_CONTACT',
+      name: `${firstName} ${surname}`.trim() || 'Website Visitor',
+      email: email.trim(),
+      company: organisation.trim() || undefined,
+      subject: `General Inquiry from ${firstName} ${surname}`.trim() || 'Website General Inquiry',
+      message: message.trim(),
+      submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      status: 'NEW',
+      priority: 'MEDIUM',
+    };
+    saveToStorage(STORAGE_KEYS.INQUIRIES, [newInquiry, ...currentInquiries]);
     setSubmitted(true);
   };
   return <section id="enquiry" className="py-16 md:py-24 lg:py-32 bg-white">
@@ -886,7 +908,7 @@ const ContactSplit = () => {
                     }}>
                       Name
                     </label>
-                    <input required type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
+                    <input required type="text" value={firstName} onChange={e => setFirstName(e.target.value)} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
@@ -903,7 +925,7 @@ const ContactSplit = () => {
                     }}>
                       Surname
                     </label>
-                    <input required type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
+                    <input required type="text" value={surname} onChange={e => setSurname(e.target.value)} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
@@ -922,7 +944,7 @@ const ContactSplit = () => {
                     }}>
                       Email
                     </label>
-                    <input required type="email" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
+                    <input required type="email" value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
@@ -939,7 +961,7 @@ const ContactSplit = () => {
                     }}>
                       Organisation
                     </label>
-                    <input required type="text" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
+                    <input required type="text" value={organisation} onChange={e => setOrganisation(e.target.value)} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
                       fontFamily: BODY_FONT,
                       minHeight: '44px'
                     }} onFocus={e => {
@@ -957,7 +979,7 @@ const ContactSplit = () => {
                   }}>
                     Message
                   </label>
-                  <textarea required rows={5} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all resize-none" style={{
+                  <textarea required rows={5} value={message} onChange={e => setMessage(e.target.value)} className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all resize-none" style={{
                     fontFamily: BODY_FONT
                   }} onFocus={e => {
                     e.currentTarget.style.borderColor = '#28B674';

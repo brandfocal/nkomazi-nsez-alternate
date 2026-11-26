@@ -18,11 +18,12 @@ import {
   ArrowRight,
   Settings,
   Newspaper,
-  TrendingUp
+  TrendingUp,
+  Inbox
 } from 'lucide-react';
 import { useAdminAuth } from '../context/AdminAuthContext';
-import { loadFromStorage, INITIAL_APPROVALS } from '../mockData';
-import { ApprovalRequest } from '../types';
+import { loadFromStorage, INITIAL_APPROVALS, INITIAL_INQUIRIES } from '../mockData';
+import { ApprovalRequest, InquiryItem } from '../types';
 
 export const AdminLayout: React.FC = () => {
   const { user, isSuperAdmin, logout, switchRole } = useAdminAuth();
@@ -30,9 +31,12 @@ export const AdminLayout: React.FC = () => {
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Load live pending approval count
+  // Load live pending approval count and unread inquiries count
   const approvals = loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS);
   const pendingCount = (Array.isArray(approvals) ? approvals : INITIAL_APPROVALS).filter(a => a?.status === 'PENDING').length;
+
+  const inquiries = loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES);
+  const unreadInquiriesCount = (Array.isArray(inquiries) ? inquiries : INITIAL_INQUIRIES).filter(i => i?.status === 'NEW').length;
 
   const handleLogout = () => {
     logout();
@@ -81,6 +85,17 @@ export const AdminLayout: React.FC = () => {
       to: '/admin/settings',
       label: 'Site Settings & Directory',
       icon: Settings
+    },
+    {
+      to: '/admin/inquiries',
+      label: 'Inquiries & Leads',
+      icon: Inbox,
+      badge: unreadInquiriesCount > 0 ? unreadInquiriesCount : null
+    },
+    {
+      to: '/admin/audit-logs',
+      label: 'Audit Trail & Compliance',
+      icon: ShieldCheck
     },
     ...(isSuperAdmin
       ? [

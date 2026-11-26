@@ -102,6 +102,23 @@ export interface AuditLog {
   ipAddress: string;
 }
 
+export interface InquiryItem {
+  id: string;
+  type: 'INVESTOR_LEAD' | 'TENDER_QUERY' | 'GENERAL_CONTACT' | 'MSME_REGISTRATION' | 'STAKEHOLDER';
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  sector?: string;
+  subject: string;
+  message: string;
+  submittedAt: string;
+  status: 'NEW' | 'IN_REVIEW' | 'RESPONDED' | 'ARCHIVED';
+  priority: 'HIGH' | 'MEDIUM' | 'LOW';
+  assignedTo?: string;
+  internalNotes?: string;
+}
+
 export interface SiteSettings {
   contactPhone: string;
   generalEmail: string;

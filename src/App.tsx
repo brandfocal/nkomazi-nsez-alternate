@@ -31,6 +31,8 @@ import { AdminResourcesPage } from './admin/pages/AdminResourcesPage';
 import { AdminApprovalsPage } from './admin/pages/AdminApprovalsPage';
 import { AdminNewsPage } from './admin/pages/AdminNewsPage';
 import { AdminCareersPage } from './admin/pages/AdminCareersPage';
+import { AdminInquiriesPage } from './admin/pages/AdminInquiriesPage';
+import { AdminAuditLogsPage } from './admin/pages/AdminAuditLogsPage';
 import { AdminUsersPage } from './admin/pages/AdminUsersPage';
 import { AdminSettingsPage } from './admin/pages/AdminSettingsPage';
 
@@ -110,9 +112,11 @@ function App() {
             <Route path="tenders" element={<AdminTendersPage />} />
             <Route path="news" element={<AdminNewsPage />} />
             <Route path="careers" element={<AdminCareersPage />} />
+            <Route path="inquiries" element={<AdminInquiriesPage />} />
             <Route path="resources" element={<AdminResourcesPage />} />
             <Route path="approvals" element={<AdminApprovalsPage />} />
             <Route path="settings" element={<AdminSettingsPage />} />
+            <Route path="audit-logs" element={<AdminAuditLogsPage />} />
             <Route path="users" element={<AdminUsersPage />} />
           </Route>
         </Routes>

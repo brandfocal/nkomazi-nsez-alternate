@@ -15,7 +15,8 @@ import {
   CheckCircle2,
   XCircle,
   Building2,
-  TrendingUp
+  TrendingUp,
+  Inbox
 } from 'lucide-react';
 import { useAdminAuth } from '../context/AdminAuthContext';
 import {
@@ -24,9 +25,10 @@ import {
   INITIAL_TENDERS,
   INITIAL_RESOURCES,
   INITIAL_APPROVALS,
-  INITIAL_AUDIT_LOGS
+  INITIAL_AUDIT_LOGS,
+  INITIAL_INQUIRIES
 } from '../mockData';
-import { OpportunityItem, TenderItem, ResourceItem, ApprovalRequest, AuditLog } from '../types';
+import { OpportunityItem, TenderItem, ResourceItem, ApprovalRequest, AuditLog, InquiryItem } from '../types';
 
 export const AdminDashboardPage: React.FC = () => {
   const { user, isSuperAdmin } = useAdminAuth();
@@ -36,10 +38,12 @@ export const AdminDashboardPage: React.FC = () => {
   const resources = loadFromStorage<ResourceItem[]>('resources', INITIAL_RESOURCES);
   const approvals = loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS);
   const auditLogs = loadFromStorage<AuditLog[]>('audit_logs', INITIAL_AUDIT_LOGS);
+  const inquiries = loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES);
 
   const pendingApprovals = (Array.isArray(approvals) ? approvals : []).filter(a => a?.status === 'PENDING');
   const activeOpportunities = (Array.isArray(opportunities) ? opportunities : []).filter(o => o?.status === 'ACTIVE');
   const openTenders = (Array.isArray(tenders) ? tenders : []).filter(t => t?.status === 'OPEN');
+  const newInquiries = (Array.isArray(inquiries) ? inquiries : []).filter(i => i?.status === 'NEW');
 
   return (
     <div className="space-y-6">
@@ -280,6 +284,12 @@ export const AdminDashboardPage: React.FC = () => {
               </h2>
               <p className="text-[11px] text-gray-500">Immutable admin action logs</p>
             </div>
+            <Link
+              to="/admin/audit-logs"
+              className="text-xs font-bold text-[#28B674] hover:underline no-underline"
+            >
+              Full Trail
+            </Link>
           </div>
 
           <div className="space-y-3 flex-1 overflow-y-auto max-h-[300px]">
