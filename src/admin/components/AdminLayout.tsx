@@ -38,7 +38,7 @@ import {
 import { ApprovalRequest, InquiryItem, OpportunityItem, TenderItem, NewsArticleItem, CareerItem } from '../types';
 
 export const AdminLayout: React.FC = () => {
-  const { user, isSuperAdmin, logout, switchRole } = useAdminAuth();
+  const { user, isSuperAdmin, logout, switchRole, backendConnected } = useAdminAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -140,16 +140,20 @@ export const AdminLayout: React.FC = () => {
   return (
  <div className="min-h-screen bg-[#F4F6F4] text-[#1A2621] flex flex-col lg:flex-row font-['Poppins',system-ui,sans-serif]">
       {/* ─── Mobile Header ─────────────────────────────────────────── */}
- <header className="lg:hidden bg-[#023A23] text-white px-4 py-3 flex items-center justify-between sticky top-0 z-50">
+      <header className="lg:hidden bg-[#023A23] text-white px-4 py-3 flex items-center justify-between sticky top-0 z-50 shadow-sm">
         <Link to="/admin" className="flex items-center gap-2.5 no-underline">
           <img
             src="/NSEZ-Horizontal-Logo-white.png"
             alt="Mpumalanga Nkomazi SEZ"
             className="h-7 w-auto object-contain"
           />
- <span className="text-[10px] bg-[#28B674]/20 text-[#28B674] font-semibold px-1.5 py-0.5 rounded">
+          <span className="text-[10px] bg-[#28B674]/20 text-[#28B674] font-semibold px-1.5 py-0.5 rounded">
             Admin
           </span>
+          <span
+            className={`w-2 h-2 rounded-full ${backendConnected ? 'bg-emerald-400 animate-pulse' : 'bg-blue-400'}`}
+            title={backendConnected ? 'API Connected (PostgreSQL)' : 'Frontend Sandbox Mode'}
+          />
         </Link>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -311,6 +315,29 @@ export const AdminLayout: React.FC = () => {
           </div>
 
           <div className="flex items-center gap-4">
+            {/* Backend API Connection Indicator */}
+            <div
+              className={`text-[11px] px-2.5 py-1 rounded-full font-semibold flex items-center gap-1.5 transition-colors ${
+                backendConnected
+                  ? 'bg-emerald-50 text-emerald-800'
+                  : 'bg-blue-50 text-blue-800'
+              }`}
+              title={
+                backendConnected
+                  ? 'Connected to bespoke Express API & PostgreSQL database'
+                  : 'Running in frontend sandbox mode with local data store'
+              }
+            >
+              <span
+                className={`w-2 h-2 rounded-full ${
+                  backendConnected
+                    ? 'bg-emerald-500 animate-pulse'
+                    : 'bg-blue-500'
+                }`}
+              />
+              <span>{backendConnected ? 'PostgreSQL Active' : 'Frontend Sandbox'}</span>
+            </div>
+
             {/* Super Admin / Standard Admin banner */}
             <div
               className={`text-xs px-3 py-1 rounded-full font-bold flex items-center gap-1.5 ${isSuperAdmin
