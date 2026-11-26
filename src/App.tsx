@@ -18,6 +18,19 @@ import { PrivacyPolicyPage } from './components/generated/PrivacyPolicyPage';
 import { CookiePolicyPage } from './components/generated/CookiePolicyPage';
 import { CookieConsentBanner } from './components/generated/CookieConsentBanner';
 
+// Admin Portal Imports
+import { AdminAuthProvider } from './admin/context/AdminAuthContext';
+import { AdminProtectedRoute } from './admin/components/AdminProtectedRoute';
+import { AdminLayout } from './admin/components/AdminLayout';
+import { AdminLoginPage } from './admin/pages/AdminLoginPage';
+import { AdminForgotPasswordPage } from './admin/pages/AdminForgotPasswordPage';
+import { AdminDashboardPage } from './admin/pages/AdminDashboardPage';
+import { AdminOpportunitiesPage } from './admin/pages/AdminOpportunitiesPage';
+import { AdminTendersPage } from './admin/pages/AdminTendersPage';
+import { AdminResourcesPage } from './admin/pages/AdminResourcesPage';
+import { AdminApprovalsPage } from './admin/pages/AdminApprovalsPage';
+import { AdminUsersPage } from './admin/pages/AdminUsersPage';
+
 let theme: Theme = 'light';
 
 function ScrollToTopOnNavigation() {
@@ -52,29 +65,53 @@ function App() {
 
   return (
     <BrowserRouter>
-      <ScrollToTopOnNavigation />
-      <Routes>
-        <Route path="/" element={<Homev2Page />} />
-        <Route path="/air-cargo" element={<AirCargoPage />} />
-        <Route path="/home2" element={<Home2Page />} />
-        <Route path="/homev2" element={<Homev2Page />} />
-        <Route path="/investor-hub" element={<InvestorHubPage />} />
-        <Route path="/enterprise-hub" element={<EnterpriseHubPage />} />
-        <Route path="/about-us" element={<AboutNSEZPage />} />
-        <Route path="/sectors" element={<SectorsPage />} />
-        <Route path="/tenders" element={<TendersPage />} />
-        <Route path="/careers" element={<CareersPage />} />
-        <Route path="/stakeholder-engagement" element={<StakeholderEngagementPage />} />
-        <Route path="/news-media" element={<NewsAndMediaPage />} />
-        <Route path="/compliance-portal" element={<CompliancePortalPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
-        <Route path="/cookie-policy" element={<CookiePolicyPage />} />
-        <Route path="/finance" element={<AboutNSEZPage />} />
-        <Route path="/office-of-the-ceo" element={<AboutNSEZPage />} />
-        <Route path="/our-board" element={<AboutNSEZPage />} />
-      </Routes>
-      <CookieConsentBanner />
+      <AdminAuthProvider>
+        <ScrollToTopOnNavigation />
+        <Routes>
+          {/* Public Website Routes */}
+          <Route path="/" element={<Homev2Page />} />
+          <Route path="/air-cargo" element={<AirCargoPage />} />
+          <Route path="/home2" element={<Home2Page />} />
+          <Route path="/homev2" element={<Homev2Page />} />
+          <Route path="/investor-hub" element={<InvestorHubPage />} />
+          <Route path="/enterprise-hub" element={<EnterpriseHubPage />} />
+          <Route path="/about-us" element={<AboutNSEZPage />} />
+          <Route path="/sectors" element={<SectorsPage />} />
+          <Route path="/tenders" element={<TendersPage />} />
+          <Route path="/careers" element={<CareersPage />} />
+          <Route path="/stakeholder-engagement" element={<StakeholderEngagementPage />} />
+          <Route path="/news-media" element={<NewsAndMediaPage />} />
+          <Route path="/compliance-portal" element={<CompliancePortalPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+          <Route path="/cookie-policy" element={<CookiePolicyPage />} />
+          <Route path="/finance" element={<AboutNSEZPage />} />
+          <Route path="/office-of-the-ceo" element={<AboutNSEZPage />} />
+          <Route path="/our-board" element={<AboutNSEZPage />} />
+
+          {/* Admin Auth Routes */}
+          <Route path="/admin/login" element={<AdminLoginPage />} />
+          <Route path="/admin/forgot-password" element={<AdminForgotPasswordPage />} />
+
+          {/* Admin Protected Dashboard & Management Routes */}
+          <Route
+            path="/admin"
+            element={
+              <AdminProtectedRoute>
+                <AdminLayout />
+              </AdminProtectedRoute>
+            }
+          >
+            <Route index element={<AdminDashboardPage />} />
+            <Route path="opportunities" element={<AdminOpportunitiesPage />} />
+            <Route path="tenders" element={<AdminTendersPage />} />
+            <Route path="resources" element={<AdminResourcesPage />} />
+            <Route path="approvals" element={<AdminApprovalsPage />} />
+            <Route path="users" element={<AdminUsersPage />} />
+          </Route>
+        </Routes>
+        <CookieConsentBanner />
+      </AdminAuthProvider>
     </BrowserRouter>
   );
 }
