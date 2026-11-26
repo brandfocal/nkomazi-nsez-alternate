@@ -116,32 +116,15 @@ export const AdminTendersPage: React.FC = () => {
         title: formTitle,
         category: formCategory,
         closingDate: formClosingDate || '30 Dec 2026',
-        status: isSuperAdmin ? formStatus : 'PENDING_APPROVAL',
+        status: formStatus || 'OPEN',
         documentCount: 2,
         dateAdded: new Date().toISOString().split('T')[0]
       };
 
-      if (!isSuperAdmin) {
-        const newApproval: ApprovalRequest = {
-          id: `appr-${Date.now()}`,
-          itemType: 'TENDER',
-          action: 'PUBLISH',
-          itemId: newItem.id,
-          itemTitle: `${newItem.refNo}: ${newItem.title}`,
-          requestedBy: `${user?.name} (Standard Admin)`,
-          requestedByEmail: user?.email || '',
-          requestedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
-          reason: 'New procurement tender notice submitted for publication.',
-          status: 'PENDING'
-        };
-        syncApprovals([newApproval, ...approvals]);
-        showNotification(`Tender queued for Super Admin publication approval.`);
-      } else {
-        showNotification(`Tender "${newItem.refNo}" published to live website.`);
-      }
+      showNotification(`Tender "${newItem.refNo}" published to live website.`);
 
       syncTenders([newItem, ...tenders]);
-      addAuditLog(isSuperAdmin ? 'PUBLISHED_TENDER' : 'SUBMITTED_TENDER', `Tender ${newItem.refNo}`);
+      addAuditLog('PUBLISHED_TENDER', `Tender ${newItem.refNo}`);
       setIsCreateOpen(false);
     }
 

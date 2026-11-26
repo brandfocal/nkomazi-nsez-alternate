@@ -153,6 +153,16 @@ export const INITIAL_TENDERS: TenderItem[] = [
     status: 'EVALUATING',
     documentCount: 4,
     dateAdded: '2026-10-25'
+  },
+  {
+    id: 'ten-4',
+    refNo: 'NSEZ/ENG/2026/020',
+    title: 'Construction of Phase 1 Regional Logistics Access Roads & Gatehouse Complex',
+    category: 'Infrastructure & Civils',
+    closingDate: '18 Jan 2027',
+    status: 'OPEN',
+    documentCount: 2,
+    dateAdded: '2026-11-26'
   }
 ];
 

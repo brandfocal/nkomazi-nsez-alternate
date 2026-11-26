@@ -1180,21 +1180,34 @@ export const TendersPage = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Dynamic connection to Admin Tenders store
-  const [adminTenders] = useState<TenderItem[]>(() =>
+  const [adminTenders, setAdminTenders] = useState<TenderItem[]>(() =>
     loadFromStorage<TenderItem[]>(STORAGE_KEYS.TENDERS, INITIAL_TENDERS)
   );
+
+  useEffect(() => {
+    const sync = () => {
+      setAdminTenders(loadFromStorage<TenderItem[]>(STORAGE_KEYS.TENDERS, INITIAL_TENDERS));
+    };
+    window.addEventListener('storage', sync);
+    window.addEventListener('focus', sync);
+    sync();
+    return () => {
+      window.removeEventListener('storage', sync);
+      window.removeEventListener('focus', sync);
+    };
+  }, []);
 
   const allOpportunities = useMemo(() => {
     // Map live admin tenders that are open or evaluating
     const dynamicTenders: Opportunity[] = (adminTenders || [])
-      .filter(t => t.status !== 'CLOSED' && t.status !== 'PENDING_APPROVAL')
+      .filter(t => t.status !== 'CLOSED')
       .map(t => ({
         id: t.id,
         category: 'Tender' as const,
         title: `${t.refNo ? `[${t.refNo}] ` : ''}${t.title}`,
         description: `Official procurement opportunity under category: ${t.category}. Issued by Nkomazi Special Economic Zone. Documentation packs available: ${t.documentCount}.`,
         closingDate: t.closingDate,
-        status: t.status === 'OPEN' ? 'Open' as const : 'Closing Soon' as const,
+        status: t.status === 'OPEN' ? 'Open' as const : t.status === 'EVALUATING' ? 'Closing Soon' as const : 'Open' as const,
         pdfUrl: '/tenders/tenders/05-08-2026/Bid Documentation -Bulk Electrical Construction.pdf'
       }));
 
