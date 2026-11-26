@@ -98,21 +98,21 @@ export const AdminAuditLogsPage: React.FC = () => {
   const getActionBadge = (action: string) => {
     const act = action.toUpperCase();
     if (act.includes('DELETE') || act.includes('REMOVE') || act.includes('REJECT')) {
-      return 'bg-red-50 text-red-700 border-red-200';
+ return 'bg-red-50 text-red-700 ';
     }
     if (act.includes('APPROV') || act.includes('CREATE') || act.includes('ADD')) {
-      return 'bg-emerald-50 text-emerald-700 border-emerald-200';
+ return 'bg-emerald-50 text-emerald-700 ';
     }
     if (act.includes('UPDATE') || act.includes('EDIT') || act.includes('TOGGLE')) {
-      return 'bg-amber-50 text-amber-700 border-amber-200';
+ return 'bg-amber-50 text-amber-700 ';
     }
-    return 'bg-blue-50 text-blue-700 border-blue-200';
+ return 'bg-blue-50 text-blue-700 ';
   };
 
   return (
     <div className="space-y-6" style={{ fontFamily: BODY_FONT }}>
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-[#023A23] via-[#044c2f] to-[#023A23] p-6 sm:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-emerald-900/30">
+ <div className="bg-gradient-to-r from-[#023A23] via-[#044c2f] to-[#023A23] p-6 sm:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2 text-[#F2AE37] text-xs font-semibold uppercase tracking-wider mb-2">
             <ShieldCheck size={16} />
@@ -131,14 +131,14 @@ export const AdminAuditLogsPage: React.FC = () => {
         <div className="flex items-center gap-3 self-start md:self-auto shrink-0">
           <button
             onClick={refreshLogs}
-            className="p-3 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors border border-white/20"
+ className="p-3 rounded-xl bg-white/10 hover:bg-white/20 text-white transition-colors"
             title="Refresh Log Stream"
           >
             <RefreshCw size={16} />
           </button>
           <button
             onClick={handleExportCSV}
-            className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#28B674] hover:bg-[#20925c] text-white font-medium text-sm transition-all duration-200 shadow-lg shadow-emerald-900/40 hover:scale-[1.02]"
+ className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#28B674] hover:bg-[#20925c] text-white font-medium text-sm transition-all duration-200 shadow-lg shadow-emerald-900/40 hover:scale-[1.02]"
           >
             <Download size={16} />
             <span>Export Audit Pack (CSV)</span>
@@ -148,7 +148,7 @@ export const AdminAuditLogsPage: React.FC = () => {
 
       {/* KPI Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Total Audited Events
           </div>
@@ -156,7 +156,7 @@ export const AdminAuditLogsPage: React.FC = () => {
             {logs.length}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Super Admin Authorizations
           </div>
@@ -164,7 +164,7 @@ export const AdminAuditLogsPage: React.FC = () => {
             {totalSuperAdminActions}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Dual-Control Approvals
           </div>
@@ -172,7 +172,7 @@ export const AdminAuditLogsPage: React.FC = () => {
             {totalApprovalActions}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Protected Deletions Executed
           </div>
@@ -183,7 +183,7 @@ export const AdminAuditLogsPage: React.FC = () => {
       </div>
 
       {/* Search and Filters */}
-      <div className="bg-white p-4 sm:p-5 rounded-xl border border-gray-100 shadow-sm space-y-4">
+ <div className="bg-white p-4 sm:p-5 rounded-xl shadow-sm space-y-4">
         <div className="flex flex-col md:flex-row gap-3">
           <div className="relative flex-1">
             <Search
@@ -204,7 +204,7 @@ export const AdminAuditLogsPage: React.FC = () => {
               value={roleFilter}
               onChange={(e) => setRoleFilter(e.target.value)}
               aria-label="Filter by Admin Role"
-              className="px-3 py-2.5 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
+ className="px-3 py-2.5 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
             >
               <option value="ALL">All Roles</option>
               <option value="SUPER_ADMIN">Super Administrator</option>
@@ -215,7 +215,7 @@ export const AdminAuditLogsPage: React.FC = () => {
               value={actionCategoryFilter}
               onChange={(e) => setActionCategoryFilter(e.target.value)}
               aria-label="Filter by Action Type"
-              className="px-3 py-2.5 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
+ className="px-3 py-2.5 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
             >
               <option value="ALL">All Action Categories</option>
               <option value="CREATE">Creation &amp; Publishing</option>
@@ -229,7 +229,7 @@ export const AdminAuditLogsPage: React.FC = () => {
       </div>
 
       {/* Audit Log Table */}
-      <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+ <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         {filteredLogs.length === 0 ? (
           <div className="p-12 text-center">
             <Activity size={40} className="mx-auto text-gray-300 mb-3" />
@@ -238,7 +238,7 @@ export const AdminAuditLogsPage: React.FC = () => {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50/75 border-b border-gray-100 text-xs uppercase font-semibold text-gray-500 tracking-wider">
+ <thead className="bg-gray-50/75 text-xs uppercase font-semibold text-gray-500 tracking-wider">
                 <tr>
                   <th className="py-3.5 px-4 sm:px-6">Timestamp &amp; Host</th>
                   <th className="py-3.5 px-4">Administrative User</th>
@@ -248,7 +248,7 @@ export const AdminAuditLogsPage: React.FC = () => {
               </thead>
               <tbody className="divide-y divide-gray-100 font-mono text-xs">
                 {filteredLogs.map((log) => (
-                  <tr key={log.id} className="hover:bg-gray-50/75 transition-colors">
+ <tr key={log.id} className="hover:bg-gray-50/75 transition-colors">
                     <td className="py-4 px-4 sm:px-6 whitespace-nowrap">
                       <div className="flex items-center gap-1.5 font-semibold text-gray-800">
                         <Clock size={13} className="text-gray-400" />
@@ -265,8 +265,8 @@ export const AdminAuditLogsPage: React.FC = () => {
                       <span
                         className={`inline-block mt-1 px-2 py-0.5 rounded text-[10px] font-semibold tracking-wider uppercase ${
                           log.userRole === 'SUPER_ADMIN'
-                            ? 'bg-amber-100 text-amber-800'
-                            : 'bg-emerald-100 text-emerald-800'
+ ? 'bg-amber-100 text-amber-800'
+ : 'bg-emerald-100 text-emerald-800'
                         }`}
                       >
                         {log.userRole.replace('_', ' ')}

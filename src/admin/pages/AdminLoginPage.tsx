@@ -46,14 +46,14 @@ export const AdminLoginPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#081B12] text-white flex flex-col justify-center items-center px-4 py-12 relative overflow-hidden font-['Poppins',system-ui,sans-serif]">
+ <div className="min-h-screen bg-[#081B12] text-white flex flex-col justify-center items-center px-4 py-12 relative overflow-hidden font-['Poppins',system-ui,sans-serif]">
       {/* Background radial glow */}
       <div
-        className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#28B674]/15 blur-3xl"
+ className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#28B674]/15 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#F2AE37]/15 blur-3xl"
+ className="pointer-events-none absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#F2AE37]/15 blur-3xl"
         aria-hidden="true"
       />
 
@@ -76,7 +76,7 @@ export const AdminLoginPage: React.FC = () => {
         </div>
 
         {/* Demo Fast Login Helper */}
-        <div className="bg-[#022A1A]/80 border border-[#28B674]/30 rounded-xl p-3.5 mb-6 shadow-md backdrop-blur-sm">
+ <div className="bg-[#022A1A]/80 rounded-xl p-3.5 mb-6 shadow-md backdrop-blur-sm">
           <div className="flex items-center gap-1.5 text-xs font-bold text-[#F2AE37] mb-2">
             <Sparkles size={14} /> Quick Demo Logins (Click to autofill):
           </div>
@@ -84,7 +84,7 @@ export const AdminLoginPage: React.FC = () => {
             <button
               type="button"
               onClick={() => handleQuickDemo('SUPER_ADMIN')}
-              className="text-left p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+ className="text-left p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
             >
               <div className="text-[11px] font-bold text-white">Super Admin</div>
               <div className="text-[10px] text-white/60">Full approvals & delete</div>
@@ -92,7 +92,7 @@ export const AdminLoginPage: React.FC = () => {
             <button
               type="button"
               onClick={() => handleQuickDemo('STANDARD_ADMIN')}
-              className="text-left p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 transition-colors"
+ className="text-left p-2 rounded-lg bg-white/5 hover:bg-white/10 transition-colors"
             >
               <div className="text-[11px] font-bold text-white">Standard Admin</div>
               <div className="text-[10px] text-white/60">Edits queue for review</div>
@@ -101,9 +101,9 @@ export const AdminLoginPage: React.FC = () => {
         </div>
 
         {/* Login form card */}
-        <div className="bg-[#0D2619] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+ <div className="bg-[#0D2619] rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
           {error && (
-            <div className="mb-5 p-3 rounded-lg bg-red-500/15 border border-red-500/30 text-xs text-red-200">
+ <div className="mb-5 p-3 rounded-lg bg-red-500/15 text-xs text-red-200">
               {error}
             </div>
           )}
@@ -121,7 +121,7 @@ export const AdminLoginPage: React.FC = () => {
                   onChange={e => setEmail(e.target.value)}
                   placeholder="name@nkomazisez.gov.za"
                   required
-                  className="w-full bg-[#081B12] border border-white/15 rounded-lg py-2.5 pl-10 pr-4 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#28B674] focus:ring-1 focus:ring-[#28B674] transition-colors"
+ className="w-full bg-[#081B12] rounded-lg py-2.5 pl-10 pr-4 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#28B674] focus:ring-1 focus:ring-[#28B674] transition-colors"
                 />
               </div>
             </div>
@@ -146,7 +146,7 @@ export const AdminLoginPage: React.FC = () => {
                   onChange={e => setPassword(e.target.value)}
                   placeholder="••••••••••••"
                   required
-                  className="w-full bg-[#081B12] border border-white/15 rounded-lg py-2.5 pl-10 pr-4 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#28B674] focus:ring-1 focus:ring-[#28B674] transition-colors"
+ className="w-full bg-[#081B12] rounded-lg py-2.5 pl-10 pr-4 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#28B674] focus:ring-1 focus:ring-[#28B674] transition-colors"
                 />
               </div>
             </div>
@@ -154,7 +154,7 @@ export const AdminLoginPage: React.FC = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full mt-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-[#28B674]/20 transition-all duration-200 cursor-pointer disabled:opacity-50"
+ className="w-full mt-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg shadow-[#28B674]/20 transition-all duration-200 cursor-pointer disabled:opacity-50"
             >
               <span>{loading ? 'Authenticating...' : 'Sign In to Console'}</span>
               <ArrowRight size={15} />

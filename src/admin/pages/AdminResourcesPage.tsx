@@ -188,7 +188,7 @@ export const AdminResourcesPage: React.FC = () => {
         </div>
         <button
           onClick={openCreateModal}
-          className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#023A23] text-white hover:bg-[#023A23]/90 font-medium text-sm transition-colors shadow-sm"
+ className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#023A23] text-white hover:bg-[#023A23]/90 font-medium text-sm transition-colors shadow-sm"
         >
           <Plus className="w-4 h-4" />
           Upload New Document
@@ -196,7 +196,7 @@ export const AdminResourcesPage: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
+ <div className="bg-white p-4 rounded-xl shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
         <div className="relative w-full md:w-96">
           <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -218,8 +218,8 @@ export const AdminResourcesPage: React.FC = () => {
               onClick={() => setCategoryFilter(cat)}
               className={`px-3 py-1.5 rounded-md text-xs font-medium whitespace-nowrap transition-colors ${
                 categoryFilter === cat
-                  ? 'bg-[#023A23] text-white'
-                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+ ? 'bg-[#023A23] text-white'
+ : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
               {cat}
@@ -229,11 +229,11 @@ export const AdminResourcesPage: React.FC = () => {
       </div>
 
       {/* Table / Grid */}
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+ <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-200 text-gray-600 font-semibold text-xs uppercase tracking-wider">
+ <tr className="bg-gray-50 text-gray-600 font-semibold text-xs uppercase tracking-wider">
                 <th className="py-3 px-4">Document Title</th>
                 <th className="py-3 px-4">Category</th>
                 <th className="py-3 px-4">Format & Size</th>
@@ -251,10 +251,10 @@ export const AdminResourcesPage: React.FC = () => {
                 </tr>
               ) : (
                 filteredResources.map((item) => (
-                  <tr key={item.id} className="hover:bg-gray-50 transition-colors">
+ <tr key={item.id} className="hover:bg-gray-50 transition-colors">
                     <td className="py-3 px-4">
                       <div className="flex items-start gap-3">
-                        <div className="p-2 bg-[#023A23]/10 text-[#023A23] rounded-lg shrink-0 mt-0.5">
+ <div className="p-2 bg-[#023A23]/10 text-[#023A23] rounded-lg shrink-0 mt-0.5">
                           <FileText className="w-4 h-4" />
                         </div>
                         <div>
@@ -266,7 +266,7 @@ export const AdminResourcesPage: React.FC = () => {
                       </div>
                     </td>
                     <td className="py-3 px-4">
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#023A23]/10 text-[#023A23]">
+ <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#023A23]/10 text-[#023A23]">
                         {item.category}
                       </span>
                     </td>
@@ -288,14 +288,14 @@ export const AdminResourcesPage: React.FC = () => {
                       <div className="flex items-center justify-end gap-1">
                         <button
                           onClick={() => openEditModal(item)}
-                          className="p-1.5 text-gray-500 hover:text-[#023A23] hover:bg-gray-100 rounded-md transition-colors"
+ className="p-1.5 text-gray-500 hover:text-[#023A23] hover:bg-gray-100 rounded-md transition-colors"
                           title="Edit Document Info"
                         >
                           <Edit className="w-4 h-4" />
                         </button>
                         <button
                           onClick={() => handleDeleteClick(item)}
-                          className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors"
+ className="p-1.5 text-gray-500 hover:text-red-600 hover:bg-red-50 rounded-md transition-colors"
                           title={isSuperAdmin ? 'Permanently Delete' : 'Request Deletion'}
                         >
                           <Trash2 className="w-4 h-4" />
@@ -312,9 +312,9 @@ export const AdminResourcesPage: React.FC = () => {
 
       {/* Edit / Create Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
-            <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+ <div className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
+ <div className="px-6 py-4 flex items-center justify-between bg-gray-50/50">
               <h3 className="font-bold text-[#023A23] text-lg">
                 {editingItem ? 'Edit Document Metadata' : 'Upload Resource to Library'}
               </h3>
@@ -388,7 +388,7 @@ export const AdminResourcesPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="p-3 bg-gray-50 border border-dashed border-gray-300 rounded-xl flex items-center justify-center text-center">
+ <div className="p-3 bg-gray-50 rounded-xl flex items-center justify-center text-center">
                 <div className="text-xs text-gray-500">
                   <FileCheck2 className="w-6 h-6 text-[#28B674] mx-auto mb-1" />
                   <span className="font-semibold text-gray-800">Simulated Upload Storage</span>: Live file link defaults to standard encrypted media bundle.
@@ -399,13 +399,13 @@ export const AdminResourcesPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
+ className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#023A23] hover:bg-[#023A23]/90 text-white rounded-lg text-sm font-medium transition-colors"
+ className="px-4 py-2 bg-[#023A23] hover:bg-[#023A23]/90 text-white rounded-lg text-sm font-medium transition-colors"
                 >
                   {editingItem ? 'Save Changes' : 'Publish Document'}
                 </button>
@@ -417,10 +417,10 @@ export const AdminResourcesPage: React.FC = () => {
 
       {/* Delete / Approval Modal */}
       {deleteModalItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+ <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
             <div className="p-6">
-              <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mb-4">
+ <div className="w-12 h-12 rounded-full bg-red-100 text-red-600 flex items-center justify-center mb-4">
                 <AlertTriangle className="w-6 h-6" />
               </div>
 
@@ -454,7 +454,7 @@ export const AdminResourcesPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setDeleteModalItem(null)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
+ className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
                 >
                   Cancel
                 </button>
@@ -463,8 +463,8 @@ export const AdminResourcesPage: React.FC = () => {
                   onClick={handleConfirmDelete}
                   className={`px-4 py-2 rounded-lg text-sm font-medium text-white transition-colors ${
                     isSuperAdmin
-                      ? 'bg-red-600 hover:bg-red-700'
-                      : 'bg-[#F2AE37] hover:bg-[#F2AE37]/90 text-gray-900 font-semibold'
+ ? 'bg-red-600 hover:bg-red-700'
+ : 'bg-[#F2AE37] hover:bg-[#F2AE37]/90 text-gray-900 font-semibold'
                   }`}
                 >
                   {isSuperAdmin ? 'Yes, Delete Permanently' : 'Submit Approval Request'}

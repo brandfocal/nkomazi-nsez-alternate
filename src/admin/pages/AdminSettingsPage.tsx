@@ -110,7 +110,7 @@ export const AdminSettingsPage: React.FC = () => {
 
         <button
           onClick={handleSave}
-          className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#023A23] text-white hover:bg-[#023A23]/90 font-semibold text-sm transition-colors shadow-sm"
+ className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg bg-[#023A23] text-white hover:bg-[#023A23]/90 font-semibold text-sm transition-colors shadow-sm"
         >
           <Save className="w-4 h-4 text-[#28B674]" />
           Save Changes
@@ -119,7 +119,7 @@ export const AdminSettingsPage: React.FC = () => {
 
       {/* Feedback Alert */}
       {savedNotice && (
-        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 flex items-center justify-between animate-in fade-in slide-in-from-top-2">
+ <div className="p-4 rounded-xl bg-emerald-50 text-emerald-900 flex items-center justify-between animate-in fade-in slide-in-from-top-2">
           <div className="flex items-center gap-2.5 text-xs font-semibold">
             <CheckCircle2 className="w-4 h-4 text-[#28B674]" />
             <span>{savedNotice}</span>
@@ -129,14 +129,14 @@ export const AdminSettingsPage: React.FC = () => {
       )}
 
       {/* Main Tabs */}
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-        <div className="flex border-b border-gray-200 bg-gray-50/50 overflow-x-auto">
+ <div className="bg-white rounded-xl shadow-sm overflow-hidden">
+ <div className="flex bg-gray-50/50 overflow-x-auto">
           <button
             onClick={() => setActiveTab('CONTACT')}
             className={`px-5 py-3 text-xs font-semibold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${
               activeTab === 'CONTACT'
-                ? 'border-[#023A23] text-[#023A23] bg-white'
-                : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
+ ? 'border-[#023A23] text-[#023A23] bg-white'
+ : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
             }`}
           >
             <Mail className="w-3.5 h-3.5" />
@@ -146,8 +146,8 @@ export const AdminSettingsPage: React.FC = () => {
             onClick={() => setActiveTab('OFFICE')}
             className={`px-5 py-3 text-xs font-semibold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${
               activeTab === 'OFFICE'
-                ? 'border-[#023A23] text-[#023A23] bg-white'
-                : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
+ ? 'border-[#023A23] text-[#023A23] bg-white'
+ : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
             }`}
           >
             <MapPin className="w-3.5 h-3.5" />
@@ -157,8 +157,8 @@ export const AdminSettingsPage: React.FC = () => {
             onClick={() => setActiveTab('SOCIAL')}
             className={`px-5 py-3 text-xs font-semibold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${
               activeTab === 'SOCIAL'
-                ? 'border-[#023A23] text-[#023A23] bg-white'
-                : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
+ ? 'border-[#023A23] text-[#023A23] bg-white'
+ : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
             }`}
           >
             <Globe className="w-3.5 h-3.5" />
@@ -168,14 +168,14 @@ export const AdminSettingsPage: React.FC = () => {
             onClick={() => setActiveTab('BANNER')}
             className={`px-5 py-3 text-xs font-semibold flex items-center gap-2 border-b-2 transition-colors whitespace-nowrap ${
               activeTab === 'BANNER'
-                ? 'border-[#023A23] text-[#023A23] bg-white'
-                : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
+ ? 'border-[#023A23] text-[#023A23] bg-white'
+ : 'border-transparent text-gray-600 hover:text-gray-900 hover:bg-gray-100/50'
             }`}
           >
             <Bell className="w-3.5 h-3.5" />
             Urgent Notice Alert Banner
             {bannerEnabled && (
-              <span className="w-2 h-2 rounded-full bg-[#28B674]"></span>
+ <span className="w-2 h-2 rounded-full bg-[#28B674]"></span>
             )}
           </button>
         </div>
@@ -392,7 +392,7 @@ export const AdminSettingsPage: React.FC = () => {
                 </p>
               </div>
 
-              <div className="p-4 rounded-xl border border-gray-200 bg-gray-50 flex items-center justify-between">
+ <div className="p-4 rounded-xl bg-gray-50 flex items-center justify-between">
                 <div>
                   <div className="font-bold text-xs text-[#023A23]">Enable Broadcast Banner</div>
                   <div className="text-[11px] text-gray-500">When active, this banner is displayed to all website visitors.</div>
@@ -401,11 +401,11 @@ export const AdminSettingsPage: React.FC = () => {
                   type="button"
                   onClick={() => setBannerEnabled(!bannerEnabled)}
                   className={`w-12 h-6 rounded-full transition-colors relative focus:outline-none ${
-                    bannerEnabled ? 'bg-[#28B674]' : 'bg-gray-300'
+ bannerEnabled ? 'bg-[#28B674]' : 'bg-gray-300'
                   }`}
                 >
                   <span
-                    className={`block w-5 h-5 rounded-full bg-white shadow-md transform transition-transform ${
+ className={`block w-5 h-5 rounded-full bg-white shadow-md transform transition-transform ${
                       bannerEnabled ? 'translate-x-6' : 'translate-x-0.5'
                     }`}
                   />
@@ -457,9 +457,9 @@ export const AdminSettingsPage: React.FC = () => {
               {/* Live Preview */}
               <div className="pt-2">
                 <div className="text-xs font-bold uppercase tracking-wider text-gray-500 mb-2">Live Visitor Preview:</div>
-                <div className="p-3 bg-[#023A23] text-white rounded-lg flex items-center justify-between text-xs border border-[#28B674]/30 shadow-md">
+ <div className="p-3 bg-[#023A23] text-white rounded-lg flex items-center justify-between text-xs shadow-md">
                   <div className="flex items-center gap-2">
-                    <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#F2AE37] text-[#023A23]">
+ <span className="px-2 py-0.5 rounded text-[10px] font-bold bg-[#F2AE37] text-[#023A23]">
                       {bannerTitle || 'Notice'}
                     </span>
                     <span className="text-white/90 line-clamp-1">{bannerText}</span>
@@ -480,7 +480,7 @@ export const AdminSettingsPage: React.FC = () => {
 
             <button
               type="submit"
-              className="px-5 py-2.5 rounded-lg bg-[#023A23] hover:bg-[#023A23]/90 text-white font-semibold text-xs transition-colors shadow-sm"
+ className="px-5 py-2.5 rounded-lg bg-[#023A23] hover:bg-[#023A23]/90 text-white font-semibold text-xs transition-colors shadow-sm"
             >
               Save Configuration
             </button>

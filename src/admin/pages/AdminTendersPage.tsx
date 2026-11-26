@@ -178,7 +178,7 @@ export const AdminTendersPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {feedbackNotice && (
-        <div className="p-3.5 rounded-xl bg-emerald-500 text-[#023A23] font-bold text-xs flex items-center gap-2 shadow-lg">
+ <div className="p-3.5 rounded-xl bg-emerald-500 text-[#023A23] font-bold text-xs flex items-center gap-2 shadow-lg">
           <CheckCircle2 size={16} />
           <span>{feedbackNotice}</span>
         </div>
@@ -203,7 +203,7 @@ export const AdminTendersPage: React.FC = () => {
             setFormClosingDate('');
             setIsCreateOpen(true);
           }}
-          className="inline-flex items-center gap-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2.5 px-4 rounded-lg shadow-sm transition-colors cursor-pointer"
+ className="inline-flex items-center gap-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2.5 px-4 rounded-lg shadow-sm transition-colors cursor-pointer"
         >
           <Plus size={16} />
           <span>Post New Tender</span>
@@ -211,7 +211,7 @@ export const AdminTendersPage: React.FC = () => {
       </div>
 
       {/* Filters */}
-      <div className="bg-white p-4 rounded-xl border border-black/10 shadow-sm flex flex-col sm:flex-row items-center gap-3">
+ <div className="bg-white p-4 rounded-xl shadow-sm flex flex-col sm:flex-row items-center gap-3">
         <div className="relative flex-1 w-full">
           <Search size={16} className="absolute left-3 top-3 text-gray-400" />
           <input
@@ -228,7 +228,7 @@ export const AdminTendersPage: React.FC = () => {
           <select
             value={categoryFilter}
             onChange={e => setCategoryFilter(e.target.value)}
-            className="text-xs border border-gray-200 rounded-lg py-2 px-3 focus:outline-none focus:border-[#28B674] bg-white text-gray-700"
+ className="text-xs rounded-lg py-2 px-3 focus:outline-none focus:border-[#28B674] bg-white text-gray-700"
           >
             <option value="ALL">All Categories</option>
             <option value="Infrastructure & Civils">Infrastructure & Civils</option>
@@ -241,10 +241,10 @@ export const AdminTendersPage: React.FC = () => {
       </div>
 
       {/* Table */}
-      <div className="bg-white rounded-xl border border-black/10 shadow-sm overflow-hidden">
+ <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs">
-            <thead className="bg-[#023A23] text-white uppercase text-[10px] tracking-wider font-bold">
+ <thead className="bg-[#023A23] text-white uppercase text-[10px] tracking-wider font-bold">
               <tr>
                 <th className="py-3 px-4">Ref Number</th>
                 <th className="py-3 px-4">Tender Title & Scope</th>
@@ -256,7 +256,7 @@ export const AdminTendersPage: React.FC = () => {
             </thead>
             <tbody className="divide-y divide-gray-100">
               {filtered.map(t => (
-                <tr key={t.id} className="hover:bg-gray-50/70 transition-colors">
+ <tr key={t.id} className="hover:bg-gray-50/70 transition-colors">
                   <td className="py-3.5 px-4 font-bold text-[#023A23]">{t.refNo}</td>
                   <td className="py-3.5 px-4 font-semibold text-gray-800 max-w-sm">{t.title}</td>
                   <td className="py-3.5 px-4 text-gray-600">{t.category}</td>
@@ -267,22 +267,22 @@ export const AdminTendersPage: React.FC = () => {
                   </td>
                   <td className="py-3.5 px-4">
                     {t.status === 'OPEN' && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+ <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
                         Open for Bids
                       </span>
                     )}
                     {t.status === 'EVALUATING' && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F2AE37]/20 text-[#023A23] border border-[#F2AE37]/40">
+ <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F2AE37]/20 text-[#023A23]">
                         In Evaluation
                       </span>
                     )}
                     {t.status === 'PENDING_APPROVAL' && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900 border border-amber-300">
+ <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-100 text-amber-900">
                         Awaiting Approval
                       </span>
                     )}
                     {t.status === 'CLOSED' && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-gray-100 text-gray-700">
+ <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-gray-100 text-gray-700">
                         Closed
                       </span>
                     )}
@@ -291,7 +291,7 @@ export const AdminTendersPage: React.FC = () => {
                     <div className="flex items-center justify-end gap-1.5">
                       <button
                         onClick={() => handleStartEdit(t)}
-                        className="p-1.5 rounded text-gray-600 hover:text-[#023A23] hover:bg-black/5"
+ className="p-1.5 rounded text-gray-600 hover:text-[#023A23] hover:bg-black/5"
                       >
                         <Edit2 size={15} />
                       </button>
@@ -300,7 +300,7 @@ export const AdminTendersPage: React.FC = () => {
                           setDeletionTarget(t);
                           setDeletionReason('');
                         }}
-                        className="p-1.5 rounded text-red-500 hover:text-red-700 hover:bg-red-50"
+ className="p-1.5 rounded text-red-500 hover:text-red-700 hover:bg-red-50"
                       >
                         <Trash2 size={15} />
                       </button>
@@ -315,8 +315,8 @@ export const AdminTendersPage: React.FC = () => {
 
       {/* ─── Modal Form ──────────────────────────────────────────────── */}
       {(isCreateOpen || editingItem) && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl border border-black/10">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
+ <div className="bg-white rounded-2xl max-w-lg w-full p-6 shadow-2xl">
             <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-4">
               <h3 className="text-base font-bold text-[#023A23]">
                 {editingItem ? 'Edit Tender Notice' : 'Post Tender Notice'}
@@ -363,7 +363,7 @@ export const AdminTendersPage: React.FC = () => {
                   <select
                     value={formCategory}
                     onChange={e => setFormCategory(e.target.value as any)}
-                    className="w-full border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#28B674] bg-white"
+ className="w-full rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#28B674] bg-white"
                   >
                     <option value="Infrastructure & Civils">Infrastructure & Civils</option>
                     <option value="Security & Facilities">Security & Facilities</option>
@@ -390,7 +390,7 @@ export const AdminTendersPage: React.FC = () => {
                 <select
                   value={formStatus}
                   onChange={e => setFormStatus(e.target.value as any)}
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#28B674] bg-white"
+ className="w-full rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#28B674] bg-white"
                 >
                   <option value="OPEN">Open for Bids</option>
                   <option value="EVALUATING">In Evaluation</option>
@@ -405,13 +405,13 @@ export const AdminTendersPage: React.FC = () => {
                     setIsCreateOpen(false);
                     setEditingItem(null);
                   }}
-                  className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 font-semibold text-xs hover:bg-gray-50"
+ className="px-4 py-2 rounded-lg text-gray-700 font-semibold text-xs hover:bg-gray-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2 rounded-lg bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider"
+ className="px-5 py-2 rounded-lg bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider"
                 >
                   {editingItem ? 'Save Changes' : isSuperAdmin ? 'Publish Tender' : 'Submit for Review'}
                 </button>
@@ -423,10 +423,10 @@ export const AdminTendersPage: React.FC = () => {
 
       {/* ─── Deletion Confirmation Modal ─────────────────────────────── */}
       {deletionTarget && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-black/10">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in">
+ <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl">
             <div className="flex items-center gap-3 text-red-600 mb-3">
-              <div className="p-2.5 rounded-full bg-red-100">
+ <div className="p-2.5 rounded-full bg-red-100">
                 <AlertTriangle size={24} />
               </div>
               <div>
@@ -463,14 +463,14 @@ export const AdminTendersPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setDeletionTarget(null)}
-                className="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 font-semibold text-xs hover:bg-gray-50"
+ className="px-4 py-2 rounded-lg text-gray-700 font-semibold text-xs hover:bg-gray-50"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={handleConfirmDeletion}
-                className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider"
+ className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white font-bold text-xs uppercase tracking-wider"
               >
                 {isSuperAdmin ? 'Permanently Delete' : 'Submit Deletion Request'}
               </button>

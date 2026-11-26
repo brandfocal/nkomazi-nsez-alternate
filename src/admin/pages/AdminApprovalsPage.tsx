@@ -161,7 +161,7 @@ export const AdminApprovalsPage: React.FC = () => {
               Governance & Approval Center
             </h1>
             {pendingCount > 0 && (
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F2AE37]/25 text-[#023A23] border border-[#F2AE37]/50">
+ <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F2AE37]/25 text-[#023A23]">
                 {pendingCount} Pending
               </span>
             )}
@@ -172,20 +172,20 @@ export const AdminApprovalsPage: React.FC = () => {
         </div>
 
         {/* Status Filter Tabs */}
-        <div className="flex items-center bg-white p-1 rounded-lg border border-gray-200 shadow-sm">
+ <div className="flex items-center bg-white p-1 rounded-lg shadow-sm">
           {(['ALL', 'PENDING', 'APPROVED', 'REJECTED'] as const).map((tab) => (
             <button
               key={tab}
               onClick={() => setFilterStatus(tab)}
               className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
                 filterStatus === tab
-                  ? 'bg-[#023A23] text-white shadow-xs'
-                  : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+ ? 'bg-[#023A23] text-white shadow-xs'
+ : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
               }`}
             >
               {tab.charAt(0) + tab.slice(1).toLowerCase()}
               {tab === 'PENDING' && pendingCount > 0 && (
-                <span className="ml-1.5 px-1.5 py-0.2 bg-amber-400 text-[#081B12] rounded-full text-[10px] font-bold">
+ <span className="ml-1.5 px-1.5 py-0.2 bg-amber-400 text-[#081B12] rounded-full text-[10px] font-bold">
                   {pendingCount}
                 </span>
               )}
@@ -197,8 +197,8 @@ export const AdminApprovalsPage: React.FC = () => {
       {/* Role explanation alert */}
       <div className={`p-4 rounded-xl border flex items-start gap-3 ${
         isSuperAdmin
-          ? 'bg-emerald-50 border-emerald-200 text-emerald-900'
-          : 'bg-amber-50 border-amber-200 text-amber-900'
+ ? 'bg-emerald-50 text-emerald-900'
+ : 'bg-amber-50 text-amber-900'
       }`}>
         <ShieldCheck className={`w-5 h-5 shrink-0 mt-0.5 ${isSuperAdmin ? 'text-[#28B674]' : 'text-amber-600'}`} />
         <div className="text-sm">
@@ -217,7 +217,7 @@ export const AdminApprovalsPage: React.FC = () => {
       {/* List of Approvals */}
       <div className="space-y-4">
         {filteredApprovals.length === 0 ? (
-          <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
+ <div className="bg-white rounded-xl p-12 text-center">
             <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto mb-3 opacity-60" />
             <h3 className="font-bold text-[#023A23] text-lg">All Caught Up!</h3>
             <p className="text-sm text-gray-500 mt-1">
@@ -228,7 +228,7 @@ export const AdminApprovalsPage: React.FC = () => {
           filteredApprovals.map((req) => (
             <div
               key={req.id}
-              className={`bg-white rounded-xl border shadow-sm p-5 transition-all ${
+ className={`bg-white rounded-xl shadow-sm p-5 transition-all ${
                 req.status === 'PENDING'
                   ? 'border-amber-200 hover:border-amber-300'
                   : 'border-gray-200'
@@ -241,20 +241,20 @@ export const AdminApprovalsPage: React.FC = () => {
                     <span
                       className={`px-2.5 py-0.5 rounded-full text-xs font-semibold ${
                         req.status === 'PENDING'
-                          ? 'bg-amber-100 text-amber-800 border border-amber-200'
+ ? 'bg-amber-100 text-amber-800 '
                           : req.status === 'APPROVED'
-                          ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
-                          : 'bg-red-100 text-red-800 border border-red-200'
+ ? 'bg-emerald-100 text-emerald-800 '
+ : 'bg-red-100 text-red-800 '
                       }`}
                     >
                       {req.status}
                     </span>
 
-                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700">
+ <span className="px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-700">
                       {req.itemType}
                     </span>
 
-                    <span className="px-2 py-0.5 rounded text-xs font-medium bg-amber-50 text-amber-700 border border-amber-200">
+ <span className="px-2 py-0.5 rounded text-xs font-medium bg-amber-50 text-amber-700">
                       ACTION: {req.action}
                     </span>
 
@@ -268,13 +268,13 @@ export const AdminApprovalsPage: React.FC = () => {
                   </h3>
 
                   {/* Justification Box */}
-                  <div className="p-3 bg-gray-50 rounded-lg text-xs text-gray-700 border border-gray-100">
+ <div className="p-3 bg-gray-50 rounded-lg text-xs text-gray-700">
                     <span className="font-semibold text-gray-900">Operator Justification: </span>
                     {req.reason}
                   </div>
 
                   {req.reviewNotes && (
-                    <div className="p-2.5 bg-red-50 rounded-lg text-xs text-red-700 border border-red-200">
+ <div className="p-2.5 bg-red-50 rounded-lg text-xs text-red-700">
                       <span className="font-semibold">Reviewer Notes: </span>
                       {req.reviewNotes}
                     </div>
@@ -306,21 +306,21 @@ export const AdminApprovalsPage: React.FC = () => {
                       <>
                         <button
                           onClick={() => openRejectModal(req)}
-                          className="px-3.5 py-2 rounded-lg border border-red-200 text-red-600 hover:bg-red-50 text-xs font-semibold transition-colors flex items-center gap-1.5"
+ className="px-3.5 py-2 rounded-lg text-red-600 hover:bg-red-50 text-xs font-semibold transition-colors flex items-center gap-1.5"
                         >
                           <XCircle className="w-4 h-4" />
                           Decline
                         </button>
                         <button
                           onClick={() => handleApprove(req)}
-                          className="px-4 py-2 rounded-lg bg-[#023A23] hover:bg-[#023A23]/90 text-white text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm"
+ className="px-4 py-2 rounded-lg bg-[#023A23] hover:bg-[#023A23]/90 text-white text-xs font-semibold transition-colors flex items-center gap-1.5 shadow-sm"
                         >
                           <CheckCircle2 className="w-4 h-4 text-[#28B674]" />
                           Approve & Execute
                         </button>
                       </>
                     ) : (
-                      <div className="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-500 text-xs font-medium flex items-center gap-1.5">
+ <div className="px-3 py-1.5 rounded-lg bg-gray-100 text-gray-500 text-xs font-medium flex items-center gap-1.5">
                         <Clock className="w-3.5 h-3.5" />
                         Awaiting Super Admin Review
                       </div>
@@ -335,8 +335,8 @@ export const AdminApprovalsPage: React.FC = () => {
 
       {/* Rejection Modal */}
       {isRejectModalOpen && activeItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl p-6 animate-in fade-in zoom-in duration-200">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+ <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl p-6 animate-in fade-in zoom-in duration-200">
             <h3 className="text-lg font-bold text-[#023A23]">
               Decline Request
             </h3>
@@ -362,14 +362,14 @@ export const AdminApprovalsPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setIsRejectModalOpen(false)}
-                className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
+ className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={handleConfirmReject}
-                className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-medium transition-colors"
+ className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm font-medium transition-colors"
               >
                 Confirm Decline
               </button>

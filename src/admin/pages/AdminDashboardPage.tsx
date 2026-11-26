@@ -48,9 +48,9 @@ export const AdminDashboardPage: React.FC = () => {
   return (
     <div className="space-y-6">
       {/* ─── Executive Welcome Banner ─────────────────────────────────── */}
-      <div className="bg-gradient-to-r from-[#023A23] via-[#08301E] to-[#0A452B] rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden border border-[#28B674]/30">
+ <div className="bg-gradient-to-r from-[#023A23] via-[#08301E] to-[#0A452B] rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
         <div
-          className="pointer-events-none absolute -right-10 -bottom-10 w-72 h-72 rounded-full bg-[#F2AE37]/10 blur-2xl"
+ className="pointer-events-none absolute -right-10 -bottom-10 w-72 h-72 rounded-full bg-[#F2AE37]/10 blur-2xl"
           aria-hidden="true"
         />
 
@@ -59,8 +59,8 @@ export const AdminDashboardPage: React.FC = () => {
             <span
               className={`text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full ${
                 isSuperAdmin
-                  ? 'bg-[#F2AE37] text-[#023A23]'
-                  : 'bg-[#28B674] text-[#023A23]'
+ ? 'bg-[#F2AE37] text-[#023A23]'
+ : 'bg-[#28B674] text-[#023A23]'
               }`}
             >
               {isSuperAdmin ? 'Super Administrator' : 'Standard Administrator'}
@@ -82,13 +82,13 @@ export const AdminDashboardPage: React.FC = () => {
           <div className="flex flex-wrap gap-3">
             <Link
               to="/admin/opportunities"
-              className="inline-flex items-center gap-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2.5 px-4 rounded-lg no-underline shadow-md transition-colors"
+ className="inline-flex items-center gap-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2.5 px-4 rounded-lg no-underline shadow-md transition-colors"
             >
               <Plus size={15} /> Add Investment Opportunity
             </Link>
             <Link
               to="/admin/tenders"
-              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider py-2.5 px-4 rounded-lg no-underline border border-white/20 transition-colors"
+ className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs uppercase tracking-wider py-2.5 px-4 rounded-lg no-underline transition-colors"
             >
               <Plus size={15} /> Publish Tender
             </Link>
@@ -98,9 +98,9 @@ export const AdminDashboardPage: React.FC = () => {
 
       {/* ─── Super Admin Pending Approvals Alert ──────────────────────── */}
       {isSuperAdmin && pendingApprovals.length > 0 && (
-        <div className="bg-amber-500/10 border-2 border-[#F2AE37] rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+ <div className="bg-amber-500/10 rounded-xl p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div className="flex items-start gap-3">
-            <div className="p-2 rounded-lg bg-[#F2AE37]/20 text-[#D4911E] flex-shrink-0">
+ <div className="p-2 rounded-lg bg-[#F2AE37]/20 text-[#D4911E] flex-shrink-0">
               <AlertCircle size={22} />
             </div>
             <div>
@@ -114,7 +114,7 @@ export const AdminDashboardPage: React.FC = () => {
           </div>
           <Link
             to="/admin/approvals"
-            className="inline-flex items-center gap-1.5 bg-[#F2AE37] hover:bg-[#e09e2a] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg no-underline shadow-sm transition-colors whitespace-nowrap"
+ className="inline-flex items-center gap-1.5 bg-[#F2AE37] hover:bg-[#e09e2a] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2 px-4 rounded-lg no-underline shadow-sm transition-colors whitespace-nowrap"
           >
             Review Queue <ArrowRight size={14} />
           </Link>
@@ -124,12 +124,12 @@ export const AdminDashboardPage: React.FC = () => {
       {/* ─── KPI Metrics Grid ─────────────────────────────────────────── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {/* Active Opportunities */}
-        <div className="bg-white rounded-xl p-5 border border-black/10 shadow-sm hover:shadow-md transition-shadow">
+ <div className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-3">
-            <div className="p-2.5 rounded-lg bg-emerald-50 text-[#28B674]">
+ <div className="p-2.5 rounded-lg bg-emerald-50 text-[#28B674]">
               <Briefcase size={20} />
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
+ <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-emerald-100 text-emerald-800">
               Live
             </span>
           </div>
@@ -144,12 +144,12 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* Open Tenders */}
-        <div className="bg-white rounded-xl p-5 border border-black/10 shadow-sm hover:shadow-md transition-shadow">
+ <div className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-3">
-            <div className="p-2.5 rounded-lg bg-[#023A23]/10 text-[#023A23]">
+ <div className="p-2.5 rounded-lg bg-[#023A23]/10 text-[#023A23]">
               <FileText size={20} />
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#023A23]/10 text-[#023A23]">
+ <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#023A23]/10 text-[#023A23]">
               Procurement
             </span>
           </div>
@@ -164,12 +164,12 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* Investor Resources */}
-        <div className="bg-white rounded-xl p-5 border border-black/10 shadow-sm hover:shadow-md transition-shadow">
+ <div className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-3">
-            <div className="p-2.5 rounded-lg bg-[#F2AE37]/15 text-[#D4911E]">
+ <div className="p-2.5 rounded-lg bg-[#F2AE37]/15 text-[#D4911E]">
               <FolderDown size={20} />
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#F2AE37]/20 text-[#023A23]">
+ <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#F2AE37]/20 text-[#023A23]">
               Downloads
             </span>
           </div>
@@ -184,16 +184,16 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* Approvals Queue */}
-        <div className="bg-white rounded-xl p-5 border border-black/10 shadow-sm hover:shadow-md transition-shadow">
+ <div className="bg-white rounded-xl p-5 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-3">
-            <div className="p-2.5 rounded-lg bg-[#E77227]/10 text-[#E77227]">
+ <div className="p-2.5 rounded-lg bg-[#E77227]/10 text-[#E77227]">
               <CheckSquare size={20} />
             </div>
             <span
               className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                 pendingApprovals.length > 0
-                  ? 'bg-[#F2AE37]/25 text-[#023A23] border border-[#F2AE37]/50 animate-pulse'
-                  : 'bg-gray-100 text-gray-600'
+ ? 'bg-[#F2AE37]/25 text-[#023A23] animate-pulse'
+ : 'bg-gray-100 text-gray-600'
               }`}
             >
               {pendingApprovals.length} Pending
@@ -213,7 +213,7 @@ export const AdminDashboardPage: React.FC = () => {
       {/* ─── Two-Column Operations Layout ─────────────────────────────── */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Recent Pending Queue Preview */}
-        <div className="lg:col-span-2 bg-white rounded-xl border border-black/10 p-5 shadow-sm">
+ <div className="lg:col-span-2 bg-white rounded-xl p-5 shadow-sm">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
             <div>
               <h2 className="text-sm font-bold text-[#023A23] uppercase tracking-wide">
@@ -242,15 +242,15 @@ export const AdminDashboardPage: React.FC = () => {
               {pendingApprovals.slice(0, 3).map(appr => (
                 <div
                   key={appr.id}
-                  className="p-3.5 rounded-lg border border-gray-200 bg-gray-50/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
+ className="p-3.5 rounded-lg bg-gray-50/60 flex flex-col sm:flex-row sm:items-center justify-between gap-3"
                 >
                   <div>
                     <div className="flex items-center gap-2 mb-1">
                       <span
                         className={`text-[9px] font-bold uppercase px-2 py-0.5 rounded ${
                           appr.action === 'DELETE'
-                            ? 'bg-red-100 text-red-800'
-                            : 'bg-emerald-100 text-emerald-800'
+ ? 'bg-red-100 text-red-800'
+ : 'bg-emerald-100 text-emerald-800'
                         }`}
                       >
                         Request to {appr.action}
@@ -265,7 +265,7 @@ export const AdminDashboardPage: React.FC = () => {
 
                   <Link
                     to="/admin/approvals"
-                    className="self-start sm:self-center px-3 py-1.5 rounded-md text-xs font-bold bg-[#023A23] text-white hover:bg-[#28B674] hover:text-[#023A23] transition-colors no-underline whitespace-nowrap"
+ className="self-start sm:self-center px-3 py-1.5 rounded-md text-xs font-bold bg-[#023A23] text-white hover:bg-[#28B674] hover:text-[#023A23] transition-colors no-underline whitespace-nowrap"
                   >
                     Review Action
                   </Link>
@@ -276,7 +276,7 @@ export const AdminDashboardPage: React.FC = () => {
         </div>
 
         {/* POPIA Audit Trail Log */}
-        <div className="bg-white rounded-xl border border-black/10 p-5 shadow-sm flex flex-col">
+ <div className="bg-white rounded-xl p-5 shadow-sm flex flex-col">
           <div className="flex items-center justify-between mb-4 pb-3 border-b border-gray-100">
             <div>
               <h2 className="text-sm font-bold text-[#023A23] uppercase tracking-wide flex items-center gap-1.5">

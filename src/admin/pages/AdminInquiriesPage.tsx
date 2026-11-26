@@ -200,33 +200,33 @@ export const AdminInquiriesPage: React.FC = () => {
   const getTypeBadge = (type: InquiryItem['type']) => {
     switch (type) {
       case 'INVESTOR_LEAD':
-        return { label: 'Investor Lead', bg: 'bg-emerald-50 text-emerald-800 border-emerald-200' };
+ return { label: 'Investor Lead', bg: 'bg-emerald-50 text-emerald-800 ' };
       case 'TENDER_QUERY':
-        return { label: 'Tender Query', bg: 'bg-amber-50 text-amber-800 border-amber-200' };
+ return { label: 'Tender Query', bg: 'bg-amber-50 text-amber-800 ' };
       case 'MSME_REGISTRATION':
-        return { label: 'MSME Incubator', bg: 'bg-blue-50 text-blue-800 border-blue-200' };
+ return { label: 'MSME Incubator', bg: 'bg-blue-50 text-blue-800 ' };
       case 'STAKEHOLDER':
-        return { label: 'Stakeholder', bg: 'bg-purple-50 text-purple-800 border-purple-200' };
+ return { label: 'Stakeholder', bg: 'bg-purple-50 text-purple-800 ' };
       default:
-        return { label: 'General Contact', bg: 'bg-gray-100 text-gray-700 border-gray-200' };
+ return { label: 'General Contact', bg: 'bg-gray-100 text-gray-700 ' };
     }
   };
 
   const getPriorityBadge = (priority: InquiryItem['priority']) => {
     switch (priority) {
       case 'HIGH':
-        return 'bg-red-50 text-red-700 border-red-200';
+ return 'bg-red-50 text-red-700 ';
       case 'MEDIUM':
-        return 'bg-amber-50 text-amber-700 border-amber-200';
+ return 'bg-amber-50 text-amber-700 ';
       default:
-        return 'bg-gray-50 text-gray-600 border-gray-200';
+ return 'bg-gray-50 text-gray-600 ';
     }
   };
 
   return (
     <div className="space-y-6" style={{ fontFamily: BODY_FONT }}>
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-[#023A23] via-[#044c2f] to-[#023A23] p-6 sm:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-emerald-900/30">
+ <div className="bg-gradient-to-r from-[#023A23] via-[#044c2f] to-[#023A23] p-6 sm:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2 text-[#F2AE37] text-xs font-semibold uppercase tracking-wider mb-2">
             <Inbox size={16} />
@@ -244,7 +244,7 @@ export const AdminInquiriesPage: React.FC = () => {
         </div>
         <button
           onClick={handleExportCSV}
-          className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-all duration-200 border border-white/20 self-start md:self-auto shrink-0 shadow-sm"
+ className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white/10 hover:bg-white/20 text-white font-medium text-sm transition-all duration-200 self-start md:self-auto shrink-0 shadow-sm"
         >
           <Download size={16} />
           <span>Export Leads (CSV)</span>
@@ -253,7 +253,7 @@ export const AdminInquiriesPage: React.FC = () => {
 
       {/* KPI Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Total Submissions
           </div>
@@ -261,7 +261,7 @@ export const AdminInquiriesPage: React.FC = () => {
             {inquiries.length}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             New / Unread Leads
           </div>
@@ -269,7 +269,7 @@ export const AdminInquiriesPage: React.FC = () => {
             {totalNew}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Investor Expressions of Interest
           </div>
@@ -277,7 +277,7 @@ export const AdminInquiriesPage: React.FC = () => {
             {totalInvestorLeads}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Tender Enquiries
           </div>
@@ -288,7 +288,7 @@ export const AdminInquiriesPage: React.FC = () => {
       </div>
 
       {/* Filters and Search Bar */}
-      <div className="bg-white p-4 sm:p-5 rounded-xl border border-gray-100 shadow-sm space-y-4">
+ <div className="bg-white p-4 sm:p-5 rounded-xl shadow-sm space-y-4">
         <div className="flex flex-col md:flex-row gap-3">
           <div className="relative flex-1">
             <Search
@@ -309,7 +309,7 @@ export const AdminInquiriesPage: React.FC = () => {
               value={typeFilter}
               onChange={(e) => setTypeFilter(e.target.value)}
               aria-label="Filter by Type"
-              className="px-3 py-2.5 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
+ className="px-3 py-2.5 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
             >
               <option value="ALL">All Inquiry Types</option>
               <option value="INVESTOR_LEAD">Investor Leads</option>
@@ -323,7 +323,7 @@ export const AdminInquiriesPage: React.FC = () => {
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
               aria-label="Filter by Status"
-              className="px-3 py-2.5 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
+ className="px-3 py-2.5 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
             >
               <option value="ALL">All Statuses</option>
               <option value="NEW">New / Unread</option>
@@ -336,7 +336,7 @@ export const AdminInquiriesPage: React.FC = () => {
               value={priorityFilter}
               onChange={(e) => setPriorityFilter(e.target.value)}
               aria-label="Filter by Priority"
-              className="px-3 py-2.5 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
+ className="px-3 py-2.5 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
             >
               <option value="ALL">All Priorities</option>
               <option value="HIGH">High Priority</option>
@@ -348,7 +348,7 @@ export const AdminInquiriesPage: React.FC = () => {
       </div>
 
       {/* Inquiries List / Table */}
-      <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+ <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         {filtered.length === 0 ? (
           <div className="p-12 text-center">
             <Inbox size={40} className="mx-auto text-gray-300 mb-3" />
@@ -357,7 +357,7 @@ export const AdminInquiriesPage: React.FC = () => {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50/75 border-b border-gray-100 text-xs uppercase font-semibold text-gray-500 tracking-wider">
+ <thead className="bg-gray-50/75 text-xs uppercase font-semibold text-gray-500 tracking-wider">
                 <tr>
                   <th className="py-3.5 px-4 sm:px-6">Sender &amp; Organisation</th>
                   <th className="py-3.5 px-4">Subject &amp; Message</th>
@@ -372,8 +372,8 @@ export const AdminInquiriesPage: React.FC = () => {
                   return (
                     <tr
                       key={item.id}
-                      className={`hover:bg-gray-50/75 transition-colors cursor-pointer ${
-                        item.status === 'NEW' ? 'bg-amber-50/20 font-medium' : ''
+ className={`hover:bg-gray-50/75 transition-colors cursor-pointer ${
+ item.status === 'NEW' ? 'bg-amber-50/20 font-medium' : ''
                       }`}
                       onClick={() => handleOpenDetail(item)}
                     >
@@ -386,7 +386,7 @@ export const AdminInquiriesPage: React.FC = () => {
                             {item.name}
                           </span>
                           {item.status === 'NEW' && (
-                            <span className="w-2 h-2 rounded-full bg-[#e87326] shrink-0" />
+ <span className="w-2 h-2 rounded-full bg-[#e87326] shrink-0" />
                           )}
                         </div>
                         {item.company && (
@@ -435,12 +435,12 @@ export const AdminInquiriesPage: React.FC = () => {
                           <span
                             className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold ${
                               item.status === 'NEW'
-                                ? 'bg-amber-100 text-amber-800'
+ ? 'bg-amber-100 text-amber-800'
                                 : item.status === 'IN_REVIEW'
-                                ? 'bg-blue-100 text-blue-800'
+ ? 'bg-blue-100 text-blue-800'
                                 : item.status === 'RESPONDED'
-                                ? 'bg-emerald-100 text-emerald-800'
-                                : 'bg-gray-100 text-gray-600'
+ ? 'bg-emerald-100 text-emerald-800'
+ : 'bg-gray-100 text-gray-600'
                             }`}
                           >
                             {item.status === 'NEW' && <Clock size={12} />}
@@ -461,7 +461,7 @@ export const AdminInquiriesPage: React.FC = () => {
                         <div className="flex items-center justify-end gap-1.5">
                           <button
                             onClick={() => handleOpenDetail(item)}
-                            className="p-1.5 rounded-lg text-gray-400 hover:text-[#023A23] hover:bg-gray-100 transition-colors"
+ className="p-1.5 rounded-lg text-gray-400 hover:text-[#023A23] hover:bg-gray-100 transition-colors"
                             title="View Full Inquiry"
                           >
                             <MessageSquare size={16} />
@@ -470,7 +470,7 @@ export const AdminInquiriesPage: React.FC = () => {
                             href={`mailto:${item.email}?subject=Re: [Nkomazi SEZ] ${encodeURIComponent(
                               item.subject
                             )}`}
-                            className="p-1.5 rounded-lg text-gray-400 hover:text-[#28B674] hover:bg-gray-100 transition-colors"
+ className="p-1.5 rounded-lg text-gray-400 hover:text-[#28B674] hover:bg-gray-100 transition-colors"
                             title="Reply by Email"
                           >
                             <Mail size={16} />
@@ -482,7 +482,7 @@ export const AdminInquiriesPage: React.FC = () => {
                                 item.status === 'ARCHIVED' ? 'IN_REVIEW' : 'ARCHIVED'
                               )
                             }
-                            className="p-1.5 rounded-lg text-gray-400 hover:text-amber-600 hover:bg-gray-100 transition-colors"
+ className="p-1.5 rounded-lg text-gray-400 hover:text-amber-600 hover:bg-gray-100 transition-colors"
                             title={item.status === 'ARCHIVED' ? 'Unarchive' : 'Archive'}
                           >
                             <Archive size={16} />
@@ -490,7 +490,7 @@ export const AdminInquiriesPage: React.FC = () => {
                           {isSuperAdmin && (
                             <button
                               onClick={() => handleDeleteInquiry(item.id, item.name)}
-                              className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors"
+ className="p-1.5 rounded-lg text-gray-400 hover:text-red-600 hover:bg-red-50 transition-colors"
                               title="Delete Record"
                             >
                               <Trash2 size={16} />
@@ -509,8 +509,8 @@ export const AdminInquiriesPage: React.FC = () => {
 
       {/* Detail Slide-over / Modal */}
       {selectedInquiry && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-gray-100 my-8">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto">
+ <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl my-8">
             <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-5">
               <div className="flex items-center gap-3">
                 <span
@@ -527,7 +527,7 @@ export const AdminInquiriesPage: React.FC = () => {
               </div>
               <button
                 onClick={() => setSelectedInquiry(null)}
-                className="text-gray-400 hover:text-gray-600 p-1 rounded-lg hover:bg-gray-100"
+ className="text-gray-400 hover:text-gray-600 p-1 rounded-lg hover:bg-gray-100"
               >
                 <X size={20} />
               </button>
@@ -535,7 +535,7 @@ export const AdminInquiriesPage: React.FC = () => {
 
             <div className="space-y-5">
               {/* Sender Profile Box */}
-              <div className="bg-gray-50/75 p-4 rounded-xl border border-gray-100 space-y-2">
+ <div className="bg-gray-50/75 p-4 rounded-xl space-y-2">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                   <h3
                     className="text-lg font-bold text-gray-900"
@@ -544,7 +544,7 @@ export const AdminInquiriesPage: React.FC = () => {
                     {selectedInquiry.name}
                   </h3>
                   {selectedInquiry.company && (
-                    <span className="text-xs font-semibold text-[#023A23] bg-emerald-100/60 px-2.5 py-1 rounded-md">
+ <span className="text-xs font-semibold text-[#023A23] bg-emerald-100/60 px-2.5 py-1 rounded-md">
                       {selectedInquiry.company}
                     </span>
                   )}
@@ -584,7 +584,7 @@ export const AdminInquiriesPage: React.FC = () => {
                 >
                   {selectedInquiry.subject}
                 </h4>
-                <div className="bg-white p-4 rounded-xl border border-gray-200 text-sm text-gray-700 leading-relaxed whitespace-pre-line shadow-inner">
+ <div className="bg-white p-4 rounded-xl text-sm text-gray-700 leading-relaxed whitespace-pre-line shadow-inner">
                   {selectedInquiry.message}
                 </div>
               </div>
@@ -598,7 +598,7 @@ export const AdminInquiriesPage: React.FC = () => {
                   <select
                     value={editStatus}
                     onChange={(e) => setEditStatus(e.target.value as InquiryItem['status'])}
-                    className="w-full px-3 py-2 rounded-lg border border-gray-200 text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674]"
+ className="w-full px-3 py-2 rounded-lg text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674]"
                   >
                     <option value="NEW">New / Unread</option>
                     <option value="IN_REVIEW">In Review</option>
@@ -614,7 +614,7 @@ export const AdminInquiriesPage: React.FC = () => {
                   <select
                     value={editPriority}
                     onChange={(e) => setEditPriority(e.target.value as InquiryItem['priority'])}
-                    className="w-full px-3 py-2 rounded-lg border border-gray-200 text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674]"
+ className="w-full px-3 py-2 rounded-lg text-xs font-medium bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674]"
                   >
                     <option value="HIGH">High Priority</option>
                     <option value="MEDIUM">Medium Priority</option>
@@ -656,7 +656,7 @@ export const AdminInquiriesPage: React.FC = () => {
                   href={`mailto:${selectedInquiry.email}?subject=Re: [Nkomazi SEZ] ${encodeURIComponent(
                     selectedInquiry.subject
                   )}`}
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#28B674] hover:bg-[#20925c] text-white text-xs font-semibold transition-colors shadow-sm"
+ className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#28B674] hover:bg-[#20925c] text-white text-xs font-semibold transition-colors shadow-sm"
                 >
                   <Send size={14} />
                   <span>Send Direct Email Reply</span>
@@ -666,14 +666,14 @@ export const AdminInquiriesPage: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setSelectedInquiry(null)}
-                    className="px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 text-xs font-medium transition-colors"
+ className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-50 text-xs font-medium transition-colors"
                   >
                     Cancel
                   </button>
                   <button
                     type="button"
                     onClick={handleSaveDetail}
-                    className="px-5 py-2 rounded-lg bg-[#023A23] hover:bg-[#035232] text-white text-xs font-semibold transition-colors shadow-sm"
+ className="px-5 py-2 rounded-lg bg-[#023A23] hover:bg-[#035232] text-white text-xs font-semibold transition-colors shadow-sm"
                   >
                     Save Changes
                   </button>

@@ -138,22 +138,22 @@ export const AdminLayout: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-[#F4F6F4] text-[#1A2621] flex flex-col lg:flex-row font-['Poppins',system-ui,sans-serif]">
+ <div className="min-h-screen bg-[#F4F6F4] text-[#1A2621] flex flex-col lg:flex-row font-['Poppins',system-ui,sans-serif]">
       {/* ─── Mobile Header ─────────────────────────────────────────── */}
-      <header className="lg:hidden bg-[#023A23] text-white px-4 py-3 flex items-center justify-between border-b border-[#28B674]/20 sticky top-0 z-50">
+ <header className="lg:hidden bg-[#023A23] text-white px-4 py-3 flex items-center justify-between sticky top-0 z-50">
         <Link to="/admin" className="flex items-center gap-2.5 no-underline">
           <img
             src="/NSEZ-Horizontal-Logo-white.png"
             alt="Mpumalanga Nkomazi SEZ"
             className="h-7 w-auto object-contain"
           />
-          <span className="text-[10px] bg-[#28B674]/20 text-[#28B674] font-semibold px-1.5 py-0.5 rounded border border-[#28B674]/30">
+ <span className="text-[10px] bg-[#28B674]/20 text-[#28B674] font-semibold px-1.5 py-0.5 rounded">
             Admin
           </span>
         </Link>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="p-2 text-white/80 hover:text-white rounded-md hover:bg-white/10"
+ className="p-2 text-white/80 hover:text-white rounded-md hover:bg-white/10"
         >
           {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
@@ -161,7 +161,7 @@ export const AdminLayout: React.FC = () => {
 
       {/* ─── Sidebar Navigation ────────────────────────────────────── */}
       <aside
-        className={`fixed inset-y-0 left-0 z-40 w-72 bg-[#081B12] text-white border-r border-[#28B674]/20 flex flex-col transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-screen ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+ className={`fixed inset-y-0 left-0 z-40 w-72 bg-[#081B12] text-white flex flex-col transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static lg:h-screen ${mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
           }`}
       >
         {/* Brand identity */}
@@ -176,7 +176,7 @@ export const AdminLayout: React.FC = () => {
               <span className="text-[11px] font-bold text-[#F2AE37] tracking-widest uppercase">
                 Admin Console
               </span>
-              <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/70 font-semibold">
+ <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/70 font-semibold">
                 v2.0
               </span>
             </div>
@@ -198,8 +198,8 @@ export const AdminLayout: React.FC = () => {
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
                   `flex items-center justify-between px-3.5 py-2.5 rounded-lg text-xs font-semibold transition-all duration-200 no-underline ${isActive
-                    ? 'bg-[#28B674] text-[#023A23] shadow-md shadow-[#28B674]/25 font-bold'
-                    : 'text-white/70 hover:text-white hover:bg-white/5'
+ ? 'bg-[#28B674] text-[#023A23] shadow-md shadow-[#28B674]/25 font-bold'
+ : 'text-white/70 hover:text-white hover:bg-white/5'
                   }`
                 }
               >
@@ -212,8 +212,8 @@ export const AdminLayout: React.FC = () => {
                     {link.badge !== null && link.badge !== undefined && (
                       <span
                         className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${isActive
-                          ? 'bg-[#023A23] text-[#F2AE37]'
-                          : 'bg-[#F2AE37] text-[#023A23]'
+ ? 'bg-[#023A23] text-[#F2AE37]'
+ : 'bg-[#F2AE37] text-[#023A23]'
                           }`}
                       >
                         {link.badge}
@@ -227,15 +227,15 @@ export const AdminLayout: React.FC = () => {
         </nav>
 
         {/* Active User Card & Demo Role Switcher */}
-        <div className="p-4 border-t border-white/10 bg-[#022A1A]/50">
+ <div className="p-4 bg-[#022A1A]/50">
           <div className="flex items-center justify-between mb-2">
             <div className="text-[10px] uppercase font-bold text-white/50 tracking-wider">
               Signed in as
             </div>
             <span
               className={`text-[10px] font-bold px-2 py-0.5 rounded ${isSuperAdmin
-                ? 'bg-[#F2AE37]/20 text-[#F2AE37] border border-[#F2AE37]/40'
-                : 'bg-[#28B674]/20 text-[#28B674] border border-[#28B674]/40'
+ ? 'bg-[#F2AE37]/20 text-[#F2AE37] '
+ : 'bg-[#28B674]/20 text-[#28B674] '
                 }`}
             >
               {isSuperAdmin ? 'Super Admin' : 'Standard Admin'}
@@ -246,7 +246,7 @@ export const AdminLayout: React.FC = () => {
           <div className="text-[11px] text-white/60 truncate mb-3">{user?.email}</div>
 
           {/* Quick Interactive Role Switcher for Demo */}
-          <div className="mb-3 p-2 rounded-lg bg-black/40 border border-white/10">
+ <div className="mb-3 p-2 rounded-lg bg-black/40">
             <div className="text-[10px] text-[#F2AE37] font-semibold flex items-center gap-1 mb-1.5">
               <Sparkles size={11} /> Test Permission Levels:
             </div>
@@ -255,8 +255,8 @@ export const AdminLayout: React.FC = () => {
                 type="button"
                 onClick={() => switchRole('SUPER_ADMIN')}
                 className={`text-[10px] py-1 px-1.5 rounded font-bold transition-all ${isSuperAdmin
-                  ? 'bg-[#F2AE37] text-[#023A23]'
-                  : 'bg-white/5 text-white/70 hover:bg-white/15'
+ ? 'bg-[#F2AE37] text-[#023A23]'
+ : 'bg-white/5 text-white/70 hover:bg-white/15'
                   }`}
               >
                 Super Admin
@@ -265,8 +265,8 @@ export const AdminLayout: React.FC = () => {
                 type="button"
                 onClick={() => switchRole('STANDARD_ADMIN')}
                 className={`text-[10px] py-1 px-1.5 rounded font-bold transition-all ${!isSuperAdmin
-                  ? 'bg-[#28B674] text-[#023A23]'
-                  : 'bg-white/5 text-white/70 hover:bg-white/15'
+ ? 'bg-[#28B674] text-[#023A23]'
+ : 'bg-white/5 text-white/70 hover:bg-white/15'
                   }`}
               >
                 Standard Admin
@@ -276,7 +276,7 @@ export const AdminLayout: React.FC = () => {
 
           <button
             onClick={handleLogout}
-            className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-medium text-red-300 hover:text-white hover:bg-red-500/20 transition-colors"
+ className="w-full flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-xs font-medium text-red-300 hover:text-white hover:bg-red-500/20 transition-colors"
           >
             <LogOut size={14} />
             <span>Sign Out</span>
@@ -287,7 +287,7 @@ export const AdminLayout: React.FC = () => {
       {/* ─── Main Content Canvas ───────────────────────────────────── */}
       <div className="flex-1 flex flex-col min-w-0 overflow-y-auto">
         {/* Top Header Bar */}
-        <header className="hidden lg:flex bg-white border-b border-black/10 px-8 py-3.5 items-center justify-between sticky top-0 z-30 shadow-sm">
+ <header className="hidden lg:flex bg-white px-8 py-3.5 items-center justify-between sticky top-0 z-30 shadow-sm">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold text-[#023A23] uppercase tracking-wider">
               Mpumalanga Nkomazi SEZ
@@ -299,12 +299,12 @@ export const AdminLayout: React.FC = () => {
                 setCommandOpen(true);
                 setCommandQuery('');
               }}
-              className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900 text-xs transition-colors border border-gray-200 cursor-pointer ml-4"
+ className="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-500 hover:text-gray-900 text-xs transition-colors cursor-pointer ml-4"
               title="Search across all modules (Ctrl + K)"
             >
               <Search size={13} className="text-gray-400" />
               <span>Quick search...</span>
-              <kbd className="px-1.5 py-0.5 rounded bg-white border border-gray-300 text-[10px] font-mono text-gray-500">
+ <kbd className="px-1.5 py-0.5 rounded bg-white text-[10px] font-mono text-gray-500">
                 Ctrl K
               </kbd>
             </button>
@@ -314,8 +314,8 @@ export const AdminLayout: React.FC = () => {
             {/* Super Admin / Standard Admin banner */}
             <div
               className={`text-xs px-3 py-1 rounded-full font-bold flex items-center gap-1.5 ${isSuperAdmin
-                ? 'bg-amber-50 text-amber-800 border border-amber-200'
-                : 'bg-emerald-50 text-emerald-800 border border-emerald-200'
+ ? 'bg-amber-50 text-amber-800 '
+ : 'bg-emerald-50 text-emerald-800 '
                 }`}
             >
               {isSuperAdmin ? (
@@ -336,7 +336,7 @@ export const AdminLayout: React.FC = () => {
               href="/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-xs font-semibold text-[#023A23] hover:text-[#28B674] no-underline px-3 py-1.5 rounded-md hover:bg-black/5 transition-colors border border-black/10"
+ className="flex items-center gap-1.5 text-xs font-semibold text-[#023A23] hover:text-[#28B674] no-underline px-3 py-1.5 rounded-md hover:bg-black/5 transition-colors"
             >
               <span>View Live Website</span>
               <ExternalLink size={13} />
@@ -353,14 +353,14 @@ export const AdminLayout: React.FC = () => {
       {/* ─── Global Command Palette Modal (Ctrl + K) ────────────────── */}
       {commandOpen && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-black/50 backdrop-blur-sm"
+ className="fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-black/50 backdrop-blur-sm"
           onClick={() => setCommandOpen(false)}
         >
           <div
-            className="bg-white rounded-2xl max-w-xl w-full shadow-2xl border border-gray-100 overflow-hidden animate-in fade-in zoom-in-95 duration-150"
+ className="bg-white rounded-2xl max-w-xl w-full shadow-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-150"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-3 px-4 py-3.5 border-b border-gray-100 bg-gray-50/75">
+ <div className="flex items-center gap-3 px-4 py-3.5 bg-gray-50/75">
               <Search size={18} className="text-gray-400" />
               <input
                 type="text"
@@ -368,11 +368,11 @@ export const AdminLayout: React.FC = () => {
                 placeholder="Search across tenders, opportunities, news, careers, leads..."
                 value={commandQuery}
                 onChange={(e) => setCommandQuery(e.target.value)}
-                className="w-full bg-transparent text-sm outline-none text-gray-800 placeholder-gray-400"
+ className="w-full bg-transparent text-sm outline-none text-gray-800 placeholder-gray-400"
               />
               <button
                 onClick={() => setCommandOpen(false)}
-                className="text-xs px-2 py-1 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 font-medium"
+ className="text-xs px-2 py-1 rounded bg-gray-200 text-gray-600 hover:bg-gray-300 font-medium"
               >
                 Esc
               </button>
@@ -396,10 +396,10 @@ export const AdminLayout: React.FC = () => {
                               navigate(nav.to);
                               setCommandOpen(false);
                             }}
-                            className="w-full flex items-center justify-between p-2.5 rounded-lg hover:bg-gray-50 text-left transition-colors cursor-pointer group"
+ className="w-full flex items-center justify-between p-2.5 rounded-lg hover:bg-gray-50 text-left transition-colors cursor-pointer group"
                           >
                             <div className="flex items-center gap-2.5">
-                              <div className="p-1.5 rounded-md bg-gray-100 text-gray-600 group-hover:bg-[#023A23] group-hover:text-white transition-colors">
+ <div className="p-1.5 rounded-md bg-gray-100 text-gray-600 group-hover:bg-[#023A23] group-hover:text-white transition-colors">
                                 <Icon size={15} />
                               </div>
                               <span className="text-xs font-semibold text-gray-800 group-hover:text-[#023A23]">
@@ -478,10 +478,10 @@ export const AdminLayout: React.FC = () => {
                         navigate(item.path);
                         setCommandOpen(false);
                       }}
-                      className="w-full flex items-center justify-between p-2.5 rounded-lg hover:bg-gray-50 text-left transition-colors cursor-pointer group"
+ className="w-full flex items-center justify-between p-2.5 rounded-lg hover:bg-gray-50 text-left transition-colors cursor-pointer group"
                     >
                       <div className="flex items-center gap-3 min-w-0">
-                        <div className="p-1.5 rounded-md bg-gray-100 text-gray-600 group-hover:bg-[#023A23] group-hover:text-white transition-colors shrink-0">
+ <div className="p-1.5 rounded-md bg-gray-100 text-gray-600 group-hover:bg-[#023A23] group-hover:text-white transition-colors shrink-0">
                           <Icon size={15} />
                         </div>
                         <div className="min-w-0">
@@ -493,7 +493,7 @@ export const AdminLayout: React.FC = () => {
                           </div>
                         </div>
                       </div>
-                      <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded shrink-0">
+ <span className="text-[10px] uppercase font-bold text-gray-400 bg-gray-100 px-2 py-0.5 rounded shrink-0">
                         {item.type}
                       </span>
                     </button>

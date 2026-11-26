@@ -219,7 +219,7 @@ export const AdminCareersPage: React.FC = () => {
   return (
     <div className="space-y-6" style={{ fontFamily: BODY_FONT }}>
       {/* Header Banner */}
-      <div className="bg-gradient-to-r from-[#023A23] via-[#044c2f] to-[#023A23] p-6 sm:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6 border border-emerald-900/30">
+ <div className="bg-gradient-to-r from-[#023A23] via-[#044c2f] to-[#023A23] p-6 sm:p-8 rounded-2xl text-white shadow-xl flex flex-col md:flex-row md:items-center justify-between gap-6">
         <div>
           <div className="flex items-center gap-2 text-[#F2AE37] text-xs font-semibold uppercase tracking-wider mb-2">
             <Briefcase size={16} />
@@ -237,7 +237,7 @@ export const AdminCareersPage: React.FC = () => {
         </div>
         <button
           onClick={openCreateModal}
-          className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#28B674] hover:bg-[#20925c] text-white font-medium text-sm transition-all duration-200 shadow-lg shadow-emerald-900/40 hover:scale-[1.02] active:scale-[0.98] self-start md:self-auto shrink-0"
+ className="flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-[#28B674] hover:bg-[#20925c] text-white font-medium text-sm transition-all duration-200 shadow-lg shadow-emerald-900/40 hover:scale-[1.02] active:scale-[0.98] self-start md:self-auto shrink-0"
         >
           <Plus size={18} />
           <span>Post New Vacancy</span>
@@ -246,7 +246,7 @@ export const AdminCareersPage: React.FC = () => {
 
       {/* KPI Stats */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Total Listings
           </div>
@@ -254,7 +254,7 @@ export const AdminCareersPage: React.FC = () => {
             {careers.length}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Active / Open Roles
           </div>
@@ -262,7 +262,7 @@ export const AdminCareersPage: React.FC = () => {
             {totalOpen}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Youth &amp; Learnerships
           </div>
@@ -270,7 +270,7 @@ export const AdminCareersPage: React.FC = () => {
             {totalLearnerships}
           </div>
         </div>
-        <div className="bg-white p-5 rounded-xl border border-gray-100 shadow-sm">
+ <div className="bg-white p-5 rounded-xl shadow-sm">
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-1">
             Pending Approval Actions
           </div>
@@ -281,7 +281,7 @@ export const AdminCareersPage: React.FC = () => {
       </div>
 
       {/* Filter and Search Bar */}
-      <div className="bg-white p-4 sm:p-5 rounded-xl border border-gray-100 shadow-sm space-y-4">
+ <div className="bg-white p-4 sm:p-5 rounded-xl shadow-sm space-y-4">
         <div className="flex flex-col md:flex-row gap-3">
           <div className="relative flex-1">
             <Search
@@ -302,7 +302,7 @@ export const AdminCareersPage: React.FC = () => {
               value={categoryFilter}
               onChange={(e) => setCategoryFilter(e.target.value)}
               aria-label="Filter by Category"
-              className="px-3 py-2.5 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
+ className="px-3 py-2.5 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
             >
               <option value="ALL">All Categories</option>
               <option value="Vacancy">Vacancy</option>
@@ -315,7 +315,7 @@ export const AdminCareersPage: React.FC = () => {
               value={statusFilter}
               onChange={(e) => setStatusFilter(e.target.value)}
               aria-label="Filter by Status"
-              className="px-3 py-2.5 rounded-lg border border-gray-200 text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
+ className="px-3 py-2.5 rounded-lg text-sm bg-white focus:outline-none focus:ring-2 focus:ring-[#28B674] text-gray-700"
             >
               <option value="ALL">All Statuses</option>
               <option value="OPEN">Open</option>
@@ -326,7 +326,7 @@ export const AdminCareersPage: React.FC = () => {
       </div>
 
       {/* Career Listings Table / Cards */}
-      <div className="bg-white rounded-xl border border-gray-100 shadow-sm overflow-hidden">
+ <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         {filtered.length === 0 ? (
           <div className="p-12 text-center">
             <Briefcase size={40} className="mx-auto text-gray-300 mb-3" />
@@ -335,7 +335,7 @@ export const AdminCareersPage: React.FC = () => {
         ) : (
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50/75 border-b border-gray-100 text-xs uppercase font-semibold text-gray-500 tracking-wider">
+ <thead className="bg-gray-50/75 text-xs uppercase font-semibold text-gray-500 tracking-wider">
                 <tr>
                   <th className="py-3.5 px-4 sm:px-6">Position Details</th>
                   <th className="py-3.5 px-4">Category &amp; Type</th>
@@ -346,7 +346,7 @@ export const AdminCareersPage: React.FC = () => {
               </thead>
               <tbody className="divide-y divide-gray-100">
                 {filtered.map((item) => (
-                  <tr key={item.id} className="hover:bg-gray-50/50 transition-colors">
+ <tr key={item.id} className="hover:bg-gray-50/50 transition-colors">
                     <td className="py-4 px-4 sm:px-6 max-w-md">
                       <div className="font-semibold text-gray-900 mb-1" style={{ fontFamily: HEADING_FONT }}>
                         {item.title}
@@ -374,11 +374,11 @@ export const AdminCareersPage: React.FC = () => {
 
                     <td className="py-4 px-4 whitespace-nowrap">
                       <div className="space-y-1.5">
-                        <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800 border border-emerald-200">
+ <span className="inline-block px-2.5 py-0.5 rounded-full text-xs font-medium bg-emerald-50 text-emerald-800">
                           {item.category}
                         </span>
                         <div>
-                          <span className="inline-block px-2 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600">
+ <span className="inline-block px-2 py-0.5 rounded text-[11px] font-medium bg-gray-100 text-gray-600">
                             {item.type}
                           </span>
                         </div>
@@ -400,7 +400,7 @@ export const AdminCareersPage: React.FC = () => {
 
                     <td className="py-4 px-4 whitespace-nowrap">
                       {item.pendingAction ? (
-                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200">
+ <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-700">
                           <AlertTriangle size={12} />
                           Pending Delete
                         </span>
@@ -410,13 +410,13 @@ export const AdminCareersPage: React.FC = () => {
                           title="Click to toggle status"
                           className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold border transition-all ${
                             item.status === 'OPEN'
-                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100'
-                              : 'bg-gray-100 text-gray-600 border-gray-200 hover:bg-gray-200'
+ ? 'bg-emerald-50 text-emerald-700 hover:bg-emerald-100'
+ : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                           }`}
                         >
                           <span
                             className={`w-1.5 h-1.5 rounded-full ${
-                              item.status === 'OPEN' ? 'bg-[#28B674]' : 'bg-gray-400'
+ item.status === 'OPEN' ? 'bg-[#28B674]' : 'bg-gray-400'
                             }`}
                           />
                           {item.status}
@@ -428,7 +428,7 @@ export const AdminCareersPage: React.FC = () => {
                       <div className="flex items-center justify-end gap-2">
                         <button
                           onClick={() => openEditModal(item)}
-                          className="p-1.5 rounded-lg text-gray-400 hover:text-[#023A23] hover:bg-gray-100 transition-colors"
+ className="p-1.5 rounded-lg text-gray-400 hover:text-[#023A23] hover:bg-gray-100 transition-colors"
                           title="Edit Position"
                         >
                           <Edit size={16} />
@@ -439,7 +439,7 @@ export const AdminCareersPage: React.FC = () => {
                           className={`p-1.5 rounded-lg transition-colors ${
                             item.pendingAction
                               ? 'text-gray-300 cursor-not-allowed'
-                              : 'text-gray-400 hover:text-red-600 hover:bg-red-50'
+ : 'text-gray-400 hover:text-red-600 hover:bg-red-50'
                           }`}
                           title={isSuperAdmin ? 'Delete Vacancy' : 'Request Deletion'}
                         >
@@ -457,15 +457,15 @@ export const AdminCareersPage: React.FC = () => {
 
       {/* Create / Edit Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto">
-          <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl border border-gray-100 my-8">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm overflow-y-auto">
+ <div className="bg-white rounded-2xl max-w-2xl w-full p-6 shadow-2xl my-8">
             <div className="flex items-center justify-between pb-4 border-b border-gray-100 mb-5">
               <h3 className="text-lg font-bold text-[#023A23]" style={{ fontFamily: HEADING_FONT }}>
                 {editingItem ? 'Edit Career Position' : 'Post New Career Opportunity'}
               </h3>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-gray-400 hover:text-gray-600 p-1 rounded-lg hover:bg-gray-100"
+ className="text-gray-400 hover:text-gray-600 p-1 rounded-lg hover:bg-gray-100"
               >
                 <X size={20} />
               </button>
@@ -494,7 +494,7 @@ export const AdminCareersPage: React.FC = () => {
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value as CareerItem['category'])}
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#28B674] bg-white"
+ className="w-full px-3.5 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#28B674] bg-white"
                   >
                     <option value="Vacancy">Vacancy</option>
                     <option value="Learnership">Learnership</option>
@@ -510,7 +510,7 @@ export const AdminCareersPage: React.FC = () => {
                   <select
                     value={type}
                     onChange={(e) => setType(e.target.value as CareerItem['type'])}
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#28B674] bg-white"
+ className="w-full px-3.5 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#28B674] bg-white"
                   >
                     <option value="Permanent">Permanent</option>
                     <option value="Contract">Contract</option>
@@ -571,7 +571,7 @@ export const AdminCareersPage: React.FC = () => {
                   <select
                     value={status}
                     onChange={(e) => setStatus(e.target.value as CareerItem['status'])}
-                    className="w-full px-3.5 py-2.5 rounded-lg border border-gray-200 text-sm focus:outline-none focus:ring-2 focus:ring-[#28B674] bg-white"
+ className="w-full px-3.5 py-2.5 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#28B674] bg-white"
                   >
                     <option value="OPEN">Open (Accepting Applications)</option>
                     <option value="CLOSED">Closed</option>
@@ -613,13 +613,13 @@ export const AdminCareersPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2.5 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 text-sm font-medium transition-colors"
+ className="px-4 py-2.5 rounded-lg text-gray-700 hover:bg-gray-50 text-sm font-medium transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 py-2.5 rounded-lg bg-[#023A23] hover:bg-[#035232] text-white text-sm font-medium transition-colors shadow-sm"
+ className="px-5 py-2.5 rounded-lg bg-[#023A23] hover:bg-[#035232] text-white text-sm font-medium transition-colors shadow-sm"
                 >
                   {editingItem ? 'Save Changes' : 'Publish Vacancy'}
                 </button>
@@ -631,10 +631,10 @@ export const AdminCareersPage: React.FC = () => {
 
       {/* Delete / Dual-Control Deletion Modal */}
       {deleteModalItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl border border-gray-100">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm">
+ <div className="bg-white rounded-2xl max-w-md w-full p-6 shadow-2xl">
             <div className="flex items-center gap-3 text-red-600 mb-4">
-              <div className="p-3 bg-red-50 rounded-xl">
+ <div className="p-3 bg-red-50 rounded-xl">
                 <AlertTriangle size={24} />
               </div>
               <div>
@@ -682,14 +682,14 @@ export const AdminCareersPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setDeleteModalItem(null)}
-                className="px-4 py-2 rounded-lg border border-gray-200 text-gray-700 hover:bg-gray-50 text-sm font-medium transition-colors"
+ className="px-4 py-2 rounded-lg text-gray-700 hover:bg-gray-50 text-sm font-medium transition-colors"
               >
                 Cancel
               </button>
               <button
                 type="button"
                 onClick={confirmDelete}
-                className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-medium transition-colors shadow-sm"
+ className="px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-medium transition-colors shadow-sm"
               >
                 {isSuperAdmin ? 'Delete Immediately' : 'Submit Deletion Request'}
               </button>

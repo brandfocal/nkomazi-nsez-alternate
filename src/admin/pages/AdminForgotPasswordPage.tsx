@@ -18,14 +18,14 @@ export const AdminForgotPasswordPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-[#081B12] text-white flex flex-col justify-center items-center px-4 py-12 relative overflow-hidden font-['Poppins',system-ui,sans-serif]">
+ <div className="min-h-screen bg-[#081B12] text-white flex flex-col justify-center items-center px-4 py-12 relative overflow-hidden font-['Poppins',system-ui,sans-serif]">
       {/* Background radial glow */}
       <div
-        className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#28B674]/15 blur-3xl"
+ className="pointer-events-none absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#28B674]/15 blur-3xl"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#F2AE37]/15 blur-3xl"
+ className="pointer-events-none absolute -bottom-40 -right-40 w-96 h-96 rounded-full bg-[#F2AE37]/15 blur-3xl"
         aria-hidden="true"
       />
 
@@ -46,7 +46,7 @@ export const AdminForgotPasswordPage: React.FC = () => {
           </p>
         </div>
 
-        <div className="bg-[#0D2619] border border-white/10 rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
+ <div className="bg-[#0D2619] rounded-2xl p-6 sm:p-8 shadow-2xl backdrop-blur-md">
           {submitted ? (
             <div className="text-center py-4">
               <CheckCircle2 size={48} className="text-[#28B674] mx-auto mb-3" />
@@ -56,7 +56,7 @@ export const AdminForgotPasswordPage: React.FC = () => {
               </p>
               <Link
                 to="/admin/login"
-                className="inline-flex items-center justify-center gap-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2.5 px-5 rounded-lg no-underline transition-colors"
+ className="inline-flex items-center justify-center gap-2 bg-[#28B674] hover:bg-[#22a166] text-[#023A23] font-bold text-xs uppercase tracking-wider py-2.5 px-5 rounded-lg no-underline transition-colors"
               >
                 <ArrowLeft size={14} /> Back to Sign In
               </Link>
@@ -79,7 +79,7 @@ export const AdminForgotPasswordPage: React.FC = () => {
                     onChange={e => setEmail(e.target.value)}
                     placeholder="name@nkomazisez.gov.za"
                     required
-                    className="w-full bg-[#081B12] border border-white/15 rounded-lg py-2.5 pl-10 pr-4 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#28B674] focus:ring-1 focus:ring-[#28B674] transition-colors"
+ className="w-full bg-[#081B12] rounded-lg py-2.5 pl-10 pr-4 text-xs text-white placeholder-white/30 focus:outline-none focus:border-[#28B674] focus:ring-1 focus:ring-[#28B674] transition-colors"
                   />
                 </div>
               </div>
@@ -87,7 +87,7 @@ export const AdminForgotPasswordPage: React.FC = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full mt-2 bg-[#F2AE37] hover:bg-[#e09e2a] text-[#023A23] font-bold text-xs uppercase tracking-wider py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg transition-colors cursor-pointer disabled:opacity-50"
+ className="w-full mt-2 bg-[#F2AE37] hover:bg-[#e09e2a] text-[#023A23] font-bold text-xs uppercase tracking-wider py-3 px-4 rounded-lg flex items-center justify-center gap-2 shadow-lg transition-colors cursor-pointer disabled:opacity-50"
               >
                 <span>{loading ? 'Dispatching Token...' : 'Send Secure Reset Link'}</span>
               </button>

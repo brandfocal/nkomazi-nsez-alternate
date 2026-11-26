@@ -136,13 +136,13 @@ export const AdminUsersPage: React.FC = () => {
         {isSuperAdmin ? (
           <button
             onClick={() => setIsInviteModalOpen(true)}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#023A23] text-white hover:bg-[#023A23]/90 font-medium text-sm transition-colors shadow-sm"
+ className="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#023A23] text-white hover:bg-[#023A23]/90 font-medium text-sm transition-colors shadow-sm"
           >
             <UserPlus className="w-4 h-4" />
             Invite Administrator
           </button>
         ) : (
-          <div className="px-3 py-1.5 bg-gray-100 rounded-lg text-xs text-gray-500 font-medium flex items-center gap-1.5">
+ <div className="px-3 py-1.5 bg-gray-100 rounded-lg text-xs text-gray-500 font-medium flex items-center gap-1.5">
             <Lock className="w-3.5 h-3.5" />
             User creation restricted to Super Admin
           </div>
@@ -150,7 +150,7 @@ export const AdminUsersPage: React.FC = () => {
       </div>
 
       {/* Search Bar */}
-      <div className="bg-white p-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-between">
+ <div className="bg-white p-4 rounded-xl shadow-sm flex items-center justify-between">
         <div className="relative w-full md:w-96">
           <Search className="w-4 h-4 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
@@ -167,11 +167,11 @@ export const AdminUsersPage: React.FC = () => {
       </div>
 
       {/* User Roster Cards / Table */}
-      <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+ <div className="bg-white rounded-xl shadow-sm overflow-hidden">
         <div className="overflow-x-auto">
           <table className="w-full text-left border-collapse text-sm">
             <thead>
-              <tr className="bg-gray-50 border-b border-gray-200 text-gray-600 font-semibold text-xs uppercase tracking-wider">
+ <tr className="bg-gray-50 text-gray-600 font-semibold text-xs uppercase tracking-wider">
                 <th className="py-3 px-4">User</th>
                 <th className="py-3 px-4">Department</th>
                 <th className="py-3 px-4">Assigned Role</th>
@@ -184,10 +184,10 @@ export const AdminUsersPage: React.FC = () => {
               {filteredUsers.map((u) => {
                 const userStatus = u.status || 'ACTIVE';
                 return (
-                  <tr key={u.id} className="hover:bg-gray-50 transition-colors">
+ <tr key={u.id} className="hover:bg-gray-50 transition-colors">
                     <td className="py-3 px-4">
                       <div className="flex items-center gap-3">
-                        <div className="w-9 h-9 rounded-full bg-[#023A23] text-[#F2AE37] font-bold text-xs flex items-center justify-center shrink-0">
+ <div className="w-9 h-9 rounded-full bg-[#023A23] text-[#F2AE37] font-bold text-xs flex items-center justify-center shrink-0">
                           {u.name
                             .split(' ')
                             .map((n) => n[0])
@@ -198,7 +198,7 @@ export const AdminUsersPage: React.FC = () => {
                           <div className="font-semibold text-gray-900 flex items-center gap-1.5">
                             {u.name}
                             {u.id === user?.id && (
-                              <span className="text-[10px] bg-[#023A23]/10 text-[#023A23] border border-[#023A23]/20 px-1.5 py-0.2 rounded font-normal">
+ <span className="text-[10px] bg-[#023A23]/10 text-[#023A23] px-1.5 py-0.2 rounded font-normal">
                                 You
                               </span>
                             )}
@@ -218,12 +218,12 @@ export const AdminUsersPage: React.FC = () => {
                     </td>
                     <td className="py-3 px-4">
                       {u.role === 'SUPER_ADMIN' ? (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#023A23] text-[#F2AE37]">
+ <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#023A23] text-[#F2AE37]">
                           <ShieldCheck className="w-3.5 h-3.5" />
                           Super Admin
                         </span>
                       ) : (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-700">
+ <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-semibold bg-gray-100 text-gray-700">
                           <Shield className="w-3.5 h-3.5 text-gray-400" />
                           Standard Admin
                         </span>
@@ -232,12 +232,12 @@ export const AdminUsersPage: React.FC = () => {
                     <td className="py-3 px-4">
                       {userStatus === 'ACTIVE' ? (
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-emerald-700">
-                          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+ <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                           Active
                         </span>
                       ) : (
                         <span className="inline-flex items-center gap-1 text-xs font-medium text-red-600">
-                          <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
+ <span className="w-1.5 h-1.5 rounded-full bg-red-400"></span>
                           Suspended
                         </span>
                       )}
@@ -250,7 +250,7 @@ export const AdminUsersPage: React.FC = () => {
                         <div className="flex items-center justify-end gap-2">
                           <button
                             onClick={() => handleToggleRole(u)}
-                            className="text-xs text-gray-600 hover:text-[#023A23] px-2 py-1 rounded border border-gray-200 hover:bg-gray-100 transition-colors"
+ className="text-xs text-gray-600 hover:text-[#023A23] px-2 py-1 rounded hover:bg-gray-100 transition-colors"
                           >
                             Switch to {u.role === 'SUPER_ADMIN' ? 'Standard' : 'Super'}
                           </button>
@@ -258,8 +258,8 @@ export const AdminUsersPage: React.FC = () => {
                             onClick={() => handleToggleStatus(u)}
                             className={`text-xs px-2 py-1 rounded border transition-colors ${
                               userStatus === 'ACTIVE'
-                                ? 'border-red-200 text-red-600 hover:bg-red-50'
-                                : 'border-emerald-200 text-emerald-700 hover:bg-emerald-50'
+ ? ' text-red-600 hover:bg-red-50'
+ : ' text-emerald-700 hover:bg-emerald-50'
                             }`}
                           >
                             {userStatus === 'ACTIVE' ? 'Suspend' : 'Activate'}
@@ -281,9 +281,9 @@ export const AdminUsersPage: React.FC = () => {
 
       {/* Invite Modal */}
       {isInviteModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
-          <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
-            <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
+ <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+ <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
+ <div className="px-6 py-4 flex items-center justify-between bg-gray-50/50">
               <h3 className="font-bold text-[#023A23] text-lg">
                 Invite Administrative User
               </h3>
@@ -359,13 +359,13 @@ export const AdminUsersPage: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setIsInviteModalOpen(false)}
-                  className="px-4 py-2 border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
+ className="px-4 py-2 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-50"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 bg-[#023A23] hover:bg-[#023A23]/90 text-white rounded-lg text-sm font-medium transition-colors"
+ className="px-4 py-2 bg-[#023A23] hover:bg-[#023A23]/90 text-white rounded-lg text-sm font-medium transition-colors"
                 >
                   Send Invite & Create
                 </button>
