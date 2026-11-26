@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { Lock, Mail, ArrowRight, ShieldCheck, KeyRound, Sparkles } from 'lucide-react';
+import { Lock, Mail, ArrowRight, ShieldCheck, Sparkles } from 'lucide-react';
 import { useAdminAuth } from '../context/AdminAuthContext';
 import { AdminRole } from '../types';
 
@@ -156,12 +156,6 @@ export const AdminLoginPage: React.FC = () => {
               <ArrowRight size={15} />
             </button>
           </form>
-
-          {/* Security note */}
-          <div className="mt-6 pt-5 border-t border-white/10 flex items-center justify-center gap-2 text-[11px] text-white/50">
-            <KeyRound size={13} className="text-[#28B674]" />
-            <span>Encrypted Session • POPIA Act 4 Compliant</span>
-          </div>
         </div>
 
         {/* Back to public site */}
