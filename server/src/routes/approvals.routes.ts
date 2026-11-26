@@ -23,7 +23,7 @@ router.get('/', authenticateToken, async (req: AuthenticatedRequest, res: Respon
 // POST /api/approvals/:id/approve (Super Admin only)
 router.post('/:id/approve', authenticateToken, requireSuperAdmin, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = req.user!;
 
     const approval = await prisma.approvalRequest.findUnique({ where: { id } });
@@ -80,7 +80,7 @@ router.post('/:id/approve', authenticateToken, requireSuperAdmin, async (req: Au
 // POST /api/approvals/:id/reject (Super Admin only)
 router.post('/:id/reject', authenticateToken, requireSuperAdmin, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = req.user!;
 
     const approval = await prisma.approvalRequest.findUnique({ where: { id } });

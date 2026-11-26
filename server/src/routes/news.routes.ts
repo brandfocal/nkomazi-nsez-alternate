@@ -47,7 +47,7 @@ router.post('/', authenticateToken, async (req: AuthenticatedRequest, res: Respo
 // PUT /api/news/:id (Admin)
 router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const article = await prisma.newsArticle.update({
       where: { id },
       data: req.body
@@ -62,7 +62,7 @@ router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Res
 // DELETE /api/news/:id (Admin)
 router.delete('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     await prisma.newsArticle.delete({ where: { id } });
     res.json({ message: 'Article permanently deleted.' });
   } catch (error) {

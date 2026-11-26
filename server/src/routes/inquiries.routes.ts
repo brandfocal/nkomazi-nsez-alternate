@@ -52,7 +52,7 @@ router.post('/', async (req, res): Promise<void> => {
 // PATCH /api/inquiries/:id/status (Admin)
 router.patch('/:id/status', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const { status } = req.body;
 
     const updated = await prisma.inquiry.update({

@@ -53,7 +53,7 @@ router.post('/', authenticateToken, async (req: AuthenticatedRequest, res: Respo
 // PUT /api/tenders/:id (Admin)
 router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = req.user!;
 
     const updated = await prisma.tender.update({
@@ -83,7 +83,7 @@ router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Res
 // POST /api/tenders/:id/delete (Super Admin vs Standard Admin)
 router.post('/:id/delete', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = req.user!;
     const { reason } = req.body;
 

@@ -55,7 +55,7 @@ router.post('/', authenticateToken, async (req: AuthenticatedRequest, res: Respo
 // PUT /api/listings/:id (Admin)
 router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = req.user!;
 
     const updated = await prisma.investmentListing.update({
@@ -85,7 +85,7 @@ router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Res
 // POST /api/listings/:id/delete (Super Admin vs Standard Admin)
 router.post('/:id/delete', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = req.user!;
     const { reason } = req.body;
 

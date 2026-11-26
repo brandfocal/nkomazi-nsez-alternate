@@ -47,7 +47,7 @@ router.post('/', authenticateToken, async (req: AuthenticatedRequest, res: Respo
 // PUT /api/careers/:id (Admin)
 router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const updated = await prisma.careerOpening.update({
       where: { id },
       data: req.body
@@ -62,7 +62,7 @@ router.put('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Res
 // DELETE /api/careers/:id (Admin)
 router.delete('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     await prisma.careerOpening.delete({ where: { id } });
     res.json({ message: 'Career opening permanently removed.' });
   } catch (error) {

@@ -47,7 +47,7 @@ router.post('/', authenticateToken, async (req: AuthenticatedRequest, res: Respo
 // DELETE /api/resources/:id (Admin)
 router.delete('/:id', authenticateToken, async (req: AuthenticatedRequest, res: Response): Promise<void> => {
   try {
-    const { id } = req.params;
+    const id = req.params.id as string;
     const user = req.user!;
 
     const resource = await prisma.resourceDoc.findUnique({ where: { id } });
