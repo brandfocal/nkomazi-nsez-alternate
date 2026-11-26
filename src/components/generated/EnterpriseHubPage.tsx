@@ -5,6 +5,8 @@ import { Menu, X, Check, ArrowRight, ChevronRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
+import { loadFromStorage, saveToStorage, STORAGE_KEYS, INITIAL_INQUIRIES } from '../../admin/mockData';
+import { InquiryItem } from '../../admin/types';
 
 
 // ─── Font constants ────────────────────────────────────────────────────────────
@@ -1053,7 +1055,41 @@ const HowToJoin = () => <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8
   </section>;
 
 // ─── Registration Form ─────────────────────────────────────────────────────────
-const RegistrationForm = () => <section id="registration" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8 lg:px-12" style={{
+const RegistrationForm = () => {
+  const [firstName, setFirstName] = useState('');
+  const [surname, setSurname] = useState('');
+  const [role, setRole] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [businessName, setBusinessName] = useState('');
+  const [businessType, setBusinessType] = useState('');
+  const [employees, setEmployees] = useState('');
+  const [province, setProvince] = useState('Mpumalanga');
+  const [municipality, setMunicipality] = useState('Nkomazi Local Municipality');
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    const currentInquiries = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);
+    const newInquiry: InquiryItem = {
+      id: `inq-msme-${Date.now()}`,
+      type: 'MSME_REGISTRATION',
+      name: `${firstName} ${surname}`.trim() || 'MSME Applicant',
+      email: email.trim(),
+      phone: phone.trim() || undefined,
+      company: businessName.trim() || undefined,
+      sector: businessType || 'MSME Development',
+      subject: `MSME Incubator Application: ${businessName || firstName + ' ' + surname}`,
+      message: `Applicant: ${firstName} ${surname} (${role || 'Representative'})\nContact: ${email} | ${phone}\nBusiness: ${businessName}\nSector/Type: ${businessType}\nStaff Size: ${employees || 'Unspecified'}\nLocation: ${municipality}, ${province}`,
+      submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
+      status: 'NEW',
+      priority: 'HIGH',
+    };
+    saveToStorage(STORAGE_KEYS.INQUIRIES, [newInquiry, ...currentInquiries]);
+    setSubmitted(true);
+  };
+
+  return <section id="registration" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8 lg:px-12" style={{
   background: `linear-gradient(160deg, ${GREEN} 0%, #023A23 40%, #162e20 100%)`
 }}>
     <div className="max-w-4xl mx-auto w-full">
@@ -1088,7 +1124,36 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
         background: "#ffffff",
         boxShadow: "0 48px 96px rgba(0,0,0,0.35), 0 0 0 1px rgba(184,150,58,0.1)"
       }}>
-          <form className="space-y-10 sm:space-y-12" onSubmit={e => e.preventDefault()}>
+          {submitted ? (
+            <div className="py-12 sm:py-16 text-center space-y-4">
+              <div className="w-16 h-16 rounded-full bg-emerald-100 text-[#28B674] flex items-center justify-center mx-auto mb-4">
+                <Check size={32} strokeWidth={3} />
+              </div>
+              <h3 className="text-2xl sm:text-3xl font-bold uppercase text-[#023A23]" style={{ fontFamily: HEADING_FONT }}>
+                Registration Submitted Successfully
+              </h3>
+              <p className="text-sm text-gray-600 max-w-lg mx-auto leading-relaxed" style={{ fontFamily: BODY_FONT }}>
+                Thank you for applying to the MPUMALANGA NKOMAZI SEZ MSME Hub. Your details have been delivered to our Enterprise Development Desk for accreditation and compliance verification.
+              </p>
+              <div className="pt-4">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSubmitted(false);
+                    setFirstName('');
+                    setSurname('');
+                    setBusinessName('');
+                    setPhone('');
+                    setEmail('');
+                  }}
+                  className="px-6 py-3 rounded-lg bg-[#023A23] text-white text-xs font-bold uppercase tracking-wider hover:bg-[#28B674] hover:text-[#023A23] transition-colors"
+                >
+                  Register Another Business
+                </button>
+              </div>
+            </div>
+          ) : (
+            <form className="space-y-10 sm:space-y-12" onSubmit={handleSubmit}>
             {/* Personal Details */}
             <div>
               <div className="flex items-center gap-3 mb-6 sm:mb-8 pb-5" style={{
@@ -1126,7 +1191,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     First Name *
                   </label>
-                  <input type="text" required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
+                  <input type="text" required value={firstName} onChange={e => setFirstName(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1154,7 +1219,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Surname *
                   </label>
-                  <input type="text" required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
+                  <input type="text" required value={surname} onChange={e => setSurname(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1182,7 +1247,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Job Title / Role
                   </label>
-                  <input type="text" className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
+                  <input type="text" value={role} onChange={e => setRole(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1210,7 +1275,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Email Address *
                   </label>
-                  <input type="email" required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
+                  <input type="email" required value={email} onChange={e => setEmail(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1238,7 +1303,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Contact Number *
                   </label>
-                  <input type="tel" required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
+                  <input type="tel" required value={phone} onChange={e => setPhone(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1294,7 +1359,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Business / Trading Name *
                   </label>
-                  <input type="text" required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
+                  <input type="text" required value={businessName} onChange={e => setBusinessName(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1322,7 +1387,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Business Type *
                   </label>
-                  <select required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all appearance-none" style={{
+                  <select required value={businessType} onChange={e => setBusinessType(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all appearance-none" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1353,7 +1418,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Number of Employees
                   </label>
-                  <select className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all appearance-none" style={{
+                  <select value={employees} onChange={e => setEmployees(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all appearance-none" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1384,7 +1449,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Province *
                   </label>
-                  <select required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all appearance-none" style={{
+                  <select required value={province} onChange={e => setProvince(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all appearance-none" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1415,7 +1480,7 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
                 }}>
                     Municipality *
                   </label>
-                  <input type="text" required className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
+                  <input type="text" required value={municipality} onChange={e => setMunicipality(e.target.value)} className="w-full px-4 sm:px-5 py-3 sm:py-4 outline-none transition-all" style={{
                   fontFamily: BODY_FONT,
                   color: GREEN,
                   background: SURFACE,
@@ -1529,10 +1594,12 @@ const RegistrationForm = () => <section id="registration" className="py-16 sm:py
             }} />
             </motion.button>
           </form>
-        </div>
+        )}
+      </div>
       </FadeUp>
     </div>
   </section>;
+};
 
 // ─── Contact CTA ───────────────────────────────────────────────────────────────
 const ContactCTA = () => {

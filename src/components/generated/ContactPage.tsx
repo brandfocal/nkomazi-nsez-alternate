@@ -663,10 +663,12 @@ const Hero = () => {
 // ─── Contact Split Section ────────────────────────────────────────────────────
 
 const ContactSplit = () => {
+  const querySubject = new URLSearchParams(window.location.search).get('subject') || '';
   const [firstName, setFirstName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
   const [organisation, setOrganisation] = useState('');
+  const [subject, setSubject] = useState(querySubject);
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -679,7 +681,7 @@ const ContactSplit = () => {
       name: `${firstName} ${surname}`.trim() || 'Website Visitor',
       email: email.trim(),
       company: organisation.trim() || undefined,
-      subject: `General Inquiry from ${firstName} ${surname}`.trim() || 'Website General Inquiry',
+      subject: subject.trim() || `General Inquiry from ${firstName} ${surname}`.trim() || 'Website General Inquiry',
       message: message.trim(),
       submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
       status: 'NEW',
@@ -972,6 +974,23 @@ const ContactSplit = () => {
                       e.currentTarget.style.boxShadow = 'none';
                     }} />
                   </div>
+                </div>
+                <div className="space-y-1.5">
+                  <label className="block text-[11px] uppercase font-semibold text-gray-400 tracking-[0.08em]" style={{
+                    fontFamily: BODY_FONT
+                  }}>
+                    Subject / Purpose of Enquiry *
+                  </label>
+                  <input required type="text" value={subject} onChange={e => setSubject(e.target.value)} placeholder="e.g. Investor Enquiry / Lease Question" className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-lg text-sm outline-none transition-all" style={{
+                    fontFamily: BODY_FONT,
+                    minHeight: '44px'
+                  }} onFocus={e => {
+                    e.currentTarget.style.borderColor = '#28B674';
+                    e.currentTarget.style.boxShadow = '0 0 0 3px rgba(40, 182, 116,0.08)';
+                  }} onBlur={e => {
+                    e.currentTarget.style.borderColor = '#e5e7eb';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }} />
                 </div>
                 <div className="space-y-1.5">
                   <label className="block text-[11px] uppercase font-semibold text-gray-400 tracking-[0.08em]" style={{
