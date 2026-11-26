@@ -274,7 +274,7 @@ export const AdminTendersPage: React.FC = () => {
             <tbody className="divide-y divide-gray-100">
               {filtered.map(t => (
                 <tr key={t.id} className="hover:bg-gray-50/70 transition-colors">
-                  <td className="py-3.5 px-4 font-mono font-bold text-[#023A23]">{t.refNo}</td>
+                  <td className="py-3.5 px-4 font-bold text-[#023A23]">{t.refNo}</td>
                   <td className="py-3.5 px-4 font-semibold text-gray-800 max-w-sm">{t.title}</td>
                   <td className="py-3.5 px-4 text-gray-600">{t.category}</td>
                   <td className="py-3.5 px-4">
@@ -289,7 +289,7 @@ export const AdminTendersPage: React.FC = () => {
                       </span>
                     )}
                     {t.status === 'EVALUATING' && (
-                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-100 text-blue-800">
+                      <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#F2AE37]/20 text-[#023A23] border border-[#F2AE37]/40">
                         In Evaluation
                       </span>
                     )}
@@ -358,7 +358,7 @@ export const AdminTendersPage: React.FC = () => {
                   placeholder="e.g. NSEZ/ENG/2026/015"
                   value={formRefNo}
                   onChange={e => setFormRefNo(e.target.value)}
-                  className="w-full border border-gray-300 rounded-lg p-2.5 text-xs font-mono focus:outline-none focus:border-[#28B674]"
+                  className="w-full border border-gray-300 rounded-lg p-2.5 text-xs focus:outline-none focus:border-[#28B674]"
                 />
               </div>
 

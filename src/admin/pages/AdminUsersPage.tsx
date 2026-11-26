@@ -125,7 +125,7 @@ export const AdminUsersPage: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 font-heading">
+          <h1 className="text-2xl font-bold text-[#023A23]">
             User Accounts & Role Permissions
           </h1>
           <p className="text-sm text-gray-600 mt-1">
@@ -198,7 +198,7 @@ export const AdminUsersPage: React.FC = () => {
                           <div className="font-semibold text-gray-900 flex items-center gap-1.5">
                             {u.name}
                             {u.id === user?.id && (
-                              <span className="text-[10px] bg-blue-100 text-blue-800 px-1.5 py-0.2 rounded font-normal">
+                              <span className="text-[10px] bg-[#023A23]/10 text-[#023A23] border border-[#023A23]/20 px-1.5 py-0.2 rounded font-normal">
                                 You
                               </span>
                             )}
@@ -284,7 +284,7 @@ export const AdminUsersPage: React.FC = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
           <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
             <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
-              <h3 className="font-bold text-gray-900 font-heading text-lg">
+              <h3 className="font-bold text-[#023A23] text-lg">
                 Invite Administrative User
               </h3>
               <button

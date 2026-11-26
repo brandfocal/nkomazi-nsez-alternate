@@ -157,11 +157,11 @@ export const AdminApprovalsPage: React.FC = () => {
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <h1 className="text-2xl font-bold text-gray-900 font-heading">
+            <h1 className="text-2xl font-bold text-[#023A23]">
               Governance & Approval Center
             </h1>
             {pendingCount > 0 && (
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-amber-100 text-amber-800 border border-amber-200">
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#F2AE37]/25 text-[#023A23] border border-[#F2AE37]/50">
                 {pendingCount} Pending
               </span>
             )}
@@ -219,7 +219,7 @@ export const AdminApprovalsPage: React.FC = () => {
         {filteredApprovals.length === 0 ? (
           <div className="bg-white rounded-xl border border-gray-200 p-12 text-center">
             <CheckCircle2 className="w-12 h-12 text-emerald-500 mx-auto mb-3 opacity-60" />
-            <h3 className="font-bold text-gray-900 font-heading text-lg">All Caught Up!</h3>
+            <h3 className="font-bold text-[#023A23] text-lg">All Caught Up!</h3>
             <p className="text-sm text-gray-500 mt-1">
               There are no {filterStatus !== 'ALL' ? filterStatus.toLowerCase() : ''} requests in the queue.
             </p>
@@ -258,12 +258,12 @@ export const AdminApprovalsPage: React.FC = () => {
                       ACTION: {req.action}
                     </span>
 
-                    <span className="text-xs text-gray-400 font-mono">
+                    <span className="text-xs text-gray-400">
                       ID: {req.id}
                     </span>
                   </div>
 
-                  <h3 className="text-base font-bold text-gray-900 font-heading">
+                  <h3 className="text-base font-bold text-[#023A23]">
                     {req.itemTitle}
                   </h3>
 
@@ -337,7 +337,7 @@ export const AdminApprovalsPage: React.FC = () => {
       {isRejectModalOpen && activeItem && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
           <div className="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl p-6 animate-in fade-in zoom-in duration-200">
-            <h3 className="text-lg font-bold text-gray-900 font-heading">
+            <h3 className="text-lg font-bold text-[#023A23]">
               Decline Request
             </h3>
             <p className="text-sm text-gray-600 mt-1">

@@ -181,7 +181,7 @@ export const AdminResourcesPage: React.FC = () => {
       {/* Top Header */}
       <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 font-heading">Downloads & Resource Library</h1>
+          <h1 className="text-2xl font-bold text-[#023A23]">Downloads & Resource Library</h1>
           <p className="text-sm text-gray-600 mt-1">
             Manage investor documentation, application guidelines, master plans, and compliance forms.
           </p>
@@ -254,7 +254,7 @@ export const AdminResourcesPage: React.FC = () => {
                   <tr key={item.id} className="hover:bg-gray-50 transition-colors">
                     <td className="py-3 px-4">
                       <div className="flex items-start gap-3">
-                        <div className="p-2 bg-red-50 text-red-700 rounded-lg shrink-0 mt-0.5">
+                        <div className="p-2 bg-[#023A23]/10 text-[#023A23] rounded-lg shrink-0 mt-0.5">
                           <FileText className="w-4 h-4" />
                         </div>
                         <div>
@@ -271,7 +271,7 @@ export const AdminResourcesPage: React.FC = () => {
                       </span>
                     </td>
                     <td className="py-3 px-4">
-                      <span className="font-mono text-xs text-gray-700 font-medium">
+                      <span className="text-xs text-gray-700 font-medium">
                         {item.format} • {item.fileSize}
                       </span>
                     </td>
@@ -315,7 +315,7 @@ export const AdminResourcesPage: React.FC = () => {
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
           <div className="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-in fade-in zoom-in duration-200">
             <div className="px-6 py-4 border-b border-gray-100 flex items-center justify-between bg-gray-50/50">
-              <h3 className="font-bold text-gray-900 font-heading text-lg">
+              <h3 className="font-bold text-[#023A23] text-lg">
                 {editingItem ? 'Edit Document Metadata' : 'Upload Resource to Library'}
               </h3>
               <button
@@ -424,7 +424,7 @@ export const AdminResourcesPage: React.FC = () => {
                 <AlertTriangle className="w-6 h-6" />
               </div>
 
-              <h3 className="text-lg font-bold text-gray-900 font-heading">
+              <h3 className="text-lg font-bold text-[#023A23]">
                 {isSuperAdmin ? 'Permanently Delete Resource?' : 'Submit Deletion for Approval?'}
               </h3>
               <p className="text-sm text-gray-600 mt-2">

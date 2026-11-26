@@ -142,10 +142,10 @@ export const AdminDashboardPage: React.FC = () => {
         {/* Open Tenders */}
         <div className="bg-white rounded-xl p-5 border border-black/10 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-3">
-            <div className="p-2.5 rounded-lg bg-blue-50 text-blue-600">
+            <div className="p-2.5 rounded-lg bg-[#023A23]/10 text-[#023A23]">
               <FileText size={20} />
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-blue-100 text-blue-800">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#023A23]/10 text-[#023A23]">
               Procurement
             </span>
           </div>
@@ -153,7 +153,7 @@ export const AdminDashboardPage: React.FC = () => {
           <div className="text-xs font-semibold text-gray-500 mt-1">Open Tenders</div>
           <Link
             to="/admin/tenders"
-            className="mt-3 text-[11px] font-bold text-blue-600 hover:text-blue-800 inline-flex items-center gap-1 no-underline"
+            className="mt-3 text-[11px] font-bold text-[#023A23] hover:text-[#28B674] inline-flex items-center gap-1 no-underline"
           >
             View notices <ArrowRight size={12} />
           </Link>
@@ -162,10 +162,10 @@ export const AdminDashboardPage: React.FC = () => {
         {/* Investor Resources */}
         <div className="bg-white rounded-xl p-5 border border-black/10 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-3">
-            <div className="p-2.5 rounded-lg bg-amber-50 text-[#F2AE37]">
+            <div className="p-2.5 rounded-lg bg-[#F2AE37]/15 text-[#D4911E]">
               <FolderDown size={20} />
             </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-amber-100 text-amber-800">
+            <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#F2AE37]/20 text-[#023A23]">
               Downloads
             </span>
           </div>
@@ -173,7 +173,7 @@ export const AdminDashboardPage: React.FC = () => {
           <div className="text-xs font-semibold text-gray-500 mt-1">Published Guides & Docs</div>
           <Link
             to="/admin/resources"
-            className="mt-3 text-[11px] font-bold text-[#D4911E] hover:text-[#023A23] inline-flex items-center gap-1 no-underline"
+            className="mt-3 text-[11px] font-bold text-[#023A23] hover:text-[#F2AE37] inline-flex items-center gap-1 no-underline"
           >
             Manage files <ArrowRight size={12} />
           </Link>
@@ -182,13 +182,13 @@ export const AdminDashboardPage: React.FC = () => {
         {/* Approvals Queue */}
         <div className="bg-white rounded-xl p-5 border border-black/10 shadow-sm hover:shadow-md transition-shadow">
           <div className="flex items-center justify-between mb-3">
-            <div className="p-2.5 rounded-lg bg-purple-50 text-purple-600">
+            <div className="p-2.5 rounded-lg bg-[#E77227]/10 text-[#E77227]">
               <CheckSquare size={20} />
             </div>
             <span
               className={`text-[10px] font-bold px-2 py-0.5 rounded ${
                 pendingApprovals.length > 0
-                  ? 'bg-amber-100 text-amber-900 animate-pulse'
+                  ? 'bg-[#F2AE37]/25 text-[#023A23] border border-[#F2AE37]/50 animate-pulse'
                   : 'bg-gray-100 text-gray-600'
               }`}
             >
@@ -199,7 +199,7 @@ export const AdminDashboardPage: React.FC = () => {
           <div className="text-xs font-semibold text-gray-500 mt-1">Governance Queue</div>
           <Link
             to="/admin/approvals"
-            className="mt-3 text-[11px] font-bold text-purple-600 hover:text-purple-800 inline-flex items-center gap-1 no-underline"
+            className="mt-3 text-[11px] font-bold text-[#E77227] hover:text-[#023A23] inline-flex items-center gap-1 no-underline"
           >
             Open approval desk <ArrowRight size={12} />
           </Link>
@@ -291,7 +291,7 @@ export const AdminDashboardPage: React.FC = () => {
                 </div>
                 <div className="font-semibold text-[#023A23]">{log.action.replace('_', ' ')}</div>
                 <div className="text-[11px] text-gray-500 truncate">{log.target}</div>
-                <div className="text-[9px] text-gray-400 mt-0.5 font-mono">IP: {log.ipAddress}</div>
+                <div className="text-[10px] text-gray-400 mt-0.5">IP: {log.ipAddress}</div>
               </div>
             ))}
           </div>

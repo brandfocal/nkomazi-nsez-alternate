@@ -79,7 +79,7 @@ body {
 
 :root {
   --font-body: 'Poppins', system-ui, sans-serif;
-  --font-heading: 'Saira Condensed', system-ui, sans-serif;
+  --font-heading: 'Poppins', system-ui, sans-serif;
   --radius: 0.625rem;
   --background: oklch(1.0000 0.0000 0);
   --foreground: oklch(0.145 0 0);
