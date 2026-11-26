@@ -2,6 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, ChevronDown, Phone } from 'lucide-react';
 import { useLocation } from 'react-router-dom';
+import { loadFromStorage, STORAGE_KEYS, INITIAL_SETTINGS } from '../../admin/mockData';
+import { SiteSettings } from '../../admin/types';
 
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
@@ -99,6 +101,34 @@ export function NSEZNavbar() {
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const dropdownTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Dynamic Site Settings from Admin Store
+  const [siteSettings] = useState<SiteSettings>(() =>
+    loadFromStorage<SiteSettings>(STORAGE_KEYS.SETTINGS, INITIAL_SETTINGS)
+  );
+
+  const dynamicSocialLinks = [
+    {
+      Icon: SOCIAL_LINKS[0].Icon,
+      label: 'Instagram',
+      href: 'https://www.instagram.com/nkomazisez/'
+    },
+    {
+      Icon: SOCIAL_LINKS[1].Icon,
+      label: 'Facebook',
+      href: siteSettings.socialFacebook || 'https://web.facebook.com/people/Nkomazi-SEZ/61586568002498/'
+    },
+    {
+      Icon: SOCIAL_LINKS[2].Icon,
+      label: 'YouTube',
+      href: siteSettings.socialYouTube || 'https://www.youtube.com/@NkomaziSEZ'
+    },
+    {
+      Icon: SOCIAL_LINKS[3].Icon,
+      label: 'LinkedIn',
+      href: siteSettings.socialLinkedIn || 'https://www.linkedin.com/company/nkomazi-special-economic-zone/'
+    }
+  ];
+
   const handleDropdownEnter = () => {
     if (dropdownTimeoutRef.current) clearTimeout(dropdownTimeoutRef.current);
     setAboutDropdownOpen(true);
@@ -160,21 +190,33 @@ export function NSEZNavbar() {
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-          <a href="tel:+27137522440" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em', display: 'flex', alignItems: 'center', gap: '5px' }}>
+          <a href={`tel:${siteSettings.contactPhone.replace(/\s+/g, '')}`} style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em', display: 'flex', alignItems: 'center', gap: '5px' }}>
             <Phone size={11} style={{ color: '#28B674' }} />
-            <span>+27 13 752 2440</span>
+            <span>{siteSettings.contactPhone}</span>
           </a>
           <span style={{ color: '#023A23', opacity: 0.35, fontSize: '11px' }}>|</span>
-          <a href="mailto:invest@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
-            invest@nkomazisez.gov.za
+          <a href={`mailto:${siteSettings.investmentEmail}`} style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
+            {siteSettings.investmentEmail}
           </a>
           <span style={{ color: '#023A23', opacity: 0.35, fontSize: '11px' }}>|</span>
-          <a href="mailto:info@nkomazisez.gov.za" style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
-            info@nkomazisez.gov.za
+          <a href={`mailto:${siteSettings.generalEmail}`} style={{ fontFamily: BODY_FONT, fontSize: '11px', color: '#023A23', textDecoration: 'none', letterSpacing: '0.04em' }}>
+            {siteSettings.generalEmail}
           </a>
+          {siteSettings.bannerEnabled && siteSettings.bannerText && (
+            <>
+              <span className="hidden md:inline" style={{ color: '#023A23', opacity: 0.35, fontSize: '11px' }}>|</span>
+              <a
+                href={siteSettings.bannerLink || '/tenders'}
+                className="hidden md:inline-flex items-center gap-1.5 px-2 py-0.5 rounded text-[10px] font-semibold bg-[#F2AE37]/20 text-[#023A23] border border-[#F2AE37]/40 hover:bg-[#F2AE37]/30 transition-colors no-underline"
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-[#E77227] animate-pulse"></span>
+                <span>{siteSettings.bannerTitle ? `${siteSettings.bannerTitle}: ` : ''}{siteSettings.bannerText}</span>
+              </a>
+            </>
+          )}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          {SOCIAL_LINKS.map(({ Icon, label, href }) => (
+          {dynamicSocialLinks.map(({ Icon, label, href }) => (
             <a
               key={label}
               href={href}

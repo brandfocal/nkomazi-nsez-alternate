@@ -4,6 +4,8 @@ import { Menu, X, ChevronRight, Search, Calendar } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
+import { loadFromStorage, STORAGE_KEYS, INITIAL_TENDERS } from '../../admin/mockData';
+import { TenderItem } from '../../admin/types';
 
 // --- Constants & Styling ---
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
@@ -1176,13 +1178,38 @@ export const TendersPage = () => {
   const [activeFilter, setActiveFilter] = useState<OpportunityCategory | 'All'>('All');
   const [searchQuery, setSearchQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  // Dynamic connection to Admin Tenders store
+  const [adminTenders] = useState<TenderItem[]>(() =>
+    loadFromStorage<TenderItem[]>(STORAGE_KEYS.TENDERS, INITIAL_TENDERS)
+  );
+
+  const allOpportunities = useMemo(() => {
+    // Map live admin tenders that are open or evaluating
+    const dynamicTenders: Opportunity[] = (adminTenders || [])
+      .filter(t => t.status !== 'CLOSED' && t.status !== 'PENDING_APPROVAL')
+      .map(t => ({
+        id: t.id,
+        category: 'Tender' as const,
+        title: `${t.refNo ? `[${t.refNo}] ` : ''}${t.title}`,
+        description: `Official procurement opportunity under category: ${t.category}. Issued by Nkomazi Special Economic Zone. Documentation packs available: ${t.documentCount}.`,
+        closingDate: t.closingDate,
+        status: t.status === 'OPEN' ? 'Open' as const : 'Closing Soon' as const,
+        pdfUrl: '/tenders/tenders/05-08-2026/Bid Documentation -Bulk Electrical Construction.pdf'
+      }));
+
+    const dynamicIds = new Set(dynamicTenders.map(d => d.id));
+    const staticFallbacks = OPPORTUNITIES.filter(o => !dynamicIds.has(o.id));
+    return [...dynamicTenders, ...staticFallbacks];
+  }, [adminTenders]);
+
   const filteredOpportunities = useMemo(() => {
-    return OPPORTUNITIES.filter(item => {
+    return allOpportunities.filter(item => {
       const matchesFilter = activeFilter === 'All' || item.category === activeFilter;
       const matchesSearch = item.title.toLowerCase().includes(searchQuery.toLowerCase()) || item.description.toLowerCase().includes(searchQuery.toLowerCase());
       return matchesFilter && matchesSearch;
     });
-  }, [activeFilter, searchQuery]);
+  }, [allOpportunities, activeFilter, searchQuery]);
 
   const activeCategory = CATEGORIES.find(c => c.value === activeFilter);
   const activeHeading = activeFilter === 'All'

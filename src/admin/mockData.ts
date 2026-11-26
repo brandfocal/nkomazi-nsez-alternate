@@ -1,4 +1,4 @@
-import { OpportunityItem, TenderItem, ResourceItem, ApprovalRequest, AuditLog, AdminUser, AdminRole } from './types';
+import { OpportunityItem, TenderItem, ResourceItem, ApprovalRequest, AuditLog, AdminUser, AdminRole, SiteSettings } from './types';
 
 export const STORAGE_KEYS = {
   USERS: 'users',
@@ -7,6 +7,27 @@ export const STORAGE_KEYS = {
   RESOURCES: 'resources',
   APPROVALS: 'approvals',
   AUDIT_LOGS: 'audit_logs',
+  SETTINGS: 'site_settings',
+};
+
+export const INITIAL_SETTINGS: SiteSettings = {
+  contactPhone: '+27 (0) 13 759 8600',
+  generalEmail: 'info@nkomazisez.co.za',
+  investmentEmail: 'invest@nkomazisez.co.za',
+  procurementEmail: 'tenders@nkomazisez.co.za',
+  physicalAddress: 'Komatipoort Industrial Precinct, N4 Trade Corridor, Mpumalanga, 1340',
+  postalAddress: 'PO Box 114, Komatipoort, 1340, South Africa',
+  officeHours: 'Monday – Friday: 08:00 – 16:30 (CAT)',
+  socialLinkedIn: 'https://www.linkedin.com/company/nkomazi-sez',
+  socialFacebook: 'https://www.facebook.com/NkomaziSEZ',
+  socialYouTube: 'https://www.youtube.com/@NkomaziSEZ',
+  socialTwitter: 'https://x.com/NkomaziSEZ',
+  bannerEnabled: true,
+  bannerTitle: 'Tender Notice NSEZ/ENG/2026/014',
+  bannerText: 'Compulsory site inspection briefing for 33kV dedicated substation is scheduled for 2 December 2026.',
+  bannerLink: '/tenders',
+  lastUpdated: '2026-11-26',
+  updatedBy: 'Sipho Ndlovu'
 };
 
 export const INITIAL_USERS: AdminUser[] = [

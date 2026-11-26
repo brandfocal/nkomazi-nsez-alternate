@@ -15,7 +15,8 @@ import {
   X,
   Bell,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Settings
 } from 'lucide-react';
 import { useAdminAuth } from '../context/AdminAuthContext';
 import { loadFromStorage, INITIAL_APPROVALS } from '../mockData';
@@ -63,6 +64,11 @@ export const AdminLayout: React.FC = () => {
       label: 'Approval Center',
       icon: CheckSquare,
       badge: pendingCount > 0 ? pendingCount : null
+    },
+    {
+      to: '/admin/settings',
+      label: 'Site Settings & Directory',
+      icon: Settings
     },
     ...(isSuperAdmin
       ? [

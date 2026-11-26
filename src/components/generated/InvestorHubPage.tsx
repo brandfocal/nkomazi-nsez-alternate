@@ -1,6 +1,8 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useMemo } from 'react';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
+import { loadFromStorage, STORAGE_KEYS, INITIAL_RESOURCES } from '../../admin/mockData';
+import { ResourceItem as AdminResourceItem } from '../../admin/types';
 
 import { motion, AnimatePresence, useInView, useScroll, useTransform, useSpring, useMotionValue } from 'framer-motion';
 import { MapPin, Globe, Zap, ShieldCheck, Wheat, Factory, Truck, FlaskConical, Sun, Menu, X, ChevronRight, ArrowDownToLine, Building2, Warehouse, Layers, CheckCircle2, FileText, Check, ArrowRight, Search } from 'lucide-react';
@@ -1867,6 +1869,23 @@ const LeasingListingsSection = () => {
 
 // ─── Resources Section ────────────────────────────────────────────────────────
 const ResourcesSection = () => {
+  const [adminResources] = useState<AdminResourceItem[]>(() =>
+    loadFromStorage<AdminResourceItem[]>(STORAGE_KEYS.RESOURCES, INITIAL_RESOURCES)
+  );
+
+  const displayResources: ResourceItem[] = useMemo(() => {
+    if (!adminResources || adminResources.length === 0) return RESOURCES;
+    const published = adminResources.filter(r => r.status === 'PUBLISHED');
+    if (published.length === 0) return RESOURCES;
+
+    return published.map((r, idx) => ({
+      index: String(idx + 1).padStart(2, '0'),
+      title: r.title,
+      description: r.description || `${r.category} document (${r.format} • ${r.fileSize})`,
+      href: '#'
+    }));
+  }, [adminResources]);
+
   return <section style={{
     background: '#FAFAF8',
     paddingTop: 'clamp(48px, 8vw, 96px)',
@@ -1890,7 +1909,7 @@ const ResourcesSection = () => {
       </div>
 
       <div className="flex flex-col">
-        {RESOURCES.map((resource, idx) => <FadeUp key={resource.title} delay={idx * 0.07}>
+        {displayResources.map((resource, idx) => <FadeUp key={resource.title} delay={idx * 0.07}>
           <div style={{
             borderTop: idx === 0 ? '1px solid rgba(2, 58, 35,0.12)' : 'none',
             borderBottom: '1px solid rgba(2, 58, 35,0.12)'

@@ -30,6 +30,7 @@ import { AdminTendersPage } from './admin/pages/AdminTendersPage';
 import { AdminResourcesPage } from './admin/pages/AdminResourcesPage';
 import { AdminApprovalsPage } from './admin/pages/AdminApprovalsPage';
 import { AdminUsersPage } from './admin/pages/AdminUsersPage';
+import { AdminSettingsPage } from './admin/pages/AdminSettingsPage';
 
 let theme: Theme = 'light';
 
@@ -107,6 +108,7 @@ function App() {
             <Route path="tenders" element={<AdminTendersPage />} />
             <Route path="resources" element={<AdminResourcesPage />} />
             <Route path="approvals" element={<AdminApprovalsPage />} />
+            <Route path="settings" element={<AdminSettingsPage />} />
             <Route path="users" element={<AdminUsersPage />} />
           </Route>
         </Routes>

@@ -74,3 +74,23 @@ export interface AuditLog {
   timestamp: string;
   ipAddress: string;
 }
+
+export interface SiteSettings {
+  contactPhone: string;
+  generalEmail: string;
+  investmentEmail: string;
+  procurementEmail: string;
+  physicalAddress: string;
+  postalAddress: string;
+  officeHours: string;
+  socialLinkedIn: string;
+  socialFacebook: string;
+  socialYouTube: string;
+  socialTwitter: string;
+  bannerEnabled: boolean;
+  bannerTitle?: string;
+  bannerText: string;
+  bannerLink?: string;
+  lastUpdated: string;
+  updatedBy?: string;
+}
