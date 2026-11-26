@@ -60,10 +60,14 @@ export const AdminLoginPage: React.FC = () => {
       <div className="max-w-md w-full relative z-10">
         {/* Brand header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-gradient-to-br from-[#28B674] to-[#023A23] border border-[#28B674]/40 shadow-xl shadow-[#28B674]/20 mb-4 font-black text-2xl text-[#023A23]">
-            N
+          <div className="flex justify-center mb-4">
+            <img
+              src="/NSEZ-Horizontal-Logo-white.png"
+              alt="Mpumalanga Nkomazi SEZ"
+              className="h-14 w-auto object-contain drop-shadow"
+            />
           </div>
-          <h1 className="text-2xl font-bold tracking-tight text-white mb-1">
+          <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1">
             MPUMALANGA NKOMAZI SEZ
           </h1>
           <p className="text-xs uppercase tracking-widest text-[#F2AE37] font-semibold">

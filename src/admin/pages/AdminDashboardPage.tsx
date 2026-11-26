@@ -73,7 +73,7 @@ export const AdminDashboardPage: React.FC = () => {
           </h1>
 
           <p className="text-xs sm:text-sm text-white/80 leading-relaxed mb-6">
-            You are managing the public portal for the Mpumalanga Nkomazi Special Economic Zone.
+            You are managing the public portal for the Mpumalanga Nkomazi SEZ.
             {isSuperAdmin
               ? ' You have full executive authority to approve publications, modify data schemas, and execute permanent deletions.'
               : ' You can draft and update active listings. Content deletions and restricted edits will queue for Super Admin sign-off.'}

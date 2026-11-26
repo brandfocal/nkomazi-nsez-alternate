@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, Outlet, useNavigate, useLocation } from 'react-router-dom';
+import { NavLink, Link, Outlet, useNavigate, useLocation } from 'react-router-dom';
 import {
   LayoutDashboard,
   Briefcase,
@@ -141,15 +141,16 @@ export const AdminLayout: React.FC = () => {
     <div className="min-h-screen bg-[#F4F6F4] text-[#1A2621] flex flex-col lg:flex-row font-['Poppins',system-ui,sans-serif]">
       {/* ─── Mobile Header ─────────────────────────────────────────── */}
       <header className="lg:hidden bg-[#023A23] text-white px-4 py-3 flex items-center justify-between border-b border-[#28B674]/20 sticky top-0 z-50">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-[#28B674] flex items-center justify-center font-bold text-[#023A23] text-sm">
-            N
-          </div>
-          <div>
-            <div className="font-bold text-xs uppercase tracking-wider text-[#F2AE37]">Nkomazi SEZ</div>
-            <div className="text-[10px] text-white/70">Admin Management Portal</div>
-          </div>
-        </div>
+        <Link to="/admin" className="flex items-center gap-2.5 no-underline">
+          <img
+            src="/NSEZ-Horizontal-Logo-white.png"
+            alt="Mpumalanga Nkomazi SEZ"
+            className="h-7 w-auto object-contain"
+          />
+          <span className="text-[10px] bg-[#28B674]/20 text-[#28B674] font-semibold px-1.5 py-0.5 rounded border border-[#28B674]/30">
+            Admin
+          </span>
+        </Link>
         <button
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           className="p-2 text-white/80 hover:text-white rounded-md hover:bg-white/10"
@@ -165,19 +166,21 @@ export const AdminLayout: React.FC = () => {
       >
         {/* Brand identity */}
         <div className="p-6 border-b border-white/10">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[#28B674] to-[#1E8A57] flex items-center justify-center shadow-lg shadow-[#28B674]/20 font-black text-[#023A23] text-xl">
-              N
+          <Link to="/admin" className="block no-underline">
+            <img
+              src="/NSEZ-Horizontal-Logo-white.png"
+              alt="Mpumalanga Nkomazi SEZ"
+              className="h-9 w-auto object-contain mb-2.5"
+            />
+            <div className="flex items-center justify-between">
+              <span className="text-[11px] font-bold text-[#F2AE37] tracking-widest uppercase">
+                Admin Console
+              </span>
+              <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-white/10 text-white/70 font-semibold">
+                v2.0
+              </span>
             </div>
-            <div>
-              <div className="font-black text-sm tracking-tight text-white leading-tight">
-                MPUMALANGA NKOMAZI
-              </div>
-              <div className="text-[11px] font-bold text-[#F2AE37] tracking-widest uppercase">
-                SEZ Admin Console
-              </div>
-            </div>
-          </div>
+          </Link>
         </div>
 
         {/* Navigation list */}
@@ -287,7 +290,7 @@ export const AdminLayout: React.FC = () => {
         <header className="hidden lg:flex bg-white border-b border-black/10 px-8 py-3.5 items-center justify-between sticky top-0 z-30 shadow-sm">
           <div className="flex items-center gap-3">
             <span className="text-xs font-bold text-[#023A23] uppercase tracking-wider">
-              Mpumalanga Nkomazi Special Economic Zone
+              Mpumalanga Nkomazi SEZ
             </span>
 
             {/* Quick Command Search Trigger */}
