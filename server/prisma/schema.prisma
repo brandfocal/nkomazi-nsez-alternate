@@ -1,0 +1,189 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  SUPER_ADMIN
+  STANDARD_ADMIN
+}
+
+enum AdminStatus {
+  ACTIVE
+  SUSPENDED
+}
+
+enum ListingStatus {
+  PUBLISHED
+  PENDING_APPROVAL
+  PENDING_DELETION
+}
+
+enum TenderStatus {
+  OPEN
+  CLOSED
+  AWARDED
+  CANCELLED
+  PENDING_APPROVAL
+  PENDING_DELETION
+}
+
+enum ApprovalAction {
+  CREATE
+  UPDATE
+  DELETE
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+}
+
+enum InquiryStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+}
+
+model User {
+  id         String      @id @default(uuid())
+  email      String      @unique
+  password   String      // Hashed with bcrypt
+  name       String
+  department String
+  role       Role        @default(STANDARD_ADMIN)
+  status     AdminStatus @default(ACTIVE)
+  createdAt  DateTime    @default(now())
+  updatedAt  DateTime    @updatedAt
+}
+
+model InvestmentListing {
+  id          String        @id @default(uuid())
+  title       String
+  sector      String
+  value       String
+  description String        @db.Text
+  location    String
+  roi         String
+  impact      String
+  stage       String
+  imageUrl    String?
+  status      ListingStatus @default(PUBLISHED)
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+}
+
+model Tender {
+  id           String       @id @default(uuid())
+  refNo        String       @unique
+  title        String
+  category     String
+  closingDate  String
+  briefingDate String?
+  status       TenderStatus @default(OPEN)
+  documentUrl  String?
+  fileSize     String?
+  queriesEmail String
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+}
+
+model ResourceDoc {
+  id        String   @id @default(uuid())
+  title     String
+  category  String
+  format    String
+  size      String
+  url       String
+  downloads Int      @default(0)
+  status    String   @default("PUBLISHED")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NewsArticle {
+  id        String   @id @default(uuid())
+  title     String
+  category  String
+  date      String
+  readTime  String
+  excerpt   String   @db.Text
+  content   String   @db.Text
+  imageUrl  String?
+  status    String   @default("PUBLISHED")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CareerOpening {
+  id           String   @id @default(uuid())
+  title        String
+  type         String
+  department   String
+  location     String
+  closingDate  String
+  requirements String   @db.Text
+  status       String   @default("OPEN")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model Inquiry {
+  id        String        @id @default(uuid())
+  type      String
+  name      String
+  email     String
+  phone     String
+  company   String?
+  message   String        @db.Text
+  status    InquiryStatus @default(NEW)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model ApprovalRequest {
+  id          String         @id @default(uuid())
+  itemType    String
+  itemId      String
+  itemTitle   String
+  action      ApprovalAction
+  requestedBy String
+  requestedAt String
+  reason      String?        @db.Text
+  status      ApprovalStatus @default(PENDING)
+  reviewedBy  String?
+  reviewedAt  String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+}
+
+model AuditLog {
+  id        String   @id @default(uuid())
+  action    String
+  target    String
+  userEmail String
+  userName  String
+  role      String
+  timestamp String
+  ipAddress String
+  details   String?  @db.Text
+  createdAt DateTime @default(now())
+}
+
+model SiteSettings {
+  id                String   @id @default(uuid())
+  primaryPhone      String
+  primaryEmail      String
+  physicalAddress   String
+  officeHours       String
+  linkedinUrl       String?
+  twitterUrl        String?
+  alertBannerText   String?
+  alertBannerActive Boolean  @default(false)
+  updatedAt         DateTime @updatedAt
+}
