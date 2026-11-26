@@ -4,6 +4,8 @@ import { Menu, X, ChevronRight, Play, Facebook, ArrowRight, ExternalLink, Calend
 import { Link } from 'react-router-dom';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
+import { loadFromStorage, STORAGE_KEYS, INITIAL_NEWS } from '../../admin/mockData';
+import { NewsArticleItem } from '../../admin/types';
 
 // ─── STYLING CONSTANTS ─────────────────────────────────────────────────────────
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
@@ -685,6 +687,10 @@ const HeroSection = () => {
 // ─── EDITORIAL NEWS SECTION ────────────────────────────────────────────────────
 
 const EditorialNewsSection = () => {
+  const storedNews = loadFromStorage<NewsArticleItem[]>(STORAGE_KEYS.NEWS, INITIAL_NEWS);
+  const activeArticles = storedNews.filter((a) => a.published !== false);
+  const articlesToDisplay = activeArticles.length > 0 ? activeArticles : NEWS_ARTICLES;
+
   return <section id="news-section" className="py-12 sm:py-16 lg:py-20" style={{
     background: '#FFFFFF'
   }}>
@@ -694,8 +700,8 @@ const EditorialNewsSection = () => {
         {/* On mobile: stacked grid. On sm+: scrollable row */}
         <div className="block sm:hidden">
           <div className="flex flex-col gap-5">
-            {NEWS_ARTICLES.map((article, idx) => <FadeUp key={article.id} delay={idx * 0.07}>
-                <div className="group bg-white flex flex-col cursor-pointer transition-all duration-300" onClick={() => window.open(article.link, '_blank')} style={{
+            {articlesToDisplay.map((article, idx) => <FadeUp key={article.id} delay={idx * 0.07}>
+                <div className="group bg-white flex flex-col cursor-pointer transition-all duration-300" onClick={() => article.link && window.open(article.link, '_blank')} style={{
               border: '1px solid rgba(230,230,230,0.8)',
               borderRadius: '14px',
               overflow: 'hidden',
@@ -744,7 +750,7 @@ const EditorialNewsSection = () => {
                 }}>
                       {article.excerpt}
                     </p>
-                    <a href={article.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-bold uppercase text-[11px] tracking-widest" style={{
+                    <a href={article.link || '#'} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 font-bold uppercase text-[11px] tracking-widest" style={{
                   fontFamily: BODY_FONT,
                   color: '#28B674',
                   textDecoration: 'none'
@@ -761,8 +767,8 @@ const EditorialNewsSection = () => {
         {/* Tablet+: horizontal scroll row, Desktop: 3-col grid */}
         <div className="hidden sm:block">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {NEWS_ARTICLES.map((article, idx) => <FadeUp key={article.id} delay={idx * 0.07}>
-                <div className="group bg-white flex flex-col h-full cursor-pointer transition-all duration-300" onClick={() => window.open(article.link, '_blank')} style={{
+            {articlesToDisplay.map((article, idx) => <FadeUp key={article.id} delay={idx * 0.07}>
+                <div className="group bg-white flex flex-col h-full cursor-pointer transition-all duration-300" onClick={() => article.link && window.open(article.link, '_blank')} style={{
               border: '1px solid rgba(230,230,230,0.8)',
               borderRadius: '16px',
               overflow: 'hidden',

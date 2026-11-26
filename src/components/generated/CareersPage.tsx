@@ -4,6 +4,8 @@ import { Menu, X, Mail, MapPin, Calendar, Briefcase, Info, ArrowUpRight, Chevron
 import { Link } from 'react-router-dom';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
+import { loadFromStorage, STORAGE_KEYS, INITIAL_CAREERS } from '../../admin/mockData';
+import { CareerItem } from '../../admin/types';
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
@@ -740,7 +742,11 @@ const WhyWorkAtNSEZ = () => <section className="py-16 sm:py-24 bg-white px-4 sm:
 
 const CareersSection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const filteredJobs = activeCategory === 'all' ? JOB_LISTINGS : JOB_LISTINGS.filter(job => {
+  const storedCareers = loadFromStorage<CareerItem[]>(STORAGE_KEYS.CAREERS, INITIAL_CAREERS);
+  const openJobs = storedCareers.filter((job) => job.status === 'OPEN');
+  const jobsToDisplay = openJobs.length > 0 ? openJobs : JOB_LISTINGS;
+
+  const filteredJobs = activeCategory === 'all' ? jobsToDisplay : jobsToDisplay.filter(job => {
     if (activeCategory === 'vacancy') return job.category === 'Vacancy';
     if (activeCategory === 'learnership') return job.category === 'Learnership';
     if (activeCategory === 'graduate') return job.category === 'Graduate Programme';

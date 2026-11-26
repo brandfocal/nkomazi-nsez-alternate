@@ -29,6 +29,8 @@ import { AdminOpportunitiesPage } from './admin/pages/AdminOpportunitiesPage';
 import { AdminTendersPage } from './admin/pages/AdminTendersPage';
 import { AdminResourcesPage } from './admin/pages/AdminResourcesPage';
 import { AdminApprovalsPage } from './admin/pages/AdminApprovalsPage';
+import { AdminNewsPage } from './admin/pages/AdminNewsPage';
+import { AdminCareersPage } from './admin/pages/AdminCareersPage';
 import { AdminUsersPage } from './admin/pages/AdminUsersPage';
 import { AdminSettingsPage } from './admin/pages/AdminSettingsPage';
 
@@ -106,6 +108,8 @@ function App() {
             <Route index element={<AdminDashboardPage />} />
             <Route path="opportunities" element={<AdminOpportunitiesPage />} />
             <Route path="tenders" element={<AdminTendersPage />} />
+            <Route path="news" element={<AdminNewsPage />} />
+            <Route path="careers" element={<AdminCareersPage />} />
             <Route path="resources" element={<AdminResourcesPage />} />
             <Route path="approvals" element={<AdminApprovalsPage />} />
             <Route path="settings" element={<AdminSettingsPage />} />

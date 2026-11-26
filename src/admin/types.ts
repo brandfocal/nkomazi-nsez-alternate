@@ -49,9 +49,36 @@ export interface ResourceItem {
   pendingAction?: 'DELETE' | 'PUBLISH';
 }
 
+export interface NewsArticleItem {
+  id: string;
+  category: 'Featured Article' | 'Press Release' | 'Media Statement' | 'Video Highlights' | 'Event';
+  title: string;
+  excerpt: string;
+  date: string;
+  authorOrSource: string;
+  image: string;
+  link?: string;
+  published: boolean;
+  pendingAction?: 'DELETE' | 'PUBLISH';
+}
+
+export interface CareerItem {
+  id: string;
+  title: string;
+  category: 'Vacancy' | 'Learnership' | 'Graduate Programme' | 'Internship';
+  department: string;
+  location: string;
+  closingDate: string;
+  description: string;
+  type: 'Permanent' | 'Contract' | 'Full-Time';
+  status: 'OPEN' | 'CLOSED' | 'PENDING_APPROVAL';
+  pdfUrl?: string;
+  pendingAction?: 'DELETE' | 'PUBLISH';
+}
+
 export interface ApprovalRequest {
   id: string;
-  itemType: 'OPPORTUNITY' | 'TENDER' | 'RESOURCE';
+  itemType: 'OPPORTUNITY' | 'TENDER' | 'RESOURCE' | 'NEWS' | 'CAREER';
   action: 'DELETE' | 'PUBLISH';
   itemId: string;
   itemTitle: string;

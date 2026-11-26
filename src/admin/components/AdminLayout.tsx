@@ -16,7 +16,9 @@ import {
   Bell,
   Sparkles,
   ArrowRight,
-  Settings
+  Settings,
+  Newspaper,
+  TrendingUp
 } from 'lucide-react';
 import { useAdminAuth } from '../context/AdminAuthContext';
 import { loadFromStorage, INITIAL_APPROVALS } from '../mockData';
@@ -47,12 +49,22 @@ export const AdminLayout: React.FC = () => {
     {
       to: '/admin/opportunities',
       label: 'Investment Opportunities',
-      icon: Briefcase
+      icon: TrendingUp
     },
     {
       to: '/admin/tenders',
       label: 'Tenders & Procurement',
       icon: FileText
+    },
+    {
+      to: '/admin/news',
+      label: 'News & Media Releases',
+      icon: Newspaper
+    },
+    {
+      to: '/admin/careers',
+      label: 'Careers & Vacancies',
+      icon: Briefcase
     },
     {
       to: '/admin/resources',

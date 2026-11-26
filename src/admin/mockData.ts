@@ -1,10 +1,23 @@
-import { OpportunityItem, TenderItem, ResourceItem, ApprovalRequest, AuditLog, AdminUser, AdminRole, SiteSettings } from './types';
+import {
+  OpportunityItem,
+  TenderItem,
+  ResourceItem,
+  NewsArticleItem,
+  CareerItem,
+  ApprovalRequest,
+  AuditLog,
+  AdminUser,
+  AdminRole,
+  SiteSettings
+} from './types';
 
 export const STORAGE_KEYS = {
   USERS: 'users',
   OPPORTUNITIES: 'opportunities',
   TENDERS: 'tenders',
   RESOURCES: 'resources',
+  NEWS: 'news_articles',
+  CAREERS: 'careers_jobs',
   APPROVALS: 'approvals',
   AUDIT_LOGS: 'audit_logs',
   SETTINGS: 'site_settings',
@@ -174,6 +187,79 @@ export const INITIAL_RESOURCES: ResourceItem[] = [
     status: 'PUBLISHED',
     updatedAt: '2026-11-02',
     description: 'Application template and financial disclosures for qualifying tenant enterprises in the SEZ.'
+  }
+];
+
+export const INITIAL_NEWS: NewsArticleItem[] = [
+  {
+    id: 'news-1',
+    category: 'Featured Article',
+    title: 'MPUMALANGA NKOMAZI SEZ Occupies One of the Most Strategically Important Economic Positions in South Africa',
+    excerpt: 'An in-depth look at how the Nkomazi Special Economic Zone is positioned along the Maputo Development Corridor to drive SADC trade and regional industrial growth.',
+    date: '2026-11-18',
+    authorOrSource: 'Mpumalanga 247',
+    image: 'https://images.unsplash.com/photo-1465447142348-e9952c393450?w=800&q=80',
+    link: 'https://mpumalanga247.co.za/nkomazi-sez-occupies-one-of-the-most-strategically-important-economic-positions-in-south-africa/#more',
+    published: true
+  },
+  {
+    id: 'news-2',
+    category: 'Video Highlights',
+    title: 'MPUMALANGA NKOMAZI SEZ Special Broadcast & Milestone Presentation',
+    excerpt: 'Watch our corporate video and progress update presentation showing development milestones and active construction sites.',
+    date: '2026-11-10',
+    authorOrSource: 'Corporate Communications',
+    image: 'https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80',
+    link: 'https://drive.google.com/file/d/1r3hwIbZZWhrRRm8BerFep7uFmAKBXs4R/view?usp=sharing',
+    published: true
+  },
+  {
+    id: 'news-3',
+    category: 'Media Statement',
+    title: 'MPUMALANGA NKOMAZI SEZ Executive Showcase on Regional Integration',
+    excerpt: 'A media statement covering the Mozambique Investment Summit (MIS) highlights, bilateral trade agreements, and border corridor benefits.',
+    date: '2026-11-04',
+    authorOrSource: 'Office of the CEO',
+    image: 'https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?w=800&q=80',
+    link: 'https://www.facebook.com/share/v/18va3hETPo/',
+    published: true
+  }
+];
+
+export const INITIAL_CAREERS: CareerItem[] = [
+  {
+    id: 'job-1',
+    title: 'Marketing and Communications Manager',
+    category: 'Vacancy',
+    department: 'Corporate Services',
+    location: 'Mbombela & Komatipoort',
+    closingDate: '15 Dec 2026',
+    description: 'To develop, implement, and manage internal and external communication and marketing strategies that enhance the organisation\'s visibility, brand reputation, and stakeholder engagement.',
+    type: 'Permanent',
+    status: 'OPEN',
+    pdfUrl: '/careers/vacancies/05-08-2026/marketing and communications manager/736045339_1353480426739712_5508305170083225341_n.jpg'
+  },
+  {
+    id: 'job-2',
+    title: 'Senior Civil & Infrastructure Project Engineer',
+    category: 'Vacancy',
+    department: 'Engineering & Zone Infrastructure',
+    location: 'Komatipoort On-Site',
+    closingDate: '22 Dec 2026',
+    description: 'Provide technical oversight for Phase 1 civils, 33kV substation grid tie-in, bulk water reticulation, and stormwater management systems.',
+    type: 'Permanent',
+    status: 'OPEN'
+  },
+  {
+    id: 'job-3',
+    title: 'Supply Chain & Compliance Officer',
+    category: 'Vacancy',
+    department: 'Finance & Supply Chain',
+    location: 'Mbombela Head Office',
+    closingDate: '18 Dec 2026',
+    description: 'Oversee PFMA-compliant procurement processes, tender evaluation committees, and supplier database verifications.',
+    type: 'Permanent',
+    status: 'OPEN'
   }
 ];
 
