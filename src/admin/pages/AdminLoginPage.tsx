@@ -60,18 +60,18 @@ export const AdminLoginPage: React.FC = () => {
       <div className="max-w-md w-full relative z-10">
         {/* Brand header */}
         <div className="text-center mb-8">
-          <div className="flex justify-center mb-4">
+          <Link to="/" className="inline-block mb-3 hover:opacity-90 transition-opacity" title="Back to Public Website">
             <img
               src="/NSEZ-Horizontal-Logo-white.png"
               alt="Mpumalanga Nkomazi SEZ"
-              className="h-14 w-auto object-contain drop-shadow"
+              className="h-12 sm:h-14 w-auto object-contain drop-shadow mx-auto"
             />
-          </div>
+          </Link>
           <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-white mb-1">
-            MPUMALANGA NKOMAZI SEZ
+            Mpumalanga Nkomazi SEZ
           </h1>
           <p className="text-xs uppercase tracking-widest text-[#F2AE37] font-semibold">
-            Executive Admin & Content Portal
+            Admin Management Portal
           </p>
         </div>
 

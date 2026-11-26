@@ -232,7 +232,7 @@ export const AdminCareersPage: React.FC = () => {
             Careers &amp; Vacancies Manager
           </h1>
           <p className="text-emerald-100/80 text-sm max-w-2xl leading-relaxed">
-            Publish employment openings, learnership programmes, and graduate development opportunities for the Nkomazi Special Economic Zone.
+            Publish employment openings, learnership programmes, and graduate development opportunities for the Mpumalanga Nkomazi SEZ.
           </p>
         </div>
         <button
