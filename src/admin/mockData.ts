@@ -411,6 +411,10 @@ export function loadFromStorage<T>(key: string, defaultValue: T): T {
 export function saveToStorage<T>(key: string, value: T): void {
   try {
     localStorage.setItem(`nkomazi_admin_${key}`, JSON.stringify(value));
+    if (typeof window !== 'undefined') {
+      window.dispatchEvent(new Event('storage'));
+      window.dispatchEvent(new CustomEvent('nkomazi_storage_update', { detail: { key, value } }));
+    }
   } catch {
     // localStorage might fail in restricted sandboxes
   }

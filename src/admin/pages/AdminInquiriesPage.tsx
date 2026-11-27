@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useAdminAuth } from '../context/AdminAuthContext';
 import { InquiryItem, AuditLog } from '../types';
 import {
@@ -41,6 +41,21 @@ export const AdminInquiriesPage: React.FC = () => {
   const [inquiries, setInquiries] = useState<InquiryItem[]>(() =>
     loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES)
   );
+
+  useEffect(() => {
+    const handleSync = () => {
+      const fresh = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);
+      setInquiries(fresh);
+    };
+    window.addEventListener('storage', handleSync);
+    window.addEventListener('nkomazi_storage_update', handleSync);
+    window.addEventListener('focus', handleSync);
+    return () => {
+      window.removeEventListener('storage', handleSync);
+      window.removeEventListener('nkomazi_storage_update', handleSync);
+      window.removeEventListener('focus', handleSync);
+    };
+  }, []);
 
   const [searchQuery, setSearchQuery] = useState('');
   const [typeFilter, setTypeFilter] = useState('ALL');

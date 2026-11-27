@@ -7,6 +7,7 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 import { loadFromStorage, saveToStorage, STORAGE_KEYS, INITIAL_INQUIRIES } from '../../admin/mockData';
 import { InquiryItem } from '../../admin/types';
+import { apiClient } from '../../admin/services/apiClient';
 
 
 // ─── Font constants ────────────────────────────────────────────────────────────
@@ -1067,26 +1068,51 @@ const RegistrationForm = () => {
   const [province, setProvince] = useState('Mpumalanga');
   const [municipality, setMunicipality] = useState('Nkomazi Local Municipality');
   const [submitted, setSubmitted] = useState(false);
+  const [referenceNo, setReferenceNo] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const currentInquiries = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);
+    setIsSubmitting(true);
+    const refCode = `NSEZ-MSME-${Date.now().toString().slice(-6)}`;
+    const fullName = `${firstName} ${surname}`.trim() || 'MSME Applicant';
+    const subTitle = `MSME Incubator Application: ${businessName || fullName}`;
+    const detailedMessage = `Applicant: ${fullName} (${role || 'Representative'})\nContact: ${email} | ${phone}\nBusiness: ${businessName}\nSector/Type: ${businessType}\nStaff Size: ${employees || 'Unspecified'}\nLocation: ${municipality}, ${province}`;
+
     const newInquiry: InquiryItem = {
-      id: `inq-msme-${Date.now()}`,
+      id: refCode,
       type: 'MSME_REGISTRATION',
-      name: `${firstName} ${surname}`.trim() || 'MSME Applicant',
+      name: fullName,
       email: email.trim(),
       phone: phone.trim() || undefined,
       company: businessName.trim() || undefined,
       sector: businessType || 'MSME Development',
-      subject: `MSME Incubator Application: ${businessName || firstName + ' ' + surname}`,
-      message: `Applicant: ${firstName} ${surname} (${role || 'Representative'})\nContact: ${email} | ${phone}\nBusiness: ${businessName}\nSector/Type: ${businessType}\nStaff Size: ${employees || 'Unspecified'}\nLocation: ${municipality}, ${province}`,
+      subject: subTitle,
+      message: detailedMessage,
       submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
       status: 'NEW',
       priority: 'HIGH',
     };
+
+    const currentInquiries = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);
     saveToStorage(STORAGE_KEYS.INQUIRIES, [newInquiry, ...currentInquiries]);
+
+    try {
+      await apiClient.submitInquiry({
+        type: 'MSME_REGISTRATION',
+        name: fullName,
+        email: email.trim(),
+        phone: phone.trim() || '',
+        company: businessName.trim() || '',
+        message: detailedMessage
+      });
+    } catch (err) {
+      console.info('Backend API offline: MSME inquiry stored locally in admin store.', err);
+    }
+
+    setReferenceNo(refCode);
     setSubmitted(true);
+    setIsSubmitting(false);
   };
 
   return <section id="registration" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-8 lg:px-12" style={{
@@ -1135,6 +1161,9 @@ const RegistrationForm = () => {
               <p className="text-sm text-gray-600 max-w-lg mx-auto leading-relaxed" style={{ fontFamily: BODY_FONT }}>
                 Thank you for applying to the MPUMALANGA NKOMAZI SEZ MSME Hub. Your details have been delivered to our Enterprise Development Desk for accreditation and compliance verification.
               </p>
+              <div className="inline-block bg-emerald-100 text-[#023A23] px-4 py-2 rounded-lg text-xs font-mono font-bold tracking-wider my-2">
+                Application Reference: {referenceNo}
+              </div>
               <div className="pt-4">
                 <button
                   type="button"
@@ -1573,12 +1602,12 @@ const RegistrationForm = () => {
               </div>
 
               {/* Submit — full width always */}
-              <motion.button type="submit" whileHover={{
+              <motion.button type="submit" disabled={isSubmitting} whileHover={{
                 scale: 1.008,
                 y: -2
               }} whileTap={{
                 scale: 0.995
-              }} className="w-full text-white uppercase py-4 sm:py-5 flex items-center justify-center gap-3 relative overflow-hidden group" style={{
+              }} className="w-full text-white uppercase py-4 sm:py-5 flex items-center justify-center gap-3 relative overflow-hidden group disabled:opacity-60" style={{
                 fontFamily: HEADING_FONT,
                 fontWeight: 700,
                 fontSize: "clamp(14px, 2vw, 17px)",
@@ -1587,7 +1616,7 @@ const RegistrationForm = () => {
                 boxShadow: `0 16px 48px rgba(22,46,32,0.35), 0 0 0 1px rgba(184,150,58,0.12)`,
                 letterSpacing: "0.12em"
               }}>
-                <span>Submit Registration</span>
+                <span>{isSubmitting ? 'Submitting Registration...' : 'Submit Registration'}</span>
                 <ArrowRight size={18} />
                 <div className="pointer-events-none absolute inset-0 translate-x-[-110%] group-hover:translate-x-[110%] transition-transform duration-600 ease-in-out" style={{
                   background: "linear-gradient(105deg, transparent 25%, rgba(255,255,255,0.08) 50%, transparent 75%)"

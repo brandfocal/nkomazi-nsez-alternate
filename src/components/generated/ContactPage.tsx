@@ -6,6 +6,7 @@ import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
 import { loadFromStorage, saveToStorage, STORAGE_KEYS, INITIAL_INQUIRIES } from '../../admin/mockData';
 import { InquiryItem } from '../../admin/types';
+import { apiClient } from '../../admin/services/apiClient';
 
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
 const BODY_FONT = "'Poppins', system-ui, sans-serif";
@@ -671,24 +672,48 @@ const ContactSplit = () => {
   const [subject, setSubject] = useState(querySubject);
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [referenceNo, setReferenceNo] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const currentInquiries = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);
+    setIsSubmitting(true);
+    const refCode = `NSEZ-INQ-${Date.now().toString().slice(-6)}`;
+    const fullName = `${firstName} ${surname}`.trim() || 'Website Visitor';
+    const finalSubject = subject.trim() || `General Inquiry from ${fullName}`;
+
     const newInquiry: InquiryItem = {
-      id: `inq-${Date.now()}`,
+      id: refCode,
       type: 'GENERAL_CONTACT',
-      name: `${firstName} ${surname}`.trim() || 'Website Visitor',
+      name: fullName,
       email: email.trim(),
       company: organisation.trim() || undefined,
-      subject: subject.trim() || `General Inquiry from ${firstName} ${surname}`.trim() || 'Website General Inquiry',
+      subject: finalSubject,
       message: message.trim(),
       submittedAt: new Date().toISOString().replace('T', ' ').substring(0, 16),
       status: 'NEW',
       priority: 'MEDIUM',
     };
+
+    const currentInquiries = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, INITIAL_INQUIRIES);
     saveToStorage(STORAGE_KEYS.INQUIRIES, [newInquiry, ...currentInquiries]);
+
+    try {
+      await apiClient.submitInquiry({
+        type: 'GENERAL_CONTACT',
+        name: fullName,
+        email: email.trim(),
+        phone: '',
+        company: organisation.trim() || '',
+        message: `${finalSubject}\n\n${message.trim()}`
+      });
+    } catch (err) {
+      console.info('Backend API offline: inquiry stored locally in admin store.', err);
+    }
+
+    setReferenceNo(refCode);
     setSubmitted(true);
+    setIsSubmitting(false);
   };
   return <section id="enquiry" className="py-16 md:py-24 lg:py-32 bg-white">
     <div className="max-w-[1372px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -892,11 +917,14 @@ const ContactSplit = () => {
                 }}>
                   Thank you for your enquiry
                 </h4>
-                <p className="text-gray-500 text-sm" style={{
+                <p className="text-gray-500 text-sm mb-3" style={{
                   fontFamily: BODY_FONT
                 }}>
                   A member of the NSEZ investment team will be in touch within 2 business days.
                 </p>
+                <div className="inline-block bg-[#023A23]/10 text-[#023A23] px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold tracking-wider mb-2">
+                  Reference: {referenceNo}
+                </div>
                 <button onClick={() => setSubmitted(false)} className="mt-6 text-[#023A23] text-sm font-medium underline hover:text-[#28B674] transition-colors min-h-[44px]" style={{
                   fontFamily: BODY_FONT
                 }}>
@@ -1009,7 +1037,7 @@ const ContactSplit = () => {
                   }} />
                 </div>
                 <div className="space-y-3 pt-2">
-                  <motion.button type="submit" className="group flex h-[44px] items-stretch relative overflow-hidden rounded-lg w-full sm:w-auto" whileHover={{
+                  <motion.button type="submit" disabled={isSubmitting} className="group flex h-[44px] items-stretch relative overflow-hidden rounded-lg w-full sm:w-auto disabled:opacity-60" whileHover={{
                     y: -2,
                     scale: 1.015
                   }} whileTap={{
@@ -1021,7 +1049,7 @@ const ContactSplit = () => {
                     <div className="flex-1 sm:flex-none flex items-center justify-center px-8 bg-[#E77227] text-white text-[15px] font-medium tracking-[0.01em] rounded-l-lg" style={{
                       fontFamily: BODY_FONT
                     }}>
-                      Send Message
+                      {isSubmitting ? 'Submitting Enquiry...' : 'Send Message'}
                     </div>
                     <div className="flex items-center justify-center w-[44px] bg-[#E77227] text-white rounded-r-lg flex-shrink-0">
                       <ArrowRightIcon />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   Briefcase,
@@ -33,12 +33,32 @@ import { OpportunityItem, TenderItem, ResourceItem, ApprovalRequest, AuditLog, I
 export const AdminDashboardPage: React.FC = () => {
   const { user, isSuperAdmin } = useAdminAuth();
 
-  const opportunities = loadFromStorage<OpportunityItem[]>('opportunities', INITIAL_OPPORTUNITIES);
-  const tenders = loadFromStorage<TenderItem[]>('tenders', INITIAL_TENDERS);
-  const resources = loadFromStorage<ResourceItem[]>('resources', INITIAL_RESOURCES);
-  const approvals = loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS);
-  const auditLogs = loadFromStorage<AuditLog[]>('audit_logs', INITIAL_AUDIT_LOGS);
-  const inquiries = loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES);
+  const [opportunities, setOpportunities] = useState(() => loadFromStorage<OpportunityItem[]>('opportunities', INITIAL_OPPORTUNITIES));
+  const [tenders, setTenders] = useState(() => loadFromStorage<TenderItem[]>('tenders', INITIAL_TENDERS));
+  const [resources, setResources] = useState(() => loadFromStorage<ResourceItem[]>('resources', INITIAL_RESOURCES));
+  const [approvals, setApprovals] = useState(() => loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS));
+  const [auditLogs, setAuditLogs] = useState(() => loadFromStorage<AuditLog[]>('audit_logs', INITIAL_AUDIT_LOGS));
+  const [inquiries, setInquiries] = useState(() => loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES));
+
+  useEffect(() => {
+    const syncDashboardData = () => {
+      setOpportunities(loadFromStorage<OpportunityItem[]>('opportunities', INITIAL_OPPORTUNITIES));
+      setTenders(loadFromStorage<TenderItem[]>('tenders', INITIAL_TENDERS));
+      setResources(loadFromStorage<ResourceItem[]>('resources', INITIAL_RESOURCES));
+      setApprovals(loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS));
+      setAuditLogs(loadFromStorage<AuditLog[]>('audit_logs', INITIAL_AUDIT_LOGS));
+      setInquiries(loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES));
+    };
+
+    window.addEventListener('storage', syncDashboardData);
+    window.addEventListener('nkomazi_storage_update', syncDashboardData);
+    window.addEventListener('focus', syncDashboardData);
+    return () => {
+      window.removeEventListener('storage', syncDashboardData);
+      window.removeEventListener('nkomazi_storage_update', syncDashboardData);
+      window.removeEventListener('focus', syncDashboardData);
+    };
+  }, []);
 
   const pendingApprovals = (Array.isArray(approvals) ? approvals : []).filter(a => a?.status === 'PENDING');
   const activeOpportunities = (Array.isArray(opportunities) ? opportunities : []).filter(o => o?.status === 'ACTIVE');

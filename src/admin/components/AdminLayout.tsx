@@ -61,11 +61,34 @@ export const AdminLayout: React.FC = () => {
   }, []);
 
   // Load live pending approval count and unread inquiries count
-  const approvals = loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS);
-  const pendingCount = (Array.isArray(approvals) ? approvals : INITIAL_APPROVALS).filter(a => a?.status === 'PENDING').length;
+  const [pendingCount, setPendingCount] = useState<number>(() => {
+    const approvals = loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS);
+    return (Array.isArray(approvals) ? approvals : INITIAL_APPROVALS).filter(a => a?.status === 'PENDING').length;
+  });
 
-  const inquiries = loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES);
-  const unreadInquiriesCount = (Array.isArray(inquiries) ? inquiries : INITIAL_INQUIRIES).filter(i => i?.status === 'NEW').length;
+  const [unreadInquiriesCount, setUnreadInquiriesCount] = useState<number>(() => {
+    const inquiries = loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES);
+    return (Array.isArray(inquiries) ? inquiries : INITIAL_INQUIRIES).filter(i => i?.status === 'NEW').length;
+  });
+
+  useEffect(() => {
+    const syncCounts = () => {
+      const appr = loadFromStorage<ApprovalRequest[]>('approvals', INITIAL_APPROVALS);
+      setPendingCount((Array.isArray(appr) ? appr : INITIAL_APPROVALS).filter(a => a?.status === 'PENDING').length);
+
+      const inq = loadFromStorage<InquiryItem[]>('inquiries', INITIAL_INQUIRIES);
+      setUnreadInquiriesCount((Array.isArray(inq) ? inq : INITIAL_INQUIRIES).filter(i => i?.status === 'NEW').length);
+    };
+
+    window.addEventListener('storage', syncCounts);
+    window.addEventListener('nkomazi_storage_update', syncCounts);
+    window.addEventListener('focus', syncCounts);
+    return () => {
+      window.removeEventListener('storage', syncCounts);
+      window.removeEventListener('nkomazi_storage_update', syncCounts);
+      window.removeEventListener('focus', syncCounts);
+    };
+  }, []);
 
   const handleLogout = () => {
     logout();
