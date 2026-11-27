@@ -104,7 +104,7 @@ export interface AuditLog {
 
 export interface InquiryItem {
   id: string;
-  type: 'INVESTOR_LEAD' | 'TENDER_QUERY' | 'GENERAL_CONTACT' | 'MSME_REGISTRATION' | 'STAKEHOLDER';
+  type: 'INVESTOR_LEAD' | 'TENDER_QUERY' | 'GENERAL_CONTACT' | 'MSME_REGISTRATION' | 'STAKEHOLDER' | 'CAREER_TALENT';
   name: string;
   email: string;
   phone?: string;

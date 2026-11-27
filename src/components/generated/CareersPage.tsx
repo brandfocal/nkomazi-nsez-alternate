@@ -4,8 +4,9 @@ import { Menu, X, Mail, MapPin, Calendar, Briefcase, Info, ArrowUpRight, Chevron
 import { Link } from 'react-router-dom';
 import { NSEZNavbar } from './NSEZNavbar';
 import { NSEZFooterSection } from './NSEZFooterSection';
-import { loadFromStorage, STORAGE_KEYS, INITIAL_CAREERS } from '../../admin/mockData';
-import { CareerItem } from '../../admin/types';
+import { loadFromStorage, saveToStorage, STORAGE_KEYS, INITIAL_CAREERS } from '../../admin/mockData';
+import { CareerItem, InquiryItem } from '../../admin/types';
+import { apiClient } from '../../admin/services/apiClient';
 
 // ─── Design Tokens ────────────────────────────────────────────────────────────
 const HEADING_FONT = "'Poppins', system-ui, sans-serif";
@@ -742,7 +743,24 @@ const WhyWorkAtNSEZ = () => <section className="py-16 sm:py-24 bg-white px-4 sm:
 
 const CareersSection = () => {
   const [activeCategory, setActiveCategory] = useState('all');
-  const storedCareers = loadFromStorage<CareerItem[]>(STORAGE_KEYS.CAREERS, INITIAL_CAREERS);
+  const [storedCareers, setStoredCareers] = useState<CareerItem[]>(() =>
+    loadFromStorage<CareerItem[]>(STORAGE_KEYS.CAREERS, INITIAL_CAREERS)
+  );
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setStoredCareers(loadFromStorage<CareerItem[]>(STORAGE_KEYS.CAREERS, INITIAL_CAREERS));
+    };
+    window.addEventListener('storage', handleUpdate);
+    window.addEventListener('nkomazi_storage_update', handleUpdate);
+    window.addEventListener('focus', handleUpdate);
+    return () => {
+      window.removeEventListener('storage', handleUpdate);
+      window.removeEventListener('nkomazi_storage_update', handleUpdate);
+      window.removeEventListener('focus', handleUpdate);
+    };
+  }, []);
+
   const openJobs = storedCareers.filter((job) => job.status === 'OPEN');
   const jobsToDisplay = openJobs.length > 0 ? openJobs : JOB_LISTINGS;
 
@@ -948,6 +966,53 @@ const LearnershipsBand = () => <section className="bg-[#023A23] text-white relat
 
 const RegisterInterestCTA = () => {
   const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submittedRef, setSubmittedRef] = useState<string | null>(null);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email.trim() || !email.includes('@')) {
+      setErrorMsg('Please enter a valid email address.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    setErrorMsg(null);
+
+    const refNumber = `#NSEZ-TALENT-${Math.floor(100000 + Math.random() * 900000)}`;
+
+    const newInquiry: InquiryItem = {
+      id: `talent-${Date.now()}`,
+      name: email.split('@')[0].replace(/[._-]/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+      email: email.trim(),
+      phone: '',
+      company: 'General Talent Pool Candidate',
+      sector: 'Human Resources / Talent Pool',
+      subject: `Talent Pool Registration (${refNumber})`,
+      message: `Applicant registered interest for upcoming career opportunities at Mpumalanga Nkomazi SEZ.\nCandidate Contact: ${email.trim()}`,
+      type: 'CAREER_TALENT',
+      submittedAt: new Date().toISOString(),
+      status: 'NEW',
+      priority: 'MEDIUM'
+    };
+
+    try {
+      // 1. Submit to Live Node/PostgreSQL Backend if online
+      await apiClient.submitInquiry(newInquiry);
+    } catch {
+      // If offline, silently handled by localStorage sync
+    }
+
+    // 2. Persist locally to admin inquiries store
+    const existing = loadFromStorage<InquiryItem[]>(STORAGE_KEYS.INQUIRIES, []);
+    saveToStorage(STORAGE_KEYS.INQUIRIES, [newInquiry, ...existing]);
+
+    setIsSubmitting(false);
+    setSubmittedRef(refNumber);
+    setEmail('');
+  };
+
   return <section id="register" style={{
     background: '#FFFFFF',
     paddingTop: 'clamp(48px, 8vw, 96px)',
@@ -1050,43 +1115,83 @@ const RegisterInterestCTA = () => {
               }}>
                 Register Your Interest
               </p>
-              {/* Email input */}
-              <div className="relative mb-4">
-                <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
-                  <Mail size={18} />
+
+              {submittedRef ? (
+                <div className="p-5 rounded-2xl bg-emerald-50 text-emerald-900 border border-emerald-200">
+                  <div className="flex items-center gap-2 mb-2 font-bold text-emerald-800">
+                    <svg className="w-5 h-5 text-emerald-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>Interest Successfully Registered</span>
+                  </div>
+                  <p className="text-sm leading-relaxed text-emerald-700 mb-3">
+                    Thank you! Your profile has been added to our central talent pool. When a matching opening is published, our Human Capital team will be in touch.
+                  </p>
+                  <div className="text-xs font-mono bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg inline-block">
+                    Reference ID: {submittedRef}
+                  </div>
                 </div>
-                <input type="email" placeholder="Enter your email address" value={email} onChange={e => setEmail(e.target.value)} className="w-full focus:outline-none transition-all" style={{
-                  fontFamily: BODY_FONT,
-                  fontSize: '14px',
-                  paddingLeft: '44px',
-                  paddingRight: '20px',
-                  paddingTop: '16px',
-                  paddingBottom: '16px',
-                  background: '#ffffff',
-                  border: '1px solid rgba(17,17,17,0.12)',
-                  borderRadius: '12px',
-                  color: '#111111',
-                  minHeight: '52px'
-                }} />
-              </div>
-              {/* Action buttons */}
-              <div className="flex flex-col sm:flex-row gap-3">
-                <motion.button type="button" className="flex items-center justify-center gap-2 text-white font-semibold rounded-xl px-6 py-3.5 text-[14px] tracking-[0.01em] min-h-[44px]" style={{
-                  fontFamily: BODY_FONT,
-                  background: '#E77227',
-                  border: 'none',
-                  cursor: 'pointer'
-                }} whileHover={{
-                  y: -2,
-                  scale: 1.015
-                }} whileTap={{
-                  scale: 0.97
-                }}>
-                  <span>Register Interest</span>
-                  <ArrowUpRight size={16} />
-                </motion.button>
-                <GhostButtonDark label="View Open Positions" href="#opportunities" />
-              </div>
+              ) : (
+                <form onSubmit={handleSubmit}>
+                  {errorMsg && (
+                    <div className="mb-3 text-xs text-red-600 bg-red-50 p-2.5 rounded-lg">
+                      {errorMsg}
+                    </div>
+                  )}
+                  {/* Email input */}
+                  <div className="relative mb-4">
+                    <div className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 pointer-events-none">
+                      <Mail size={18} />
+                    </div>
+                    <input
+                      type="email"
+                      required
+                      placeholder="Enter your email address"
+                      value={email}
+                      onChange={e => setEmail(e.target.value)}
+                      className="w-full focus:outline-none transition-all"
+                      style={{
+                        fontFamily: BODY_FONT,
+                        fontSize: '14px',
+                        paddingLeft: '44px',
+                        paddingRight: '20px',
+                        paddingTop: '16px',
+                        paddingBottom: '16px',
+                        background: '#ffffff',
+                        border: '1px solid rgba(17,17,17,0.12)',
+                        borderRadius: '12px',
+                        color: '#111111',
+                        minHeight: '52px'
+                      }}
+                    />
+                  </div>
+                  {/* Action buttons */}
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <motion.button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="flex items-center justify-center gap-2 text-white font-semibold rounded-xl px-6 py-3.5 text-[14px] tracking-[0.01em] min-h-[44px] disabled:opacity-50"
+                      style={{
+                        fontFamily: BODY_FONT,
+                        background: '#E77227',
+                        border: 'none',
+                        cursor: isSubmitting ? 'not-allowed' : 'pointer'
+                      }}
+                      whileHover={{
+                        y: -2,
+                        scale: 1.015
+                      }}
+                      whileTap={{
+                        scale: 0.97
+                      }}
+                    >
+                      <span>{isSubmitting ? 'Registering...' : 'Register Interest'}</span>
+                      <ArrowUpRight size={16} />
+                    </motion.button>
+                    <GhostButtonDark label="View Open Positions" href="#opportunities" />
+                  </div>
+                </form>
+              )}
             </div>
 
             <div style={{

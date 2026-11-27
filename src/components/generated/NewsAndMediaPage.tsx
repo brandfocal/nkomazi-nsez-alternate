@@ -687,7 +687,24 @@ const HeroSection = () => {
 // ─── EDITORIAL NEWS SECTION ────────────────────────────────────────────────────
 
 const EditorialNewsSection = () => {
-  const storedNews = loadFromStorage<NewsArticleItem[]>(STORAGE_KEYS.NEWS, INITIAL_NEWS);
+  const [storedNews, setStoredNews] = useState<NewsArticleItem[]>(() =>
+    loadFromStorage<NewsArticleItem[]>(STORAGE_KEYS.NEWS, INITIAL_NEWS)
+  );
+
+  useEffect(() => {
+    const handleUpdate = () => {
+      setStoredNews(loadFromStorage<NewsArticleItem[]>(STORAGE_KEYS.NEWS, INITIAL_NEWS));
+    };
+    window.addEventListener('storage', handleUpdate);
+    window.addEventListener('nkomazi_storage_update', handleUpdate);
+    window.addEventListener('focus', handleUpdate);
+    return () => {
+      window.removeEventListener('storage', handleUpdate);
+      window.removeEventListener('nkomazi_storage_update', handleUpdate);
+      window.removeEventListener('focus', handleUpdate);
+    };
+  }, []);
+
   const activeArticles = storedNews.filter((a) => a.published !== false);
   const articlesToDisplay = activeArticles.length > 0 ? activeArticles : NEWS_ARTICLES;
 
